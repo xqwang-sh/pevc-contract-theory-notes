@@ -1,0 +1,8 @@
+.DS_Store
+.quarto/
+*_cache/
+
+/.quarto/
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,1234 @@
+---
+title: "第 6 周：创始人有股份，为什么可能拿不到退出款？"
+subtitle: "投资层合同、状态依赖控制与分阶段融资 · 学生讲义"
+author: "PE/VC 金融博士选修课"
+date: "2026-08-30"
+description: "从 Newco 优先股算例出发，区分支付权、控制权与后续融资权，并理解状态依赖治理。"
+page-layout: article
+---
+
+<nav class="course-nav" aria-label="课程讲义导航">
+  <a href="index.html">← 课程首页</a>
+  <span class="week-links">
+    <a href="w05-fund-contract.html">← 第 5 周·基金层</a>
+    <a href="w06-venture-contract.html" aria-current="page">第 6 周·企业层</a>
+  </span>
+</nav>
+
+<div class="chapter-opening">
+<span class="box-title">本讲的两个中心问题</span>
+
+1. 如果公司今天退出，给定可分配退出款，投资人与创始人各拿多少？
+2. 如果明天出现新的技术、经营或融资信息，谁有权决定继续、重组、出售或停止？
+
+</div>
+
+股权比例只能回答这两个问题中的一部分。VC 合同之所以把清算优先、转换、董事席位、保护性条款、信息权和后续参与权分开配置，正是因为“给定结果后怎么分”与“结果尚未确定时谁来决定”是两类不同任务。
+
+<div class="learning-goals">
+<span class="box-title">学完本讲，你应该能做什么？</span>
+
+1. 复算一张 1x 非参与式可转换优先股的退出支付表；
+2. 区分现金流权、明示控制权、状态依赖控制与剩余决策空间；
+3. 从数值状态表推出创业者私人选择与总剩余选择分离的条件；
+4. 说明 staging 为什么既创造信息与停止节点，也会带来重复融资成本；
+5. 将一项 Term Sheet 权利改写成可检验的研究命题，并指出最大的内生性问题。
+</div>
+
+<div class="reading-guide">
+<span class="box-title">阅读方法</span>
+本讲会反复区分五种内容：**条款算术、课堂化模型、论文证据、研究推论与法律边界**。Newco 的优先股公式是给定条款后的支付算术；ControlCo 是一个独立的状态依赖控制模型。两者用来说明不同问题，不要把它们当成同一份真实交易的完整合同。
+</div>
+
+| 课堂顺序 | 建议时间 | 学生产出 |
+|---|---:|---|
+| 第二层授权与权利分类 | 14 分钟 | 条款分类表 |
+| Newco 退出支付 | 22 分钟 | 支付表与转换点 |
+| ControlCo 状态依赖控制 | 24 分钟 | 状态—行动—控制表 |
+| Staging 与后续融资 | 10 分钟 | 两阶段决策树 |
+| 论文、法律边界与研究命题 | 10 分钟 | Exit ticket |
+
+## 从基金层进入企业层：第二层授权
+
+第 5 周研究 LP 如何把基金投资权交给 GP。现在，GP 代表基金或 SPV 把资本投入企业，创业者取得经营所需的现金，并继续投入人力资本。这一层同样是授权：投资人不可能代替创业者做每一项日常决定，但需要为新信息出现后的重大决策准备权利与程序。
+
+<div class="agency-flow" role="img" aria-label="LP到基金再到创业企业的双层授权">
+  <div class="node"><strong>LP</strong><br><span class="small-note">资本提供者</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><strong>Fund / GP</strong><br><span class="small-note">筛选、投资与治理</span></div>
+  <div class="arrow">→</div>
+  <div class="node"><strong>Company / Founder</strong><br><span class="small-note">经营与人力资本</span></div>
+</div>
+
+本讲为了表述简洁，用“VC”指代投资人的经济与治理角色。实际证券持有人通常是基金、合伙企业或 SPV；创始人、公司和其他股东也可能分别承担不同义务。
+
+### Term Sheet 首先是权利配置摘要
+
+| 权利组 | 首先回答什么 | 典型安排 |
+|---|---|---|
+| 支付与清算分配 | 给定结果，谁拿多少？ | 清算优先、转换、参与分配、反稀释 |
+| 明示控制与治理 | 哪些行动需要谁投票、同意或否决？ | 董事提名、投票权、保护性条款、类别表决 |
+| 信息与后续参与 | 谁获得新信息，谁可以继续投入？ | 报告、检查、优先认购、按比例跟投权 |
+
+<div class="boundary-box">
+<span class="box-title">文本与法律边界</span>
+Term Sheet 常是正式协议签署前对关键交易与治理条件的摘要，不同条款的约束力取决于具体文本与适用法。正式权利通常还需落实在投资协议、股东协议、章程、类别股条款或其他正式文件中。本讲义是经济学教学框架，不是具体交易的法律意见。
+</div>
+
+<details class="self-check">
+<summary>条款分类练习</summary>
+
+- 1x 清算优先：首先是退出分配权。
+- 董事提名权、重大资产出售否决权：明示控制权。
+- 月度财务报告：信息权。
+- Pro rata right：后续参与的选择权，不是实际出资义务。
+- Anti-dilution：主要调整转换价格与稀释暴露，它本身不等于控制权转移。
+
+一项条款可能同时影响多种摩擦，上述分类只表示它首先回答的问题。
+</details>
+
+## 什么信息可以触发权利变化？
+
+企业层合同要为未来状态安排权利，但不是任何有意义的信息都适合成为合同触发条件。依次问三件事：
+
+1. **可观察**：交易双方能否看到或记录？
+2. **可验证**：发生争议时，第三方能否依据证据确认？
+3. **可写入并执行**：能否清楚连接到某项权利、程序和后果？
+
+| 较容易成为触发条件 | 较难直接成为触发条件 |
+|---|---|
+| 是否完成约定融资 | 创始人是否“足够努力” |
+| 是否出售核心资产 | 技术路线是否“足够好” |
+| 是否提供经审计报表 | 管理层“领导力是否下降” |
+| 监管机构是否作出特定决定 | 产品方向是否“明显错误” |
+
+难以验证的主观判断并没有从治理中消失。它们常常通过董事会、投票机制和后续谈判处理。这也是为什么不完全合同不等于“不写合同”：无法对所有未来行动一一写尽时，反而更需要配置未来的决策程序。
+
+## Newco：先把退出分配算清楚
+
+先考虑一份经过明确简化的交易。目的是学会区分“保留优先股”与“转换普通股”两个候选支付，而不是复制现实多轮融资的全部条款。
+
+### 交易假设
+
+- A 轮投资 $I=500$ 万元；
+- 1x 清算优先额 $L=500$ 万元；
+- 转换为普通股后，投资人持股比例 $\alpha=1/3$；
+- 只有一轮优先股，无参与权、累计股息、反稀释、多轮 seniority、税费和其他特殊支付；
+- $W$ 是偿还债务和交易费用后，可向相关股东分配的退出现金。
+
+<div class="boundary-box">
+<span class="box-title">不要把 $W$ 当成新闻中的企业估值</span>
+$W$ 是当下真正可向这两类股东分配的退出现金。企业价值、股权价值、新闻口径估值与可分配退出款不能自动画等号。
+</div>
+
+### 先写两个候选支付
+
+**选择 1：保留优先股。** 投资人取得优先额，但不能超过实际可分配资产：
+
+$$
+V_{\text{pref}}(W)=\min(W,L).
+$$
+
+**选择 2：转换为普通股。** 投资人按转换后持股比例分配：
+
+$$
+V_{\text{convert}}(W)=\alpha W.
+$$
+
+非参与式可转换优先股在两个选择中取高：
+
+$$
+\boxed{V_{NP}(W)=\max\{\min(W,L),\alpha W\}.}
+$$
+
+这个式子中，“非参与”的含义就是投资人不会在同一退出状态中同时拿完优先额又按普通股比例参与剩余分配，而是在保留优先股与转换普通股之间选择。
+
+### 四个退出状态
+
+| $W$ | 保留优先股 | 转换普通股 | 投资人选择 | 创始人/普通股所得 |
+|---:|---:|---:|---:|---:|
+| 300 万 | 300 万 | 100 万 | 300 万 | 0 |
+| 1,000 万 | 500 万 | 333.3 万 | 500 万 | 500 万 |
+| 1,500 万 | 500 万 | 500 万 | 500 万 | 1,000 万 |
+| 3,000 万 | 500 万 | 1,000 万 | 1,000 万 | 2,000 万 |
+
+每一行都应当做两个检查：第一，投资人是否选择了两个候选支付中较高的一个；第二，投资人与普通股所得之和是否等于 $W$。
+
+<details class="self-check">
+<summary>为什么 $W=300$ 万时投资人不能拿 500 万？</summary>
+
+清算优先权决定分配顺序，不会凭空创造可分配资产。当 $W<L$ 时，投资人最多取得实际可分配的 $W$，普通股所得为 0。
+</details>
+
+### 转换点是一个无差异条件
+
+投资人在优先额与转换支付之间无差异时，
+
+$$
+L=\alpha W^*.
+$$
+
+因此
+
+$$
+\boxed{W^*=\frac{L}{\alpha}}
+=\frac{500}{1/3}=1{,}500\text{万元}.
+$$
+
+| 退出区间 | 投资人的支付选择 |
+|---|---|
+| $0\le W<L$ | 资产不足，保留优先股并取得 $W$ |
+| $L\le W\le W^*$ | 保留优先股，取得 $L$ |
+| $W>W^*$ | 转换为普通股，取得 $\alpha W$ |
+
+<div class="key-takeaway">
+<span class="box-title">支付算例的结论</span>
+清算优先保护下行，转换保留上行。“创始人持有 $2/3$”只在投资人转换后直接决定按比例分配；在低退出价值区间，清算优先权改变分配。
+</div>
+
+<details class="self-check">
+<summary>参数练习：优先额和持股比例改变后怎样？</summary>
+
+转换点始终是 $W^*=L/\alpha$。
+
+- 若 $L=750$ 万元、$\alpha=1/3$，则 $W^*=2{,}250$ 万元；
+- 若 $L=500$ 万元、$\alpha=40\%$，则 $W^*=1{,}250$ 万元。
+
+更高优先额会延迟转换；更高转换持股比例会使转换更早发生。
+</details>
+
+## 从支付转向控制：为什么 Newco 公式还不够？
+
+Newco 的支付公式把 $W$ 当作已经给定。但现实中，$W$ 会受产品路线、追加融资、管理层更换、资产出售和退出时机影响。下一步必须问：这些行动由谁决定？
+
+### 四个容易混淆的概念
+
+| 概念 | 它真正回答什么 | 例子 |
+|---|---|---|
+| 现金流/清算分配权 | 结果实现后怎样分钱 | 清算优先、转换、参与分配 |
+| 明示控制权 | 合同或组织文件已经规定哪些事项由谁投票、同意或否决 | 董事提名、保护性条款、类别表决 |
+| 状态依赖控制权 | 明示权利是否随可验证事件转移或加强 | 特定触发后改变董事、投票或同意权 |
+| 剩余决策空间 | 合同和组织规则没有明确分配的事项由谁处理 | 留给管理层的日常产品与资产使用判断 |
+
+<div class="boundary-box">
+<span class="box-title">概念校正</span>
+董事席位、保护性条款和类别表决权是已经写入合同或组织文件的明示权利，不应自动被称为 Grossman–Hart 意义上的“剩余控制权”。剩余控制权关心的是合同空白处对资产用途或行动的最后决定。
+</div>
+
+## ControlCo：状态依赖控制的两状态模型
+
+以下是一个独立的课堂模型，不与 Newco 的优先股支付直接联立。为避免把 Newco 的转换比例 $\alpha$ 与控制模型混在一起，用 $s_E$ 表示创业者在本模型中的现金份额。
+
+### 环境与状态表
+
+中期必须在两个行动中选择：
+
+- $a_E$：创业者偏好的继续经营或产品路线；
+- $a_V$：投资人偏好的重组或现金优先路线。
+
+设创业者的现金份额 $s_E=30\%$。$R(a)$ 是某行动产生的可分配现金，$B(a)$ 是创业者获得的真实非货币效用，例如保持项目独立性、继续实现原始愿景或留任经营职位。
+
+| 状态 | $R(a_E)$ | $B(a_E)$ | $R(a_V)$ | $B(a_V)$ |
+|---|---:|---:|---:|---:|
+| G：创业者行动有效 | 100 | 30 | 120 | 0 |
+| B：投资人行动有效 | 50 | 18 | 80 | 0 |
+
+<div class="boundary-box">
+<span class="box-title">$B$ 是什么？</span>
+本例把 $B$ 当作创业者真实享有的非货币效用，因此在评价总剩余时把 $R+B$ 相加。如果所谓“私人利益”实际上是资源挪用，必须扣除相应资源损失，不能不加调整地当成社会剩余。
+</div>
+
+### 分别计算私人选择与有效选择
+
+创业者的效用是
+
+$$
+U_E(a)=s_ER(a)+B(a).
+$$
+
+#### G 状态
+
+如果创业者从 $a_E$ 改为 $a_V$，会增加现金收益 20，其中创业者分享 $0.3\times20=6$；但会失去私人效用 30。因此创业者选择 $a_E$：
+
+$$
+30\ge0.3\times(120-100)=6.
+$$
+
+总剩余也选择 $a_E$，因为
+
+$$
+100+30>120+0.
+$$
+
+#### B 状态
+
+创业者仍然选择 $a_E$，因为
+
+$$
+18\ge0.3\times(80-50)=9.
+$$
+
+但总剩余选择 $a_V$，因为
+
+$$
+50+18<80+0.
+$$
+
+<div class="key-takeaway">
+<span class="box-title">冲突发生在哪里？</span>
+在 B 状态，创业者只分享 30% 的现金增量，却完整享有保留原路线的私人效用。他的私人选择因此与总剩余选择分离。
+</div>
+
+### 再写一般条件
+
+定义
+
+$$
+\Delta R_s=R_s(a_V)-R_s(a_E)>0,
+\qquad
+\Delta B_s=B_s(a_E)-B_s(a_V)>0.
+$$
+
+创业者选择 $a_E$ 的条件是
+
+$$
+\Delta B_s\ge s_E\Delta R_s.
+$$
+
+总剩余选择 $a_E$ 的条件是
+
+$$
+\Delta B_s\ge\Delta R_s.
+$$
+
+因此，创业者选择 $a_E$、但总剩余希望选择 $a_V$ 的冲突区间是
+
+$$
+\boxed{s_E\Delta R_s\le\Delta B_s<\Delta R_s.}
+$$
+
+如果一个可验证信号能够较好地区分两类状态，合同就可以预先安排：在创业者行动有效的状态保留其决策空间，在投资人行动有效且存在私人冲突的状态，把特定控制权交给投资人。
+
+<div class="boundary-box">
+<span class="box-title">不要过度推论</span>
+“困境时由 VC 控制”不是普遍定律。现实控制可能是董事多数、某项否决权或共同同意，不是二元的“完全控制”。完整模型还需考虑融资参与、事前投入、再谈判和更一般的行动集合。
+</div>
+
+<details class="self-check">
+<summary>现金流份额能否消除 B 状态的控制冲突？</summary>
+
+在 B 状态，创业者愿意改选 $a_V$ 需要
+
+$$
+18<s_E(80-50).
+$$
+
+临界现金份额是
+
+$$
+s_E=\frac{18}{30}=60\%.
+$$
+
+更强的现金流激励可以减少冲突，但现实证券的状态支付并不必然是一条固定线性份额。这个 60% 阈值因此不能单独证明某种证券最优。
+</details>
+
+## 信号不完美：控制权也会犯错
+
+现实中，里程碑、财务指标或违约事件不会完美显示哪个行动有效。因此，状态依赖控制要权衡两种误判：
+
+| 误判 | 可能损失 | 什么情况下更严重 |
+|---|---|---|
+| 创业者行动有效，却转给投资人控制 | 创新空间、人力资本投入和长期战略受损 | 创业者的关系专用投入更重要时 |
+| 投资人行动有效，却仍由创业者控制 | 错过重组、更换、停止或融资窗口 | 现金损失、时间窗口或后续融资压力更大时 |
+
+所以，状态依赖控制的价值取决于三件事：**状态出现概率、信号准确率和两类误判的损失。** 更强的投资人控制不是免费保险，它可能在错误状态下压缩创业者激励。
+
+<details class="self-check">
+<summary>如果一个里程碑很容易被短期操纵，是否应当更强地绑定控制权？</summary>
+
+不一定。信号越容易被操纵，就越可能错误分配控制权，还可能诱导创业者牺牲长期价值以满足短期指标。此时可能需要改进指标、增加多维信息或保留董事会判断，而不是机械强化触发。
+</details>
+
+## Staging：把后续融资变成决策节点
+
+初创企业的价值信息通常随时间逐步出现。如果一次性提供项目全部资金，后续发现技术失败或团队变化时，资本已经难以收回。Staging 的基本做法是只投入当前阶段所需资本，把未来资本保留为新的决策节点。
+
+<div class="formula-walkthrough">
+
+**$t=0$ 当前轮**：投入当前阶段所需资本，约定信息、控制与后续融资程序。
+
+**$t=1$ 新信息**：技术、客户、团队、现金消耗和市场状态逐步显现。
+
+**后续决策**：继续投资、附条件重谈，或停止投资并转向出售、清算或其他路径。
+
+</div>
+
+Staging 的治理价值来自两点：更频繁地获得和使用信息，以及保留不再继续投入的选择权。但轮次越密也会增加尽调、谈判、资金断档、稀释、hold-up 与创业者短期化成本。
+
+### 三类“分期给钱”不是一件事
+
+| 安排 | 当前已承诺什么 | 新信息后发生什么 |
+|---|---|---|
+| LP capital call | LP 已在 LPA 下对基金承诺出资 | GP 或基金在 LPA 约定范围内发出缴付通知 |
+| Committed tranches | 当前协议已对总额或多笔拨付作出一定程度的承诺 | 按事先约定的里程碑或条件判断是否拨付 |
+| Staged financing / new round | 当前只投入本轮资金 | 下一轮是新的续投、估值与条款谈判决定 |
+
+<div class="boundary-box">
+<span class="box-title">Pro rata right 是选择权，不是出资义务</span>
+如果投资人拥有按比例参与后续融资的权利，只能说它可以选择维持某种经济暴露。要研究续投激励，还必须观察投资人后来是否真的投资，以及实际承担了多少新资本。
+</div>
+
+<details class="self-check">
+<summary>比较题：哪类公司更需要较短的计划融资间隔？</summary>
+
+如果两家公司的单轮融资成本相同，A 公司的技术信息过时很快，B 公司的商业模式稳定，则 A 公司的信息延迟损失更高，更有理由设置较短的计划融资间隔。但观察到的实际融资间隔还受意外现金消耗、市场关闭与企业失败影响，不能把横截面相关性直接解释为合同效果。
+</details>
+
+## 从模型回到真实合同与论文证据
+
+| 理论中的机制 | 现实中的可能载体 | 必须保留的边界 |
+|---|---|---|
+| 下行支付保护 | 清算优先 | 不自动赋予控制权 |
+| 上行分享 | 转换 | 转换点不决定董事权 |
+| 状态依赖控制 | 董事权、保护性条款、类别表决 | 触发与公司程序必须可实施 |
+| 获得状态信息 | 报告、检查、董事会信息 | 看到不等于可被第三方验证 |
+| 保留后续参与机会 | Pro rata、优先认购 | 是权利，不是实际跟投义务 |
+| 重复决策节点 | 新融资轮或条件拨付 | Committed tranche 与新一轮的承诺程度不同 |
+
+### Kaplan–Strömberg：现实合同确实分开配置权利
+
+[Kaplan & Strömberg (2003)](https://doi.org/10.1111/1467-937X.00245) 研究 14 家 VC 机构提供的 119 家企业、213 笔投资，分别测量现金流权、董事权、投票权、清算权和其他控制权，并记录部分权利的条件性配置。它使契约理论中的“支付—控制—状态”概念可以与真实合同数据对照。
+
+但这项证据主要支持“现实中存在权利分离和条件配置”。高风险企业可能内生选择更强的控制条款，因此不能仅凭权利与业绩的相关性证明“更强控制导致更好绩效”。[Gompers (1995)](https://doi.org/10.1111/j.1540-6261.1995.tb05185.x) 则是理解分阶段融资、监控和信息更新的经典起点。
+
+<div class="evidence-box">
+<span class="box-title">证据链的正确顺序</span>
+理论告诉我们为什么需要把权利分开配置；合同数据告诉我们现实中是否这样做；识别设计才决定能否进一步作因果判断。
+</div>
+
+## 中国制度语境：为经济权利寻找法律载体
+
+2023 年修订的《中华人民共和国公司法》自 2024 年 7 月 1 日起施行。其第 144–146 条对股份有限公司类别股作出了有关规定，涉及利润或剩余财产分配、表决权、转让限制与章程记载。[官方文本](https://www.npc.gov.cn/npc/c2/c30834/202312/t20231229_433999.html)
+
+境内早期企业也常采用有限责任公司形式。所以，与经济上的优先分配、表决或保护相似的安排，不必然拥有与美国类别股完全相同的法律效果。具体分析至少需要检查：
+
+1. 实际权利人是基金、SPV 还是其他主体？
+2. 公司是有限责任公司还是股份有限公司？
+3. 权利写在 Term Sheet、投资协议、股东协议还是章程？
+4. 触发事件如何证明？
+5. 权利行使还需要哪些董事会、股东会、登记或第三方程序？
+6. 后来实际发生的是行使、豁免、重谈还是终止？
+
+<div class="boundary-box">
+<span class="box-title">更新与使用说明</span>
+本节按 2026-08-30 可核验的官方公司法文本表述。它只提醒我们模型中的“权利”必须找到具体法律载体、程序和实现路径，不展开回购、对赌、IPO 清理等实体法问题。
+</div>
+
+## 从条款记录到可检验的研究命题
+
+以“绩效触发后投资人增强董事或同意权”为例：
+
+| 环节 | 一句话写法 |
+|---|---|
+| 理论摩擦 | 某些状态中，创业者的私人选择与总剩余选择分离 |
+| 合同机制 | 可验证触发条件把特定董事、投票或同意权交给投资人 |
+| 可观察结果 | 管理层更换、融资停止/续投、资产出售或战略调整 |
+| 最大识别难点 | 绩效恶化可能同时导致权利触发和后续结果 |
+| 必需的制度数据 | 条款存在、事件触发、权利行使、豁免/重谈与最终行动 |
+
+<div class="research-box">
+<span class="box-title">Exit ticket</span>
+选一项 Term Sheet 权利，写出：**一个触发状态 + 一个被改变的支付或决策 + 一个结果变量 + 一个替代解释**。如果只写“有无清算优先”或“有无董事权”，还没有进入机制层。
+</div>
+
+## 本讲小结与自测
+
+### 五句话概括本讲
+
+1. 非参与式可转换优先股在优先支付与转换支付中取高，不是两者同时取得。
+2. 转换点只回答给定退出款下的支付选择，不决定董事席位或否决权。
+3. 状态依赖控制有价值，不是因为投资人始终更聪明，而是私人选择与总剩余选择只在部分状态分离。
+4. 控制权存在信号误判成本；更强控制不是免费保险。
+5. Staging 的核心不是“少给钱”，而是用后续资本决定创造重复学习与停止节点。
+
+### 术语速查
+
+| 术语 | 本讲中的可操作定义 |
+|---|---|
+| Liquidation preference | 在约定退出或清算状态中优先取得分配的权利 |
+| Nonparticipating convertible preferred | 在保留优先支付与转换后按普通股比例分配之间选择的优先证券 |
+| Conversion threshold | 优先支付与转换支付刚好相等的退出款阈值 |
+| Protective provision | 对约定重大事项赋予特定同意或否决权的明示治理安排 |
+| State-contingent control | 明示控制权随可验证触发条件变化的安排 |
+| Residual control | 对合同和组织规则没有明确规定的资产用途或行动作决定的权力 |
+| Staged financing | 当前只提供当前轮资本，下一轮根据新信息重新决定的融资结构 |
+| Pro rata right | 在后续融资中按约定比例参与的选择权，不是出资义务 |
+
+### 自测题
+
+1. 当 $W=1{,}200$ 万元时，Newco 投资人取得多少？
+2. 董事席位是现金流权还是明示控制权？
+3. 为什么创始人和 VC 都观察到“技术路线不好”，它仍可能不适合直接写成合同触发条件？
+4. Committed tranche 与新一轮 staged financing 的承诺程度有何不同？
+5. Pro rata right 是否意味着投资人必须跟投？
+
+<details class="solution">
+<summary>展开查看自测题答案</summary>
+
+1. 保留优先股得 500 万，转换得 $1/3\times1{,}200=400$ 万，所以选择优先支付 500 万元。
+2. 董事席位是已明确规定的治理权利，属于明示控制权。
+3. 因为双方能观察不等于第三方能按统一证据标准验证并执行。
+4. Committed tranche 在当前合同中已对未来拨付作出一定承诺；新一轮融资保留新的续投、估值与条款谈判决定。
+5. 否。它通常是参与选择权，不是必须出资的义务。
+</details>
+
+## 附录导读：80 分钟课堂到此结束 {#w06-appendix}
+
+<div class="appendix-boundary">
+<span class="box-title">以下均为课后选读</span>
+旧讲义沿交易时序安排了 V1–V6 六个模型。80 分钟正文只完整讲 Newco 支付、ControlCo 状态依赖控制与 staging 直觉；下面把尽调、续投、误判损失、双边努力、证券设计和退出控制的完整链条保留下来。请先完成正文自测，再任选一个模型分支，不要求一次读完。
+</div>
+
+::: {.reading-paths}
+::: {.reading-path}
+**最小复习路径**
+
+约 30–45 分钟。阅读附录 C，复原状态、行动、控制与误判损失；随后读 Kaplan–Strömberg（2003）文献卡。
+:::
+
+::: {.reading-path}
+**机制进阶路径**
+
+约 60–90 分钟。在附录 A–F 中任选一个模型，完成一页“时序—约束—比较静态—合同含义”。
+:::
+
+::: {.reading-path}
+**研究入口路径**
+
+约 90–120 分钟。先读附录 G 的现代合同问题，再从附录 H 选择一篇论文，完成附录 I 的阅读备忘录。
+:::
+:::
+
+| 附录 | 旧讲义中的模型或专题 | 建议先修 | 学生应完成什么 |
+|---|---|---|---|
+| A | V1：尽调与信息价值 | 会比较投与不投的 NPV | 一个 VOI 分解 |
+| B | V2：知情 VC 与固定比例续投 | 会读投资门槛 | 一张续投偏差表 |
+| C | V3：或有控制、误判与搜寻投入 | 会读状态—行动表 | 一张控制损失表 |
+| D | V4：分阶段融资期限 | 会求一阶条件 | 两条比较静态 |
+| E | V5：创业者与 VC 双边努力 | 会求最优反应 | 两条努力反应函数 |
+| F | V6：可转换证券与退出控制 | 已完成 Newco | 三个退出门槛 |
+| G | 复杂条款、匹配、合同演化与中国接口 | 能区分机制和识别 | 一个研究命题 |
+| H–I | 经典文献与阅读方法 | 已完成正文 | 一页论文备忘录 |
+
+## 附录 A：V1——尽调为什么有价值
+
+### 无额外信息时
+
+项目类型为 $\theta\in\{H,L\}$。高类型概率为 $\pi$，低类型概率为 $1-\pi$，投资成本为 $I$，并满足
+
+$$
+Y_H>I>Y_L.
+$$
+
+没有额外信息时，VC 只能对混合项目统一作出“投资或不投资”的选择，最优预期剩余为
+
+$$
+W_0
+=
+\max\left\{
+0,\,
+\pi Y_H+(1-\pi)Y_L-I
+\right\}.
+$$
+
+### 获得完美信息后
+
+若支付尽调成本 $\kappa$ 后可以完全识别类型，VC 只投资高类型，尽调后的预期剩余为
+
+$$
+W_1=\pi(Y_H-I)-\kappa.
+$$
+
+因此尽调发生的条件是
+
+$$
+\boxed{
+\pi(Y_H-I)-W_0\ge\kappa.
+}
+$$
+
+左边是信息在成本之前所创造的决策价值。它有两个分解：
+
+| 无信息时的基准决策 | 信息帮助避免什么 | 信息价值 |
+|---|---|---:|
+| 混合项目值得投资 | 避免投资低类型 | $(1-\pi)(I-Y_L)$ |
+| 混合项目不值得投资 | 找出本会被放弃的高类型 | $\pi(Y_H-I)$ |
+
+### 一个数值例子
+
+设 $\pi=0.4$、$Y_H=180$、$Y_L=60$、$I=100$。混合项目的期望回报是 108，所以无信息时全部投资：
+
+$$
+W_0=108-100=8.
+$$
+
+完美识别后，只投资高类型的成本前剩余为
+
+$$
+0.4(180-100)=32.
+$$
+
+因此信息价值为 $32-8=24$。只有当 $\kappa\le24$ 时，尽调才值得进行。信息并不是因为“知道得更多”就自动有价值；它必须改变行动或改善选择。
+
+### 不完美信号与合同筛选
+
+若尽调只产生信号 $z$，先用 Bayes 法则得到后验概率 $\pi(z)$，再在
+
+$$
+\pi(z)Y_H+[1-\pi(z)]Y_L\ge I
+$$
+
+时投资。更精确的信号通常提高决策价值，但 VC 能否私下取得这项剩余还取决于定价、竞争与谈判。
+
+如果项目类型由创业者掌握，另一条路径是设计合同菜单。面向两种类型的合同 $C_H$ 与 $C_L$ 至少要满足
+
+$$
+U_H(C_H)\ge U_H(C_L),
+\qquad
+U_L(C_L)\ge U_L(C_H),
+$$
+
+并同时满足两类创业者的参与约束。这里保留模型结构，不进一步求最优菜单。
+
+<details class="self-check">
+<summary>附录练习：若混合项目本来就会被拒绝，信息价值来自哪里？</summary>
+
+来自识别并投资本来会与低类型一起被放弃的高类型，即 $\pi(Y_H-I)$。如果信号即使出现也不会改变任何投资决策，则其决策价值为零。
+</details>
+
+## 附录 B：V2——知情 VC 与固定比例续投
+
+到下一轮时，早期 VC 可能比新投资人更了解项目。下一阶段需要新增投资 $I_1$，产生增量期望回报 $Z$。项目的有效续投规则是
+
+$$
+Z-I_1\ge0.
+$$
+
+令 $\phi$ 为 VC 取得的增量项目支付份额，$\psi$ 为 VC 实际承担的新增投资份额。VC 支持续投的条件是
+
+$$
+\phi Z-\psi I_1\ge0,
+$$
+
+即
+
+$$
+Z\ge\frac{\psi}{\phi}I_1.
+$$
+
+| 比例关系 | VC 的私人门槛 | 与有效决策的偏差 |
+|---|---:|---|
+| $\psi<\phi$ | $(\psi/\phi)I_1<I_1$ | 在一段负 NPV 区间仍愿续投 |
+| $\psi=\phi$ | $I_1$ | 私人续投收益与项目 NPV 同号 |
+| $\psi>\phi$ | $(\psi/\phi)I_1>I_1$ | 一些正 NPV 续投被放弃 |
+
+当
+
+$$
+\boxed{\psi=\phi}
+$$
+
+时，VC 的增量净收益为
+
+$$
+\phi(Z-I_1),
+$$
+
+所以对所有 $Z$ 都与项目增量 NPV 同号。
+
+### 两个数值区间
+
+设 $I_1=100$、$\phi=0.4$：
+
+- 若 $\psi=0.2$，VC 的门槛是 50；当 $50\le Z<100$ 时，项目 NPV 为负但 VC 愿意续投。
+- 若 $\psi=0.6$，VC 的门槛是 150；当 $100\le Z<150$ 时，项目 NPV 为正但 VC 不愿续投。
+
+<div class="boundary-box">
+<span class="box-title">与 Pro rata right 的区别</span>
+固定比例合同要求 VC 始终取得固定项目份额，并承担同一比例的后续投资。Pro rata right 只是一项可以选择行使的参与权。经验研究必须观察完全稀释持股、实际出资、权利放弃和新证券定价，不能用“是否拥有权利”替代“实际承担了多少资本”。
+</div>
+
+## 附录 C：V3——控制权的误判损失与事前投入
+
+正文已经说明：好状态 $G$ 中的有效行动是 $a_E$，困境状态 $B$ 中的有效行动是 $a_V$。现在定义两种错误配置控制的总剩余损失：
+
+$$
+L_G
+=
+\big[R_G(a_E)+B_G(a_E)\big]
+-\big[R_G(a_V)+B_G(a_V)\big]>0,
+$$
+
+$$
+L_B
+=
+\big[R_B(a_V)+B_B(a_V)\big]
+-\big[R_B(a_E)+B_B(a_E)\big]>0.
+$$
+
+令好状态先验概率为 $\pi$，信号在好状态正确保留创业者控制的概率为 $\rho_G$，在困境状态正确转给投资人控制的概率为 $\rho_B$。三种控制规则的预期决策损失是
+
+| 控制规则 | 预期损失 |
+|---|---:|
+| 创业者始终控制 | $(1-\pi)L_B$ |
+| 投资人始终控制 | $\pi L_G$ |
+| 按信号或有控制 | $\pi(1-\rho_G)L_G+(1-\pi)(1-\rho_B)L_B$ |
+
+或有控制优于创业者始终控制的条件可写成
+
+$$
+\pi(1-\rho_G)L_G
+<
+(1-\pi)\rho_B L_B.
+$$
+
+左边是错误把好状态交给投资人所新增的损失；右边是在困境状态正确转移控制所避免的损失。这个不等式把“信号准确率、状态概率和两类错误的代价”放在同一个判断中。
+
+<details class="self-check">
+<summary>数值练习：或有控制能把预期误判损失降到多少？</summary>
+
+设 $\pi=0.6$、$L_G=20$、$L_B=30$、$\rho_G=0.9$、$\rho_B=0.8$。创业者始终控制的损失是 $0.4\times30=12$；投资人始终控制的损失是 $0.6\times20=12$。或有控制的损失为
+
+$$
+0.6(1-0.9)20+0.4(1-0.8)30=3.6.
+$$
+
+这不是因为或有控制永不犯错，而是信号在两种状态中都排除了一部分错误。
+</details>
+
+### 控制权还会保护 VC 的事前搜寻投入
+
+设 VC 投入搜寻强度 $x$，以更高概率找到新经理、战略伙伴或客户，成本为 $C(x)$。若替换管理层带来货币收益增量 $\Delta R$，VC 从中取得份额 $s_V$，且拥有可实施的替换权，其一阶条件可以写成
+
+$$
+C'(x)=s_V\Delta R.
+$$
+
+若替换仍需创业者事后同意，VC 预期会在重谈中只取得总剩余的一部分，搜寻投入回报下降。控制权因此不只改变事后“谁做决定”，还影响投资人是否愿意事前投入治理资源。
+
+<div class="boundary-box">
+<span class="box-title">理论边界</span>
+正文的两状态表是 Aghion–Bolton 机制的教学特例；搜寻投入来自 Hellmann（1998）的控制权逻辑。完整模型还处理融资参与、现金流分配、再谈判与更一般的行动集合。这里不能推出“VC 控制越多越好”。
+</div>
+
+## 附录 D：V4——分阶段融资期限的完整比较静态
+
+令 $T>0$ 为两轮计划融资的间隔，$A$ 为不确定性或信息过时速度，$\ell(A,T)$ 为等待至下一节点才纠正错误的单位时间损失，每轮融资固定成本为 $F$。这里使用 $\ell$，避免与清算优先额 $L$ 混淆。项目总时长为 $H$，则单位一致的约化总成本可以写成
+
+$$
+C(T)
+=H\left[\ell(A,T)+\frac{F}{T}\right].
+$$
+
+由于 $H$ 是共同倍数，内部最优 $T^*$ 满足
+
+$$
+\ell_T(A,T^*)=\frac{F}{(T^*)^2}.
+$$
+
+只要二阶条件
+
+$$
+\ell_{TT}(A,T^*)+\frac{2F}{(T^*)^3}>0
+$$
+
+成立，隐函数定理给出
+
+$$
+\frac{\partial T^*}{\partial A}
+=-\frac{\ell_{AT}}
+{\ell_{TT}+2F/(T^*)^3},
+$$
+
+$$
+\frac{\partial T^*}{\partial F}
+=\frac{1/(T^*)^2}
+{\ell_{TT}+2F/(T^*)^3}.
+$$
+
+因此，只有在 $\ell_{AT}>0$ 时，才能推出不确定性上升会缩短最优融资间隔；单轮固定成本上升会延长间隔。
+
+取一个便于复算的特例
+
+$$
+\ell(A,T)=\frac{AT}{2},
+$$
+
+则
+
+$$
+C(T)=H\left(\frac{AT}{2}+\frac{F}{T}\right),
+\qquad
+\boxed{T^*=\sqrt{\frac{2F}{A}}}.
+$$
+
+<div class="boundary-box">
+<span class="box-title">来源与测量边界</span>
+这是展示“信息延迟—重复融资成本”权衡的 reduced-form，不是 Gompers（1995）原模型的复现。实际轮次间隔还受到现金消耗、里程碑、已承诺分期、意外冲击、谈判力和资本市场开放程度影响。
+</div>
+
+Neher（1999）进一步研究分阶段投入如何逐步形成可转让资产并缓解 hold-up；Cornelli 与 Yosha（2003）研究阶段考核如何诱发 window dressing，以及可转换证券如何改变该激励。它们不是同一个模型的简单参数变化，而是分别改变了可承诺资产和信号操纵。
+
+<details class="self-check">
+<summary>数值练习：不确定性翻倍后，计划间隔怎样变化？</summary>
+
+若 $A=2$、$F=9$，则 $T^*=\sqrt{18/2}=3$。当 $A$ 上升到 4、$F$ 不变时，
+
+$$
+T^*=\sqrt{\frac{18}{4}}=\frac{3}{\sqrt2}.
+$$
+
+这是约化模型的计划间隔变化，不应直接解释为企业实际融资日期必然按该比例提前。
+</details>
+
+## 附录 E：V5——创业者与 VC 的双边努力
+
+创业者投入技术、经营和不可转让的人力资本；VC 投入招聘、治理、客户、后续融资和退出支持。两方努力都难以直接写入合同。
+
+令 $s$ 为 VC 的现金流份额，创业者取得 $1-s$。两方努力分别为 $e_E$ 和 $e_V$，努力生产率为 $y_E,y_V>0$。符号 $p>0$ 在本模型中只是把努力转化为价值的共同尺度，不要求被解释为落在 $[0,1]$ 内的成功概率；它只在 V5 内有效。在课堂化的线性产出、二次努力成本下，
+
+$$
+U_E
+=(1-s)p(y_Ee_E+y_Ve_V)-\frac{e_E^2}{2},
+$$
+
+$$
+U_V
+=sp(y_Ee_E+y_Ve_V)-\frac{e_V^2}{2}.
+$$
+
+分别对自己的努力求一阶条件：
+
+$$
+\boxed{
+e_E(s)=y_E(1-s)p,
+\qquad
+e_V(s)=y_Vsp.
+}
+$$
+
+提高 $s$ 会增加 VC 努力，也会降低创业者努力。把反应函数代回总剩余，得到
+
+$$
+S'(s)
+=p^2\left[y_V^2(1-s)-y_E^2s\right],
+$$
+
+$$
+S''(s)=-p^2(y_E^2+y_V^2)<0.
+$$
+
+因此唯一最优现金流份额是
+
+$$
+\boxed{
+s^*=\frac{y_V^2}{y_E^2+y_V^2}.
+}
+$$
+
+对应的均衡努力为
+
+$$
+e_E^*
+=\frac{y_E^3p}{y_E^2+y_V^2},
+\qquad
+e_V^*
+=\frac{y_V^3p}{y_E^2+y_V^2}.
+$$
+
+如果 $y_E=2$、$y_V=1$、$p=1$，则 $s^*=1/(4+1)=20\%$，$e_E^*=1.6$、$e_V^*=0.2$，总剩余为 2.1。若把 VC 份额提高到 $s=0.4$，则 $e_E=1.2$、$e_V=0.4$，总剩余降为 2.0。给 VC 更多份额提高了 VC 努力，却同时削弱创业者努力。这个数字不是现实估值建议，只说明模型内部的边际激励权衡。
+
+### 融资参与约束
+
+若 VC 还需要投入资本 $x$，必须满足
+
+$$
+U_V(s)\ge x.
+$$
+
+代入努力反应后，VC 的均衡净效用是
+
+$$
+U_V(s)
+=p^2\left[s y_E^2(1-s)+\frac{y_V^2s^2}{2}\right].
+$$
+
+当 $U_V(s^*)<x$ 时，纯股权可能需要在“提高 $s$ 确实能改善 VC 参与约束”的相关区间把 $s$ 提高到 $s^*$ 以上；但此时 $S'(s)<0$，说明融资需求开始挤压创业者努力。$U_V(s)$ 不一定对 $s$ 全局单调，所以不能只凭“给 VC 更多股份”断言融资一定可行。证券设计的空间来自：能否在对努力破坏较小的状态向 VC 提供额外支付，而在努力仍然重要的状态保留接近 $s^*$ 的边际份额。
+
+<div class="boundary-box">
+<span class="box-title">本模型没有证明什么</span>
+一个线性股权、风险中性、二次成本模型只能展示双边努力权衡，不能单独证明现实中的可转换优先股必然最优。Casamatta（2003）、Schmidt（2003）和 Repullo–Suarez（2004）通过改变融资、咨询、投入顺序和可验证性，才进入更完整的证券设计。
+</div>
+
+## 附录 F：V6——可转换证券、退出支付与退出控制
+
+### 先把标准支付规则守住
+
+若退出可分配现金为 $W$、优先额为 $L$、转换份额为 $\alpha$，标准非参与式可转换优先股仍是
+
+$$
+\boxed{
+V_{NP}(W)=\max\{\min(W,L),\alpha W\}.
+}
+$$
+
+无上限参与式优先股则是
+
+$$
+V_P(W)
+=\min(W,L)+\alpha\max(W-L,0).
+$$
+
+若参与上限为 $C\ge L$ 且保留转换权，可以写成
+
+$$
+V_{P,cap}(W)
+=\max\{\min[C,V_P(W)],\alpha W\}.
+$$
+
+以 $L=500$、$\alpha=1/3$、$C=1{,}000$ 万元为例：
+
+| $W$ | 受上限参与式支付 | 转换支付 | 投资人取得 |
+|---:|---:|---:|---:|
+| 300 | 300 | 100 | 300 |
+| 1,000 | 666.7 | 333.3 | 666.7 |
+| 2,000 | 1,000 | 666.7 | 1,000 |
+| 3,000 | 1,000 | 1,000 | 1,000 |
+| 4,000 | 1,000 | 1,333.3 | 1,333.3 |
+
+这张表假设达到参与上限后仍保留转换选择。若合同只规定受上限约束的参与支付而不保留转换，应改用 $\min\{C,V_P(W)\}$。累计股息、反稀释、多轮优先顺序、pay-to-play 与自动转换会继续改变支付规则，研究时必须保留完整 cap table 和各轮条款版本。
+
+### 再建立一个独立的退出渠道约化模型
+
+以下模型讨论 IPO 与并购状态，不再声称复现标准优先股支付。设企业 IPO 后仍需双方努力，VC 保留附录 E 的最优份额 $s^*$，IPO 价值为 $W$：
+
+$$
+F_{IPO}(W)=s^*W.
+$$
+
+若企业被收购，双方的继续努力关系结束。令 $\delta\ge0$ 表示并购状态额外转移给 VC 的教学化支付，则有限责任下
+
+$$
+F_A(A)=\min\{A,s^*A+\delta\}.
+$$
+
+在 $s^*A+\delta<A$ 的内部区间，创业者取得 $(1-s^*)A-\delta$。如果 VC 的融资机会成本为 $x$、并购概率为 $\pi_A$，额外支付可以帮助满足
+
+$$
+\pi_A\delta
+=x-E[s^*V_{\text{exit}}]>0.
+$$
+
+### 三个并购门槛
+
+若企业保持独立时创业者还享有真实私人利益 $B>0$，三个判断标准为
+
+$$
+\text{总剩余：}\quad A\ge W+B,
+$$
+
+$$
+\text{VC：}\quad A\ge W-\frac{\delta}{s^*},
+$$
+
+$$
+\text{创业者：}\quad
+A\ge W+\frac{B+\delta}{1-s^*}.
+$$
+
+以 $s^*=1/2$、$W=100$、$B=20$、$\delta=10$ 为例：
+
+| 决策者 | 支持并购的门槛 | 当 $A=130$ 时 |
+|---|---:|---|
+| 总剩余 | $A\ge120$ | 支持并购 |
+| VC | $A\ge80$ | 支持并购 |
+| 创业者 | $A\ge160$ | 希望保持独立 |
+
+额外并购状态支付降低 VC 的并购门槛，却提高创业者的门槛。支付合同本身因此不能实施有效退出；并购同意权、drag-along、状态依赖控制与再谈判程序还必须一起分析。
+
+<div class="boundary-box">
+<span class="box-title">必须区分的两条公式</span>
+$s^*A+\delta$ 是为了说明退出状态额外转移与退出偏好的课堂约化，只在有限责任未绑定的内部区间使用；它不是标准非参与式可转换优先股。真实优先股支付必须回到 $\max\{\min(A,L),\alpha A\}$ 的选择逻辑。
+</div>
+
+## 附录 G：复杂合同、匹配、演化与中国研究接口
+
+基本模型一次突出一个摩擦。现代研究进一步放松了四项简化：
+
+| 被放松的假设 | 新问题 | 代表文献 | 数据要求 |
+|---|---|---|---|
+| VC 能力相同 | 能力更强的投资人是否用治理替代下行保护？ | Bengtsson–Sensoy（2011） | 投资人身份、经验、董事权与现金流权 |
+| 一种证券代表经济价值 | 同一名义估值为何对应不同类别股价值？ | Gornall–Strebulaev（2020） | 完整资本结构、优先顺序与退出分布 |
+| 交易双方给定 | 合同与投资人—企业匹配如何共同决定？ | Ewens–Gorbenko–Korteweg（2022） | 投资人和企业质量、搜索及未成交信息 |
+| 合同只签一次 | 条款为什么在 Series A 形成并跨轮延续或修订？ | Fu–Jenkinson–Rauch（2023） | 历轮协议、章程、类别股和修订版本 |
+
+### 中国制度研究的五步链条
+
+1. **经济摩擦**：先说明隐藏信息、双边努力、退出冲突或后续融资中的哪一项问题。
+2. **权利载体**：确认权利写在增资协议、股东协议、章程、类别股安排还是其他文件。
+3. **触发与程序**：记录什么事件可被验证，之后需要董事会、股东会、登记、仲裁或其他配合。
+4. **实际实现**：区分条款存在、事件触发、权利行使、豁免、重谈、终止与最终结果。
+5. **识别边界**：检查同一负面冲击是否同时导致条款触发与结果变化，并明确适用法律和文件版本的时间点。
+
+公司法文本是制度接口，不是契约理论论文。《公司法》关于类别股的规定适用于其法定范围；有限责任公司中的投资权利组合还需要回到具体章程、协议、公司程序与适用法。
+
+基金组织与企业证券还处在不同制度层次。《私募投资基金监督管理条例》自 2023 年 9 月 1 日起施行，涉及私募基金管理人、募集、投资运作和信息提供等基金层边界；它不直接给出企业层优先股支付公式。[国务院官方文本](https://www.gov.cn/zhengce/content/202307/content_6890738.htm)
+
+做比较研究时还应限定交易环境：人民币或跨境结构、有限责任公司或股份有限公司、国资或市场化投资人、首次机构轮或后续轮。签约、触发、争议和退出可能落在不同制度版本下，应分别匹配日期，而不能只用最终退出年份归组。
+
+### 可直接发展的研究命题
+
+| 现象 | 模型入口 | 必需数据 | 最大识别威胁 |
+|---|---|---|---|
+| 困境后投资人增加董事席位 | V3 | 触发、董事变更、恢复与行动 | 困境同时导致权利变化和结果 |
+| 创始人被更换 | V3 与 Hellmann 搜寻投入 | 事前董事权、搜寻与更换时间 | 更换源自业绩冲击而非原有控制 |
+| 高不确定性项目融资轮次更密 | V4 | 计划 runway、实际融资间隔、里程碑 | 现金耗尽和资本市场关闭 |
+| 里程碑前指标异常改善 | Cornelli–Yosha | 原始指标、费用时点、拨付结果 | 指标变化可能是真实进展 |
+| 名义估值与证券经济价值分离 | Newco 与多类证券 | 逐类别股权利与退出情景 | 只观察成功披露企业 |
+| 高能力 VC 的下行保护较弱 | V5 与治理替代 | VC 经验、董事权、优先权与匹配 | 优质企业与优质 VC 双向选择 |
+| Series A 条款跨轮黏性 | 合同演化 | 历次协议、章程和类别股版本 | 企业状态与谈判力共同决定修订 |
+| 回购约定的实现结果不同 | 承诺、执行与重谈 | 义务主体、触发、公司程序、裁判与履行 | 进入诉讼样本存在强烈选择 |
+| IPO 前权利终止或恢复 | V6 与合同演化 | 终止、恢复、申报、定价 | 不能用 IPO 成功倒推条款处理 |
+
+## 附录 H：经典文献扩展阅读
+
+<div class="reading-guide">
+<span class="box-title">推荐顺序</span>
+第一次先读 Kaplan–Strömberg（2003），因为它把真实合同中的现金流、投票、董事和控制权拆开。随后在 Gompers（1995）与 Hellmann（1998）中二选一。Aghion–Bolton（1992）是理论源头，但不建议基础较弱的学生把它作为第一篇。
+</div>
+
+### 路径 1：四篇锚点文献
+
+<details class="paper-card" open>
+<summary>Kaplan 与 Strömberg（2003）｜真实合同锚点｜建议 35–50 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">首先阅读</span><span class="reading-badge">合同数据</span></div>
+
+**论文**：Steven N. Kaplan and Per Strömberg, “Financial Contracting Theory Meets the Real World: An Empirical Analysis of Venture Capital Contracts,” *Review of Economic Studies*, 70(2), 281–315. [DOI](https://doi.org/10.1111/1467-937X.00245)
+
+**研究问题**：真实 VC 合同是否分别、并按条件配置现金流权、投票权、董事权、清算权和其他控制权？
+
+**核心证据**：作者对 14 家 VC 机构、119 家企业、213 笔投资的合同权利进行编码，并与契约理论机制对照。
+
+**阅读抓手**：读引言、第 2–3 节和结论；把每项权利放回正文“Term Sheet 首先是权利配置摘要”和 ControlCo。
+
+**读完产出**：一张条款编码表，并写一句该文不能推出的因果结论。观察到条件性权利配置，不等于更强控制随机提高了绩效。
+</details>
+
+<details class="paper-card" open>
+<summary>Gompers（1995）｜Staging 与监控｜建议 40–60 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">机制与证据</span><span class="reading-badge">V4</span></div>
+
+**论文**：Paul A. Gompers, “Optimal Investment, Monitoring, and the Staging of Venture Capital,” *Journal of Finance*, 50(5), 1461–1489. [DOI](https://doi.org/10.1111/j.1540-6261.1995.tb05185.x)
+
+**研究问题**：在代理与监控成本存在时，为什么不确定性更高、资产更无形的企业会使用更密集的阶段融资？
+
+**核心机制**：分期资本使 VC 定期获得信息，并保留停止继续投入的选择权；融资间隔同时反映监控收益和融资成本。
+
+**阅读抓手**：先读引言、主要假设和核心表格；附录 D 只帮助理解方向，不是原论文模型。
+
+**读完产出**：写出一个期限预测，以及一个使实际融资间隔偏离计划期限的冲击。
+</details>
+
+<details class="paper-card" open>
+<summary>Hellmann（1998）｜控制保护增值投入｜建议 45–60 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">控制权</span><span class="reading-badge">V3</span></div>
+
+**论文**：Thomas Hellmann, “The Allocation of Control Rights in Venture Capital Contracts,” *RAND Journal of Economics*, 29(1), 57–76. [DOI](https://doi.org/10.2307/2555816)
+
+**研究问题**：创业者为什么会自愿交出可能导致自己被替换的控制权？
+
+**核心机制**：可实施的控制权保护 VC 搜寻经理、客户或战略资源的事前投入，减少事后 hold-up。
+
+**阅读抓手**：先画“VC 先投入搜寻—后来决定是否更换”的时序，再读控制权如何改变投入回报；回到附录 C 的 $C'(x)=s_V\Delta R$。
+
+**读完产出**：一条“控制权—VC 增值投入—管理层更换”的可检验链条。
+</details>
+
+<details class="paper-card">
+<summary>Aghion 与 Bolton（1992）｜不完全合同理论源头｜建议 60–90 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">高级理论</span><span class="reading-badge">不建议第一篇</span></div>
+
+**论文**：Philippe Aghion and Patrick Bolton, “An Incomplete Contracts Approach to Financial Contracting,” *Review of Economic Studies*, 59(3), 473–494. [DOI](https://doi.org/10.2307/2297860)
+
+**研究问题**：当创业者关心货币与非货币收益、投资人只关心货币收益，而未来行动无法完全写入合同时，控制权应如何配置？
+
+**核心机制**：当现金流合同不能使目标完全一致时，控制可以随可验证状态配置；融资约束、行动偏好与再谈判共同决定结果。
+
+**阅读抓手**：先用正文冲突区间和附录 C 的误判表建立直觉，再读原文时序与控制分配。不要把任何董事权自动称为剩余控制权。
+
+**读完产出**：一张“状态—私人偏好—有效行动—控制主体”表。
+</details>
+
+### 路径 2：信息生产与多轮融资
+
+<details class="paper-card">
+<summary>Chan（1983）与 Admati–Pfleiderer（1994）｜从筛选到续投｜建议任选一篇 50–75 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">V1–V2</span><span class="reading-badge">理论进阶</span></div>
+
+**Chan（1983）**：“On the Positive Role of Financial Intermediation in Allocation of Venture Capital in a Market with Imperfect Information,” *Journal of Finance*, 38(5), 1543–1568. [DOI](https://doi.org/10.1111/j.1540-6261.1983.tb03840.x)。研究 VC 作为有信息中介如何改善柠檬市场中的资本配置。先用附录 A 的 VOI 进入，但不要把二类型完美信息例子当作原模型。
+
+**Admati 与 Pfleiderer（1994）**：“Robust Financial Contracting and the Role of Venture Capitalists,” *Journal of Finance*, 49(2), 371–402. [DOI](https://doi.org/10.1111/j.1540-6261.1994.tb05146.x)。核心是知情内部投资人的固定比例合同：取得项目固定份额，同时承担同一份额的未来投资，并抑制后续证券错价。
+
+**读完产出**：选择一篇，画出信息何时产生、谁据此行动，以及合同如何让私人决策接近有效决策。
+</details>
+
+<details class="paper-card">
+<summary>Amit–Glosten–Muller（1990）与 Chan–Siegel–Thakor（1990）｜能力筛选与中期学习</summary>
+<div class="paper-meta"><span class="reading-badge">逆向选择</span><span class="reading-badge">学习与控制</span></div>
+
+**Amit、Glosten 与 Muller（1990）**：“Entrepreneurial Ability, Venture Investments, and Risk Sharing,” *Management Science*, 36(10), 1233–1246. [DOI](https://doi.org/10.1287/mnsc.36.10.1233)。它把创业能力的私人信息、风险分担和是否引入 VC 联系起来，适合放在附录 A 的合同菜单之后。
+
+**Chan、Siegel 与 Thakor（1990）**：“Learning, Corporate Control and Performance Requirements in Venture Capital Contracts,” *International Economic Review*, 31(2), 365–381. [DOI](https://doi.org/10.2307/2526845)。它研究签约时未知的能力如何在中期学习中显现，以及绩效要求如何与控制变化连接。
+
+**读完产出**：说明“签约前私人类型”与“签约后共同学习”在时间线上有什么不同，以及为什么两者可能需要不同合同工具。
+</details>
+
+### 路径 3：分阶段、双边努力与证券设计
+
+<details class="paper-card">
+<summary>Neher（1999）与 Cornelli–Yosha（2003）｜Staging 的两种扩展｜建议任选一篇 50–75 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">承诺</span><span class="reading-badge">信号操纵</span></div>
+
+**Neher（1999）**：“Staged Financing: An Agency Perspective,” *Review of Economic Studies*, 66(2), 255–274. [DOI](https://doi.org/10.1111/1467-937X.00087)。关注分阶段投入如何逐渐形成可转让资产，从而改变创业者 hold-up。
+
+**Cornelli 与 Yosha（2003）**：“Stage Financing and the Role of Convertible Securities,” *Review of Economic Studies*, 70(1), 1–32. [DOI](https://doi.org/10.1111/1467-937X.00235)。关注创业者为避免项目被终止而 window dress 短期信号，以及可转换证券如何改变这种激励。
+
+**读完产出**：说明两篇论文各自修改了正文 staging 的哪一项简化假设。
+</details>
+
+<details class="paper-card">
+<summary>Casamatta（2003）、Schmidt（2003）与 Repullo–Suarez（2004）｜双边努力与证券｜建议任选一篇 60–90 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">V5</span><span class="reading-badge">证券设计</span></div>
+
+| 文献 | 新增的关键问题 | 阅读时抓住什么 |
+|---|---|---|
+| Casamatta（2003） | VC 同时提供资本和咨询投入 | 融资规模、双方努力与现金流分配怎样联合决定 |
+| Schmidt（2003） | 双方投入和信息按顺序发生 | 可转换证券怎样随状态内生调整现金流权 |
+| Repullo–Suarez（2004） | 续投、控制与状态可验证性 | 证券形态如何在融资约束和激励之间变化 |
+
+三篇论文都比附录 E 的线性份额模型更完整。读完只需写出：原基准模型的哪项假设被改变，以及因此新增了什么合同结论。
+</details>
+
+### 路径 4：退出控制与现代合同数据
+
+<details class="paper-card">
+<summary>Berglöf（1994）、Bascha–Walz（2001）与 Hellmann（2006）｜退出与转换｜建议任选一篇 60–90 分钟</summary>
+<div class="paper-meta"><span class="reading-badge">V6</span><span class="reading-badge">退出</span></div>
+
+这条文献链把可转换证券、控制权和退出渠道连接起来。Berglöf（1994）研究控制与退出；Bascha–Walz（2001）研究可转换证券与最优退出；Hellmann（2006）区分 IPO 与并购，说明努力激励、融资参与和退出控制为何需要联合设计。
+
+**阅读抓手**：先用附录 F 的三个并购门槛确定“总剩余、VC、创业者”各自的选择，再到原文检查支付、状态空间和控制假设。不要把课堂 $\delta$ 直接解释成任何现实优先股条款。
+</details>
+
+<details class="paper-card">
+<summary>现代合同数据与风险分析｜能力、估值、匹配与演化｜建议按研究问题选一篇</summary>
+<div class="paper-meta"><span class="reading-badge">研究前沿</span><span class="reading-badge">经验与结构</span></div>
+
+| 文献 | 最适合回答什么 |
+|---|---|
+| Kaplan–Strömberg（2004） | VC 的内部风险分析如何对应合同设计与计划干预 |
+| Bengtsson–Sensoy（2011） | 投资人能力如何与下行保护、董事参与共同变化 |
+| Gornall–Strebulaev（2020） | 多类证券如何使名义估值偏离证券经济价值 |
+| Ewens–Gorbenko–Korteweg（2022） | 合同与投资人—企业匹配如何共同决定 |
+| Fu–Jenkinson–Rauch（2023） | 合同条款如何跨融资轮次延续和修订 |
+| Chen（2023） | 中国 VC 数据来源、样本筛选和制度细节如何进入研究设计 |
+
+读完后必须写出一个选择问题：投资人能力、企业质量、谈判力或企业状态如何同时影响合同与结果？
+</details>
+
+### 制度接口：执行环境不是模型脚注
+
+<details class="paper-card">
+<summary>Lerner–Schoar（2005）与 Bottazzi–Da Rin–Hellmann（2009）｜法律执行与合同</summary>
+<div class="paper-meta"><span class="reading-badge">跨国证据</span><span class="reading-badge">制度边界</span></div>
+
+两篇文献研究法律执行环境如何与 PE/VC 的证券、合同工具和投资人治理活动相关。它们提示：同一经济摩擦在不同执行环境中可能由不同权利组合处理，私人合同不能完全替代制度执行。
+
+用于中国问题时，不要只按“普通法/大陆法”贴标签；应把规范变化具体连接到合同可写性、执行预期、信息披露或退出成本，并检查它是否同时改变融资供给和样本选择。
+</details>
+
+## 附录 I：一页论文阅读备忘录
+
+对任一篇文献按以下七问完成一页纸：
+
+1. 论文要解释什么事实？
+2. 哪一方在什么时点掌握私人信息或选择隐藏行动？
+3. 若没有目标合同安排，会发生什么低效率？
+4. 合同改变现金流、控制、信息、续投还是退出？
+5. 最关键的约束、状态表或比较静态是什么？
+6. 作者的证据能支持多强的结论，最大识别或外推边界是什么？
+7. 用于中国交易时，需要补充什么法律载体、文件版本和实现程序？
+
+建议分四遍阅读：第一遍只读摘要、引言、图表和结论；第二遍画参与者与时间线；第三遍追一条关键约束或识别比较；第四遍再做制度外推。卡住时明确写出困难来自假设、代数、变量还是识别，而不是只写“没有读懂”。
+
+### 本讲所有扩展的结论边界
+
+| 课后主题 | 可以学什么 | 不能自动推出什么 |
+|---|---|---|
+| 尽调信息价值 | 信息在改变投资行动时才产生决策价值 | VC 一定取得全部信息剩余 |
+| 固定比例续投 | 项目份额与实际新增投资责任同比例时，私人续投条件可与 NPV 同号 | 有 pro rata right 就等于实际同比例出资 |
+| 状态依赖控制 | 条件性控制可以减少部分状态中的行动错误 | VC 控制越强总福利越高 |
+| 双边努力 | 现金流份额在两方努力之间形成权衡 | 线性股权模型证明现实可转换证券最优 |
+| 退出与转换 | 退出渠道会改变支付、努力与控制需求 | 把 $s^*A+\delta$ 当成标准优先股支付 |
+
+### 扩展术语速查
+
+| 中文 | English | 本附录中的识别点 |
+|---|---|---|
+| 信息价值 | value of information (VOI) | 信息改变最优行动后增加的期望剩余 |
+| 自我选择约束 | self-selection constraint | 每种类型愿意选择为自己设计的合同 |
+| 固定比例合同 | fixed-fraction contract | 项目支付份额与实际新增投资份额相同 |
+| 双边道德风险 | double moral hazard | 创业者与 VC 都采取不可完全合约化的努力 |
+| 敲竹杠或套牢 | hold-up | 关系专用投入完成后，原承诺难以维持 |
+| 再谈判 | renegotiation | 新信息出现后修改初始安排 |
+| 窗口粉饰 | window dressing | 为触发续投而改善短期可见指标、牺牲长期价值 |
+| 自动转换 | automatic conversion | 达到约定事件后证券按规则转为普通股 |
+| 参与上限 | participation cap | 参与式优先支付达到约定上限后的处理 |
+| 拖售权 | drag-along right | 满足约定条件时推动其他股东共同出售 |
+| 后续跟投保权 | pay-to-play | 后续轮未按约参与可能丧失部分既有权利 |
+| 视同清算事件 | deemed liquidation event | 合同约定按清算分配处理的出售或重组事件 |
+
+## 参考文献与官方文本
+
+- Chan, Y.-S. (1983). On the positive role of financial intermediation in allocation of venture capital in a market with imperfect information. *Journal of Finance*, 38(5), 1543–1568. [DOI](https://doi.org/10.1111/j.1540-6261.1983.tb03840.x)
+- Amit, R., Glosten, L., & Muller, E. (1990). Entrepreneurial ability, venture investments, and risk sharing. *Management Science*, 36(10), 1233–1246. [DOI](https://doi.org/10.1287/mnsc.36.10.1233)
+- Chan, Y.-S., Siegel, D. R., & Thakor, A. V. (1990). Learning, corporate control and performance requirements in venture capital contracts. *International Economic Review*, 31(2), 365–381. [DOI](https://doi.org/10.2307/2526845)
+- Admati, A. R., & Pfleiderer, P. (1994). Robust financial contracting and the role of venture capitalists. *Journal of Finance*, 49(2), 371–402. [DOI](https://doi.org/10.1111/j.1540-6261.1994.tb05146.x)
+- Aghion, P., & Bolton, P. (1992). An incomplete contracts approach to financial contracting. *Review of Economic Studies*, 59(3), 473–494. [DOI](https://doi.org/10.2307/2297860)
+- Hart, O. (1995). *Firms, Contracts, and Financial Structure*. Oxford University Press.
+- Gompers, P. A. (1995). Optimal investment, monitoring, and the staging of venture capital. *Journal of Finance*, 50(5), 1461–1489. [DOI](https://doi.org/10.1111/j.1540-6261.1995.tb05185.x)
+- Hellmann, T. (1998). The allocation of control rights in venture capital contracts. *RAND Journal of Economics*, 29(1), 57–76. [JSTOR](https://www.jstor.org/stable/2555816)
+- Neher, D. V. (1999). Staged financing: An agency perspective. *Review of Economic Studies*, 66(2), 255–274. [DOI](https://doi.org/10.1111/1467-937X.00087)
+- Berglöf, E. (1994). A control theory of venture capital finance. *Journal of Law, Economics, and Organization*, 10(2), 247–267. [DOI](https://doi.org/10.1093/oxfordjournals.jleo.a036850)
+- Bascha, A., & Walz, U. (2001). Convertible securities and optimal exit decisions in venture capital finance. *Journal of Corporate Finance*, 7(3), 285–306. [DOI](https://doi.org/10.1016/S0929-1199(01)00023-2)
+- Kaplan, S. N., & Strömberg, P. (2003). Financial contracting theory meets the real world: An empirical analysis of venture capital contracts. *Review of Economic Studies*, 70(2), 281–315. [DOI](https://doi.org/10.1111/1467-937X.00245)
+- Kaplan, S. N., & Strömberg, P. (2004). Characteristics, contracts, and actions: Evidence from venture capitalist analyses. *Journal of Finance*, 59(5), 2177–2210. [DOI](https://doi.org/10.1111/j.1540-6261.2004.00696.x)
+- Cornelli, F., & Yosha, O. (2003). Stage financing and the role of convertible securities. *Review of Economic Studies*, 70(1), 1–32. [DOI](https://doi.org/10.1111/1467-937X.00235)
+- Casamatta, C. (2003). Financing and advising: Optimal financial contracts with venture capitalists. *Journal of Finance*, 58(5), 2059–2085. [DOI](https://doi.org/10.1111/1540-6261.00597)
+- Schmidt, K. M. (2003). Convertible securities and venture capital finance. *Journal of Finance*, 58(3), 1139–1166. [DOI](https://doi.org/10.1111/1540-6261.00561)
+- Repullo, R., & Suarez, J. (2004). Venture capital finance: A security design approach. *Review of Finance*, 8(1), 75–108. [DOI](https://doi.org/10.1023/B:EUFI.0000022158.96140.f8)
+- Hellmann, T. (2006). IPOs, acquisitions, and the use of convertible securities in venture capital. *Journal of Financial Economics*, 81(3), 649–679. [DOI](https://doi.org/10.1016/j.jfineco.2005.06.007)
+- Bengtsson, O., & Sensoy, B. A. (2011). Investor abilities and financial contracting: Evidence from venture capital. *Journal of Financial Intermediation*, 20(4), 477–502. [DOI](https://doi.org/10.1016/j.jfi.2011.02.001)
+- Gornall, W., & Strebulaev, I. A. (2020). Squaring venture capital valuations with reality. *Journal of Financial Economics*, 135(1), 120–143. [DOI](https://doi.org/10.1016/j.jfineco.2018.04.015)
+- Ewens, M., Gorbenko, A. S., & Korteweg, A. (2022). Venture capital contracts. *Journal of Financial Economics*, 143(1), 131–158. [DOI](https://doi.org/10.1016/j.jfineco.2021.06.042)
+- Fu, D., Jenkinson, T., & Rauch, C. (2023). How do financial contracts evolve for new ventures? *Journal of Corporate Finance*, 81, 102222. [DOI](https://doi.org/10.1016/j.jcorpfin.2022.102222)
+- Lerner, J., & Schoar, A. (2005). Does legal enforcement affect financial transactions? The contractual channel in private equity. *Quarterly Journal of Economics*, 120(1), 223–246. [DOI](https://doi.org/10.1162/0033553053327443)
+- Bottazzi, L., Da Rin, M., & Hellmann, T. (2009). What is the role of legal systems in financial intermediation? Theory and evidence. *Journal of Financial Intermediation*, 18(4), 559–598. [DOI](https://doi.org/10.1016/j.jfi.2008.04.003)
+- Chen, J. (2023). Venture capital research in China: Data and institutional details. *Journal of Corporate Finance*, 81, 102239. [DOI](https://doi.org/10.1016/j.jcorpfin.2022.102239)
+- 全国人大常委会（2023）：《中华人民共和国公司法》，自 2024 年 7 月 1 日起施行。[官方文本](https://www.npc.gov.cn/npc/c2/c30834/202312/t20231229_433999.html)
+- 国务院（2023）：《私募投资基金监督管理条例》，自 2023 年 9 月 1 日起施行。[官方文本](https://www.gov.cn/zhengce/content/202307/content_6890738.htm)
+
+<a class="next-chapter" href="w05-fund-contract.html">
+  <span>返回第 5 周：从企业层权利回看基金层激励</span>
+  <span aria-hidden="true">←</span>
+</a>

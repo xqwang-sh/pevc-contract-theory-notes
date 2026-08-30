@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向金融学博士生的 PE/VC 合同理论学生讲义：基金层激励、投资层支付与控制、分阶段融资。">
+  <title>PE/VC 合同理论｜学生讲义</title>
+  <style>
+    :root {
+      --ink: #1f3346;
+      --soft: #4d6272;
+      --paper: #fffdf8;
+      --canvas: #f3efe6;
+      --cream: #f8f3e9;
+      --gold: #9e7426;
+      --coral: #a94f3d;
+      --line: #d8d0c2;
+      --blue: #315f83;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", STSong, Georgia, serif;
+      font-size: 18px;
+      line-height: 1.78;
+      margin: 0;
+    }
+    main {
+      background: var(--paper);
+      border: 1px solid rgba(91, 75, 48, .14);
+      box-shadow: 0 18px 48px rgba(45, 38, 27, .08);
+      margin: 28px auto 64px;
+      max-width: 1040px;
+      padding: 64px clamp(24px, 6vw, 76px) 76px;
+    }
+    h1, h2, h3, .eyebrow, .open, .path, .meta {
+      font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    h1 {
+      color: #17334a;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: -.045em;
+      line-height: 1.08;
+      margin: 0;
+      max-width: 820px;
+    }
+    h2 {
+      border-top: 1px solid #e9dcc0;
+      color: #17334a;
+      font-size: 1.75rem;
+      margin: 4rem 0 1.2rem;
+      padding-top: 1.4rem;
+    }
+    h3 { color: #17334a; font-size: 1.35rem; line-height: 1.35; margin: 0; }
+    p { margin: 0 0 1.05rem; }
+    li + li { margin-top: .35rem; }
+    a { color: var(--blue); text-underline-offset: .15em; }
+    a:focus-visible { border-radius: 3px; outline: 3px solid #d08a45; outline-offset: 3px; }
+    .eyebrow {
+      color: var(--coral);
+      font-size: .82rem;
+      font-weight: 750;
+      letter-spacing: .1em;
+      margin-bottom: .65rem;
+    }
+    .lead { color: var(--soft); font-size: 1.28rem; line-height: 1.65; margin: 1.25rem 0 2rem; max-width: 850px; }
+    .audience {
+      background: var(--cream);
+      border-left: 5px solid var(--gold);
+      padding: 1rem 1.25rem;
+    }
+    .audience strong { color: #18344b; }
+    .path {
+      align-items: stretch;
+      display: grid;
+      gap: .65rem;
+      grid-template-columns: 1fr auto 1.2fr auto 1fr;
+      margin: 1.8rem 0;
+    }
+    .path .node {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      padding: .9rem;
+      text-align: center;
+    }
+    .path .arrow { align-self: center; color: var(--coral); font-size: 1.6rem; font-weight: 800; }
+    .lectures { display: grid; gap: 1.4rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    article {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem;
+    }
+    article p { color: var(--soft); }
+    article ul { padding-left: 1.25rem; }
+    .meta { color: var(--coral); font-size: .8rem; font-weight: 700; letter-spacing: .035em; margin: .5rem 0 .7rem; }
+    .open {
+      align-self: flex-start;
+      background: #203b50;
+      color: white;
+      font-weight: 700;
+      margin-top: auto;
+      padding: .72rem 1rem;
+      text-decoration: none;
+    }
+    .open:hover { background: #2d516d; color: white; }
+    .route { counter-reset: route; list-style: none; padding: 0; }
+    .route li { border-left: 4px solid #d9e2e7; margin: 0; padding: .55rem 0 .8rem 1rem; }
+    .route li::before {
+      color: var(--coral);
+      content: counter(route);
+      counter-increment: route;
+      font-family: sans-serif;
+      font-weight: 800;
+      margin-right: .55rem;
+    }
+    .notice {
+      background: #eef4f0;
+      border-left: 5px solid #3d6f59;
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+    }
+    .small { color: #6d746f; font-size: .84rem; margin-top: 3rem; }
+    @media (max-width: 760px) {
+      body { background: var(--paper); font-size: 17px; }
+      main { border: 0; box-shadow: none; margin: 0; padding: 38px 22px 60px; }
+      .lectures { grid-template-columns: 1fr; }
+      .path { display: block; }
+      .path .arrow { padding: .2rem; text-align: center; transform: rotate(90deg); }
+    }
+    @media print {
+      body, main { background: #fff; border: 0; box-shadow: none; }
+      main { margin: 0; max-width: none; padding: 0; }
+      .open { border: 1px solid #333; color: #111; }
+      article, .audience, .notice { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main id="main-content">
+    <div class="eyebrow">金融学博士选修课 · 第 5–6 周</div>
+    <h1>PE/VC 合同理论<br>学生讲义</h1>
+    <p class="lead">沿着同一元钱的旅程，先理解 LP 如何把长期资本交给 GP，再理解 VC 为什么要把企业层的支付权、控制权和后续融资权分开配置。</p>
+
+    <div class="audience">
+      <strong>适用基础：</strong>已经学习高级微观、高级宏观和基础计量，但没有系统学习委托代理、不完全合同或 VC 条款。正文只要求会比较预期效用、理解不等式和基本 NPV；所有新符号都会在首次出现时解释。
+    </div>
+
+    <h2>两次课共享的一张地图</h2>
+    <div class="path" role="img" aria-label="LP 经基金和 GP 向企业提供资本的两层合同链条">
+      <div class="node"><strong>LP</strong><br>承诺长期资本</div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Fund / GP</strong><br>筛选、投资与治理</div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Company / Founder</strong><br>经营与人力资本</div>
+    </div>
+    <p>第 5 周研究第一层授权：LPA 如何让 GP 获得专业裁量，同时保持激励和问责。第 6 周研究第二层授权：企业出现新信息以后，合同如何安排退出支付、重大决定和后续资本。</p>
+
+    <h2>进入讲义</h2>
+    <div class="lectures">
+      <article>
+        <h3>第 5 周：LP 为什么敢投盲池？</h3>
+        <div class="meta">基金层合同 · 80 分钟课堂主线 + 课后自学附录</div>
+        <p>从法律主体和资本流开始，用管理费与基金瀑布算例建立口径，再推导一条 GP 高投入 IC；附录保留旧稿的完整动态模型与经典文献。</p>
+        <ul>
+          <li>LP、Fund、GP、管理公司与 LPAC</li>
+          <li>Management fee、GP commitment 与 Carry</li>
+          <li>隐藏行动、激励租金和可质押收入</li>
+          <li>Covenant 的收益、成本与实证边界</li>
+          <li>附录：F1–F4 完整推导与十篇基金层文献导读</li>
+        </ul>
+        <a class="open" href="w05-fund-contract.html">阅读第 5 周讲义 →</a>
+      </article>
+      <article>
+        <h3>第 6 周：创始人有股份，为何可能拿不到退出款？</h3>
+        <div class="meta">企业层合同 · 80 分钟课堂主线 + 课后自学附录</div>
+        <p>先复算 Newco 优先股支付，再从给定退出款走向状态依赖控制与分阶段融资；附录沿交易时序恢复 V1–V6。</p>
+        <ul>
+          <li>非参与式可转换优先股与转换点</li>
+          <li>支付权、明示控制权与剩余决策空间</li>
+          <li>ControlCo 两状态控制模型</li>
+          <li>Staging、后续参与权与法律实现边界</li>
+          <li>附录：筛选、续投、双边努力、退出与经典文献地图</li>
+        </ul>
+        <a class="open" href="w06-venture-contract.html">阅读第 6 周讲义 →</a>
+      </article>
+    </div>
+
+    <h2>建议学习顺序</h2>
+    <ol class="route">
+      <li><strong>先读问题和制度事实。</strong>先说清参与者、时间线和信息差，不急着背条款。</li>
+      <li><strong>独立完成数字例题。</strong>先写候选支付和口径，再展开答案核对。</li>
+      <li><strong>把数字翻译成公式。</strong>每条公式都要能用中文解释左右两边。</li>
+      <li><strong>回到真实合同与论文。</strong>区分制度描述、条款算术、理论机制和因果识别。</li>
+      <li><strong>完成 Exit ticket。</strong>用“摩擦—权利—行动—结果—替代解释”分析一项条款。</li>
+      <li><strong>按需进入附录。</strong>先选一套模型，再选一篇锚点论文；不要求一次读完全部扩展。</li>
+    </ol>
+
+    <div class="notice">
+      <strong>难度提示：</strong>两次课的 80 分钟主线难度约为 3/5；课后模型与经典文献附录约为 4/5。最重要的不是完成复杂求导，而是保持分析层次清楚：支付公式不能自动回答控制问题，理论比较静态也不能自动变成现实条款的因果效果。附录有独立阅读路径、预计时间和产出要求，不属于课堂硬性讲授内容。
+    </div>
+
+    <p class="small">讲义更新日期：2026-08-30。中国法律部分仅用于说明经济权利需要具体法律载体与执行程序，不构成具体交易的法律意见。</p>
+  </main>
+</body>
+</html>
