@@ -1,0 +1,9 @@
+---
+pagetitle: "PE/VC 合同理论完整学生讲义"
+date: "2026-09-05"
+number-sections: false
+---
+
+[课程首页](index.html) · [第 4 周预习](w04-preparation.html) · [第 5 周预习](w05-preparation.html) · [课后习题](exercises.html)
+
+{{< include student-notes.md >}}

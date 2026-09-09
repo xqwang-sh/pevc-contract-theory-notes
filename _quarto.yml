@@ -2,8 +2,12 @@ project:
   type: default
   output-dir: docs
   render:
-    - w05-fund-contract.qmd
-    - w06-venture-contract.qmd
+    - w04-fund-contract.qmd
+    - w05-venture-contract.qmd
+    - w04-preparation.qmd
+    - w05-preparation.qmd
+    - exercises.qmd
+    - student-notes.qmd
 
 lang: zh-CN
 
@@ -14,7 +18,7 @@ format:
     toc: true
     toc-title: "本讲目录"
     toc-location: left
-    toc-depth: 3
+    toc-depth: 2
     number-sections: true
     smooth-scroll: true
     anchor-sections: true

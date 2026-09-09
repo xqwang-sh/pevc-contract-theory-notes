@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="面向金融学博士生的 PE/VC 合同理论学生讲义：基金层激励、投资层支付与控制、分阶段融资。">
-  <title>PE/VC 合同理论｜学生讲义</title>
+  <title>PE/VC 合同理论｜两层授权，两类合同</title>
   <style>
     :root {
       --ink: #1f3346;
@@ -142,69 +142,41 @@
 </head>
 <body>
   <main id="main-content">
-    <div class="eyebrow">金融学博士选修课 · 第 5–6 周</div>
-    <h1>PE/VC 合同理论<br>学生讲义</h1>
-    <p class="lead">沿着同一元钱的旅程，先理解 LP 如何把长期资本交给 GP，再理解 VC 为什么要把企业层的支付权、控制权和后续融资权分开配置。</p>
-
-    <div class="audience">
-      <strong>适用基础：</strong>已经学习高级微观、高级宏观和基础计量，但没有系统学习委托代理、不完全合同或 VC 条款。正文只要求会比较预期效用、理解不等式和基本 NPV；所有新符号都会在首次出现时解释。
+    <div class="eyebrow">金融博士选修课 · 第 4–5 周</div>
+    <h1>PE/VC 合同理论<br>两层授权，两类合同</h1>
+    <p class="lead">一笔资本先由 LP 交给 GP 管理，再由基金投入创业企业。每一层都需要专业能力，也都面临同一个问题：出钱的人无法亲自作出全部决定，合同怎样让合作创造价值？</p>
+    <h2>先看两次课共同的问题</h2>
+    <div class="path" role="img" aria-label="资本由LP进入基金，再投入企业；对应基金层和企业层两类合同">
+      <div class="node"><strong>LP</strong><br>承诺长期资本</div><div class="arrow">→</div>
+      <div class="node"><strong>基金</strong><br>由 GP 作投资判断</div><div class="arrow">→</div>
+      <div class="node"><strong>创业企业</strong><br>经营、投入与成长</div>
     </div>
-
-    <h2>两次课共享的一张地图</h2>
-    <div class="path" role="img" aria-label="LP 经基金和 GP 向企业提供资本的两层合同链条">
-      <div class="node"><strong>LP</strong><br>承诺长期资本</div>
-      <div class="arrow">→</div>
-      <div class="node"><strong>Fund / GP</strong><br>筛选、投资与治理</div>
-      <div class="arrow">→</div>
-      <div class="node"><strong>Company / Founder</strong><br>经营与人力资本</div>
-    </div>
-    <p>第 5 周研究第一层授权：LPA 如何让 GP 获得专业裁量，同时保持激励和问责。第 6 周研究第二层授权：企业出现新信息以后，合同如何安排退出支付、重大决定和后续资本。</p>
-
-    <h2>进入讲义</h2>
+    <p>第一层，LP 用授权获得 GP 的专业投资能力，却难以逐项监督努力。第二层，基金把资本投入企业，价值还依赖创业者与 VC 的投入，以及后来面对新信息时的选择。两次课沿着这笔资本展开：先研究基金层的长期授权，再研究企业层的收益与决定权。</p>
+    <h2>两类合同，分别怎样回答这个问题？</h2>
     <div class="lectures">
       <article>
-        <h3>第 5 周：LP 为什么敢投盲池？</h3>
-        <div class="meta">基金层合同 · 80 分钟课堂主线 + 课后自学附录</div>
-        <p>从法律主体和资本流开始，用管理费与基金瀑布算例建立口径，再推导一条 GP 高投入 IC；附录保留旧稿的完整动态模型与经典文献。</p>
-        <ul>
-          <li>LP、Fund、GP、管理公司与 LPAC</li>
-          <li>Management fee、GP commitment 与 Carry</li>
-          <li>隐藏行动、激励租金和可质押收入</li>
-          <li>Covenant 的收益、成本与实证边界</li>
-          <li>附录：F1–F4 完整推导与十篇基金层文献导读</li>
-        </ul>
-        <a class="open" href="w05-fund-contract.html">阅读第 5 周讲义 →</a>
+        <div class="meta">第 4 周 · 第一层合同 · LP—GP</div>
+        <h3>为什么愿意把长期资本交给 GP？</h3>
+        <p>LP 需要给 GP 裁量空间，也需要使其认真工作。奖励要足以诱导努力，又不能让资本提供者无利可图；多年合作中，还要面对未来募资和基金到期。</p>
+        <ol><li><strong>先看报酬：</strong>分配怎样影响努力，融资要求能否同时满足？</li><li><strong>再看治理：</strong>限制和问责能解决什么，又付出什么代价？</li><li><strong>最后看时间：</strong>未来募资、期限和资本承诺怎样改变选择？</li></ol>
+        <a class="open" href="w04-fund-contract.html">进入第 4 周课堂 →</a>
+        <p><a href="w04-preparation.html">课前预习</a> · <a href="student-notes.html#book-fund">完整学生讲义·第一篇</a> · <a href="exercises.html#w04-homework">课后习题</a></p>
       </article>
       <article>
-        <h3>第 6 周：创始人有股份，为何可能拿不到退出款？</h3>
-        <div class="meta">企业层合同 · 80 分钟课堂主线 + 课后自学附录</div>
-        <p>先复算 Newco 优先股支付，再从给定退出款走向状态依赖控制与分阶段融资；附录沿交易时序恢复 V1–V6。</p>
-        <ul>
-          <li>非参与式可转换优先股与转换点</li>
-          <li>支付权、明示控制权与剩余决策空间</li>
-          <li>ControlCo 两状态控制模型</li>
-          <li>Staging、后续参与权与法律实现边界</li>
-          <li>附录：筛选、续投、双边努力、退出与经典文献地图</li>
-        </ul>
-        <a class="open" href="w06-venture-contract.html">阅读第 6 周讲义 →</a>
+        <div class="meta">第 5 周 · 第二层合同 · 基金/VC—创业者</div>
+        <h3>为什么既要约定钱怎么分，也要约定谁决定？</h3>
+        <p>股份比例不能独自保证双方愿意投入，也不能化解路线、融资和退出上的分歧。企业合同需要把收益、决定权与新信息联系起来。</p>
+        <ol><li><strong>先看收益：</strong>怎样分配退出款，并兼顾双方努力与融资？</li><li><strong>再看控制：</strong>利益不一致时，什么状态由谁决定？</li><li><strong>最后看调整：</strong>何时继续投入，何时停止或退出？</li></ol>
+        <a class="open" href="w05-venture-contract.html">进入第 5 周课堂 →</a>
+        <p><a href="w05-preparation.html">课前预习</a> · <a href="student-notes.html#book-venture">完整学生讲义·第二篇</a> · <a href="exercises.html#w05-homework">课后习题</a></p>
       </article>
     </div>
-
-    <h2>建议学习顺序</h2>
-    <ol class="route">
-      <li><strong>先读问题和制度事实。</strong>先说清参与者、时间线和信息差，不急着背条款。</li>
-      <li><strong>独立完成数字例题。</strong>先写候选支付和口径，再展开答案核对。</li>
-      <li><strong>把数字翻译成公式。</strong>每条公式都要能用中文解释左右两边。</li>
-      <li><strong>回到真实合同与论文。</strong>区分制度描述、条款算术、理论机制和因果识别。</li>
-      <li><strong>完成 Exit ticket。</strong>用“摩擦—权利—行动—结果—替代解释”分析一项条款。</li>
-      <li><strong>按需进入附录。</strong>先选一套模型，再选一篇锚点论文；不要求一次读完全部扩展。</li>
-    </ol>
-
-    <div class="notice">
-      <strong>难度提示：</strong>两次课的 80 分钟主线难度约为 3/5；课后模型与经典文献附录约为 4/5。最重要的不是完成复杂求导，而是保持分析层次清楚：支付公式不能自动回答控制问题，理论比较静态也不能自动变成现实条款的因果效果。附录有独立阅读路径、预计时间和产出要求，不属于课堂硬性讲授内容。
-    </div>
-
-    <p class="small">讲义更新日期：2026-08-30。中国法律部分仅用于说明经济权利需要具体法律载体与执行程序，不构成具体交易的法律意见。</p>
+    <div class="notice"><strong>两周合起来要理解：</strong>收益分配影响各方是否出资和努力；当报酬无法消除全部分歧时，需要安排决策权；当信息和机会随时间变化时，还需要资本承诺、续投与退出程序。这些安排共同构成合同的经济逻辑。</div>
+    <h2>围绕每一类合同，怎样预习和复习？</h2>
+    <p><strong>课前</strong>读本周短预习，做第一遍计算，留下答案和问题；<strong>课堂</strong>从问答出发，重算基本例子，再加入新的约束与假设；<strong>课后</strong>用新题自检，需要时回到完整讲义与附录。预习约 30–45 分钟，两次课堂各 80 分钟，实际节奏按理解程度调整。</p>
+    <p><a href="student-notes.html">打开完整学生讲义</a> · <a href="exercises.html">打开全部课后习题</a></p>
+    <div class="audience"><strong>适用基础：</strong>学过高等微观、高等宏观和基础计量，尚未系统学过合同理论。完整讲义供连贯复习与查阅，不要求课前通读。企业层以 VC 为主，收购型 PE 的杠杆和债权人治理另行学习。</div>
+    <p class="small">2026-09-05。预习、课堂和复习是学习同一问题的三个阶段；课程按基金层和企业层两类合同组织。</p>
   </main>
 </body>
 </html>
