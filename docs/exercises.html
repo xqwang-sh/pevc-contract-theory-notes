@@ -3606,7 +3606,7 @@ text-decoration: none;
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">本讲目录</h2>
-
+   
   <ul class="collapse">
   <li><a href="#w04-homework" id="toc-w04-homework" class="nav-link active" data-scroll-target="#w04-homework"><span class="header-section-number">1</span> 第 4 周：分配、融资与动态激励</a></li>
   <li><a href="#w05-homework" id="toc-w05-homework" class="nav-link" data-scroll-target="#w05-homework"><span class="header-section-number">2</span> 第 5 周：支付、双方投入与动态决策</a></li>
@@ -3628,28 +3628,44 @@ text-decoration: none;
 
 <div class="quarto-title-meta">
 
-
+    
     <div>
     <div class="quarto-title-meta-heading">发布于</div>
     <div class="quarto-title-meta-contents">
       <p class="date">2026年9月5日</p>
     </div>
   </div>
-
-
+  
+    
   </div>
-
+  
 
 
 </header>
 
 
 <p><a href="index.html">课程首页</a> · <a href="student-notes.html">完整学生讲义</a> · <a href="w04-fund-contract.html">第 4 周课堂</a> · <a href="w05-venture-contract.html">第 5 周课堂</a></p>
-<p>每周先完成三道基础题，建议分别预留 40–50、45–60 分钟；时间只是预算，不是限时考试。每题写出假设、计算和一句经济解释。答案可展开，建议作答后再看。选做题面向希望进一步推导的学生，不与基础题叠加为统一必交要求。</p>
+<p>每周先完成三道基础题，建议分别预留 40–50、45–60 分钟；时间只是预算，不是限时考试。第 4 周另设概念热身题 H4-0（约 10 分钟），用于检查信息不对称、逆向选择/道德风险与 IC/PC 的区分，建议在基础题之前完成。每题写出假设、计算和一句经济解释。答案可展开，建议作答后再看。选做题面向希望进一步推导的学生，不与基础题叠加为统一必交要求。</p>
 <section id="w04-homework" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="w04-homework"><span class="header-section-number">1</span> 第 4 周：分配、融资与动态激励</h2>
-<section id="h4-1基础先区分支付与奖励差" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="h4-1基础先区分支付与奖励差"><span class="header-section-number">1.1</span> H4-1｜基础：先区分支付与奖励差</h3>
+<section id="h4-0热身先分清概念再谈模型" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="h4-0热身先分清概念再谈模型"><span class="header-section-number">1.1</span> H4-0｜热身：先分清概念，再谈模型</h3>
+<ol type="1">
+<li>四个情境分别属于逆向选择还是道德风险？（a）GP 募资时比 LP 更清楚自己的真实投资能力；（b）基金成立后 GP 减少项目走访，LP 无法逐次核实；（c）创业者比 VC 更了解技术成熟度；（d）投后创业者把精力转向自己持股更高的另一家公司。</li>
+<li>某合同下 GP 高投入效用 34、低投入效用 33，外部机会为 20。写出并核对 IC 与 PC。外部机会升到 40 时，哪条约束先出问题？为什么这不等于“激励不够”？</li>
+<li>“团队不专注”与“关键人已离职”，哪一条更适合写进可由第三方执行的合同条款？用可观察与可验证的区别说明。</li>
+</ol>
+<details class="solution">
+<summary>
+H4-0 分步答案
+</summary>
+<p>（a）（c）为签约前隐藏信息，属逆向选择；（b）（d）为签约后隐藏行动，属道德风险。</p>
+<p>IC：<span class="math inline">34\ge33</span>，成立；PC：<span class="math inline">34\ge20</span>，成立。外部机会为 40 时，IC 不变而 PC 失败：GP 仍有动力努力，但根本不接受合同。补救方向是提高整体报酬或改善条件，而不是改变奖励差。</p>
+“关键人已离职”有正式记录、可验证；“不专注”双方可观察却难向第三方证明。可执行条款应依赖可验证变量。概念定义见<a href="student-notes.html#book-foundations">完整讲义基础篇</a>。
+</details>
+</section>
+<section id="h4-1基础先区分支付与奖励差" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="h4-1基础先区分支付与奖励差"><span class="header-section-number">1.2</span> H4-1｜基础：先区分支付与奖励差</h3>
 <p>基金总出资 10 亿元，LP 出资 90%，GP 出资 10%。按出资返本，再按出资分利润，从 LP 利润中计提 20% Carry。无其他费用、优先回报和贴现。</p>
 <ol type="1">
 <li>总可分配现金 14 亿元时，算 LP、GP 所得及 GP 的三项组成。</li>
@@ -3665,8 +3681,8 @@ H4-1 分步答案
 <strong>错因检查：</strong>若得到 0.72，将 Carry 与总支付差混同；若得到 2.12，遗漏了失败回收。
 </details>
 </section>
-<section id="h4-2基础求一段可行支付而不只写-ic" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="h4-2基础求一段可行支付而不只写-ic"><span class="header-section-number">1.2</span> H4-2｜基础：求一段可行支付，而不只写 IC</h3>
+<section id="h4-2基础求一段可行支付而不只写-ic" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="h4-2基础求一段可行支付而不只写-ic"><span class="header-section-number">1.3</span> H4-2｜基础：求一段可行支付，而不只写 IC</h3>
 <p>独立融资模型：风险中性，GP 无初始财富、固定支付和外部机会均为零，失败现金和支付为零。<span class="math inline">p_H=0.8,p_L=0.5,c=12,b=6,R=100,I=40</span>。</p>
 <ol type="1">
 <li>求成功支付 w 的激励下界和资本参与上界。高投入合同可行吗？</li>
@@ -3683,8 +3699,8 @@ H4-2 分步答案
 <strong>错因检查：</strong>正总剩余不能代替资本参与约束；治理降低代理便利也不一定免费。这里仅判断高投入目标。
 </details>
 </section>
-<section id="h4-3基础把未来与期限放进判断" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="h4-3基础把未来与期限放进判断"><span class="header-section-number">1.3</span> H4-3｜基础：把未来与期限放进判断</h3>
+<section id="h4-3基础把未来与期限放进判断" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="h4-3基础把未来与期限放进判断"><span class="header-section-number">1.4</span> H4-3｜基础：把未来与期限放进判断</h3>
 <p>沿用 <span class="math inline">\Delta p=0.3,c+b=18</span>，当前收入差 D=40。</p>
 <ol type="1">
 <li>若折现后的未来价值差为 25，高投入是否得到支持？若未来差额降为 10 呢？最低需要多少未来差额？</li>
@@ -3699,8 +3715,8 @@ H4-3 分步答案
 动态 IC 没有区分创造价值与展示信号的不同努力方向。ρ=0.3 时 <span class="math inline">N_G=3.6-5=-1.4</span>，ρ=0.6 时为 <span class="math inline">7.2-5=2.2</span>，该好项目从不受支持转为受支持。若另一个项目总价值为负，类似变化可能使它被继续，不能推出普遍延期。
 </details>
 </section>
-<section id="h4-4选做融资门槛等于投资选择吗" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="h4-4选做融资门槛等于投资选择吗"><span class="header-section-number">1.4</span> H4-4｜选做：融资门槛等于投资选择吗？</h3>
+<section id="h4-4选做融资门槛等于投资选择吗" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="h4-4选做融资门槛等于投资选择吗"><span class="header-section-number">1.5</span> H4-4｜选做：融资门槛等于投资选择吗？</h3>
 <p>项目成本 1、可核实回报 θ，可质押比例 λ=0.4，外部偿付要求 rₘ=1.2。d=0.2 和 d=0.5 时分别算融资门槛。</p>
 <p>哪种情形可能挡住好项目？哪种情形允许部分差项目融资？后一结果还缺少什么，才能证明过度投资？</p>
 <details class="solution">
@@ -3819,7 +3835,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       toggleBodyColorMode(bsSheetEl);
     }
   }
-  toggleBodyColorPrimary();
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -3829,7 +3845,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {
+      if (clz.startsWith('code-annotation-')) {                     
         return true;
       }
     }
@@ -3849,11 +3865,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
       button.setAttribute("data-bs-title", "已复制");
-      tooltip = new bootstrap.Tooltip(button,
-        { trigger: "manual",
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
           offset: [0, -8]});
-      tooltip.show();
+      tooltip.show();    
     }
     setTimeout(function() {
       if (tooltip) {
@@ -3936,7 +3952,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     if (onUntriggerFn) {
       config.onUntrigger = onUntriggerFn;
     }
-    window.tippy(el, config);
+    window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
   for (var i=0; i<noterefs.length; i++) {
@@ -4012,7 +4028,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     tippyHover(xref, undefined, function(instance) {
       instance.disable();
       let url = xref.getAttribute('href');
-      let hash = undefined;
+      let hash = undefined; 
       if (url.startsWith('#')) {
         hash = url;
       } else {
@@ -4040,7 +4056,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             if (note !== null) {
               const html = processXRef(id, note);
               instance.setContent(html);
-            }
+            } 
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -4064,7 +4080,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             const html = processXRef(null, note);
             instance.setContent(html);
-          }
+          } 
         }).finally(() => {
           instance.enable();
           instance.show();
@@ -4104,7 +4120,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             height = bottom - top;
           }
           if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it
+            // cook up a div (if necessary) and position it 
             let div = window.document.getElementById("code-annotation-line-highlight");
             if (div === null) {
               div = window.document.createElement("div");

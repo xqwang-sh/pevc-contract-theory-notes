@@ -3606,7 +3606,7 @@ text-decoration: none;
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">本讲目录</h2>
-
+   
   <ul class="collapse">
   <li><a href="#w04-opening" id="toc-w04-opening" class="nav-link active" data-scroll-target="#w04-opening"><span class="header-section-number">1</span> 开场问答：先解释你的预习答案</a></li>
   <li><a href="#w04-payments" id="toc-w04-payments" class="nav-link" data-scroll-target="#w04-payments"><span class="header-section-number">2</span> 共同复算：支付规则怎样变成努力激励？</a></li>
@@ -3633,17 +3633,17 @@ text-decoration: none;
 
 <div class="quarto-title-meta">
 
-
+    
     <div>
     <div class="quarto-title-meta-heading">发布于</div>
     <div class="quarto-title-meta-contents">
       <p class="date">2026年9月5日</p>
     </div>
   </div>
-
-
+  
+    
   </div>
-
+  
 
 
 </header>
@@ -3706,7 +3706,7 @@ text-decoration: none;
 <tr class="odd">
 <td>0–8 分钟</td>
 <td>导入与预习问答</td>
-<td>角色、Carry、IC 与 PC 分清</td>
+<td>信息差归类、角色、Carry、IC 与 PC 分清</td>
 </tr>
 <tr class="even">
 <td>8–18 分钟</td>
@@ -3759,21 +3759,26 @@ text-decoration: none;
 </thead>
 <tbody>
 <tr class="odd">
+<td>P4-0</td>
+<td>各说一个逆向选择与道德风险的例子；外部机会升高时，IC 与 PC 哪条先出问题？</td>
+<td>时间轴位置、两条约束的对象</td>
+</tr>
+<tr class="even">
 <td>P4-1</td>
 <td>LP 承诺 1 亿时，是否已经缴足？企业股权由谁持有？</td>
 <td>承诺、缴款与持有主体</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>P4-2</td>
 <td>GP 共取得 0.748 亿，为什么只有 0.588 亿叫 Carry？</td>
 <td>本金、自有利润、业绩报酬</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>P4-3</td>
 <td>D 从 60 降到 50，行动为什么改变？</td>
 <td>分别算高、低投入的收益</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>P4-4</td>
 <td>固定费不改变这个行动比较，是否也不影响签约？</td>
 <td>IC 与 PC 的区别</td>
@@ -3784,7 +3789,7 @@ text-decoration: none;
 <summary>
 问答核对
 </summary>
-承诺不等于已全部缴付；基金或其载体通常持有企业证券。0.748 亿包括本金 0.100、自有利润 0.060、Carry 0.588。D=60 时收益为 34 对 33；D=50 时为 27 对 28。固定费同时进入两种行动，但会改变接受合同的总效用。
+逆向选择是签约前藏类型（如 GP 能力），道德风险是签约后藏行动（如减少走访）；外部机会升高时 PC 先出问题，IC 不变。承诺不等于已全部缴付；基金或其载体通常持有企业证券。0.748 亿包括本金 0.100、自有利润 0.060、Carry 0.588。D=60 时收益为 34 对 33；D=50 时为 27 对 28。固定费同时进入两种行动，但会改变接受合同的总效用。
 </details>
 <p><strong>把问题推进一步：</strong>如果 GP 只有拿到足够奖励才努力，LP 却不愿让出这么多收入，合同还能成立吗？这是今天的核心。</p>
 </section>
@@ -4122,7 +4127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       toggleBodyColorMode(bsSheetEl);
     }
   }
-  toggleBodyColorPrimary();
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -4132,7 +4137,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {
+      if (clz.startsWith('code-annotation-')) {                     
         return true;
       }
     }
@@ -4152,11 +4157,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
       button.setAttribute("data-bs-title", "已复制");
-      tooltip = new bootstrap.Tooltip(button,
-        { trigger: "manual",
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
           offset: [0, -8]});
-      tooltip.show();
+      tooltip.show();    
     }
     setTimeout(function() {
       if (tooltip) {
@@ -4239,7 +4244,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     if (onUntriggerFn) {
       config.onUntrigger = onUntriggerFn;
     }
-    window.tippy(el, config);
+    window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
   for (var i=0; i<noterefs.length; i++) {
@@ -4315,7 +4320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     tippyHover(xref, undefined, function(instance) {
       instance.disable();
       let url = xref.getAttribute('href');
-      let hash = undefined;
+      let hash = undefined; 
       if (url.startsWith('#')) {
         hash = url;
       } else {
@@ -4343,7 +4348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             if (note !== null) {
               const html = processXRef(id, note);
               instance.setContent(html);
-            }
+            } 
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -4367,7 +4372,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             const html = processXRef(null, note);
             instance.setContent(html);
-          }
+          } 
         }).finally(() => {
           instance.enable();
           instance.show();
@@ -4407,7 +4412,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             height = bottom - top;
           }
           if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it
+            // cook up a div (if necessary) and position it 
             let div = window.document.getElementById("code-annotation-line-highlight");
             if (div === null) {
               div = window.document.createElement("div");
