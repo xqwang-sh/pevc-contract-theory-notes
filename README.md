@@ -1,6 +1,6 @@
 # PE/VC 合同理论教学材料
 
-面向学过高微、高宏与基础计量、尚未系统学习合同理论的金融博士生。两次课各 80 分钟。
+面向学过高微、高宏与基础计量、尚未系统学习合同理论的金融博士生。
 
 - `w04-preparation.qmd`、`w05-preparation.qmd`：短预习、计算与携带问题。
 - `w04-fund-contract.qmd`、`w05-venture-contract.qmd`：教师课堂问答、公式与深入推导。
