@@ -3775,25 +3775,22 @@ H4-4 参考分析
 </details>
 </section>
 <section id="h4-5" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="h4-5"><span class="header-section-number">1.5</span> H4-5：业绩包含什么，报酬模型又在比较什么？</h3>
-<p>使用 Gompers–Lerner（1999）学习模型的设定：<span class="math inline">\pi_1=\eta+e_1+\varepsilon_1</span>。以下数值为自设更新练习，不是论文估计。初始能力均值 <span class="math inline">m_0=1.5</span>，能力方差 <span class="math inline">\sigma_0^2=1</span>，噪声方差 <span class="math inline">\sigma_\varepsilon^2=3</span>。市场观察业绩 <span class="math inline">\pi_1=4</span>，预期努力 <span class="math inline">\hat e_1=1</span>。</p>
+<h3 data-number="1.5" class="anchored" data-anchor-id="h4-5"><span class="header-section-number">1.5</span> H4-5：为什么两种模型对年轻机构给出相反预测？</h3>
+<p>Gompers–Lerner（1999）比较学习与信号两种解释。沿用课堂的 <span class="math inline">w_t=f_t+\nu_t\pi_t</span>，其中 <span class="math inline">\nu_t</span> 为当期业绩系数，第 1 期与第 2 期分别对应机构的早期和后期基金。本题解释公式与预测，不要求代入数字。</p>
 <ol type="1">
-<li>用 <span class="math inline">\kappa=\sigma_0^2/(\sigma_0^2+\sigma_\varepsilon^2)</span> 与 <span class="math inline">m_1=(1-\kappa)m_0+\kappa(\pi_1-\hat e_1)</span> 更新能力均值。</li>
-<li>只把噪声方差改为 7，更新结果怎样变化？为什么不能把业绩 4 当作能力 4？</li>
-<li>学习模型与信号模型中，谁事先知道 GP 能力？信号模型还要检查哪种 IC？</li>
-<li><span class="math inline">w_t=f_t+\nu_t\pi_t</span> 中的 <span class="math inline">f_t</span> 是否就是现实管理费净收入，<span class="math inline">\nu_t</span> 是否就是本讲 Carry 比例 <span class="math inline">\alpha</span>？</li>
+<li>显性业绩激励较弱，是否等于 GP 总激励较弱或努力较少？用学习模型的 <span class="math inline">C&#39;(e_1)=\nu_1+\delta\beta\kappa</span> 与 <span class="math inline">C&#39;(e_2)=\nu_2</span> 解释，并说明正向声誉激励需要什么条件。</li>
+<li>信号模型中谁事先知道能力？为什么高能力类型在早期选择更高的业绩系数，而在类型揭示后要求降低系数？说明两条类型 IC 分别排除什么偏离。</li>
+<li>论文发现成熟机构的报酬对业绩更敏感。这一方向更符合哪一种模型？为什么不能据此断言另一种机制在现实中不存在？</li>
+<li>判断两句话是否成立：“市场提高能力评价，就必然提高下一只基金的业绩系数”；“信号模型预测所有年轻 GP 都比成熟 GP 采用更高系数”。说明理由。</li>
 </ol>
 <details class="solution">
 <summary>
 H4-5 分步答案
 </summary>
-<p>噪声方差为 3 时，<span class="math inline">\kappa=1/4</span>，扣预期努力后的业绩信号为 3。因此</p>
-<p><span class="math display">
-m_1=\tfrac34\times1.5+\tfrac14\times3=1.875.
-</span></p>
-<p>噪声方差为 7 时，<span class="math inline">\kappa=1/8</span>，<span class="math inline">m_1=1.6875</span>。这次好结果较可能包含运气，因此更新更接近初始均值。观察的业绩还包含努力，不能直接当作能力。</p>
-<p>学习模型初始时双方都不完全知道能力；信号模型中 GP 知道、LP 不知道。后者要检查不同能力类型是否冒充，且不能省去各合同下的努力选择和参与条件。</p>
-<span class="math inline">f_t,\nu_t</span> 是原论文线性报酬模型中的参数，GP 风险厌恶，假设与正文风险中性 Carry 算例不同。固定收入不能直接视为现实管理费净收入，线性收入系数也没有本金门槛，不能等同于 <span class="math inline">\alpha</span>。
+<p>显性激励只指 <span class="math inline">\nu_t</span>，总激励还包含未来报酬。学习模型初始时双方都不完全知道能力；未被观察到的努力可以通过业绩影响能力评价，再影响未来收入。当 <span class="math inline">\delta\beta\kappa&gt;0</span> 时，为实现相同目标努力，第一期所需的当期业绩系数可以较低。课堂教学展开中 <span class="math inline">\beta=1/2-\nu_2</span>，正向解释需要 <span class="math inline">\nu_2&lt;1/2</span>，以及非零的学习权重与未来报酬。努力条件解释给定合同的机制，原论文再通过最优合同分析预测 <span class="math inline">\nu_1^{*}&lt;\nu_2^{*}</span>。</p>
+<p>信号模型中 GP 知道能力，LP 不知道。高能力类型相对更愿意接受低固定收入、高业绩系数的合同，以使低能力类型不愿冒充。<span class="math inline">V_h(h)\ge V_h(\ell)</span> 要求高类型愿意选择自己的合同，<span class="math inline">V_\ell(\ell)\ge V_\ell(h)</span> 要求低类型不冒充高类型；比较必须包含冒充可带来的后续收入。原文所选分离均衡中，合同选择揭示类型后不再需要同样的信号风险，高能力 GP 要求更多保险，故 <span class="math inline">\nu_{1,h}^{*}&gt;\nu_2^{*}</span>。努力 IC 与双方 PC 仍须满足。</p>
+<p>成熟机构采用更高系数，与学习模型的方向一致，与纯信号模型对高能力类型的跨期方向相反。但年龄、规模是声誉的代理，实际环境也可能同时包含学习与信号，不能据此排除信号机制。</p>
+两句话都不成立。<span class="math inline">m_1</span> 提高是能力评价的均值上升，在课堂的加性模型中先影响下期固定项，不自动推出 <span class="math inline">\nu_2</span> 提高。信号模型的早期高系数比较针对高能力类型，低能力类型没有同样的信号扭曲。
 </details>
 </section>
 </section>

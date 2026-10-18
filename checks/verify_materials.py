@@ -94,75 +94,6 @@ def numerical_checks():
     assert risk["0.05"]["A_GP"] > risk["0.05"]["B_GP"]
     close(.5*(income(130)+income(90)),5.14)
     close(income(.5*(130+90)),4.16)
-    learning = []
-    for prior,prior_var,noise,signal,e_hat,want in (
-        (2,1,1,4,1,2.5),(1.5,1,3,4,1,1.875),(1.5,1,7,4,1,1.6875)):
-        weight=prior_var/(prior_var+noise)
-        posterior=(1-weight)*prior+weight*(signal-e_hat)
-        close(posterior,want)
-        learning.append({"noise_variance":noise,"weight":weight,"posterior":posterior})
-
-    # Reconstruct income in the two funds before differentiating its certainty equivalent.
-    m0, prior_var, noise_var, discount, risk_aversion = 2., 1., 1., .8, 1.
-    v1, v2, expected_e1 = .15, .25, 1.
-    cost = lambda e: e*e/8
-    kappa = prior_var/(prior_var+noise_var)
-    e2 = 4*v2
-    def fixed_second(public_mean):
-        return .5*((1-2*v2)*(public_mean+e2)+cost(e2))
-    f1 = .5*((1-2*v1)*(m0+expected_e1)+cost(expected_e1))
-    def moments(e1, response=True):
-        samples = []
-        for ability_node, first_noise, second_noise in product((-1.,1.), repeat=3):
-            ability = m0+ability_node*math.sqrt(prior_var)
-            first_return = ability+e1+first_noise*math.sqrt(noise_var)
-            public_mean = (1-kappa)*m0+kappa*(first_return-expected_e1)
-            f2 = fixed_second(public_mean if response else m0)
-            second_return = ability+e2+second_noise*math.sqrt(noise_var)
-            samples.append(f1+v1*first_return-cost(e1)
-                           +discount*(f2+v2*second_return-cost(e2)))
-        mean = sum(samples)/len(samples)
-        variance = sum((x-mean)**2 for x in samples)/len(samples)
-        return mean, variance
-    def ce(e1, response=True):
-        mean, variance = moments(e1,response)
-        return mean-risk_aversion*variance/2
-    for e1, target in ((.2,.25-.2/4),(.6,.25-.6/4),(1.,0.),(1.4,.25-1.4/4)):
-        h = 1e-5
-        close((ce(e1+h)-ce(e1-h))/(2*h),target)
-        close(moments(e1)[1],.305)
-    assert ce(1.)>ce(.9) and ce(1.)>ce(1.1)
-    assert ce(.6,False)>ce(.5,False) and ce(.6,False)>ce(.7,False)
-    close(ce(1.),2.435)
-    beta = fixed_second(3)-fixed_second(2)
-    close(beta,.25)
-    close(discount*beta*kappa,.10)
-    close(fixed_second(2),.8125)
-    close(fixed_second(2.5),.9375)
-    posterior_var=prior_var*noise_var/(prior_var+noise_var)
-    mean_second=fixed_second(2.5)+v2*(2.5+e2)-cost(e2)
-    second_risk_coefficient=risk_aversion*discount
-    ce_second=mean_second-second_risk_coefficient*v2*v2*(posterior_var+noise_var)/2
-    lp_second=(2.5+e2)-(fixed_second(2.5)+v2*(2.5+e2))
-    close(mean_second,1.6875);close(ce_second,1.65);close(lp_second,1.6875)
-    log_expected_utility=-risk_aversion*discount*mean_second + .5*(risk_aversion*discount)**2*v2*v2*(posterior_var+noise_var)
-    close(-log_expected_utility/(risk_aversion*discount),ce_second)
-    def known_type_ce(ability, coefficient):
-        chosen_effort=4*coefficient
-        return coefficient*(ability+chosen_effort)-cost(chosen_effort)-coefficient**2/2
-    signal_difference=(known_type_ce(3,.5)-known_type_ce(3,.25)
-                       -known_type_ce(1,.5)+known_type_ce(1,.25))
-    close(signal_difference,.5)
-    compensation={"posterior":2.5,"posterior_variance":posterior_var,
-                  "future_fixed_income_before":fixed_second(2),
-                  "future_fixed_income_after":fixed_second(2.5),
-                  "future_marginal_incentive":discount*beta*kappa,
-                  "effort_first":1.,"effort_second":e2,"effort_without_future_response":.6,
-                  "second_GP_net_mean":mean_second,"second_GP_certainty_equivalent":ce_second,
-                  "second_effective_risk_aversion":second_risk_coefficient,
-                  "second_LP_income":lp_second,"discounted_income_variance":moments(1.)[1],
-                  "signal_relative_advantage":signal_difference}
-
     def preferred(w, l, alpha):
         return max(min(w, l), alpha*w)
     for w, want in ((400, 400), (1200, 600), (2800, 700)):
@@ -315,8 +246,7 @@ def numerical_checks():
     close(double_effort["0.4"]["VC_before_capital"],1.04)
     return {"waterfall_GP_success":income(200),"waterfall_gap":income(220)-income(80),
             "effort_main":effort_main,"effort_low_carry":effort_low,
-            "high_effort_carry_interval":[lower,upper],"risk_choice":risk,"learning":learning,
-            "compensation":compensation,
+            "high_effort_carry_interval":[lower,upper],"risk_choice":risk,
             "control":control,"neher_deviations":neher_deviations,
             "asw":asw,"experiment":experiment,"double_effort":double_effort}
 
@@ -352,11 +282,11 @@ def source_checks():
         assert not re.search(r"\d+\s*分钟|预计.{0,20}(分钟|小时)",text),name
     required={
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
-        "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88","2.5"],
+        "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
         "w05-venture-contract.qmd":["52.5","0.65","2.84","3.38","-1.5"],
         "w05-preparation.qmd":["0.8571","0.5217"],
-        "exercises.qmd":["26.32","14.664","42.336","1.875","1.6875","198.8406","41.7","6.66","8.18"],
+        "exercises.qmd":["26.32","14.664","42.336","198.8406","41.7","6.66","8.18"],
     }
     for name,claims in required.items():
         text=(ROOT/name).read_text().replace("−","-")
