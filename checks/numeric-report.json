@@ -45,39 +45,6 @@
         "B_LP_net": -12.380952380952365
       }
     },
-    "learning": [
-      {
-        "noise_variance": 1,
-        "weight": 0.5,
-        "posterior": 2.5
-      },
-      {
-        "noise_variance": 3,
-        "weight": 0.25,
-        "posterior": 1.875
-      },
-      {
-        "noise_variance": 7,
-        "weight": 0.125,
-        "posterior": 1.6875
-      }
-    ],
-    "compensation": {
-      "posterior": 2.5,
-      "posterior_variance": 0.5,
-      "future_fixed_income_before": 0.8125,
-      "future_fixed_income_after": 0.9375,
-      "future_marginal_incentive": 0.1,
-      "effort_first": 1.0,
-      "effort_second": 1.0,
-      "effort_without_future_response": 0.6,
-      "second_GP_net_mean": 1.6875,
-      "second_GP_certainty_equivalent": 1.65,
-      "second_effective_risk_aversion": 0.8,
-      "second_LP_income": 1.6875,
-      "discounted_income_variance": 0.305,
-      "signal_relative_advantage": 0.5
-    },
     "control": {
       "entrepreneur": {
         "E_utility": 46.5,
@@ -156,12 +123,12 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "a37cfbbbc99812fc71510e685489a38a1a01e2176b4aab136258c93e5eb1cba3",
+    "student-notes.md": "f30391293bf5bf0d22421d6cccc2e1fd07d4fc376b9394d5887cde29b9c88c78",
     "student-notes.qmd": "e8ce7a2e34f18748bfc15ca4062867219c90c7732dffaa4606d2d42555826df0",
-    "w04-fund-contract.qmd": "9b0c159e30977868cc6ac4a5452806c7fa4ad5c872c44bd658dcaaaa211d8ddc",
+    "w04-fund-contract.qmd": "96202d0ec95d7763d6827d19b2439305cdc796f413248c03b3abb8df7f0d1166",
     "w05-venture-contract.qmd": "8ec0e3350ffde3bafe55eeb65039bc7e6e27319a76209aa4d2fdf275eb527aba",
-    "w04-preparation.qmd": "0320850bcb90f9a81926c929e917c634fc15498a49e5ceb8cd6e8082c711c1d8",
+    "w04-preparation.qmd": "fd7a3fe9dd6601cca0497a445eeeecde4b3c5aeab51ab655175ff29cece7fbed",
     "w05-preparation.qmd": "a3c223b28fb52b57f19fec235347c8d89b798c119f4825410de23c54b1aaf6f9",
-    "exercises.qmd": "209f4799542042a3515b073093af774b2b1ed4a03cf2a4014274495a437a8259"
+    "exercises.qmd": "c442ed6a87f6392dd515e28fb9b365e5a4c5d2095837914d79a02bec9602b854"
   }
 }

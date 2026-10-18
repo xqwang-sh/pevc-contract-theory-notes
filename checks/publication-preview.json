@@ -1,17 +1,18 @@
 {
-  "checked_at": "2026-10-19T00:55:21.241884+09:00",
-  "base_url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app",
+  "checked_at": "2026-10-19T01:39:45.156527+09:00",
+  "base_url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app",
   "site_id": "246bda20-385d-4788-a73b-3a69c3afbc16",
-  "deploy_id": "6ad4ea5b1400a1b79728b8a0",
-  "normalization": "Only opening anchor tags are canonicalized: equivalent attribute quoting/order plus local .html-to-pretty-URL paths. Attribute values other than those local href paths are preserved. All remaining HTML and embedded scripts/styles must match.",
+  "deploy_id": "6ad4f661f179726335ca1a84",
+  "normalization": "Only opening anchor tags are canonicalized: equivalent attribute quoting/order plus local .html-to-pretty-URL paths. Attribute values other than those local href paths are preserved. On production only the exact, observed Netlify public HUD and homepage hosting comment for this site ID are excluded and recorded. All authored HTML, scripts and styles must match.",
   "pages": [
     {
       "page": "index.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/index.html",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/index.html",
       "bytes": 10185,
       "sha256": "6c5301b636925319e4d953416ccfc51a5a496110b010a0a52643fc7ac0146fc9",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
       "normalized_sha256": "d36e735070e44c20ae22eb27ab5a5f0f1bd2e8530ed6c32c48004ace869d2e11"
@@ -19,32 +20,35 @@
     {
       "page": "student-notes.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/student-notes.html",
-      "bytes": 3771110,
-      "sha256": "1ad53751969fb438bcae54e58b10a46604708e41786e91e69a78f00411401632",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/student-notes.html",
+      "bytes": 3768163,
+      "sha256": "b98706de0d0c650f8bcce0aba28291c10854ca479ac67cad5a26b65d37e3eecc",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
-      "normalized_sha256": "18400ee4d8038e7cc16840a7d75de2f45bf5221b7f792f03a9b35e67bf74d4e2"
+      "normalized_sha256": "b08b014bf83504b3ec86837f32928a08e65f28569ba0c1f97a75b6b8ecfc2ccd"
     },
     {
       "page": "w04-fund-contract.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/w04-fund-contract.html",
-      "bytes": 3649990,
-      "sha256": "5872aaa092d352b66c320b3fb2cf2ceadca5e3d268450bc0d626d043e22e7405",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/w04-fund-contract.html",
+      "bytes": 3647484,
+      "sha256": "b7bf6271d58d4489decce4020319d222709ef75ba1f39475cbf49055f0a113a6",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
-      "normalized_sha256": "2406e25d5f2ed09557a9e4f1847620e368f7f713d88c08eab8c643e064f7a5ba"
+      "normalized_sha256": "99e7121c38fe589c7716d4416ead9ae7559f3978bead65e11d9576dd05f09936"
     },
     {
       "page": "w05-venture-contract.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/w05-venture-contract.html",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/w05-venture-contract.html",
       "bytes": 3634783,
       "sha256": "82293de1ecdc8d0f3c409b79f22c8e336e957a443834e994f6fc80ebb784e276",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
       "normalized_sha256": "2aa00f00e594572011b44910a9c20e9f4df0d486fe202679f18284d96a149eaf"
@@ -52,21 +56,23 @@
     {
       "page": "w04-preparation.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/w04-preparation.html",
-      "bytes": 3617741,
-      "sha256": "c0ad44f2e4c25b9b11ae83f260ab490c6750a58cb19d5706db10a9561811ed8f",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/w04-preparation.html",
+      "bytes": 3618185,
+      "sha256": "e8744a4cb38f859be2adfb07341459fc1d0625f7efb8a5c98fde5ecdd22d8d46",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
-      "normalized_sha256": "8349d6c57377e7be498b4f0cfdc9de13fdd5585dc76f728b37ce9498c02926e0"
+      "normalized_sha256": "c92c80d736485bdddd3717b7f0acb19aa668de0158be4484f9c2c5686dd00fec"
     },
     {
       "page": "w05-preparation.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/w05-preparation.html",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/w05-preparation.html",
       "bytes": 3616514,
       "sha256": "c54c81636964ec91a6d24e4be791baca619d67aec0aa3c7f9c6c06900e7e40e4",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
       "normalized_sha256": "cac078bd1526444a30a443828c34c131ba6a2f624ed2a0c097ad0da6269fec67"
@@ -74,13 +80,14 @@
     {
       "page": "exercises.html",
       "status": 200,
-      "url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app/exercises.html",
-      "bytes": 3643577,
-      "sha256": "c62fab253c04ee4f4a8d34e6759af108f65e91f7835969d6b5f2b1ca7054fe36",
+      "url": "https://6ad4f661f179726335ca1a84--pevc-contract-theory-notes.netlify.app/exercises.html",
+      "bytes": 3644556,
+      "sha256": "f4283e7131091438e5645d53bed0254b6a90332a3832d07f6a92516c3ee46205",
       "raw_matches_local": false,
+      "known_platform_additions": [],
       "matches_after_local_link_normalization": true,
       "embedded_scripts_and_styles_match": true,
-      "normalized_sha256": "b00b74655a5786f1a4c2c558002a6bb69f56c6b2412a7df49d9e2583c41f17a2"
+      "normalized_sha256": "43b6fb4d09326295f55aa2f1c54e418ec13215dd62d2ada0408960db4925c6b2"
     }
   ]
 }

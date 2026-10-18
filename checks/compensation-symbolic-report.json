@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-19T01:37:54.609331+09:00",
+  "method": "Symbolic algebra from the stated income, sharing rule, effort timing and CARA-normal preferences",
+  "identities": [
+    {
+      "identity": "Fixed income obtained by solving expected net surplus sharing",
+      "residual": "0"
+    },
+    {
+      "identity": "Fixed income response to public ability assessment",
+      "residual": "0"
+    },
+    {
+      "identity": "First-period effort derivative from both periods of net income",
+      "residual": "0"
+    },
+    {
+      "identity": "Second-period effort derivative with the contracted fixed term held fixed",
+      "residual": "0"
+    },
+    {
+      "identity": "Discounted income variance reconstructed from independent shocks",
+      "residual": "0"
+    },
+    {
+      "identity": "Risk is unchanged by a hidden effort deviation",
+      "residual": "0"
+    },
+    {
+      "identity": "Conditional certainty equivalent in second-period income units",
+      "residual": "0"
+    },
+    {
+      "identity": "Posterior variance from Gaussian precision addition",
+      "residual": "0"
+    },
+    {
+      "identity": "Relative gain from a larger coefficient for the high type",
+      "residual": "0"
+    }
+  ],
+  "scope": "Teaching derivations, not a reproduction of the original optimal contracts or a proof of a separating equilibrium",
+  "original_predictions": "Checked against the publisher full text, Sections 3.1 and 3.2; Appendix A equations A.3-A.5 and A.9 checked for source identity.",
+  "source_url": "https://www.sciencedirect.com/science/article/pii/S0304405X98000427",
+  "source_sha256": {
+    "w04-fund-contract.qmd": "96202d0ec95d7763d6827d19b2439305cdc796f413248c03b3abb8df7f0d1166",
+    "student-notes.md": "f30391293bf5bf0d22421d6cccc2e1fd07d4fc376b9394d5887cde29b9c88c78",
+    "w04-preparation.qmd": "fd7a3fe9dd6601cca0497a445eeeecde4b3c5aeab51ab655175ff29cece7fbed",
+    "exercises.qmd": "c442ed6a87f6392dd515e28fb9b365e5a4c5d2095837914d79a02bec9602b854"
+  }
+}
