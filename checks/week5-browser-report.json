@@ -1,41 +1,31 @@
 {
   "status": "passed_for_inspected_views",
-  "checked_at": "2026-10-19T08:02:21.441439+09:00",
-  "environment": "Local HTTP pages in the in-app browser; existing narrow reading pane; no viewport emulation",
+  "checked_at": "2026-10-19T08:15:17.695607+09:00",
+  "environment": "Local HTTP pages in the in-app browser",
   "checks": [
     {
-      "page": "w05-venture-contract.html",
-      "method": "Accessibility text and screenshots",
-      "observed": "Motivation, three-model map, original-model and teaching-example labels; AB branches and PC; Neher timing and backward-induction formulas; AP financing equations and pricing explanation"
-    },
-    {
-      "page": "w05-preparation.html",
+      "page": "student-notes.html#book-appendices",
       "method": "Accessibility text",
-      "observed": "Core P5-1/P5-2/P5-3a-b and collapsed optional P5-4; scope labels visible"
+      "observed": "Appendices A through H in continuous order; A-C grouped under LPA and D-H under enterprise contracts; ASW appears at C without a fixed special title"
     },
     {
-      "page": "exercises.html#h5-3",
-      "method": "Accessibility text, click disclosure, screenshot",
-      "observed": "Answer expands; P0/P1/P2, .66 and .14 appear consistently; H5-5 is in the optional section"
-    },
-    {
-      "page": "student-notes.html#book-app-g",
-      "method": "Accessibility text",
-      "observed": "Appendix heading, optional scope, committed versus discretionary follow-on rule, G.1/G.2/G.3 visible"
+      "page": "w05-preparation.html#p5-4",
+      "method": "Accessibility text, expanded answer and screenshot",
+      "observed": "Exactly four core modules in classroom order; experiment-design preparation absent; original author-year citations, Neher timing and liquidation values, AP conditional-pricing assumption and Q=30/7 answer visible"
     }
   ],
   "limits": [
-    "Not a full-page pixel audit",
-    "No separate mobile or desktop emulation",
+    "No separate mobile emulation",
+    "This record covers the appendix and preparation follow-up, not a new full pixel audit",
     "No production deployment performed"
   ],
   "html_sha256": {
-    "index.html": "64135a8a6f76758b702532751dbbd87cf6f41c10de83f96fe0756586b44b8968",
-    "student-notes.html": "78b63e6d3e7d7f95d89871b947b0f209f5d3c2b5585e469f46cbe975c8bbc06c",
-    "w04-fund-contract.html": "a27612d6572673d7896a3fdd0d37a0d9bef919b8625574cebda76291c102a679",
-    "w05-venture-contract.html": "619685f213b64315f060c09a827870b735459bbf5265742e180f259bc38aaede",
-    "w04-preparation.html": "ed6419b56a27305498ff24cc00e2a895999315f1fc6d1a6940e6e1be50df5a90",
-    "w05-preparation.html": "642cdec05e339939cb5f7f733e4086c2cd445b39e7c9af2bff8946b657ca2cba",
-    "exercises.html": "df2c39758c7a73f1dd6e093a7499b22728ac90f8e148e8bb047b3e76b58f97aa"
+    "index.html": "c162a61cf215208df8e5a08eb0d87b2d8bcf8c131f11cae8e70b2dc89dacaa85",
+    "student-notes.html": "98c3c640867bc58da0162d72f7cee6f00bb0d8084e46c81e06d8f4b6ca3d5d69",
+    "w04-fund-contract.html": "eabcb8457b8f568b1bdfbbd608e7a5959eb6585a27961c67b96df73b27dc2004",
+    "w05-venture-contract.html": "5b77127862788d1f5c6e1c96bfc0a4c94b24073eb02beffe9c93d493d2dbdee9",
+    "w04-preparation.html": "5cf3b319cdff07dcd131ac66662b80e0703b646fbdecffc095292c55d4305e75",
+    "w05-preparation.html": "dabc68908a294740614f973b42846fad590963ab45c84aaea0a388622e88e26c",
+    "exercises.html": "1557bfd9597cf96ac288eb771735fbc514b85dd504db0065a94c9b951f45354b"
   }
 }

@@ -190,12 +190,12 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "7a77b456d8dad31e61330532f9a338a1c869b05adbe23ff01319613c8292a5f8",
+    "student-notes.md": "c77492ca27321ad5af9bf30521c3c3df4e07c8e62690c887a6ba04261a9b20ec",
     "student-notes.qmd": "e8ce7a2e34f18748bfc15ca4062867219c90c7732dffaa4606d2d42555826df0",
-    "w04-fund-contract.qmd": "96202d0ec95d7763d6827d19b2439305cdc796f413248c03b3abb8df7f0d1166",
-    "w05-venture-contract.qmd": "fc258f0f118cd25913b93c0c2d3dc6283726163b2aa274d4d35f6500be13c450",
-    "w04-preparation.qmd": "fd7a3fe9dd6601cca0497a445eeeecde4b3c5aeab51ab655175ff29cece7fbed",
-    "w05-preparation.qmd": "327571c6721e6bfd473746af36d3c38dd56a39119ff2f1e266933ae112ae4151",
-    "exercises.qmd": "d58b42044537636e075f5502ef9fcc2509d2ace6c279d3df10ed1993f78af361"
+    "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
+    "w05-venture-contract.qmd": "e4913035f1bb12df1a1fb0f82300dc63c9b253a16925416c4866a88d37ca86ec",
+    "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
+    "w05-preparation.qmd": "16c1df519c3f040fff35e2160ddc973e98708b37abc32a105a91845aba48b07c",
+    "exercises.qmd": "8df1607e7a48dcc66fa0f88e19a4b4edd2c03a7c1f563bc3d98c3a40affa89ba"
   }
 }

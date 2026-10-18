@@ -387,7 +387,7 @@ def source_checks():
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
         "w05-venture-contract.qmd":["91.2","83.8","1.1852","1.2222","1.3333","5/14","530/203"],
-        "w05-preparation.qmd":["0.8571","0.5217"],
+        "w05-preparation.qmd":["1.1852","30/7","0.7","L_2"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","91.2","83.8","1.1852","5/14","6.66","8.18"],
     }
     for name,claims in required.items():
@@ -402,7 +402,24 @@ def source_checks():
     assert "GP 无初始财富" not in fund
     assert "### 4. 有业绩报酬" in fund
     assert "### 6. 为什么新老管理机构" in fund
-    assert "## ASW附录D：" in book
+    assert "## 附录 C：多项目投资与基金融资结构" in book
+    headings=re.findall(r"^## 附录 ([A-H])：.*\{#book-app-([a-h])\}",book,re.M)
+    assert headings==[(x,x.lower()) for x in "ABCDEFGH"], headings
+    for letter in "ABCDEFGH":
+        section=book.split("## 附录 "+letter+"：",1)[1].split("\n## ",1)[0]
+        numbers=re.findall(r"^### ([A-H])\.(\d+)",section,re.M)
+        assert [x for x,_ in numbers]==[letter]*len(numbers),(letter,numbers)
+        assert [int(n) for _,n in numbers]==list(range(1,len(numbers)+1)),(letter,numbers)
+    for name in SOURCES:
+        value=(ROOT/name).read_text()
+        assert "ASW附录D" not in value,name
+        for label,target in re.findall(r"\[附录 ([A-H])\]\([^)]*#book-app-([a-h])\)",value):
+            assert label.lower()==target,(name,label,target)
+    prep=(ROOT/"w05-preparation.qmd").read_text()
+    assert re.findall(r"^## P5-(\d)：",prep,re.M)==["1","2","3","4"]
+    assert "#p5-3a" not in prep and "#p5-3b" not in prep
+    assert "检验通过率与后验概率" not in prep
+    assert "核对 P5-4" in prep and "Admati" in prep
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
@@ -411,7 +428,7 @@ def source_checks():
     assert "Example 4.1" in venture
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture
-    assert book.index("{#book-venture-experiment}") > book.index("{#book-app-g}")
+    assert book.index("{#book-venture-experiment}") > book.index("{#book-app-h}")
     exercises=(ROOT/"exercises.qmd").read_text()
     assert exercises.index("{#h5-5}") > exercises.index("{#optional-homework}")
     assert "第 5 周完成 H5-1 至 H5-4" in exercises
