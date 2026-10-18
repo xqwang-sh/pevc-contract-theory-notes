@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="面向金融学博士生的 PE/VC 合同理论学生讲义：基金层激励、投资层支付与控制、分阶段融资。">
+  <meta name="description" content="面向金融学博士生的 PE/VC 合同理论学生讲义：LPA 的授权、报酬与行为限制；GP 与企业合同的控制权、知情续投与实验设计。">
   <title>PE/VC 合同理论｜两层授权，两类合同</title>
   <style>
     :root {
@@ -144,39 +144,55 @@
   <main id="main-content">
     <div class="eyebrow">金融博士选修课 · 第 4–5 周</div>
     <h1>PE/VC 合同理论<br>两层授权，两类合同</h1>
-    <p class="lead">一笔资本先由 LP 交给 GP 管理，再由基金投入创业企业。每一层都需要专业能力，也都面临同一个问题：出钱的人无法亲自作出全部决定，合同怎样让合作创造价值？</p>
-    <h2>先看两次课共同的问题</h2>
-    <div class="path" role="img" aria-label="资本由LP进入基金，再投入企业；对应基金层和企业层两类合同">
-      <div class="node"><strong>LP</strong><br>承诺长期资本</div><div class="arrow">→</div>
-      <div class="node"><strong>基金</strong><br>由 GP 作投资判断</div><div class="arrow">→</div>
-      <div class="node"><strong>创业企业</strong><br>经营、投入与成长</div>
+    <p class="lead">LP 先向基金承诺资本，由 GP 选择和管理投资；基金再向企业提供资本，与创业者共同推进成长。两次课沿这两类合同展开，解释资本、专业能力与决定权怎样合作。</p>
+    <div class="path" role="img" aria-label="LP 经LPA向基金承诺资本，由GP管理；基金经企业合同向创业企业提供资本">
+      <div class="node"><strong>LP</strong><br>提供长期资本</div><div class="arrow">→</div>
+      <div class="node"><strong>基金与 GP</strong><br>选择和管理投资</div><div class="arrow">→</div>
+      <div class="node"><strong>企业与创业者</strong><br>经营、投入与成长</div>
     </div>
-    <p>第一层，LP 用授权获得 GP 的专业投资能力，却难以逐项监督努力。第二层，基金把资本投入企业，价值还依赖创业者与 VC 的投入，以及后来面对新信息时的选择。两次课沿着这笔资本展开：先研究基金层的长期授权，再研究企业层的收益与决定权。</p>
-    <h2>两类合同，分别怎样回答这个问题？</h2>
+    <p>专业分工使投资成为可能，也使出资者难以亲自核实或决定所有行动。合同需要回答谁承诺资本、成果怎样分、谁有决定权，以及新情况出现后怎样继续。每一讲先提出问题，再明确模型时序、假设和符号，保留必要的推导与数值计算。</p>
+    <h2>第一类：LPA 合同；第二类：GP 与企业合同</h2>
     <div class="lectures">
       <article>
-        <div class="meta">第 4 周 · 第一层合同 · LP—GP</div>
-        <h3>为什么愿意把长期资本交给 GP？</h3>
-        <p>LP 需要给 GP 裁量空间，也需要使其认真工作。奖励要足以诱导努力，又不能让资本提供者无利可图；多年合作中，还要面对未来募资和基金到期。</p>
-        <ol><li><strong>先看报酬：</strong>分配怎样影响努力，融资要求能否同时满足？</li><li><strong>再看治理：</strong>限制和问责能解决什么，又付出什么代价？</li><li><strong>最后看时间：</strong>未来募资、期限和资本承诺怎样改变选择？</li></ol>
+        <div class="meta">第 4 周 · LPA 合同 · LP 与 GP</div>
+        <h3>怎样把资本和投资判断交给 GP？</h3>
+        <p>LP 在具体组合形成之前承诺资本，GP 取得投资裁量。报酬、权限与资本承诺需要共同支持这段授权关系。</p>
+        <ol>
+          <li>认识基金关系，分清承诺、缴款与持有主体。</li>
+          <li>计算 GP 收入，联合检查 IC、GP 的 PC 和 LP 的 PC。</li>
+          <li>比较 GP 的项目选择，解释 Carry 为什么仍会留下风险冲突。</li>
+          <li>研究行为限制、合同差异，以及能力学习与报酬结构。</li>
+        </ol>
+        <p>制度与经济解释以 Sahlman（1990）、Gompers–Lerner（1996、1999）为核心；Axelson–Strömberg–Weisbach（2009）的多项目融资结构见<a href="student-notes.html#book-app-d">ASW附录D</a>，其他拓展另列附录。</p>
         <a class="open" href="w04-fund-contract.html">进入第 4 周课堂 →</a>
         <p><a href="w04-preparation.html">课前预习</a> · <a href="student-notes.html#book-fund">完整学生讲义·第一篇</a> · <a href="exercises.html#w04-homework">课后习题</a></p>
       </article>
       <article>
-        <div class="meta">第 5 周 · 第二层合同 · 基金/VC—创业者</div>
-        <h3>为什么既要约定钱怎么分，也要约定谁决定？</h3>
-        <p>股份比例不能独自保证双方愿意投入，也不能化解路线、融资和退出上的分歧。企业合同需要把收益、决定权与新信息联系起来。</p>
-        <ol><li><strong>先看收益：</strong>怎样分配退出款，并兼顾双方努力与融资？</li><li><strong>再看控制：</strong>利益不一致时，什么状态由谁决定？</li><li><strong>最后看调整：</strong>何时继续投入，何时停止或退出？</li></ol>
+        <div class="meta">第 5 周 · GP 与企业合同 · 以 VC 投资为主</div>
+        <h3>怎样安排收益、控制和后续融资？</h3>
+        <p>双方谈好股份以后，还会面对经营路线、追加资本和停止决定。融资还依赖可信的信息，以及提供资本的一方怎样使用信息。</p>
+        <ol>
+          <li>计算优先股分配，识别不同合同权利。</li>
+          <li>用 Aghion–Bolton 解释控制与融资的关系。</li>
+          <li>借 Neher 理解分阶段承诺，再用 Admati–Pfleiderer 分析知情续投。</li>
+          <li>用 Bolton 等的实验设计模型，分析里程碑的信息与激励。</li>
+        </ol>
+        <p>真实合同以 Kaplan–Strömberg 为对照；双边投入、可转换证券与 Cornelli–Yosha 的信号粉饰列入附录。</p>
         <a class="open" href="w05-venture-contract.html">进入第 5 周课堂 →</a>
         <p><a href="w05-preparation.html">课前预习</a> · <a href="student-notes.html#book-venture">完整学生讲义·第二篇</a> · <a href="exercises.html#w05-homework">课后习题</a></p>
       </article>
     </div>
-    <div class="notice"><strong>两周合起来要理解：</strong>收益分配影响各方是否出资和努力；当报酬无法消除全部分歧时，需要安排决策权；当信息和机会随时间变化时，还需要资本承诺、续投与退出程序。这些安排共同构成合同的经济逻辑。</div>
-    <h2>围绕每一类合同，怎样预习和复习？</h2>
-    <p><strong>课前</strong>读本周短预习，做第一遍计算，留下答案和问题；<strong>课堂</strong>从问答出发，重算基本例子，再加入新的约束与假设；<strong>课后</strong>用新题自检，需要时回到完整讲义与附录。课堂根据理解情况推进。</p>
-    <p><a href="student-notes.html">打开完整学生讲义</a> · <a href="exercises.html">打开全部课后习题</a></p>
-    <div class="audience"><strong>适用基础：</strong>学过高等微观、高等宏观和基础计量，尚未系统学过合同理论。合同理论的基础概念（信息不对称、逆向选择/道德风险、IC/PC）在完整讲义的<a href="student-notes.html#book-foundations">基础篇</a>详细讲解，可按需查阅。完整讲义供连贯复习与查阅，不要求课前通读。企业层以 VC 为主，收购型 PE 的杠杆和债权人治理另行学习。</div>
-    <p class="small">2026-09-16。预习、课堂和复习是学习同一问题的三个阶段；课程按基金层和企业层两类合同组织，完整讲义另设基础概念篇。</p>
+    <h2>课前、课堂与课后，各做什么？</h2>
+    <ol class="route">
+      <li><strong>先读短预习。</strong>完成本周基本计算，写下答案与疑问；不要求课前通读完整学生讲义。</li>
+      <li><strong>课堂从问答开始。</strong>重算必要步骤，再进入核心模型；每个新模型先明确时序、信息与合同范围。</li>
+      <li><strong>课后独立自检。</strong>第 4 周完成 H4-1 至 H4-5，第 5 周完成 H5-1 至 H5-5，再展开分步答案核对。</li>
+      <li><strong>按问题查完整讲义。</strong>正文连贯解释两类合同，附录保留完整核查、推广与拓展文献。</li>
+    </ol>
+    <p><a href="student-notes.html">打开完整学生讲义</a> · <a href="exercises.html">打开课后习题与分步答案</a> · <a href="student-notes.html#book-reading">按合同查文献</a></p>
+    <div class="notice"><strong>每个模型都要回答：</strong>谁在何时知道什么、能够选择什么、取得哪些收入？希望的行动是否符合自身利益，双方是否愿意参与？本课区分原文机制、教学特例与真实合同证据，不把不同模型的参数混成一份合同。</div>
+    <div class="audience"><strong>适用基础：</strong>学过高等微观、高等宏观与基础计量，尚未系统学习合同理论。<a href="student-notes.html#book-foundations">基础篇</a>解释信息、收入与效用、IC/PC、可验证性和沉没成本；预习另练预期收入与信息更新所需的概率。课堂按理解推进。</div>
+    <p class="small">2026-10-18 修订。首页按 LPA 合同与 GP—企业合同组织；每类合同都有预习、课堂、完整讲义与习题入口。</p>
   </main>
 </body>
 </html>

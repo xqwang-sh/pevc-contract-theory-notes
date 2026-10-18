@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-19T00:57:39.627124+09:00",
+  "environment": "Netlify draft deployment; desktop viewport 1280 x 720",
+  "deploy_id": "6ad4ea5b1400a1b79728b8a0",
+  "base_url": "https://6ad4ea5b1400a1b79728b8a0--pevc-contract-theory-notes.netlify.app",
+  "checks": [
+    {
+      "page": "w04-fund-contract.html#w04-compensation",
+      "result": "Motivation, symbols, boxed effort condition and type IC render; no KaTeX errors; anchor heading below sticky navigation",
+      "math_elements_in_section": 85,
+      "heading_top_px": 84.89,
+      "navigation_bottom_px": 51.4
+    },
+    {
+      "page": "student-notes.html#book-fund-compensation",
+      "result": "Full explanatory section and formulas render; no KaTeX errors",
+      "math_elements_in_section": 95
+    },
+    {
+      "page": "student-notes.html#book-app-h",
+      "result": "Cross-period CARA formula and corrected conditional certainty equivalent present; obsolete 1.640625 absent; no page-wide horizontal overflow",
+      "math_elements_in_section": 62
+    }
+  ],
+  "mobile_visual_check": "not_run",
+  "http_and_content_checks": "Seven draft pages return 200. After normalizing Netlify local href paths and equivalent opening-anchor attribute serialization, HTML matches local output. Embedded scripts/styles match without normalization. See publication-preview.json."
+}
