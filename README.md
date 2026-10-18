@@ -1,13 +1,17 @@
 # PE/VC 合同理论教学材料
 
-面向学过高微、高宏与基础计量、尚未系统学习合同理论的金融博士生。
+面向学过高微、高宏与基础计量、尚未系统学习合同理论的金融博士生。第 4 周研究 LPA 合同，第 5 周研究 GP 与企业合同，以 VC 为主。
 
-- `w04-preparation.qmd`、`w05-preparation.qmd`：短预习、计算与携带问题。
-- `w04-fund-contract.qmd`、`w05-venture-contract.qmd`：教师课堂问答、公式与深入推导。
-- `student-notes.md`：完整学生讲义；`student-notes.qmd` 生成其 HTML 阅读版。
-- `exercises.qmd`：独立课后习题与分步答案。
-- [教学分工与范围](教学安排-预习课堂复习.md)：预习—课堂—课后对应和附录安排。
+- 完整学生讲义：student-notes.md，由 student-notes.qmd 生成 HTML，正文连贯解释，拓展进入附录。
+- 短预习：w04-preparation.qmd、w05-preparation.qmd，包含基础概念、公式与自查答案。
+- 课堂讲义：w04-fund-contract.qmd、w05-venture-contract.qmd，每讲有动机、内容安排、开场问答、必要推导与计算。
+- 课后习题：exercises.qmd，核心题与附录选做分开，提供折叠分步答案。
+- [教学安排与模型口径](教学安排-预习课堂复习.md)记录材料对应、模型参数与文献来源。
 
-在本目录运行 `quarto render` 生成全部 HTML，入口为 `docs/index.html`。首页独立维护，不由 Quarto 覆盖。源文件中链接指向同一 `docs/` 下的生成页面。
+在本目录运行 python3 checks/render_materials.py 生成六个 HTML 页面；它在本地临时目录渲染，避免 OneDrive 临时目录清理权限错误。需要更新课程目录副本时加 --sync-parent。首页 docs/index.html 独立维护。全部页面自包含，沿用 pevc-handout.css。源文件和 HTML 的课程目录副本按 AGENTS.md 同步。
 
-2026-09-05 本轮重编按用户明确的用途区分三类讲义，替代上一轮仅压缩课堂正文的安排。旧版审查说明保留为历史记录。现行材料是否已公开发布，应以实际推送和部署记录为准。
+2026-10-18 按两类合同重写。LPA 以 Sahlman、Gompers–Lerner 为核心，沿资本授权、收入与努力、风险选择、限制条款和报酬差异推进，ASW 放附录；企业合同以 Aghion–Bolton、Admati–Pfleiderer、Bolton 等为核心，Neher 补充分阶段承诺。学生材料不写预计用时。是否已公开发布，以实际推送和部署记录为准。
+
+核查命令：python3 checks/verify_materials.py --sources-only 独立复算数值；完成渲染与副本同步后，运行 python3 checks/verify_materials.py 核对本地链接、锚点和文件一致性。检查结果写入 checks 下的 JSON 文件。
+
+本轮 LPA 修订统一核心金额为 K=100、GP 出资比例 2%、Carry 20%；同一分配函数下检查努力与双方 PC。独立的风险选择反例和原论文报酬模型分别说明假设，避免将线性报酬系数当作 Carry。第 4 周有 5 道核心题、2 道 ASW 附录选做题。
