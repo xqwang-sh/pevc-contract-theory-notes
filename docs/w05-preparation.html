@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>第 5 周预习：企业合同怎样分配现金，并支持后续决定？</title>
+<title>第 5 周预习：现金分配、行动比较与后续融资</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3613,10 +3613,9 @@ text-decoration: none;
   <ul class="collapse">
   <li><a href="#为什么持股比例还不够" id="toc-为什么持股比例还不够" class="nav-link active" data-scroll-target="#为什么持股比例还不够"><span class="header-section-number">1</span> 为什么持股比例还不够？</a></li>
   <li><a href="#p5-1" id="toc-p5-1" class="nav-link" data-scroll-target="#p5-1"><span class="header-section-number">2</span> P5-1：持有三分之一，是否总拿三分之一？</a></li>
-  <li><a href="#p5-2" id="toc-p5-2" class="nav-link" data-scroll-target="#p5-2"><span class="header-section-number">3</span> P5-2：双方都知道结果，为什么还会选得不同？</a></li>
-  <li><a href="#p5-3" id="toc-p5-3" class="nav-link" data-scroll-target="#p5-3"><span class="header-section-number">4</span> P5-3：现在追加的钱，怎样决定是否继续？</a></li>
-  <li><a href="#p5-4" id="toc-p5-4" class="nav-link" data-scroll-target="#p5-4"><span class="header-section-number">5</span> P5-4：实验更容易通过，意味着技术更好吗？</a></li>
-  <li><a href="#带到课堂的记录" id="toc-带到课堂的记录" class="nav-link" data-scroll-target="#带到课堂的记录"><span class="header-section-number">6</span> 带到课堂的记录</a></li>
+  <li><a href="#p5-2" id="toc-p5-2" class="nav-link" data-scroll-target="#p5-2"><span class="header-section-number">3</span> P5-2：双方知道同一个状态，为什么仍意见不同？</a></li>
+  <li><a href="#p5-3" id="toc-p5-3" class="nav-link" data-scroll-target="#p5-3"><span class="header-section-number">4</span> P5-3：先把资本日期与继续门槛算对</a></li>
+  <li><a href="#p5-4" id="toc-p5-4" class="nav-link" data-scroll-target="#p5-4"><span class="header-section-number">5</span> 附录预习 P5-4：检验通过率与后验概率</a></li>
   </ul>
 </nav>
 </div>
@@ -3626,8 +3625,8 @@ text-decoration: none;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 5 周预习：企业合同怎样分配现金，并支持后续决定？</h1>
-<p class="subtitle lead">先算优先股、行动收益、续投与检验概率</p>
+<h1 class="title">第 5 周预习：现金分配、行动比较与后续融资</h1>
+<p class="subtitle lead">先练基本计算，课堂再分析控制、承诺与知情投资</p>
 </div>
 
 
@@ -3638,7 +3637,7 @@ text-decoration: none;
     <div>
     <div class="quarto-title-meta-heading">发布于</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026年10月18日</p>
+      <p class="date">2026年10月19日</p>
     </div>
   </div>
 
@@ -3653,8 +3652,8 @@ text-decoration: none;
 <p><a href="index.html">课程首页</a> · <a href="w05-venture-contract.html">第 5 周课堂</a> · <a href="student-notes.html#book-venture">完整学生讲义</a> · <a href="exercises.html#w05-homework">课后习题</a></p>
 <section id="为什么持股比例还不够" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="为什么持股比例还不够"><span class="header-section-number">1</span> 为什么持股比例还不够？</h2>
-<p>基金把钱投入企业以后，创业者与 VC 还要决定经营路线、追加资本和退出。即使两方都希望企业成功，也可能因为收益分配、非货币收益和资金承担不同而意见不一。</p>
-<p>课堂将沿“收益与控制、分阶段承诺、知情 VC 续投、实验设计”展开。预习只练这些问题所需的基础计算；课堂保留公式，并从你的答案继续推导。无需提前读完英文论文或附录。</p>
+<p>基金投资企业以后，双方还要决定经营路线、何时投入下一笔资本，以及怎样引入新投资者。本次课堂分别用 Aghion–Bolton、Neher、Admati–Pfleiderer 分析这些决定。</p>
+<p>预习只练基本概念和计算，不要求提前求出最优合同或读完英文论文。先独立作答，再展开答案；课堂会重新写出公式，并解释前面的计算为什么会成为合同问题。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -3664,204 +3663,131 @@ text-decoration: none;
 <thead>
 <tr class="header">
 <th>预习</th>
-<th>要完成的计算</th>
-<th>课堂怎样继续</th>
+<th>先会什么？</th>
+<th>课堂继续解决什么？</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>P5-1：优先股</td>
-<td>给定退出现金，谁拿多少？</td>
-<td>为什么现金流权之外还要安排决定权？</td>
+<td>P5-1</td>
+<td>非参与式优先股怎样分配现金</td>
+<td>收入安排为什么不等于决定权</td>
 </tr>
 <tr class="even">
-<td>P5-2：行动</td>
-<td>分别计算双方效用与总剩余</td>
-<td>Aghion–Bolton 的控制与融资问题</td>
+<td>P5-2</td>
+<td>期望现金、私人收益与行动比较</td>
+<td>允许重谈后，财富约束为什么仍重要</td>
 </tr>
 <tr class="odd">
-<td>P5-3：续投</td>
-<td>比较从现在起的收益与成本</td>
-<td>Neher 的承诺与 Admati–Pfleiderer 的知情续投</td>
+<td>P5-3a</td>
+<td>不同日期的收入和资本怎样贴现</td>
+<td>分期投入如何支持持续合作的承诺</td>
 </tr>
 <tr class="even">
-<td>P5-4：检验</td>
-<td>通过概率与通过后的可行概率</td>
-<td>Bolton 等的隐藏实验设计</td>
+<td>P5-3b</td>
+<td>继续净价值与停止价值怎样比较</td>
+<td>知情 VC 的续投、外部融资与定价</td>
 </tr>
 </tbody>
 </table>
-<p>这些是独立模型。优先股例子的三分之一，不代入控制例子的 30%；检验模型的概率，也不等于努力模型的成功概率。</p>
+<p>这些是独立模型，字母不跨节通用。Bolton 等的检验概率作为本页末尾附录预习，不属于本次课前要求。</p>
 </section>
 <section id="p5-1" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="p5-1"><span class="header-section-number">2</span> P5-1：持有三分之一，是否总拿三分之一？</h2>
-<p>VC 投资 500 万，取得 1 倍非参与式可转换优先股。优先额 <span class="math inline">L=500</span> 万，转换后持股 <span class="math inline">\alpha=1/3</span>。只有这一轮优先股，其余归创始人。<span class="math inline">W</span> 是偿债及扣费用后的股东可分配现金，退出允许自由转换。</p>
-<p>保留优先股取得 <span class="math inline">\min(W,L)</span>，转换后取得 <span class="math inline">\alpha W</span>；非参与式意味着择高，不是两项相加：</p>
+<p>VC 投资 500 万，取得 1 倍非参与式可转换优先股。优先额 <span class="math inline">L=500</span> 万，转换份额 <span class="math inline">\alpha=1/3</span>。只有这一轮优先股，其余归创始人。<span class="math inline">W</span> 是偿债和扣费用后可分配给股东的现金，退出允许自由转换。</p>
+<p>保留优先股得 <span class="math inline">\min(W,L)</span>，转换后得 <span class="math inline">\alpha W</span>，两者择高：</p>
 <p><span class="math display">
 V_{NP}(W)=\max\{\min(W,L),\alpha W\}.
 </span></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: right;"><span class="math inline">W</span>，万元</th>
-<th style="text-align: right;">保留优先股</th>
-<th style="text-align: right;">转换后</th>
-<th style="text-align: right;">VC 选择的收入</th>
-<th style="text-align: right;">创始人收入</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">300</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1,000</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3,000</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-</tr>
-</tbody>
-</table>
-<p>转换点满足 <span class="math inline">L=\alpha W</span>。请计算。</p>
+<p>计算 <span class="math inline">W=300,1{,}000,3{,}000</span> 时双方收入，并求两种选择相同的转换点。这里只算分配，有没有决定应不应该出售企业？</p>
 <details class="solution">
 <summary>
 核对 P5-1
 </summary>
-<p>VC 收入依次为 300、500、1,000；创始人收入为 0、500、2,000。每行收入之和都等于 <span class="math inline">W</span>。转换点为 <span class="math inline">W^*=500/(1/3)=1,500</span> 万。</p>
-这里算的是退出收入，不是净投资收益，也没有判断现在是否应该接受收购。
+VC 收入依次为 300、500、1,000；创始人收入为 0、500、2,000。每行之和都等于退出现金。转换点 <span class="math inline">W^*=L/\alpha=1,500</span> 万。收入分配尚未决定何时出售，也不是扣除初始出资后的投资净收益。
 </details>
 </section>
 <section id="p5-2" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="p5-2"><span class="header-section-number">3</span> P5-2：双方都知道结果，为什么还会选得不同？</h2>
-<p>独立例子：创业者现金份额 <span class="math inline">s=0.3</span>，VC 为 0.7。原路线产生现金 50，并给创业者非货币收益 <span class="math inline">B_E=18</span>；新路线产生现金 80，非货币收益为零。18 是真实效用的货币等值，本例不涉及侵占资产。</p>
+<h2 data-number="3" class="anchored" data-anchor-id="p5-2"><span class="header-section-number">3</span> P5-2：双方知道同一个状态，为什么仍意见不同？</h2>
+<p>这是课堂控制模型的自设数值。创业者无初始财富，VC 先出资。双方风险中性、无贴现。期末现金 <span class="math inline">X</span> 只有 0、200 两种结果，表中现金列是期望值 <span class="math inline">\bar R</span>，非货币收益 <span class="math inline">b_E</span> 不能直接拿来补偿 VC。</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>比较对象</th>
-<th style="text-align: right;">原路线</th>
-<th style="text-align: right;">新路线</th>
-<th>更偏好哪条路线？</th>
+<th>状态</th>
+<th>原路线成功概率；<span class="math inline">\bar R,b_E</span></th>
+<th>新路线成功概率；<span class="math inline">\bar R,b_E</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>创业者：<span class="math inline">sR+B_E</span></td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td>请填</td>
+<td><span class="math inline">G</span></td>
+<td>0.5；100，150</td>
+<td>1；200，0</td>
 </tr>
 <tr class="even">
-<td>VC：<span class="math inline">(1-s)R</span></td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td>请填</td>
-</tr>
-<tr class="odd">
-<td>总剩余：<span class="math inline">R+B_E</span></td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td>请填</td>
+<td><span class="math inline">B</span></td>
+<td>0.4；80，19</td>
+<td>0.5；100，0</td>
 </tr>
 </tbody>
 </table>
+<p>创业者现金份额 <span class="math inline">\gamma=0.05</span>，两方分别比较：</p>
+<p><span class="math display">
+U_E=\gamma\bar R+b_E,\qquad
+\text{VC 现金}=(1-\gamma)\bar R.
+</span></p>
+<ol type="1">
+<li>算每个状态两方各选哪条路线。总价值 <span class="math inline">\bar R+b_E</span> 又要求哪条路线？</li>
+<li>若 <span class="math inline">G</span> 中 VC 已有权选新路线，改选原路线后的全部现金能否补足它原来的收入？为什么私人收益不能直接填补缺口？</li>
+</ol>
 <details class="solution">
 <summary>
 核对 P5-2
 </summary>
-<p>创业者为 <span class="math inline">15+18=33</span> 对 24，偏好原路线；VC 为 35 对 56，偏好新路线；总剩余为 68 对 80，新路线较好。</p>
-创业者只分享新增现金 30 的 30%，即 9，却失去 18。课堂将加入另一个状态，并同时核对控制安排与融资参与。
+<p>在 <span class="math inline">G</span>，创业者两行动效用为 155、10，VC 现金为 95、190；在 <span class="math inline">B</span>，分别为 23、5 和 76、95。创业者都想选原路线，VC 都想选新路线。总价值要求 <span class="math inline">G</span> 选原路线，<span class="math inline">B</span> 选新路线。</p>
+<span class="math inline">G</span> 中 VC 原本能得 190，原路线全部期望现金只有 100，缺口 90。创业者无财富，私人收益也不能转让为现金。课堂允许重谈，再检查哪些改变谈得成，哪些谈不成。
 </details>
 </section>
 <section id="p5-3" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="p5-3"><span class="header-section-number">4</span> P5-3：现在追加的钱，怎样决定是否继续？</h2>
-<p>企业过去已花掉 20，现在继续需要新增资本 <span class="math inline">I_1=100</span>。预期新增现金为 <span class="math inline">Z=120</span> 或 80；停止的新增收入和成本都为零。</p>
-<p>请判断两个状态是否值得继续。为什么不再把过去的 20 扣入这个增量比较？</p>
-<p>再假定 VC 从新增现金分得 <span class="math inline">\phi=0.3</span>，却只承担新增资本的 <span class="math inline">\psi=0.1</span>，其余资本由其他出资人承担。分别算 VC 的增量净收益：</p>
-<p><span class="math display">
-\phi Z-\psi I_1.
-</span></p>
+<h2 data-number="4" class="anchored" data-anchor-id="p5-3"><span class="header-section-number">4</span> P5-3：先把资本日期与继续门槛算对</h2>
+<section id="a.-一期后的一元和今天的一元一样吗" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="a.-一期后的一元和今天的一元一样吗"><span class="header-section-number">4.1</span> a. 一期后的一元，和今天的一元一样吗？</h3>
+<p>Neher 原文例子的总资本 <span class="math inline">K=1</span>，完成现金 <span class="math inline">R=2</span>，一期贴现因子 <span class="math inline">\beta=0.9</span>。一期后的金额乘 <span class="math inline">\beta</span>，两期后的金额乘 <span class="math inline">\beta^2</span> 才是当前价值。</p>
+<p>一次投入 1，一期后完成；或者现在投入 0.6，一期后投入 0.4，再过一期完成。分别算两种方案的收入现值、成本现值和净现值。注意：这一步还没检查承诺是否可信。</p>
 <details class="solution">
 <summary>
-核对 P5-3
+核对 P5-3a
 </summary>
-<p>项目新增净价值分别为 20、−20，所以只应继续前者。过去的 20 已经花掉，停止也不能收回，属于沉没成本；它仍用于事前评价整个项目。</p>
-VC 净收益分别为 26、14，会愿意继续两者。若它实际承担同样的 30% 资本，净收益改为 6、−6，与项目净价值同号。课堂将说明这个比例关系适用的假设，以及跟投权与实际出资的区别。
+一次投入：收入现值 <span class="math inline">0.9(2)=1.8</span>，成本 1，净现值 0.8。分期投入：收入现值 <span class="math inline">0.9^2(2)=1.62</span>，成本现值 <span class="math inline">0.6+0.9(0.4)=0.96</span>，净现值 0.66。两者都盈利，但分期延迟了完成。课堂将解释为何较高净现值的一次融资反而可能失败。
 </details>
-<p>另想一个承诺问题：资本一旦投入，创业者能否威胁退出并重新要求分配？课堂会用没有质量不确定性的两阶段例子解释，为什么分阶段投入不只依赖新消息。</p>
+</section>
+<section id="b.-停止也能回收现金时应该怎样比较" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="b.-停止也能回收现金时应该怎样比较"><span class="header-section-number">4.2</span> b. 停止也能回收现金时，应该怎样比较？</h3>
+<p>在另一模型中，启动资本 <span class="math inline">K=1</span> 已经投入。现在可停止并取得 <span class="math inline">L=1</span>，或新增投入 <span class="math inline">I=3</span>，成功取得现金 10，失败为零。成功概率 <span class="math inline">s</span> 是创业者和内部 VC 知道、外部投资者不知道的状态。无贴现。</p>
+<ol type="1">
+<li>当 <span class="math inline">s=0.3,0.4,0.7</span> 时，继续净价值 <span class="math inline">10s-3</span> 分别是多少？与什么比较？</li>
+<li>VC 若取得停止与完成现金的同一比例 <span class="math inline">\alpha</span>，并提供新增资本的同一比例，它的继续净价值减去停止价值是什么？</li>
+</ol>
+<details class="solution">
+<summary>
+核对 P5-3b
+</summary>
+<p>继续净价值依次为 0、1、4，与停止现金 1 比较。门槛是 <span class="math inline">10s-3\ge1</span>，即 <span class="math inline">s\ge0.4</span>。已沉没的启动资本不重复扣除。</p>
+VC 的差额为 <span class="math inline">\alpha(10s)-\alpha(3)-\alpha(1)=\alpha(10s-4)</span>。只要 <span class="math inline">\alpha&gt;0</span>，它与有效继续条件同号。课堂还要检查外部资本怎样定价、VC 最初的 1 怎样收回。
+</details>
+</section>
 </section>
 <section id="p5-4" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="p5-4"><span class="header-section-number">5</span> P5-4：实验更容易通过，意味着技术更好吗？</h2>
-<p>双方起初都不知道技术是否可行。先验可行概率 <span class="math inline">\pi=0.4</span>，不可行概率为 0.6。实验在技术可行时通过的概率为 <span class="math inline">a=0.9</span>。有两种检验：</p>
-<ul>
-<li>严格检验：不可行技术被拒绝的概率 <span class="math inline">d=0.9</span>。</li>
-<li>宽松检验：不可行技术被拒绝的概率 <span class="math inline">d=0.45</span>。</li>
-</ul>
-<p><span class="math inline">1-d</span> 是不可行技术误通过的概率。先想象 100 个技术项目，其中 40 个可行，60 个不可行；不要把“通过”直接等同于“可行”。</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>检验</th>
-<th style="text-align: right;">可行且通过的项目数</th>
-<th style="text-align: right;">不可行却通过的项目数</th>
-<th style="text-align: right;">通过总数</th>
-<th style="text-align: right;">通过者中可行的比例</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>严格</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-</tr>
-<tr class="even">
-<td>宽松</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-<td style="text-align: right;">请填</td>
-</tr>
-</tbody>
-</table>
-<p>对应的概率公式是</p>
-<p><span class="math display">
-h(d)=\pi a+(1-\pi)(1-d),\qquad
-P(\text{可行}\mid+)=\frac{\pi a}{h(d)}.
-</span></p>
-<p>“<span class="math inline">\mid+</span>”表示已经观察到实验通过。请分别算两种检验。</p>
+<h2 data-number="5" class="anchored" data-anchor-id="p5-4"><span class="header-section-number">5</span> 附录预习 P5-4：检验通过率与后验概率</h2>
+<p>本节配合<a href="student-notes.html#book-app-g">附录 G</a>和 <a href="exercises.html#h5-5">H5-5 选做</a>，不作为第 5 周课前必做。课堂正文不依赖本节。</p>
 <details class="solution">
 <summary>
-核对 P5-4
+选读：Bolton 等实验设计所需的概率
 </summary>
-<p>严格检验：36 个可行项目和 6 个不可行项目通过，合计 42 个；通过率 0.42，通过后可行概率为 <span class="math inline">36/42=6/7\approx0.8571</span>。</p>
-<p>宽松检验：36 个可行项目和 33 个不可行项目通过，合计 69 个；通过率 0.69，通过后可行概率为 <span class="math inline">36/69=12/23\approx0.5217</span>。</p>
-更高的通过率来自放过更多坏技术，不能解释为技术质量提高。实验结果可以如实报告，问题仍可能出在实验怎样设计。
+<p>100 项技术中，40 项可行、60 项不可行。两种检验都让 90% 可行技术通过。严格检验拒绝 90% 不可行技术，宽松检验只拒绝 45%。算两种通过率，以及通过后技术可行的概率。</p>
+<p>严格检验：36 项可行、6 项不可行技术通过，通过率 0.42，后验 <span class="math inline">36/42=6/7\approx0.8571</span>。宽松检验：36 项可行、33 项不可行技术通过，通过率 0.69，后验 <span class="math inline">36/69=12/23\approx0.5217</span>。</p>
+通过率更高，可能只是多放过坏技术。附录进一步解释创业者为什么会选择宽松设计，并明确通过后出资是合同承诺还是投资者裁量。
 </details>
-</section>
-<section id="带到课堂的记录" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="带到课堂的记录"><span class="header-section-number">6</span> 带到课堂的记录</h2>
-<p>带上四张计算表或对应算式，并各写一句解释：现金流权为什么不等于控制权；沉没成本为什么不再次计入；高通过率为什么可能提供较少信息。</p>
-<p>课堂会重做必要计算，再问创业者为什么选择某种检验，以及这种选择能否同时满足行动激励与双方参与。</p>
 </section>
 
 </main>

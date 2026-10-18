@@ -3620,11 +3620,11 @@ text-decoration: none;
   <li><a href="#book-appendices" id="toc-book-appendices" class="nav-link" data-scroll-target="#book-appendices">附录怎样读？</a></li>
   <li><a href="#book-app-a" id="toc-book-app-a" class="nav-link" data-scroll-target="#book-app-a">附录 A：分配与稀释的补充计算</a></li>
   <li><a href="#book-app-b" id="toc-book-app-b" class="nav-link" data-scroll-target="#book-app-b">附录 B：同一收入函数下的可行区间与风险比较</a></li>
-  <li><a href="#book-app-c" id="toc-book-app-c" class="nav-link" data-scroll-target="#book-app-c">附录 C：控制规则怎样依赖信号与合同空间？</a></li>
+  <li><a href="#book-app-c" id="toc-book-app-c" class="nav-link" data-scroll-target="#book-app-c">附录 C：重谈、财富约束与固定控制的收入上界</a></li>
   <li><a href="#book-app-d" id="toc-book-app-d" class="nav-link" data-scroll-target="#book-app-d">ASW附录D：多项目投资与基金融资结构</a></li>
-  <li><a href="#book-app-e" id="toc-book-app-e" class="nav-link" data-scroll-target="#book-app-e">附录 E：分阶段承诺算例的完整时序</a></li>
+  <li><a href="#book-app-e" id="toc-book-app-e" class="nav-link" data-scroll-target="#book-app-e">附录 E：Neher 的一般投资路径与知情融资的进一步条件</a></li>
   <li><a href="#book-app-f" id="toc-book-app-f" class="nav-link" data-scroll-target="#book-app-f">附录 F：双边投入与可转换证券</a></li>
-  <li><a href="#book-app-g" id="toc-book-app-g" class="nav-link" data-scroll-target="#book-app-g">附录 G：实验设计的一般式与发现失败的奖励</a></li>
+  <li><a href="#book-app-g" id="toc-book-app-g" class="nav-link" data-scroll-target="#book-app-g">附录 G：Bolton 等的实验设计、续投规则与失败奖励</a></li>
   <li><a href="#book-app-h" id="toc-book-app-h" class="nav-link" data-scroll-target="#book-app-h">附录 H：报酬模型与 LPA 的进一步问题</a></li>
   <li><a href="#book-reading" id="toc-book-reading" class="nav-link" data-scroll-target="#book-reading">文献导读：先按合同，再按问题阅读</a></li>
   <li><a href="#book-glossary" id="toc-book-glossary" class="nav-link" data-scroll-target="#book-glossary">术语速查</a></li>
@@ -3688,7 +3688,7 @@ text-decoration: none;
 <tr class="even">
 <td>第二篇：GP 与企业合同</td>
 <td>基金或 VC 与企业及创业者</td>
-<td>现金怎样分配，谁有决定权，何时追加融资，里程碑提供的信息是否可信</td>
+<td>现金怎样分配，谁有决定权，资本怎样逐步投入，知情投资者怎样支持后续融资</td>
 </tr>
 </tbody>
 </table>
@@ -3708,12 +3708,12 @@ text-decoration: none;
 <tr class="odd">
 <td>课前</td>
 <td><a href="w04-preparation.html">角色、分配与 IC/PC</a></td>
-<td><a href="w05-preparation.html">优先股、行动比较、续投与概率</a></td>
+<td><a href="w05-preparation.html">优先股、行动比较、贴现与续投</a></td>
 </tr>
 <tr class="even">
 <td>课堂</td>
 <td><a href="w04-fund-contract.html">资本与授权、收入与行动、行为限制与合同差异</a></td>
-<td><a href="w05-venture-contract.html">控制权、分阶段融资、知情续投与实验设计</a></td>
+<td><a href="w05-venture-contract.html">控制与重谈、分阶段承诺、知情融资与定价</a></td>
 </tr>
 <tr class="odd">
 <td>课后</td>
@@ -4460,8 +4460,8 @@ f+\nu[\eta_i+e(\nu)]-C(e(\nu))
 <h2 class="anchored" data-anchor-id="book-venture">第二篇：GP 与企业合同，怎样安排收益、控制与后续融资？</h2>
 <section id="book-venture-motivation" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-motivation">本讲为什么不能只讲持股比例？</h3>
-<p>基金成立以后，GP 以投资方身份面对企业。创业者需要资本，投资方需要创业者的知识和持续投入。双方都希望企业成功，但对保留独立性、改变经营路线、是否追加资本和什么时候停止，可能有不同偏好。</p>
-<p>我们先算清退出时谁拿多少钱，再问现金分配为什么不能解决所有决定。随后沿企业融资时序继续追问：为什么资本要分阶段投入，已经了解企业的 VC 会怎样决定续投，以及里程碑检验本身是否可信。</p>
+<p>LP 把基金资本交给 GP 后，GP 以投资方身份面对企业。创业者需要资本，VC 需要创业者的知识与持续合作。谈好股份只回答了收入怎样分，还留下经营路线由谁决定、何时投入下一笔资本、内部信息怎样影响后续融资等问题。</p>
+<p>本讲先复算优先股分配，再依次分析控制、承诺和知情续投。每篇论文回答一个明确问题，不把三篇的假设拼成同一个模型。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -4471,39 +4471,34 @@ f+\nu[\eta_i+e(\nu)]-C(e(\nu))
 <thead>
 <tr class="header">
 <th>推进顺序</th>
-<th>理论问题</th>
-<th>文献角色</th>
+<th>核心问题</th>
+<th>文献与课堂任务</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>识别权利</td>
-<td>现金流权、控制权与后续融资安排分别约定什么？</td>
-<td>Kaplan–Strömberg（2003、2004），合同证据</td>
+<td>认识权利与分配</td>
+<td>现金流权、控制权、后续融资安排各规定什么？</td>
+<td>Kaplan–Strömberg（2003、2004）的合同事实；复算优先股</td>
 </tr>
 <tr class="even">
-<td>分配与决定</td>
-<td>收益冲突为什么需要控制权安排？</td>
-<td>Aghion–Bolton（1992），核心理论</td>
+<td>控制与财富</td>
+<td>允许重谈后，谁先有决定权为什么仍然重要？</td>
+<td>Aghion–Bolton（1992）；允许重谈的自设数值特例</td>
 </tr>
 <tr class="odd">
-<td>分阶段投入</td>
-<td>为什么企业家的承诺问题会影响融资路径？</td>
-<td>Neher（1999），机制补充</td>
+<td>投入与承诺</td>
+<td>收益确定时，为什么一次融资仍可能失败？</td>
+<td>Neher（1999）；原文 Example 4.1 的两期逆推</td>
 </tr>
 <tr class="even">
-<td>知情续投</td>
-<td>哪种收益与成本分担使 VC 愿意有效投资？</td>
-<td>Admati–Pfleiderer（1994），核心理论</td>
-</tr>
-<tr class="odd">
-<td>信息产生</td>
-<td>怎样的实验容易通过，却不能帮助识别坏技术？</td>
-<td>Bolton、Liu、Nanda、Sundaresan（2024），核心前沿论文</td>
+<td>信息与融资</td>
+<td>知情 VC 怎样既有效续投，又支持外部资本定价？</td>
+<td>Admati–Pfleiderer（1994）；原文融资反例与固定比例教学推导</td>
 </tr>
 </tbody>
 </table>
-<p>三篇核心论文在本课分别承担控制权、知情续投和实验设计的问题。Neher 补足分阶段投入的承诺逻辑。附录提供双边投入的简化推导，以及可转换证券与 Cornelli–Yosha 信号粉饰模型的阅读导引。</p>
+<p>三条理论主线分别处理控制权、投入路径和知情融资。正文保留必要公式、计算与参与约束。Bolton 等（2024）的实验设计放在附录 G；双边投入、可转换证券和 Cornelli–Yosha 的信号粉饰放在附录 F，均不作为本讲课前要求。</p>
 </section>
 <section id="book-venture-rights" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-rights">1. 一份企业合同配置了哪些权利？</h3>
@@ -4603,219 +4598,173 @@ W^*=\frac L\alpha=1{,}500\text{ 万元}.
 <p>这里算的是既定退出现金的分配，不是预期回报率，也还没有判断双方怎样创造 <span class="math inline">W</span>、是否愿意融资或是否接受某个收购报价。参与式、估值、反稀释与期权池的补充计算见<a href="#book-app-a">附录 A</a>。</p>
 </section>
 <section id="book-venture-control" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-control">2. Aghion–Bolton：现金分成之外，为什么需要控制权？</h3>
-<p>假设创业者关心独立性或原有技术路线，VC 更关注可分配现金。双方即使掌握同样的信息，也可能偏好不同决定。若创业者有足够财富并能自由补偿投资者，双方可能通过交易解决冲突；财富限制与合同不完备使这个办法受到约束。</p>
-<p><a href="https://doi.org/10.2307/2297860">Aghion–Bolton（1992）</a>研究无初始财富的创业者与投资者之间的不完全金融契约，分析收入安排和控制配置如何共同影响融资与行动。下面是保留“非货币收益、融资要求与控制选择”的课堂特例，数字与合同空间为教学设定，不是原文全部定理。</p>
-<section id="先交代时序与合同空间" class="level4">
-<h4 class="anchored" data-anchor-id="先交代时序与合同空间">先交代时序与合同空间</h4>
-<p>VC 在期初投入 <span class="math inline">I_0=60</span>，创业者没有初始财富。双方约定创业者的固定现金份额 <span class="math inline">s=0.3</span> 和控制规则。中期双方观察真实状态 <span class="math inline">\theta\in\{G,B\}</span>；控制者在原路线 <span class="math inline">a_E</span> 与新路线 <span class="math inline">a_V</span> 中选择；期末获得现金并分配。两状态概率各为一半，无贴现，双方风险中性。</p>
-<p>本特例中，具体经营行动不能由第三方直接核实；合同可以依据一个可核实信号 <span class="math inline">\sigma</span> 分配决定权。先取完美信号 <span class="math inline">\sigma=\theta</span>，之后再讨论误判。初始合同只包含现金份额与控制规则，中期不增加补偿、也不重新谈判。改变这一限制会改变结论，见附录 C。</p>
-<p><span class="math inline">R(\theta,a)</span> 是企业现金，<span class="math inline">B_E(\theta,a)</span> 是创业者的非货币收益。双方效用与总剩余的口径为</p>
+<h3 class="anchored" data-anchor-id="book-venture-control">2. Aghion–Bolton：允许重谈以后，控制权为什么仍然重要？</h3>
+<p>谈好股份以后，如果双方对经营路线意见不同，能否先让一方决定，再由另一方出钱补偿，使双方选择总价值最高的行动？如果补偿总能实现，最初把控制权交给谁似乎就不重要了。</p>
+<p><a href="https://doi.org/10.2307/2297860">Aghion–Bolton（1992）</a>研究的困难恰在这里。创业者既关心现金，也关心不能转让的私人收益；他没有足够财富，不能把全部效用都拿来补偿投资者。因此，允许事后重谈，并不意味着初始控制配置无关紧要。</p>
+<p>原文采用不完全合同：双方能观察状态，但法庭不能核实状态；合同可以依据可核实信号安排现金收入和控制权。重谈由创业者提出，投资者必须获得不低于原合同的收入。下面按这些条件构造一个二元现金的教学特例。<strong>数字由本讲义设定，不是原文算例，也不替代原文的一般定理。</strong></p>
+<section id="先说明时间信息和可用合同" class="level4">
+<h4 class="anchored" data-anchor-id="先说明时间信息和可用合同">先说明时间、信息和可用合同</h4>
+<p>VC 在期初投入 <span class="math inline">I_0=91.2</span>，创业者没有财富。双方风险中性、无贴现，拒绝项目的外部机会均为零。中期的状态为 <span class="math inline">G</span> 或 <span class="math inline">B</span>，各以 <span class="math inline">1/2</span> 的概率出现。双方都观察到状态，但不能把“若状态为 <span class="math inline">G</span> 就选原路线”直接写成可执行条款。</p>
+<p>合同能依据可核实信号 <span class="math inline">\sigma\in\{+,-\}</span> 分配控制权：</p>
 <p><span class="math display">
-U_E=sR+B_E,\qquad U_V=(1-s)R-I_0,
-\qquad S=R+B_E-I_0.
+P(+\mid G)=1,\qquad P(+\mid B)=0.4.
 </span></p>
-<p><span class="math inline">I_0</span> 已经付出，中期比较行动时两边都有相同的 <span class="math inline">-I_0</span>，因此可以先比较 VC 的现金收入。创业者的外部机会效用设为零，VC 的外部机会净收益也为零。</p>
+<p>所以三个可能分支是 <span class="math inline">G+</span>、<span class="math inline">B+</span>、<span class="math inline">B-</span>，概率分别为 <span class="math inline">0.5,0.2,0.3</span>。信号不是状态本身；<span class="math inline">+</span> 也可能出现在 <span class="math inline">B</span>。控制者在重谈后选择原路线 <span class="math inline">o</span> 或新路线 <span class="math inline">n</span>。行动不能直接写入期初可执行合同。</p>
+<p>期末可核实现金为 <span class="math inline">X\in\{0,200\}</span>。下表的现金列是期望值 <span class="math inline">\bar R=E[X\mid\text{状态、行动}]</span>，不是每次都实现的现金。<span class="math inline">b_E</span> 是以货币单位衡量的创业者非货币收益。它计入效用，不能拿来偿还 VC。</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>状态</th>
-<th>原路线的 <span class="math inline">R,B_E</span></th>
-<th>新路线的 <span class="math inline">R,B_E</span></th>
+<th style="text-align: right;">原路线成功概率</th>
+<th>原路线 <span class="math inline">\bar R,b_E</span></th>
+<th style="text-align: right;">新路线成功概率</th>
+<th>新路线 <span class="math inline">\bar R,b_E</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">G</span></td>
-<td>100，30</td>
-<td>120，0</td>
+<td style="text-align: right;">0.5</td>
+<td>100，150</td>
+<td style="text-align: right;">1</td>
+<td>200，0</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">B</span></td>
-<td>50，18</td>
-<td>80，0</td>
+<td style="text-align: right;">0.4</td>
+<td>80，19</td>
+<td style="text-align: right;">0.5</td>
+<td>100，0</td>
 </tr>
 </tbody>
 </table>
+<p>所有状态和行动使用同一组可核实现金结果，避免让期末现金本身直接揭示行动。有效行动最大化 <span class="math inline">\bar R+b_E</span>：<span class="math inline">G</span> 选原路线，<span class="math inline">250&gt;200</span>；<span class="math inline">B</span> 选新路线，<span class="math inline">100&gt;99</span>。</p>
+<p>初始合同给创业者现金份额 <span class="math inline">\gamma=0.05</span>。在给定行动下：</p>
+<p><span class="math display">
+U_E=\gamma\bar R+b_E,\qquad
+\text{VC 期望现金收入}=(1-\gamma)\bar R.
+</span></p>
+<p>“固定控制”指初始合同在所有信号下把控制权交给同一方，不限制事后自愿重谈。期初比较合同才扣除 <span class="math inline">I_0</span>；中期比较行动时，这笔投入已经沉没。随后允许创业者提出改变收入分配和控制权的重谈方案。VC 只接受不降低其原合同收入的方案，创业者的现金收入不得为负。创业者可以让出未来项目现金，却不能凭空预先拿出补偿款。</p>
 </section>
-<section id="分别计算偏好与有效行动" class="level4">
-<h4 class="anchored" data-anchor-id="分别计算偏好与有效行动">分别计算偏好与有效行动</h4>
+<section id="单看行动偏好双方各会怎样选" class="level4">
+<h4 class="anchored" data-anchor-id="单看行动偏好双方各会怎样选">单看行动偏好，双方各会怎样选？</h4>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>状态</th>
 <th>创业者效用：原 / 新</th>
-<th>VC 现金：原 / 新</th>
-<th>现金加非货币收益：原 / 新</th>
+<th>VC 期望现金：原 / 新</th>
+<th>有效行动</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">G</span></td>
-<td>60 / 36</td>
-<td>70 / 84</td>
-<td>130 / 120</td>
+<td><span class="math inline">155/10</span></td>
+<td><span class="math inline">95/190</span></td>
+<td>原路线</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">B</span></td>
-<td>33 / 24</td>
-<td>35 / 56</td>
-<td>68 / 80</td>
+<td><span class="math inline">23/5</span></td>
+<td><span class="math inline">76/95</span></td>
+<td>新路线</td>
 </tr>
 </tbody>
 </table>
-<p>创业者在两状态都选原路线，VC 在两状态都选新路线。但总剩余在 <span class="math inline">G</span> 需要原路线，在 <span class="math inline">B</span> 需要新路线。这里的 <span class="math inline">G,B</span> 按收益表定义，不等于任何现实会计指标天然能够识别的“好业绩、坏业绩”。</p>
-<p>令新路线增加的现金为 <span class="math inline">\Delta R&gt;0</span>，原路线多提供的非货币收益为 <span class="math inline">\Delta B_E&gt;0</span>。创业者愿意改变路线，需要</p>
-<p><span class="math display">
-s\Delta R&gt;\Delta B_E.
-</span></p>
-<p>总剩余需要改变路线，则是 <span class="math inline">\Delta R&gt;\Delta B_E</span>。因此，在</p>
-<p><span class="math display">
-s\Delta R\le\Delta B_E&lt;\Delta R
-</span></p>
-<p>这个区间里，创业者的私人偏好与总剩余冲突。<span class="math inline">B</span> 状态是 <span class="math inline">9\le18&lt;30</span>。</p>
+<p>这里斜线隔开两种行动的数值，不表示除法。创业者在两状态都偏好原路线，VC 都偏好新路线。下一步必须允许重谈，再判断最后会选什么。</p>
 </section>
-<section id="融资要求为何限制多给创业者股份" class="level4">
-<h4 class="anchored" data-anchor-id="融资要求为何限制多给创业者股份">融资要求为何限制“多给创业者股份”？</h4>
-<p>若创业者始终控制，要在 <span class="math inline">B</span> 严格选新路线，需要 <span class="math inline">s&gt;18/30=0.6</span>。实施两状态有效行动时，预期企业现金是 <span class="math inline">(100+80)/2=90</span>；VC 的 PC 要求</p>
+<section id="财富约束怎样阻止一次有效重谈" class="level4">
+<h4 class="anchored" data-anchor-id="财富约束怎样阻止一次有效重谈">财富约束怎样阻止一次有效重谈？</h4>
+<p>先考虑创业者份额仍为 5%、初始固定 VC 控制的合同。在 <span class="math inline">G</span>，VC 会选新路线，取得 190。创业者希望改选原路线，因为它创造总价值 250，高于新路线的 200。</p>
+<p>可是原路线总共只有期望现金 100。即使创业者把全部项目现金交给 VC，也补不齐它放弃新路线损失的收入：</p>
 <p><span class="math display">
-(1-s)90\ge60
-\iff s\le\frac13.
+\underbrace{100}_{\text{原路线全部现金}}
+&lt;\underbrace{190}_{\text{VC 原有收入}}.
 </span></p>
-<p>两个条件无法同时满足。因此，在这个特例的合同工具下，单靠提高创业者现金份额不能同时实施有效行动与融资。</p>
-<p>保持 <span class="math inline">s=0.3</span>，由完美信号决定 <span class="math inline">G</span> 交创业者、<span class="math inline">B</span> 交 VC，则有效行动得到实施，双方 PC 也可以直接核对：</p>
-<p><span class="math display">
-E[U_E]=\frac{60+24}{2}=42\ge0,
-</span></p>
-<p><span class="math display">
-E[U_V]=\frac{70+56}{2}-60=3\ge0.
-</span></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>控制规则，<span class="math inline">s=0.3</span></th>
-<th style="text-align: right;">预期 VC 回收</th>
-<th>VC 的 PC</th>
-<th style="text-align: right;">预期总净剩余</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>创业者始终控制</td>
-<td style="text-align: right;">52.5</td>
-<td>不满足，低于 60</td>
-<td style="text-align: right;">39</td>
-</tr>
-<tr class="even">
-<td>VC 始终控制</td>
-<td style="text-align: right;">70</td>
-<td>满足</td>
-<td style="text-align: right;">40</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">G</span> 创业者、<span class="math inline">B</span> VC</td>
-<td style="text-align: right;">63</td>
-<td>满足</td>
-<td style="text-align: right;">45</td>
-</tr>
-</tbody>
-</table>
-<p>每行都在同一组现金、非货币收益和初始出资下计算。VC 始终控制虽然能够融资，仍损失了 <span class="math inline">G</span> 状态中有价值的非货币收益。或有控制的价值来自让合适的一方在相应状态决定，而不是把投资者控制视为普遍更好。</p>
-<p>现实合同通常依赖不完美信号，而且董事席位、否决权与单方选择全部行动的权力不同。原论文还分析更丰富的转移和重谈安排。因此，课堂表说明机制；具体条款能否实施该机制，仍须检查触发信息与权限范围。</p>
+<p>缺口为 90。创业者的私人收益 150 能使改变行动值得做，却不能充当补偿款。<strong>重谈被允许，但财富约束使这次有效改变不能达成。</strong>这才是本例控制权有价值的原因。</p>
 </section>
-</section>
-<section id="book-venture-staging" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-staging">3. Neher：为什么分阶段投资能够缓解承诺问题？</h3>
-<p>控制权解释谁决定，但项目还需要持续资本。有一种常见理由是边做边学习，低质量项目可以停止。这个理由本身还不充分：如果一次筹足的钱也能在需要时停止使用并返还，何必一定重新融资？要解释融资路径，必须说明承诺或控制的困难。</p>
-<p><a href="https://doi.org/10.1111/1467-937X.00087">Neher（1999）</a>强调企业家无法承诺未来持续提供不可转让的人力资本。资本投入后，企业家可能利用退出或不合作的威胁重新议价，降低投资者能够收回的金额。分阶段投资使前期活动逐步形成可以处置的资产，为后续投资提供保障。</p>
-<p>下面只给一个完整的两阶段教学特例。投资额、清算值与议价规则均自设，不声称求出了 Neher 的最优投资路径。</p>
-<p>企业完成后确定产生 1.8，需要资本共 1，创业者必须持续参与，资本和收入都没有贴现。创业者无初始财富，双方外部机会为零。若创业者拒绝合作，双方按对称议价重新分配扣除未来资本成本后的剩余；投资者还享有已经形成资产的清算价值。只允许创业者触发这种重新议价。</p>
-<ul>
-<li><strong>一次投入。</strong>先投入全部 1，而企业家还没有开展工作，此时清算值为零。创业者退出后再议价，双方各得 0.9。投资者只能预期收回 0.9，低于出资 1，融资不能成立。</li>
-<li><strong>分两阶段。</strong>先投入 0.6，创业者完成第一阶段工作后形成清算值 0.5；再投入 0.4，最后获得 1.8。初始合同约定投资者最终得 1，创业者得 0.8。后续出资须按约履行，不能把这个承诺模型说成投资者可以任意重新定价的模型。</li>
-</ul>
-<p>检查创业者的偏离：第一笔钱刚投入、还未工作时，重新议价可得 <span class="math inline">(1.8-0.4)/2=0.7</span>；完成第一阶段、第二笔钱尚未投入时，可得 <span class="math inline">(1.8-0.4-0.5)/2=0.45</span>；第二笔钱投入后，可得 <span class="math inline">(1.8-0.5)/2=0.65</span>。都低于履约所得 0.8，所以创业者愿意继续履约。</p>
-<p>投资者预期回收 1，覆盖总出资 1；创业者得 0.8，双方 PC 成立。第二笔投资前，投资者继续的净收入为 <span class="math inline">1-0.4=0.6</span>，也高于清算所得 0.5。</p>
-<p>资产积累和逐步投入共同支持了融资。这个例子没有质量不确定性，也没有依赖“看到坏消息就停止”。<a href="#book-app-e">附录 E</a>补足算例核查，并提供学习机制与原文最优投资路径的阅读入口。</p>
-</section>
-<section id="book-venture-followon" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-followon">4. Admati–Pfleiderer：知情 VC 为什么要同时承担相应的新增资本？</h3>
-<p>分阶段融资留下了下一轮决定。原有 VC 往往比新投资者更了解企业，但“知道得更多”不保证它按项目总价值作决定。如果它分享上行收益、却把大部分新增成本交给别人，可能支持坏项目；如果它承担的新增成本过大，又可能拒绝好项目。</p>
-<p><a href="https://doi.org/10.1111/j.1540-6261.1994.tb05146.x">Admati–Pfleiderer（1994）</a>研究多阶段融资中的知情内部投资者，说明固定比例合同怎样协调投资选择并消除特定的后续定价激励。下面把其中收益与成本对齐的机制写为一个中期增量选择问题，不求解期初完整证券合同。</p>
-<p>在中期，VC 观察企业信息 <span class="math inline">\theta</span>，知道继续投资的预期新增现金 <span class="math inline">Z(\theta)</span>。这里 <span class="math inline">Z</span> 已经是条件期望，不是保证实现的金额。继续需要新增资本 <span class="math inline">I_1&gt;0</span>，停止的新增收入和成本都为零。先前投入是沉没成本。</p>
-<p>VC 从新增现金取得比例 <span class="math inline">\phi\in(0,1]</span>，实际承担新增资本比例 <span class="math inline">\psi\in[0,1]</span>。本例没有控制私人收益、努力成本或新增信息操纵。</p>
-<p>项目应当继续的条件与 VC 选择继续的条件分别为</p>
-<p><span class="math display">
-Z(\theta)-I_1\ge0,
-</span></p>
-<p><span class="math display">
-\phi Z(\theta)-\psi I_1\ge0
-\iff
-Z(\theta)\ge\frac{\psi}{\phi}I_1.
-</span></p>
-<p>为了让两个条件对所有可能的 <span class="math inline">Z</span> 有同一门槛，需要 <span class="math inline">\psi=\phi</span>。此时 VC 的增量净收益为</p>
-<p><span class="math display">
-\phi[Z(\theta)-I_1],
-</span></p>
-<p>与项目增量净价值同号。这个结果不要求把全部现金收入分给 VC，而是要求它在这个合同机制中分享与承担同一比例。</p>
+<section id="或有控制怎样同时使用重谈和保留控制" class="level4">
+<h4 class="anchored" data-anchor-id="或有控制怎样同时使用重谈和保留控制">或有控制怎样同时使用重谈和保留控制？</h4>
+<p>考虑初始合同：<span class="math inline">+</span> 时创业者控制，<span class="math inline">-</span> 时 VC 控制，现金份额仍为 5%。逐个分支向后看。</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">I_1=100,\phi=0.3</span></th>
-<th style="text-align: right;">VC 承担比例 <span class="math inline">\psi</span></th>
-<th style="text-align: right;"><span class="math inline">Z=120</span>：VC 净收益</th>
-<th style="text-align: right;"><span class="math inline">Z=80</span>：VC 净收益</th>
-<th>决定</th>
+<th>分支与概率</th>
+<th>原合同决定</th>
+<th>重谈及最终行动</th>
+<th style="text-align: right;">VC 期望现金</th>
+<th style="text-align: right;">创业者效用</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>成本承担过少</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">14</td>
-<td>坏项目也愿意继续</td>
+<td><span class="math inline">G+</span>，0.5</td>
+<td>创业者选原路线</td>
+<td>已有效率，无有利重谈</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">155</td>
 </tr>
 <tr class="even">
-<td>同比例分享与承担</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">−6</td>
-<td>与项目净价值一致</td>
+<td><span class="math inline">B+</span>，0.2</td>
+<td>创业者原本选原路线</td>
+<td>重谈转交 VC 控制，并将创业者现金份额改为 24%；最终选新路线</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">24</td>
 </tr>
 <tr class="odd">
-<td>成本承担过多</td>
-<td style="text-align: right;">0.6</td>
-<td style="text-align: right;">−24</td>
-<td style="text-align: right;">−36</td>
-<td>好项目也被拒绝</td>
+<td><span class="math inline">B-</span>，0.3</td>
+<td>VC 选新路线</td>
+<td>已有效率，无有利重谈</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">5</td>
 </tr>
 </tbody>
 </table>
-<p>原文进一步讨论内部投资者的固定比例合同及其与外部融资的关系。不能把本节的代数条件解释为“现实 VC 永远不能被稀释”。按比例参与权只给出融资机会，实际出资、现金收益权及是否存在约束仍须另行检查。</p>
-<p>本节比较的是中期继续与停止。期初创业者和 VC 是否接受整份合同，还要放回完整时序核算，不能把中期正的增量净收益当作期初 PC 的证明。</p>
+<p>为什么 <span class="math inline">B+</span> 的重谈成立？不重谈时，VC 得 76，创业者得 <span class="math inline">4+19=23</span>。新路线的期望现金为 100。创业者提出让 VC 保有 76，自己取得 24，并把控制权交给 VC。VC 不受损，创业者严格改善，且 VC 在新合同下选择新路线。</p>
+<p>控制权转交不能省略。若只把创业者份额改为 24%，却仍让他控制，他比较的是 <span class="math inline">0.24\times80+19=38.2</span> 与 <span class="math inline">0.24\times100=24</span>，仍会选择原路线。这里得到有效行动，依靠的是<strong>现金分配与控制权一起重谈</strong>。</p>
+<p>按原文的接受规则，VC 对收入不变的提议接受。若要求严格改善，可给 VC 任意小的额外收入；这是边界处接受规则的问题。</p>
 </section>
-<section id="book-venture-experiment" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-experiment">5. Bolton 等：里程碑容易通过，为什么反而可能融不到钱？</h3>
-<p>前面把中期信息视为给定。现在再问一步：这些信息由谁产生？如果创业者可以设计实验，它可能选择一个更容易给出“通过”的检验，而不是更能够发现技术不可行的检验。投资者知道这种动机，因此会降低对通过结果的信任。</p>
-<p><a href="https://www.savitars.com/_files/ugd/0da7cb_02fe7345796f45678a3144024bd5fdd3.pdf">Bolton、Liu、Nanda、Sundaresan（2024）</a>研究这个实验设计问题。本节按 2024 年工作论文版本讲述，固定好技术通过率，只保留坏技术拒绝率的选择，以便完整计算其独立任务情形的机制；更一般的实验集合见附录 G。</p>
-<section id="时序信息与符号" class="level4">
-<h4 class="anchored" data-anchor-id="时序信息与符号">时序、信息与符号</h4>
-<p>VC 与创业者先约定实验融资和成功收益份额；VC 提供实验资金；创业者选择检验；结果“通过”或“未通过”可核实，实验设计本身不能核实；候选合同约定通过后才提供开发资金。若候选合同不能满足事前参与和设计激励，它就不会被签订，实验也不会发生。</p>
-<p>双方起初都不知道技术是否可行，拥有相同先验 <span class="math inline">\pi</span>。没有“创业者已经知道技术很差却隐瞒”的类型优势。隐藏的是后来选择的实验设计。</p>
+<section id="最后核对双方-pc-和总剩余" class="level4">
+<h4 class="anchored" data-anchor-id="最后核对双方-pc-和总剩余">最后核对双方 PC 和总剩余</h4>
+<p><span class="math display">
+\begin{aligned}
+E[\text{VC 现金}]&amp;=0.5(95)+0.2(76)+0.3(95)=91.2,\\
+E[U_E]&amp;=0.5(155)+0.2(24)+0.3(5)=83.8.
+\end{aligned}
+</span></p>
+<p>VC 的 PC 是 <span class="math inline">91.2-I_0=0</span>，创业者的 PC 是 <span class="math inline">83.8\ge0</span>。最终各状态均选有效行动，总净剩余为：</p>
+<p><span class="math display">
+\frac12(100+150)+\frac12(100)-91.2=83.8.
+</span></p>
+<p>创业者的 83.8 由现金收入 8.8 和私人收益 75 构成；8.8 与 VC 的现金 91.2 合计为项目期望现金 100。两方净收益之和等于总净剩余，现金和非货币收益没有重复计算。</p>
+<p>这里只比较 5% 分成还不够。如果固定控制权，但重新设计任意非负现金收入，能否同样融资并实现有效行动？<a href="#book-app-c">附录 C</a>给出本例的上界：初始固定创业者控制时，VC 最多取得期望收入 90；初始固定 VC 控制且要求实现全部有效行动时，也至多取得 90。二者都不足以覆盖 91.2。初始固定 VC 控制可以通过接受低效率行动融资，不能把“无法融资并实现有效行动”误写成“任何合同都融不到钱”。</p>
+<p>本例说明可核实信号、财富约束和重谈共同影响控制安排。它不推出所有企业都应在坏业绩时转交董事会控制，也没有求出原文全部合同空间中的一般最优证券。</p>
+<p>控制安排解决谁有权选择。接下来即使双方知道将来会发生什么，创业者也可能无法承诺持续合作，融资因此还要安排投入的路径。</p>
+</section>
+</section>
+<section id="book-venture-staging" class="level3">
+<h3 class="anchored" data-anchor-id="book-venture-staging">3. Neher：没有新消息，为什么也需要分阶段融资？</h3>
+<p>通常的直觉是先投一笔，观察进展，再决定是否追加。但<a href="https://doi.org/10.1111/1467-937X.00087">Neher（1999）</a>提出了另一个问题：收益已经确定、双方信息相同时，分期本身能否使原来不能融资的项目获得资金？</p>
+<p>答案取决于持续合作的承诺。创业者的人力资本不能被强制转让；资金沉没后，他可能威胁退出，要求降低 VC 的收入。早期工作如果能形成离开创业者也有价值的资产，VC 的退出保障就会改善，从而支持后续资本。</p>
+<section id="原文环境与本节使用的数字" class="level4">
+<h4 class="anchored" data-anchor-id="原文环境与本节使用的数字">原文环境与本节使用的数字</h4>
+<p>本节采用原文第 262 页 <strong>Example 4.1</strong> 的参数和投入路径，下面的计算逐步展开原文，没有另换议价模型。原文有确定性、完全且对称的信息；创业者无财富、无外部收入机会，工作没有效用成本；VC 竞争、资本充足。双方使用共同的一期贴现因子 <span class="math inline">\beta</span>。</p>
+<p>VC 签约时承诺提供整条投入路径。每期先投入资金，创业者再工作。只有创业者能通过拒绝合作发起重谈；届时实物资产控制权交给 VC。它可以清算，也可以与创业者重谈后继续。不能把这种已承诺的后续出资改说成 VC 可以任意拒绝和重新定价。</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -4826,128 +4775,196 @@ Z(\theta)\ge\frac{\psi}{\phi}I_1.
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\pi</span></td>
-<td>技术可行的先验概率</td>
-<td style="text-align: right;">0.4</td>
+<td><span class="math inline">K</span></td>
+<td>全部资本投入上限，本例按满规模融资</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">V</span></td>
-<td>可行技术完成开发后的现金；不可行技术现金为零</td>
-<td style="text-align: right;">100</td>
+<td><span class="math inline">s</span></td>
+<td>每单位资本完成工作后创造的现金倍数</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">K_1</span></td>
-<td>实验通过后开发所需的新增资本</td>
-<td style="text-align: right;">50</td>
+<td><span class="math inline">R=sK</span></td>
+<td>项目完成时的确定现金</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">C</span></td>
-<td>实验成本，由 VC 提供</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">a</span></td>
-<td>好技术通过率，<span class="math inline">P(+\mid\text{可行})</span></td>
+<td><span class="math inline">\beta</span></td>
+<td>一期后金额折算到当前的系数</td>
 <td style="text-align: right;">0.9</td>
 </tr>
+<tr class="odd">
+<td><span class="math inline">I_i</span></td>
+<td>第 <span class="math inline">i</span> 期开始投入的资本</td>
+<td style="text-align: right;">一次投入或 0.6、0.4</td>
+</tr>
 <tr class="even">
-<td><span class="math inline">d</span></td>
-<td>坏技术拒绝率，<span class="math inline">P(-\mid\text{不可行})</span></td>
-<td style="text-align: right;">可选 0.9 或 0.45</td>
+<td><span class="math inline">L_i</span></td>
+<td>第 <span class="math inline">i</span> 期重谈时可立即清算的价值</td>
+<td style="text-align: right;">由此前完成工作的资本形成</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\eta\in[0,1]</span></td>
-<td>创业者获得的成功现金份额，VC 取得 <span class="math inline">1-\eta</span></td>
-<td style="text-align: right;">先取 0</td>
+<td><span class="math inline">P_0</span></td>
+<td>初始合同承诺 VC 在完成时取得的现金收入</td>
+<td style="text-align: right;">由 PC 确定</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">b_E</span></td>
-<td>创业者每参与一个阶段获得的非货币收益</td>
-<td style="text-align: right;">2</td>
+<td><span class="math inline">P_i</span></td>
+<td>第 <span class="math inline">i</span> 期发起重谈后，VC 在完成时取得的现金收入</td>
+<td style="text-align: right;">由逆推确定</td>
 </tr>
 </tbody>
 </table>
-<p>没有贴现，创业者无初始财富，不承担实验或开发资本，双方外部机会为零。暂不允许按未通过结果另外补偿创业者。原文的 <span class="math inline">s_1,s_2</span> 对应本节 <span class="math inline">a,d</span>；原文用 <span class="math inline">\alpha</span> 表示投资者份额，本节用 <span class="math inline">\eta</span> 表示创业者份额。</p>
+<p>本节 <span class="math inline">s</span> 是现金倍数，不是上一节创业者的现金份额。<span class="math inline">P_0,P_1,P_2</span> 始终按同一完成日期计量，才能比较大小。</p>
+<p>新投入在本期工作完成前没有清算价值；完成后按倍数 <span class="math inline">s</span> 形成可转让价值。因此 <span class="math inline">L_1=0</span>，两期方案中 <span class="math inline">L_2=sI_1=1.2</span>。这项资产积累关系是模型假设，不是凭空增加一笔现金。</p>
 </section>
-<section id="先算信息怎样改变融资" class="level4">
-<h4 class="anchored" data-anchor-id="先算信息怎样改变融资">先算信息怎样改变融资</h4>
-<p>若不做实验直接开发，项目的预期现金净值为 <span class="math inline">\pi V-K_1=40-50=-10</span>。若存在完美且可承诺的实验，通过才开发的现金净值为 <span class="math inline">\pi(V-K_1)-C=17</span>。</p>
-<p>对一般实验，通过概率为</p>
+<section id="为什么不能一次投入" class="level4">
+<h4 class="anchored" data-anchor-id="为什么不能一次投入">为什么不能一次投入？</h4>
+<p>一次投入 1，工作一期后获得现金 2。VC 的期初 PC 要求：</p>
 <p><span class="math display">
-h(d)=\pi a+(1-\pi)(1-d).
+\beta P_0\ge1
+\quad\Rightarrow\quad P_0\ge\frac1{0.9}=1.1111.
 </span></p>
-<p>前一项是好技术正确通过，后一项是坏技术误通过。通过后的技术可行概率为</p>
+<p>但投入刚发生时，没有清算价值。创业者如果拒绝工作，双方重谈后，VC 在期末只能取得 <span class="math inline">P_1=R/2=1</span>。这低于最初需要承诺的 1.1111；创业者会通过重谈降低 VC 的收入，VC 因而预见无法收回投入。</p>
+<p>项目本身的净现值 <span class="math inline">0.9\times2-1=0.8&gt;0</span>，却不能一次融资。问题不是技术没有价值，而是承诺给投资者的收入不能维持。</p>
+</section>
+<section id="两期投入先满足哪条-pc" class="level4">
+<h4 class="anchored" data-anchor-id="两期投入先满足哪条-pc">两期投入先满足哪条 PC？</h4>
+<p>现在第 1 期投入 <span class="math inline">I_1=0.6</span>，第 2 期投入 <span class="math inline">I_2=0.4</span>，第 3 个时点取得现金 <span class="math inline">R=2</span>。两期开始投入后的工作各持续一期。</p>
+<p>VC 的期初 PC 为：</p>
 <p><span class="math display">
-P(\text{可行}\mid+)=\frac{\pi a}{h(d)}.
+\beta^2P_0=I_1+\beta I_2
+=0.6+0.9(0.4)=0.96,
 </span></p>
-<p>先取 <span class="math inline">\eta=0</span>，让 VC 获得全部成功现金。这是给 VC 收入最有利的边界，用来检验融资能否成立；创业者仍取得正的非货币收益。之后再检查给创业者成功现金能否改变设计。候选合同的 VC 预期净收益为</p>
 <p><span class="math display">
-U_V(d)=\pi aV-h(d)K_1-C.
+P_0=\frac{0.96}{0.81}=\frac{32}{27}\approx1.1852.
 </span></p>
-<p>第一项是最终成功现金的期望，第二项是开发资本的期望支出，第三项是一定发生的实验成本。中期判断是否追加开发资本时，<span class="math inline">C</span> 已沉没，不再扣一次。</p>
+<p>相同的总投入 1 分布在不同日期，不能省略贴现，也不能直接令 VC 期末收入等于 1。接下来逆推，检查这项承诺能否维持。</p>
+</section>
+<section id="从第二期重谈开始" class="level4">
+<h4 class="anchored" data-anchor-id="从第二期重谈开始">从第二期重谈开始</h4>
+<p>第二笔资本已投入、创业者尚未完成第二期工作。VC 可立即清算得到 <span class="math inline">L_2=1.2</span>；继续一期的总价值为 <span class="math inline">\beta R=1.8</span>。</p>
+<p>原文使用快速交替报价的极限结果。若退出机会不约束，双方平分继续价值；若 VC 的清算价值更高，它至少取得清算价值：</p>
+<p><span class="math display">
+U_2^V=\max\{L_2,\beta R/2\}
+=\max\{1.2,0.9\}=1.2.
+</span></p>
+<p><span class="math inline">U_2^V</span> 是第二期当时的价值，换成完成时的收入：</p>
+<p><span class="math display">
+P_2=U_2^V/\beta=1.3333.
+</span></p>
+<p>初始合同只给 VC 1.1852。若创业者发起重谈，VC 反而取得更多，他自己取得更少，所以不会发起。注意这里不是“清算价值加上剩余收益的一半”，那是另一种议价设定。</p>
+</section>
+<section id="再回到第一期" class="level4">
+<h4 class="anchored" data-anchor-id="再回到第一期">再回到第一期</h4>
+<p>第一笔已投入，尚未工作。此时还需要第二笔资本，其当前成本为 <span class="math inline">\beta I_2=0.36</span>。可供双方分享的继续价值为：</p>
+<p><span class="math display">
+S_1=\beta^2R-\beta I_2=1.62-0.36=1.26.
+</span></p>
+<p>不能只把 <span class="math inline">S_1</span> 平分就结束，因为未来仍能重谈。VC 未来可维持的完成时收入至多为 <span class="math inline">P_2</span>，因此今天可向它承诺的净价值至多为：</p>
+<p><span class="math display">
+C_1=\beta^2P_2-\beta I_2=1.08-0.36=0.72.
+</span></p>
+<p>清算底线、未来承诺上限和均分结果共同给出：</p>
+<p><span class="math display">
+U_1^V=\max\{L_1,\min(C_1,S_1/2)\}
+=\max\{0,\min(0.72,0.63)\}=0.63.
+</span></p>
+<p>这 0.63 已扣掉尚未投入资本的现值。恢复第二笔资本成本，再换成完成时的收入：</p>
+<p><span class="math display">
+P_1=\frac{U_1^V+\beta I_2}{\beta^2}
+=\frac{0.63+0.36}{0.81}=1.2222.
+</span></p>
+<p>它也高于原承诺的 1.1852，所以第一期重谈同样不利于创业者。</p>
+</section>
+<section id="把履约参与和效率放在一起核对" class="level4">
+<h4 class="anchored" data-anchor-id="把履约参与和效率放在一起核对">把履约、参与和效率放在一起核对</h4>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>检验</th>
-<th style="text-align: right;"><span class="math inline">a</span></th>
-<th style="text-align: right;"><span class="math inline">d</span></th>
-<th style="text-align: right;">通过概率 <span class="math inline">h</span></th>
-<th style="text-align: right;">通过后可行概率</th>
-<th style="text-align: right;">VC 事前净收益</th>
+<th>融资方案</th>
+<th style="text-align: right;">VC 的 PC 所需 <span class="math inline">P_0</span></th>
+<th style="text-align: right;">重谈后 <span class="math inline">P_1</span></th>
+<th style="text-align: right;">重谈后 <span class="math inline">P_2</span></th>
+<th>原合同能否维持？</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>严格识别坏技术</td>
-<td style="text-align: right;">0.9</td>
-<td style="text-align: right;">0.9</td>
-<td style="text-align: right;">0.42</td>
-<td style="text-align: right;"><span class="math inline">6/7\approx0.8571</span></td>
-<td style="text-align: right;">12</td>
+<td>一次投入</td>
+<td style="text-align: right;">1.1111</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">不适用</td>
+<td>不能，创业者会降低 VC 的收入</td>
 </tr>
 <tr class="even">
-<td>容易放过坏技术</td>
-<td style="text-align: right;">0.9</td>
-<td style="text-align: right;">0.45</td>
-<td style="text-align: right;">0.69</td>
-<td style="text-align: right;"><span class="math inline">12/23\approx0.5217</span></td>
-<td style="text-align: right;">−1.5</td>
+<td>两期投入 0.6、0.4</td>
+<td style="text-align: right;">1.1852</td>
+<td style="text-align: right;">1.2222</td>
+<td style="text-align: right;">1.3333</td>
+<td>能，两个时点均无有利偏离</td>
 </tr>
 </tbody>
 </table>
-<p>以严格检验为例，<span class="math inline">U_V=0.4\times0.9\times100-0.42\times50-3=12</span>。宽松检验的通过率更高，但多出来的通过结果来自不可行技术，预期开发成本升高，现金净值变为负。</p>
-<p>这不是实验结果造假。两种实验都可以如实报告结果，区别在于检验发现坏技术的能力。</p>
-</section>
-<section id="为什么创业者偏好宽松检验" class="level4">
-<h4 class="anchored" data-anchor-id="为什么创业者偏好宽松检验">为什么创业者偏好宽松检验？</h4>
-<p>在“通过才继续”的候选合同下，创业者取得第一阶段非货币收益 <span class="math inline">b_E</span>，通过后再取得 <span class="math inline">b_E</span>，并可能分享成功现金。因此</p>
+<p>两期的履约条件是 <span class="math inline">P_0\le\min\{P_1,P_2\}</span>，而不是要求重谈后的 VC 收入更低。VC 的 PC 恰好成立；创业者的期初效用是：</p>
 <p><span class="math display">
-U_E(d)=b_E+\pi a\eta V+h(d)b_E.
+\beta^2(R-P_0)=0.81(2-1.185185\ldots)=0.66\ge0.
 </span></p>
-<p><span class="math inline">\eta=0</span> 时，两种检验的效用分别为 <span class="math inline">2+0.42\times2=2.84</span> 和 <span class="math inline">2+0.69\times2=3.38</span>。创业者偏好宽松检验，尽管双方事前有相同技术判断。</p>
-<p>固定 <span class="math inline">a</span>，提高 <span class="math inline">d</span> 会减少坏技术误通过。对两方效用求导：</p>
+<p>项目两期净现值也为 <span class="math inline">1.62-0.96=0.66</span>。这低于一次投入在没有承诺困难时的 0.8，说明分阶段融资有延迟成本。它使融资可行，却没有消除全部效率损失。</p>
+<p><strong>0.6／0.4 是原文展示的可行路径，不是最优路径。</strong>原文继续内生决定每轮投入和轮数。<a href="#book-app-e">附录 E</a>保留一般递推、最优路径条件和原文多轮例子。正文已包含理解 Example 4.1 所需的逆推。</p>
+<p>Neher 解释为什么要逐步投入。下一篇接受存在后续融资这个条件，进一步问：当内部 VC 比外部资本更了解企业时，续投和证券定价应当怎样安排？</p>
+</section>
+</section>
+<section id="book-venture-followon" class="level3">
+<h3 class="anchored" data-anchor-id="book-venture-followon">4. Admati–Pfleiderer：知情 VC 怎样同时支持融资、投资和定价？</h3>
+<p>原有 VC 了解企业的经营状态，后来进入的投资者不了解。外部资本应相信创业者说项目很好吗？VC 如果既持有旧证券，又购买新证券，会希望新一轮估值高还是低？仅仅说“VC 懂企业”还不足以回答这些问题。</p>
+<p><a href="https://doi.org/10.1111/j.1540-6261.1994.tb05146.x">Admati–Pfleiderer（1994）</a>研究能够在多种信息环境下维持有效投资的金融合同。原文的固定比例安排把三个问题放在一起：是否继续、谁出新增资本，以及知情者是否从新证券定价中获利。原文第 383 页的例子说明仅由创业者向市场融资的困难，第 385 页的命题 2 给出固定比例合同。</p>
+<section id="先把信息和融资顺序写清" class="level4">
+<h4 class="anchored" data-anchor-id="先把信息和融资顺序写清">先把信息和融资顺序写清</h4>
+<p>创业者没有初始财富，先由投资者提供启动资本 <span class="math inline">K</span>。中期创业者和内部 VC 观察状态 <span class="math inline">s</span>，外部投资者看不到，法庭也不能核实。双方可以选择放弃，取得现金 <span class="math inline">L</span>，或再投入资本 <span class="math inline">I</span>，得到随机完成现金 <span class="math inline">X</span>。投资者风险中性、无贴现，资本市场竞争。</p>
+<p>合同必须能够落实放弃时的现金分配、继续时的资本承担与最终收入。状态本身不能作为可执行条款，但实际融资安排及有关合同可被观察和执行。这里的 <span class="math inline">s</span> 是信息状态，不是 Neher 的现金倍数。</p>
+<p>先用固定后续资本说明机制。记 <span class="math inline">Z(s)=E[X\mid s]</span>，有效继续条件是：</p>
 <p><span class="math display">
-\frac{\partial U_V}{\partial d}=(1-\pi)K_1&gt;0,
-\qquad
-\frac{\partial U_E}{\partial d}=-(1-\pi)b_E&lt;0.
+Z(s)-I\ge L.
 </span></p>
-<p>双方对如何识别失败有相反激励。增加创业者成功份额 <span class="math inline">\eta</span>，不改变第二个导数，因为坏技术没有最终成功现金；放过坏技术却仍能带来继续研究的非货币收益。</p>
+<p>停止也有价值，不能未经说明就把它写成零。启动资本 <span class="math inline">K</span> 已经沉没，不重复放入中期继续条件；它仍需在期初 PC 中回收。</p>
 </section>
-<section id="最后同时检查-ic-与-pc" class="level4">
-<h4 class="anchored" data-anchor-id="最后同时检查-ic-与-pc">最后同时检查 IC 与 PC</h4>
-<p>如果严格检验可以写进合同，<span class="math inline">\eta=0</span> 时 VC 得 12，创业者得 2.84，双方 PC 成立。但设计不可核实时，严格检验违反创业者的 IC。若允许创业者选择宽松检验，创业者愿意参加，VC 却预期亏损 1.5，VC 的 PC 不成立。</p>
-<p>一般 <span class="math inline">\eta\ge0</span> 时，宽松检验给 VC 的收入为</p>
+<section id="创业者单独向外融资问题在哪里" class="level4">
+<h4 class="anchored" data-anchor-id="创业者单独向外融资问题在哪里">创业者单独向外融资，问题在哪里？</h4>
+<p>使用原文第 383 页的数值：<span class="math inline">K=1</span>，后续投入 <span class="math inline">I=3</span>，放弃现金 <span class="math inline">L=1</span>；继续后成功取得 10，失败取得 0。创业者私下知道成功概率 <span class="math inline">s</span>，其事前分布为 <span class="math inline">U[0,1]</span>。有效继续门槛是：</p>
 <p><span class="math display">
-U_V(0.45)=36(1-\eta)-34.5-3
-=-1.5-36\eta&lt;0.
+10s-3\ge1\quad\Longleftrightarrow\quad s\ge0.4.
 </span></p>
-<p>所以，在本节限定的合同集合里，增加创业者成功份额也不能使融资成立。投资者会在最初拒绝这份候选合同，而不是事先相信严格检验、事后才意外发现宽松检验。两种检验在 <span class="math inline">\eta=0</span> 时通过后的追加净收益都为正，宽松检验的融资失败来自实验成本也需要事前覆盖。</p>
-<p>本节揭示了分阶段融资的进一步限制：合同能核实里程碑结果，不代表能够约束产生结果的方法。奖励发现失败、外部验证和不同实验集合的分析放在附录 G。这个结论依赖私人收益、资本承担和合同空间，不能推广成“所有绩效奖励都无效”。</p>
+<p>先考虑没有内部知情 VC 参与的对照情形，原投资者不观察状态，由创业者向外筹集新资本，试图实现这个门槛。用 <span class="math inline">M</span> 表示放弃时原投资者取得的现金，<span class="math inline">N</span> 表示继续且成功时原投资者的现金，<span class="math inline">Q</span> 表示新投资者在成功时取得的现金。失败时无可分配现金。这里 <span class="math inline">Q</span> 对应原文该例中的 <span class="math inline">R</span>，改名只是避免和上一节完成现金混淆。</p>
+<p>若只有 <span class="math inline">s\ge0.4</span> 的项目继续，新投资者面对的平均成功概率为 <span class="math inline">E[s\mid s\ge0.4]=0.7</span>。三项要求必须一起成立：</p>
+<p><span class="math display">
+\begin{aligned}
+0.4M+0.6(0.7)N&amp;=1 &amp;&amp;\text{原投资者期初 PC},\\
+0.4(10-N-Q)&amp;=1-M &amp;&amp;\text{门槛类型创业者无差异},\\
+0.7Q&amp;=3 &amp;&amp;\text{新投资者 PC}.
+\end{aligned}
+</span></p>
+<p>第一条的 0.4 是停止概率，<span class="math inline">0.6(0.7)</span> 是继续且成功的概率；第二条的 0.4 则是门槛类型的成功概率。</p>
+<p>解得：</p>
+<p><span class="math display">
+Q=\frac{30}{7},\qquad
+N=\frac{530}{203},\qquad
+M=-\frac7{29}&lt;0.
+</span></p>
+<p><span class="math inline">M&lt;0</span> 意味着放弃时原投资者还要倒贴现金，不符合原文这个例子的有限责任与项目现金分配限制 <span class="math inline">0\le M\le1</span>。它不是创业者需要缴纳一笔负收入。结论是这组创业者主导的融资安排不能实现有效门槛；不能把它扩大成所有金融合同都无效。</p>
+<p>这一步的作用是让外部资本的定价、旧资本的回收和创业者的选择同时进入分析。只有创业者行动比较，尚未构成可融资合同。</p>
 </section>
-</section>
-<section id="book-venture-summary" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-summary">6. 把理论放回实际企业合同</h3>
-<p>现在可以重新读一份 Term Sheet。优先清算和转换告诉我们收入怎样变化；董事、同意权和触发条件决定谁能行动；分阶段资本安排改变承诺和继续选择；里程碑还需要可信的检验方法。</p>
+<section id="固定比例合同怎样改变中期决定" class="level4">
+<h4 class="anchored" data-anchor-id="固定比例合同怎样改变中期决定">固定比例合同怎样改变中期决定？</h4>
+<p>现在引入知情 VC。合同内的后续融资须有它按约参与，它可以拒绝不利的投资；创业者不能绕过既定安排任意稀释其收入。原文的安排使内部 VC 始终取得同一比例 <span class="math inline">\alpha\in(0,1]</span> 的放弃现金和完成现金，并承担同一比例的新增资本。对任一可选的后续投入规模也适用同一规则。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -4956,41 +4973,109 @@ U_V(0.45)=36(1-\eta)-34.5-3
 </colgroup>
 <thead>
 <tr class="header">
-<th>观察到的合同安排</th>
-<th>优先追问的理论问题</th>
-<th>不能直接推出的结论</th>
+<th>选择</th>
+<th>内部 VC 的收入与新增成本</th>
+<th>创业者和外部资本合计</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>随特定事件改变的控制权</td>
-<td>当前控制者的偏好是否符合有效行动？</td>
-<td>不能只凭业绩差就断言投资者控制有效</td>
+<td>放弃</td>
+<td>收入 <span class="math inline">\alpha L</span></td>
+<td>剩余 <span class="math inline">(1-\alpha)L</span></td>
 </tr>
 <tr class="even">
-<td>多轮融资</td>
-<td>解决承诺、学习还是资金使用问题？</td>
-<td>不能把所有分轮都归结为同一机制</td>
-</tr>
-<tr class="odd">
-<td>原有 VC 的参与权</td>
-<td>收益份额和实际新增资本承担是否协调？</td>
-<td>有权跟投不等于一定按比例出资</td>
-</tr>
-<tr class="even">
-<td>技术或经营里程碑</td>
-<td>指标会怎样被选择或影响？</td>
-<td>达标概率高不等于信息质量高</td>
-</tr>
-<tr class="odd">
-<td>可转换证券</td>
-<td>改变哪些状态下的收入与投入激励？</td>
-<td>计算转换点不等于证明证券最优</td>
+<td>继续</td>
+<td>收入 <span class="math inline">\alpha X</span>，新增出资 <span class="math inline">\alpha I</span></td>
+<td>分配剩余 <span class="math inline">(1-\alpha)X</span>，提供 <span class="math inline">(1-\alpha)I</span></td>
 </tr>
 </tbody>
 </table>
-<p>本讲没有把这些论文合并成一个大模型。它们解释的是同一融资关系中不同决定，假设、可用合同与信息结构各有边界。复习时，要能够说明每篇新增了什么问题，以及哪项假设支撑了结论。</p>
-<p>完成 <a href="exercises.html#w05-homework">H5-1 至 H5-5</a>。基础题覆盖优先股、控制与双方参与、分阶段承诺、知情续投及实验设计。选做题进入信号误差、双边投入和发现失败的奖励。</p>
+<p>VC 的继续净价值减去放弃价值为：</p>
+<p><span class="math display">
+\alpha Z(s)-\alpha I-\alpha L
+=\alpha[Z(s)-I-L].
+</span></p>
+<p>因为 <span class="math inline">\alpha&gt;0</span>，符号与项目的社会现金净增值相同。VC 的私人选择因此与有效继续条件一致。本例中仍在 <span class="math inline">s=0.4</span> 切换。</p>
+<p>如果只分享 <span class="math inline">\phi</span> 比例的继续现金，却承担 <span class="math inline">\psi</span> 比例的新增资本，且放弃现金仍分享 <span class="math inline">\phi</span>，则比较变成：</p>
+<p><span class="math display">
+\phi[Z(s)-L]-\psi I.
+</span></p>
+<p>两种比例不一致时，私人门槛通常偏离有效门槛。这只描述给定融资下的激励；还要检查其他出资者是否愿意提供资金，不能把“VC 愿意投”直接写成“坏项目已经获得融资”。</p>
+</section>
+<section id="为什么新证券价格变化不会改变-vc-的总收入" class="level4">
+<h4 class="anchored" data-anchor-id="为什么新证券价格变化不会改变-vc-的总收入">为什么新证券价格变化不会改变 VC 的总收入？</h4>
+<p>用一个会计分解解释原文的定价机制。令 <span class="math inline">q(X)</span> 表示本轮全部新证券在完成时领取的现金。内部 VC 持有旧证券的比例为 <span class="math inline">\alpha</span>，同时认购新证券的同一比例 <span class="math inline">\alpha</span>。</p>
+<p>新证券分走现金后，旧证券只剩 <span class="math inline">X-q(X)</span>。VC 在新旧两部分中的收入加总为：</p>
+<p><span class="math display">
+\underbrace{\alpha[X-q(X)]}_{\text{旧证券收入}}
++\underbrace{\alpha q(X)}_{\text{新增证券收入}}
+=\alpha X.
+</span></p>
+<p>再扣除新增出资 <span class="math inline">\alpha I</span>，得到 <span class="math inline">\alpha(X-I)</span>。新证券价格变动，会使旧证券被稀释的程度与新认购取得的收入反向变化，两者恰好抵消。这是基于固定比例合同的教学分解，不是原文新增的一条定理。</p>
+<p>外部资本仍要公平定价。若公开信息只表明项目达到继续门槛，平均成功概率仍为 0.7。本轮全部新证券只在成功时取得 <span class="math inline">Q=30/7</span>，有 <span class="math inline">0.7Q=3</span>。这里 <span class="math inline">Q</span> 是全部新证券的收入，不再像创业者单独融资的对照例子那样全归外部投资者。VC 认购 <span class="math inline">\alpha</span>，外部投资者认购 <span class="math inline">1-\alpha</span>，于是：</p>
+<p><span class="math display">
+E[(1-\alpha)q(X)\mid\text{继续}]=(1-\alpha)I.
+</span></p>
+<p>VC 不再从改变新证券价格中获得净收入，外部资本也覆盖自身出资。创业者与外部资本之间的收入分配仍受定价影响。</p>
+<p>这个结果消除了 VC 的一种歪曲定价动机，通常只是弱激励相容，不自动使如实报告成为唯一严格最优选择。原文讨论声誉以及合同可观察、可执行等条件。也不能把固定比例理解为只有一项普通跟投权；没有实际出资、收入结构和相关执行条件，抵消关系便不成立。</p>
+</section>
+<section id="固定比例多大才能覆盖最初投入" class="level4">
+<h4 class="anchored" data-anchor-id="固定比例多大才能覆盖最初投入">固定比例多大，才能覆盖最初投入？</h4>
+<p>下面沿用原文数值，进一步求一个可融资的固定比例。<strong>这一步是本讲义的教学延伸，<span class="math inline">\alpha=5/14</span> 不是原文该页印出的数值解。</strong></p>
+<p>有效投资政策扣除后续资本、但尚未扣启动资本的期望现金价值为：</p>
+<p><span class="math display">
+W=\int_0^{0.4}1\,ds+\int_{0.4}^{1}(10s-3)\,ds
+=0.4+2.4=2.8.
+</span></p>
+<p>VC 先提供全部 <span class="math inline">K=1</span>，后来按比例提供资本，其期初 PC 是：</p>
+<p><span class="math display">
+\alpha W\ge K.
+</span></p>
+<p>竞争下取等号，得到 <span class="math inline">\alpha=1/2.8=5/14</span>。外部新资本按公平价格投入，净收益为零；创业者取得剩余期望效用：</p>
+<p><span class="math display">
+(1-\alpha)W=1.8&gt;0.
+</span></p>
+<p>VC 净收益为零，创业者 PC 成立，二者净收益加总等于有效项目净现值 <span class="math inline">W-K=1.8</span>。这才把中期激励、后来投资者的 PC 和初始融资接在一起。</p>
+<p>原文的固定比例合同还要求它在不同融资菜单与投资规模下成立；收入顺位、合同变化能否被外部投资者观察，以及重谈与强制执行都重要。它不是“所有现实 VC 永远持有固定股比”的结论。更一般的稳健性要求和原文扩展见<a href="#book-ap-extension">附录 E.4</a>。</p>
+</section>
+</section>
+<section id="book-venture-summary" class="level3">
+<h3 class="anchored" data-anchor-id="book-venture-summary">5. 把控制、承诺与知情融资放回企业合同</h3>
+<p>现在再看一份 Term Sheet，不能只问 VC 持股多少。现金分配规定结果怎样分享；控制条款规定谁能选择行动；投入路径改变资金沉没后合作能否维持；后续融资合同还要处理信息和证券定价。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>本讲问题</th>
+<th>得到的解释</th>
+<th>仍需核对的条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aghion–Bolton：谁有决定权？</td>
+<td>非货币收益与财富约束使有效补偿可能失败，初始控制和重谈共同影响行动</td>
+<td>哪些信号可核实、现金能否转移、重谈由谁提出</td>
+</tr>
+<tr class="even">
+<td>Neher：资本怎样投入？</td>
+<td>前期工作形成资产，支持后续承诺；分期同时产生延迟成本</td>
+<td>后续资本是否已承诺、清算价值如何形成、各期重谈及贴现</td>
+</tr>
+<tr class="odd">
+<td>Admati–Pfleiderer：知情 VC 怎样参与后续融资？</td>
+<td>相同比例的现金收入和新增资本使决定对齐，新旧证券收入抵消定价动机</td>
+<td>外部投资者 PC、实际出资、收入顺位与合同执行</td>
+</tr>
+</tbody>
+</table>
+<p>复习时分别复原三篇的时间线，再解释各自的约束。不能把 Neher 的确定性承诺问题写成坏消息导致停止，也不能把 Admati–Pfleiderer 的固定比例写成普通的可选跟投权。原文模型、课堂教学推导与真实合同事实也不是同一层证据。</p>
+<p>课后先完成 <a href="exercises.html#w05-homework">H5-1 至 H5-4</a>，独立核对现金分配、重谈与财富约束、两期逆推、知情融资与定价。再按需要选做附录题。附录 G 进一步把检验方法本身作为隐藏行动，解释为什么“通过”未必可信。</p>
 </section>
 </section>
 <section id="book-appendices" class="level2">
@@ -5022,7 +5107,7 @@ U_V(0.45)=36(1-\eta)-34.5-3
 </tr>
 <tr class="odd">
 <td>C</td>
-<td>控制模型、信号误差与重新议价边界</td>
+<td>允许一般非负现金收入时的固定控制上界、信号与 PC</td>
 <td>Aghion–Bolton 部分</td>
 </tr>
 <tr class="even">
@@ -5032,8 +5117,8 @@ U_V(0.45)=36(1-\eta)-34.5-3
 </tr>
 <tr class="odd">
 <td>E</td>
-<td>分阶段承诺算例的逐时点核查</td>
-<td>Neher 部分</td>
+<td>Neher 多期递推和最优路径、Admati–Pfleiderer 的执行条件</td>
+<td>分阶段承诺与知情融资</td>
 </tr>
 <tr class="even">
 <td>F</td>
@@ -5042,8 +5127,8 @@ U_V(0.45)=36(1-\eta)-34.5-3
 </tr>
 <tr class="odd">
 <td>G</td>
-<td>实验设计的一般式及发现失败的奖励</td>
-<td>Bolton 等部分</td>
+<td>Bolton 等的实验设计、基准算例、续投规则及失败奖励</td>
+<td>第 5 周课后拓展</td>
 </tr>
 <tr class="even">
 <td>H</td>
@@ -5183,28 +5268,53 @@ E[G(X)\mid B]-G(110)
 </section>
 </section>
 <section id="book-app-c" class="level2">
-<h2 class="anchored" data-anchor-id="book-app-c">附录 C：控制规则怎样依赖信号与合同空间？</h2>
-<section id="c.1-信号错误的预期损失" class="level3">
-<h3 class="anchored" data-anchor-id="c.1-信号错误的预期损失">C.1 信号错误的预期损失</h3>
-<p>沿用正文控制表。有效安排在 <span class="math inline">G</span> 选原路线，在 <span class="math inline">B</span> 选新路线。若在 <span class="math inline">G</span> 错交 VC，总效用损失为 <span class="math inline">130-120=10</span>；若在 <span class="math inline">B</span> 错留创业者，损失为 <span class="math inline">80-68=12</span>。共同的期初资本 60 在这些差额中消去。</p>
-<p>设 <span class="math inline">P(G)=q_G</span>，信号在 <span class="math inline">G</span> 正确保留创业者控制的概率为 <span class="math inline">t_G</span>，在 <span class="math inline">B</span> 正确转交 VC 的概率为 <span class="math inline">t_B</span>。或有控制的预期损失是</p>
-<p><span class="math display">
-L_{\mathrm{signal}}
-=q_G(1-t_G)10+(1-q_G)(1-t_B)12.
-</span></p>
-<p>创业者始终控制和 VC 始终控制的损失分别是</p>
-<p><span class="math display">
-L_E=(1-q_G)12,\qquad L_V=q_G10.
-</span></p>
-<p>取 <span class="math inline">q_G=0.5,t_G=t_B=0.8</span>，或有控制损失 2.2，小于固定控制的 6 或 5。但信号足够差时，这种优势可能消失。</p>
-<p>还必须重新检查融资。上述信号下，<span class="math inline">G</span> 的预期现金为 <span class="math inline">0.8\times100+0.2\times120=104</span>，<span class="math inline">B</span> 为 <span class="math inline">0.8\times80+0.2\times50=74</span>。VC 预期回收 <span class="math inline">0.7(104+74)/2=62.3</span>，仍覆盖 60；预期总净剩余为 <span class="math inline">45-2.2=42.8</span>，创业者预期效用为 <span class="math inline">42.8-(62.3-60)=40.5</span>。</p>
-<p>这说明“降低行动损失”和“满足双方 PC”是需要同时核查的要求。改变信号不能只改福利数字而不改现金分配。</p>
+<h2 class="anchored" data-anchor-id="book-app-c">附录 C：重谈、财富约束与固定控制的收入上界</h2>
+<section id="c.1-本附录保留什么合同空间" class="level3">
+<h3 class="anchored" data-anchor-id="c.1-本附录保留什么合同空间">C.1 本附录保留什么合同空间？</h3>
+<p>沿用正文自设的 Aghion–Bolton 教学特例。状态不可核实，信号可核实，现金只有 0、200 两种可核实结果。允许期初为每个信号分别约定创业者现金收入 <span class="math inline">t_0,t_{200}\ge0</span>，不强行限定线性分成。创业者无额外财富，不能向 VC 支付超出项目收入的现金；VC 的现金为 <span class="math inline">X-t_X</span>。VC 资本充足，其收入在个别结果中可以为负。</p>
+<p>双方知道状态后，可以重谈收入与控制。创业者提出方案，在 VC 弱改善的条件下取得重谈剩余。以下仅比较“初始固定创业者控制”“初始固定 VC 控制”和正文的或有控制，不声称穷尽原文的一般合同、信号或随机控制机制。</p>
 </section>
-<section id="c.2-为什么不能把课堂表当作全部原文证明" class="level3">
-<h3 class="anchored" data-anchor-id="c.2-为什么不能把课堂表当作全部原文证明">C.2 为什么不能把课堂表当作全部原文证明？</h3>
-<p>课堂限制中期额外补偿和重谈，以直接观察控制者偏好。若可以在未来自由承诺可执行的补偿，控制者可能为了补偿而选择另一方偏好的行动，原有行动表必须重新求解。</p>
-<p>Aghion–Bolton 原文分析创业者财富约束、收入安排、控制配置与重新议价之间的关系。阅读全文时依次核对：哪些状态与行动不能写入合同，哪些信号可以触发权利，哪些收入可以转移，财富约束怎样影响补偿，投资者期初 PC 怎样限制收入安排。其状态依赖控制结论具有相应条件，不能简化成“坏业绩时投资者一定应该接管”。</p>
-<p><a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>提供更直接的 VC 治理问题：创业者为什么会事先同意可能被替换的控制安排，以及这怎样影响 VC 寻找更好管理团队的激励。它与一般控制权框架有关，重点又不同，可作进一步阅读。</p>
+<section id="c.2-初始固定创业者控制为什么最多只能向-vc-承诺-90" class="level3">
+<h3 class="anchored" data-anchor-id="c.2-初始固定创业者控制为什么最多只能向-vc-承诺-90">C.2 初始固定创业者控制，为什么最多只能向 VC 承诺 90？</h3>
+<p>在 <span class="math inline">G</span>，若实现有效的原路线，全部期望现金仅为 100，创业者收入非负，VC 因而至多取得 100。如果用现金激励诱使创业者选新路线，需要 <span class="math inline">t_{200}-t_0\ge300</span>，因为成功概率增加 0.5，私人收益减少 150。此时 VC 的收入也不会超过 100。</p>
+<p>在 <span class="math inline">B</span>，若创业者原本选择原路线，VC 的期望收入至多为 80。随后若重谈到新路线，提出方案的创业者取得增量剩余，VC 保有原合同收入，不会因此获得超过 80 的收入。</p>
+<p>若想不重谈、直接用现金合同让创业者选新路线，必须满足：</p>
+<p><span class="math display">
+0.1(t_{200}-t_0)\ge19
+\quad\Rightarrow\quad t_{200}-t_0\ge190.
+</span></p>
+<p>新路线成功概率为 0.5，创业者期望现金至少为 <span class="math inline">95+t_0\ge95</span>，VC 至多得到 <span class="math inline">100-95=5</span>，仍不超过 80。</p>
+<p>因此，无论如何调整非负现金合同并允许上述重谈，初始固定创业者控制时：</p>
+<p><span class="math display">
+E[\text{VC 现金}]\le\tfrac12(100)+\tfrac12(80)=90&lt;91.2.
+</span></p>
+<p>这比只比较某个给定股份比例更强；融资困难不能靠随意提高创业者股份解决。</p>
+</section>
+<section id="c.3-初始固定-vc-控制为什么不能融资并实现全部有效行动" class="level3">
+<h3 class="anchored" data-anchor-id="c.3-初始固定-vc-控制为什么不能融资并实现全部有效行动">C.3 初始固定 VC 控制，为什么不能融资并实现全部有效行动？</h3>
+<p>设 <span class="math inline">+</span> 信号下给创业者的成功收入为 <span class="math inline">c_+=t_{+,200}</span>，失败收入为 <span class="math inline">t_{+,0}\ge0</span>。在 <span class="math inline">G+</span>，VC 通常选择新路线，原有收入为 <span class="math inline">200-c_+</span>。若要重谈成有效的原路线，VC 最多只能从该路线取得期望现金 100，因此至少需要：</p>
+<p><span class="math display">
+200-c_+\le100\quad\Rightarrow\quad c_+\ge100.
+</span></p>
+<p>同一个 <span class="math inline">+</span> 合同也出现在 <span class="math inline">B+</span>。若 VC 选择有效的新路线，它的期望现金至多为：</p>
+<p><span class="math display">
+100-\tfrac12c_+-\tfrac12t_{+,0}\le50.
+</span></p>
+<p>如果刻意让 VC 一开始就偏好原路线，同一二元现金支持要求 <span class="math inline">t_{+,200}-t_{+,0}\ge200</span>；此时 <span class="math inline">G+</span>、<span class="math inline">B+</span> 的 VC 现金更低，也不放松上述收入上界。若在 <span class="math inline">B+</span> 再由创业者提出重谈，VC 保有的原合同收入同样不超过此界。</p>
+<p><span class="math inline">G+</span> 中实现原路线时 VC 至多取得 100，<span class="math inline">B-</span> 中实现新路线时也至多取得 100。于是要实现所有分支的有效行动：</p>
+<p><span class="math display">
+E[\text{VC 现金}]\le0.5(100)+0.2(50)+0.3(100)=90&lt;91.2.
+</span></p>
+<p>固定 VC 控制可以融资，例如正文 5% 分成下 VC 在 <span class="math inline">G</span> 选择新路线。只是这样没有实现有效行动。因此这里的结论必须同时包含“融资”和“有效行动”两个要求。</p>
+</section>
+<section id="c.4-信号变化时先重算重谈再重算-pc" class="level3">
+<h3 class="anchored" data-anchor-id="c.4-信号变化时先重算重谈再重算-pc">C.4 信号变化时，先重算重谈，再重算 PC</h3>
+<p>保持 <span class="math inline">P(+\mid G)=1</span>，把 <span class="math inline">P(+\mid B)</span> 改为 <span class="math inline">q</span>。正文同一候选合同在 <span class="math inline">B+</span> 仍重谈为 VC 控制、创业者份额 24%。最终行动仍有效，但两个 <span class="math inline">B</span> 分支的发生概率改变。</p>
+<p><span class="math display">
+E[\text{VC 现金}]=0.5(95)+0.5q(76)+0.5(1-q)(95)=95-9.5q.
+</span></p>
+<p>原投入 91.2 下，这份候选合同满足 VC 的 PC 当且仅当 <span class="math inline">q\le0.4</span>。在 <span class="math inline">q=0.2</span> 时，VC 现金为 93.1，创业者效用为 81.9，双方净收益之和仍为 83.8；在 <span class="math inline">q=0.6</span> 时，VC 现金为 89.3，不足融资。后者不证明所有其他合同都不能融资。</p>
+<p><a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>进一步研究 VC 控制、寻找新管理团队及创业者替换。它可以帮助把一般控制框架联系到具体治理，但不能用来把不同的行动、重谈制度和财富条件混成同一模型。</p>
 </section>
 </section>
 <section id="book-app-d" class="level2">
@@ -5510,52 +5620,59 @@ k^*=I-\pi_LZ.
 </section>
 </section>
 <section id="book-app-e" class="level2">
-<h2 class="anchored" data-anchor-id="book-app-e">附录 E：分阶段承诺算例的完整时序</h2>
-<p>正文的两阶段算例假定资本总额为 1，完成现金为 1.8，早期投入 0.6，后期投入 0.4。第一阶段工作完成后形成可清算资产 0.5。各时点的价值均按同一时点计量，无贴现。</p>
-<p>如果创业者触发重谈，设从该时点起还需要投入的资本为 <span class="math inline">J_t</span>，可清算资产价值为 <span class="math inline">L_t</span>。当继续总价值不低于清算时，对称议价给创业者的收益为</p>
+<h2 class="anchored" data-anchor-id="book-app-e">附录 E：Neher 的一般投资路径与知情融资的进一步条件</h2>
+<section id="e.1-原文多期重谈怎样递推" class="level3">
+<h3 class="anchored" data-anchor-id="e.1-原文多期重谈怎样递推">E.1 原文多期重谈怎样递推？</h3>
+<p>沿用 Neher（1999）的原文符号：共 <span class="math inline">T</span> 期，投入 <span class="math inline">I_1,\ldots,I_T</span>，完成现金 <span class="math inline">R=s\sum I_i</span>，共同贴现因子 <span class="math inline">\beta</span>，清算价值 <span class="math inline">L_i=s\sum_{j&lt;i}I_j</span>。这些符号只用于本节，不与 Aghion–Bolton 或 Admati–Pfleiderer 的状态及收入混用。</p>
+<p>在第 <span class="math inline">i</span> 期当前资本已投入后，尚需资本的当前成本、继续总价值和未来可维持的收入上限分别为：</p>
 <p><span class="math display">
-U_E^{\mathrm{reneg}}(t)
-=\frac{1.8-J_t-L_t}{2}.
+G_i=\sum_{j=i+1}^T\beta^{j-i}I_j,\qquad
+S_i=\beta^{T+1-i}R-G_i,\qquad
+Q_i=\min\{P_{i+1},\ldots,P_T,R\}.
 </span></p>
-<p>投资者先保有清算价值这一外部选择，再分享继续合作的增量剩余；不能先把全部现金平分，又重复加上清算价值。</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>比较时点</th>
-<th style="text-align: right;">尚需资本 <span class="math inline">J_t</span></th>
-<th style="text-align: right;">清算值 <span class="math inline">L_t</span></th>
-<th style="text-align: right;">创业者重谈收益</th>
-<th style="text-align: right;">履约收益</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>第一次投入 0.6 后，尚未工作</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.70</td>
-<td style="text-align: right;">0.80</td>
-</tr>
-<tr class="even">
-<td>第一阶段完成，尚未再投入</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.45</td>
-<td style="text-align: right;">0.80</td>
-</tr>
-<tr class="odd">
-<td>第二次投入 0.4 后</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: right;">0.65</td>
-<td style="text-align: right;">0.80</td>
-</tr>
-</tbody>
-</table>
-<p>因此创业者在相关时点没有有利偏离。投资者的总回收 1 覆盖投入；创业者取得 0.8，双方 PC 成立。第二次投入前，继续的投资者净收入为 <span class="math inline">1-0.4=0.6</span>，高于清算的 0.5。</p>
-<p>若一次投入全部 1、尚无可处置资产，重新议价给投资者的金额只有 0.9，期初融资不能成立。这里改变的是投入路径与已形成的退出保障，不是项目的技术成功概率。</p>
-<p>原文 Neher（1999）进一步研究投资路径如何随资产积累及延迟成本变化。课堂例子固定了两轮、资产价值与议价规则，只复现承诺问题的方向。它没有证明更多轮次总是更好，也不把原投资者按约追加出资与新投资者重新报价当成同一种融资制度。</p>
-<p>分阶段投入还有学习理由。<a href="https://doi.org/10.1016/S0378-4266(98)00017-X">Bergemann–Hege（1998）</a>与<a href="https://cowles.yale.edu/sites/default/files/2022-08/d1292-r.pdf">Bergemann–Hege（2005）</a>研究学习、代理问题与停止决定。区分它们与 Neher 的方法是问：拿掉技术质量的不确定性，融资路径的理由是否仍存在？</p>
+<p>最后一期取 <span class="math inline">Q_T=R</span>。原文命题 1 给出：</p>
+<p><span class="math display">
+U_i^V=\max\left\{L_i,\min\left(\beta^{T+1-i}Q_i-G_i,\frac{S_i}{2}\right)\right\}.
+</span></p>
+<p>若 <span class="math inline">L_i&gt;\beta^{T+1-i}Q_i-G_i</span>，即使继续总价值较高，也没有可维持的合同使 VC 愿意放弃清算，重谈后立即清算。否则继续，完成时 VC 的收入为：</p>
+<p><span class="math display">
+P_i=\frac{U_i^V+G_i}{\beta^{T+1-i}}.
+</span></p>
+<p>本式对应快速交替报价的极限，不能替换成“清算价值加上增量剩余的一半”。一般路径必须同时满足：</p>
+<p><span class="math display">
+P_0\le\min_i P_i,\qquad
+\beta^T P_0\ge\sum_{i=1}^T\beta^{i-1}I_i.
+</span></p>
+<p>前者排除创业者有利的重新议价，后者是 VC 的 PC。创业者取得剩余现值并与其零外部机会比较。</p>
+</section>
+<section id="e.2-可行路径与最优路径有什么差别" class="level3">
+<h3 class="anchored" data-anchor-id="e.2-可行路径与最优路径有什么差别">E.2 可行路径与最优路径有什么差别？</h3>
+<p>原文 Example 4.1 的 0.6／0.4 证明融资可行，没有宣称最优。命题 2 表明最优路径中，从第二轮起，VC 的累计投入按该时点折算后恰好被清算价值覆盖：</p>
+<p><span class="math display">
+U_i^V=L_i=\sum_{j=1}^i\beta^{j-i}I_j,\qquad 2\le i\le T.
+</span></p>
+<p>由此得到后续投入的候选递推：</p>
+<p><span class="math display">
+I_i=L_i-\sum_{j&lt;i}\beta^{j-i}I_j.
+</span></p>
+<p>还要满足满规模 <span class="math inline">\sum I_i=K</span> 和第一轮的可行性 <span class="math inline">I_1\le S_1/2</span>。不能只用后续抵押条件就断言整个项目能融资。原文命题 3 在这些候选路径中选择可行的最少轮数，包含对每轮投入规模的重新安排，而非把任意路径机械删去一轮。</p>
+<p>例如，原文 Example 4.2 取 <span class="math inline">s=1.5,\beta=0.95,K=100</span>，最短可行候选路径是六轮，投入约为：</p>
+<p><span class="math display">
+(19.6432,\ 8.7877,\ 11.6308,\ 15.2017,\ 19.6398,\ 25.0968).
+</span></p>
+<p>前五轮候选不能通过第一轮可行性检查。这里的轮数来自原文具体的资本积累和延迟结构，不是现实基金都要分六轮的建议。</p>
+</section>
+<section id="e.3-怎样区分承诺机制和学习机制" class="level3">
+<h3 class="anchored" data-anchor-id="e.3-怎样区分承诺机制和学习机制">E.3 怎样区分承诺机制和学习机制？</h3>
+<p>Neher 的基础模型没有技术不确定性。资产积累使创业者离开后项目仍有价值，改变重谈结果。若新投入一开始就有较高可回收价值，承诺困难较小；若延迟较不昂贵，分期更容易支持融资。这些结论依赖原文的资产积累规律。</p>
+<p><a href="https://doi.org/10.1016/S0378-4266(98)00017-X">Bergemann–Hege（1998）</a>与<a href="https://cowles.yale.edu/sites/default/files/2022-08/d1292-r.pdf">Bergemann–Hege（2005）</a>研究学习、代理与停止。比较时问：拿掉技术不确定性，分期的融资理由是否还存在？不要把学习、重谈承诺和任意拒绝后续出资当成同一个机制。</p>
+</section>
+<section id="book-ap-extension" class="level3">
+<h3 class="anchored" data-anchor-id="book-ap-extension">E.4 Admati–Pfleiderer 的稳健性还要求什么？</h3>
+<p>原文第 385 页的固定比例合同同时覆盖放弃收入、完成收入和后续投入，并适用于所有可选投资规模。在原文规定的稳健性要求下，不能只针对两个人工状态调好一个门槛，就声称证明了一般结论。</p>
+<p>知情 VC 的收入需要得到相应顺位与执行保障，不能被后来合同任意稀释。它不等于未经保护的一份普通股。若外部投资者看不到内部合同或其变化，创业者和 VC 可能在融资后另行安排收入，外部资本就必须重新评估。原文第 387–390 页因此讨论执行、合同变化的可观察性和重新议价。</p>
+<p>VC 对新证券价格无净收入动机，通常给出如实定价的弱激励，声誉等条件可以支持如实报告。它并不无条件保证严格真实报告，也不自动排除以拒绝出资迫使他方重谈的所有问题。原文随后把创业者努力与风险分担加入分析，不能据固定比例的基础版本宣称真实 VC 合同已经全部求解。</p>
+</section>
 </section>
 <section id="book-app-f" class="level2">
 <h2 class="anchored" data-anchor-id="book-app-f">附录 F：双边投入与可转换证券</h2>
@@ -5630,7 +5747,7 @@ s_V(1-s_V)y_E^2+\frac{s_V^2y_V^2}{2}\ge x_V.
 <section id="f.2-cornelliyosha分阶段考核怎样诱发粉饰" class="level3">
 <h3 class="anchored" data-anchor-id="f.2-cornelliyosha分阶段考核怎样诱发粉饰">F.2 Cornelli–Yosha：分阶段考核怎样诱发粉饰？</h3>
 <p><a href="https://doi.org/10.1111/1467-937X.00235">Cornelli–Yosha（2003）</a>列为拓展阅读。其问题是：VC 保留停止融资的机会后，创业者可能牺牲长期价值来改善短期表现，以降低项目被停止的概率。设计适当的转换安排，可以使这种粉饰同时增加 VC 转换的可能性，改变创业者的收入激励。</p>
-<p>它与正文实验设计问题的区别很重要。Cornelli–Yosha 研究短期表现粉饰与可转换证券；Bolton 等研究创业者选择信息产生方式，使检验更难识别坏技术。不能因为两篇都涉及“信号”，就认为转换条款已经解决所有实验设计问题。</p>
+<p>它与附录 G 实验设计问题的区别很重要。Cornelli–Yosha 研究短期表现粉饰与可转换证券；Bolton 等研究创业者选择信息产生方式，使检验更难识别坏技术。不能因为两篇都涉及“信号”，就认为转换条款已经解决所有实验设计问题。</p>
 </section>
 <section id="f.3-退出问题怎样继续展开" class="level3">
 <h3 class="anchored" data-anchor-id="f.3-退出问题怎样继续展开">F.3 退出问题怎样继续展开？</h3>
@@ -5639,10 +5756,157 @@ s_V(1-s_V)y_E^2+\frac{s_V^2y_V^2}{2}\ge x_V.
 </section>
 </section>
 <section id="book-app-g" class="level2">
-<h2 class="anchored" data-anchor-id="book-app-g">附录 G：实验设计的一般式与发现失败的奖励</h2>
-<section id="g.1-两类准确性与双方的设计选择" class="level3">
-<h3 class="anchored" data-anchor-id="g.1-两类准确性与双方的设计选择">G.1 两类准确性与双方的设计选择</h3>
-<p>保持正文 <span class="math inline">\pi,V,K_1,C,\eta,b_E</span> 的含义，把好技术通过率 <span class="math inline">a</span> 和坏技术拒绝率 <span class="math inline">d</span> 都允许选择。假定两者可独立变化，实验成本固定，候选合同仍为通过才开发。</p>
+<h2 class="anchored" data-anchor-id="book-app-g">附录 G：Bolton 等的实验设计、续投规则与失败奖励</h2>
+<p>本附录及其预习和习题为选读，不属于第 5 周课堂必讲。先辨认信息、设计行动与出资承诺，再做概率和约束计算。</p>
+<section id="book-venture-experiment" class="level3">
+<h3 class="anchored" data-anchor-id="book-venture-experiment">G.1 里程碑容易通过，为什么反而可能融不到钱？</h3>
+<p>本附录延伸正文的后续融资问题，进一步问：这些信息由谁产生？如果创业者可以设计实验，它可能选择一个更容易给出“通过”的检验，而不是更能够发现技术不可行的检验。投资者知道这种动机，因此会降低对通过结果的信任。</p>
+<p><a href="https://www.savitars.com/_files/ugd/0da7cb_02fe7345796f45678a3144024bd5fdd3.pdf">Bolton、Liu、Nanda、Sundaresan（2024）</a>研究这个实验设计问题。本附录依据 2024 年 6 月工作论文的独立任务机制构造教学特例。以下数字和简化的实验集合由讲义设定，先固定好技术通过率，只保留坏技术拒绝率的选择；不是原文最优合同的完整求解。</p>
+<section id="时序信息与符号" class="level4">
+<h4 class="anchored" data-anchor-id="时序信息与符号">时序、信息与符号</h4>
+<p>VC 与创业者先约定实验融资和成功收益份额；VC 提供实验资金；创业者选择检验；结果“通过”或“未通过”可核实，实验设计本身不能核实；候选合同约定通过后才提供开发资金。若候选合同不能满足事前参与和设计激励，它就不会被签订，实验也不会发生。</p>
+<p>双方起初都不知道技术是否可行，拥有相同先验 <span class="math inline">\pi</span>。没有“创业者已经知道技术很差却隐瞒”的类型优势。隐藏的是后来选择的实验设计。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>符号</th>
+<th>含义</th>
+<th style="text-align: right;">本例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\pi</span></td>
+<td>技术可行的先验概率</td>
+<td style="text-align: right;">0.4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">V</span></td>
+<td>可行技术完成开发后的现金；不可行技术现金为零</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">K_1</span></td>
+<td>实验通过后开发所需的新增资本</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">C</span></td>
+<td>实验成本，由 VC 提供</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">a</span></td>
+<td>好技术通过率，<span class="math inline">P(+\mid\text{可行})</span></td>
+<td style="text-align: right;">0.9</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">d</span></td>
+<td>坏技术拒绝率，<span class="math inline">P(-\mid\text{不可行})</span></td>
+<td style="text-align: right;">可选 0.9 或 0.45</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\eta\in[0,1]</span></td>
+<td>创业者获得的成功现金份额，VC 取得 <span class="math inline">1-\eta</span></td>
+<td style="text-align: right;">先取 0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">b_E</span></td>
+<td>创业者每参与一个阶段获得的非货币收益</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>没有贴现，创业者无初始财富，不承担实验或开发资本，双方外部机会为零。暂不允许按未通过结果另外补偿创业者。原文的 <span class="math inline">s_1,s_2</span> 对应本节 <span class="math inline">a,d</span>；原文用 <span class="math inline">\alpha</span> 表示投资者份额，本节用 <span class="math inline">\eta</span> 表示创业者份额。</p>
+</section>
+<section id="先明确续投是承诺还是裁量" class="level4">
+<h4 class="anchored" data-anchor-id="先明确续投是承诺还是裁量">先明确续投是承诺还是裁量</h4>
+<p>以下基准采用可执行的出资承诺：通过就提供开发资本 <span class="math inline">K_1</span>，未通过就停止。VC 在期初预见创业者的设计选择，再决定是否接受包含未来出资的整份合同。后面的效用公式和对设计求导都以这项固定续投规则为前提。</p>
+<p>若另改为 VC 观察结果后有权拒绝出资，必须改为按实际后验决定：</p>
+<p><span class="math display">
+(1-\eta)P(\text{可行}\mid+)V\ge K_1.
+</span></p>
+<p>本例严格检验要求 <span class="math inline">\eta\le5/12</span>，宽松检验要求 <span class="math inline">\eta\le1/24</span>。在基准 <span class="math inline">\eta=0</span> 时，两者通过后都会继续，下面的基准数值也适用于这种裁量制度。越过门槛后，必须重写实际继续概率及创业者的设计 IC；不能继续套用“所有通过都开发”的效用公式。</p>
+</section>
+<section id="先算信息怎样改变融资" class="level4">
+<h4 class="anchored" data-anchor-id="先算信息怎样改变融资">先算信息怎样改变融资</h4>
+<p>若不做实验直接开发，项目的预期现金净值为 <span class="math inline">\pi V-K_1=40-50=-10</span>。若存在完美且可承诺的实验，通过才开发的现金净值为 <span class="math inline">\pi(V-K_1)-C=17</span>。</p>
+<p>对一般实验，通过概率为</p>
+<p><span class="math display">
+h(d)=\pi a+(1-\pi)(1-d).
+</span></p>
+<p>前一项是好技术正确通过，后一项是坏技术误通过。通过后的技术可行概率为</p>
+<p><span class="math display">
+P(\text{可行}\mid+)=\frac{\pi a}{h(d)}.
+</span></p>
+<p>先取 <span class="math inline">\eta=0</span>，让 VC 获得全部成功现金。这是给 VC 收入最有利的边界，用来检验融资能否成立；创业者仍取得正的非货币收益。之后再检查给创业者成功现金能否改变设计。候选合同的 VC 预期净收益为</p>
+<p><span class="math display">
+U_V(d)=\pi aV-h(d)K_1-C.
+</span></p>
+<p>第一项是最终成功现金的期望，第二项是开发资本的期望支出，第三项是一定发生的实验成本。中期判断是否追加开发资本时，<span class="math inline">C</span> 已沉没，不再扣一次。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>检验</th>
+<th style="text-align: right;"><span class="math inline">a</span></th>
+<th style="text-align: right;"><span class="math inline">d</span></th>
+<th style="text-align: right;">通过概率 <span class="math inline">h</span></th>
+<th style="text-align: right;">通过后可行概率</th>
+<th style="text-align: right;">VC 事前净收益</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>严格识别坏技术</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;"><span class="math inline">6/7\approx0.8571</span></td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td>容易放过坏技术</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.69</td>
+<td style="text-align: right;"><span class="math inline">12/23\approx0.5217</span></td>
+<td style="text-align: right;">−1.5</td>
+</tr>
+</tbody>
+</table>
+<p>以严格检验为例，<span class="math inline">U_V=0.4\times0.9\times100-0.42\times50-3=12</span>。宽松检验的通过率更高，但多出来的通过结果来自不可行技术，预期开发成本升高，现金净值变为负。</p>
+<p>这不是实验结果造假。两种实验都可以如实报告结果，区别在于检验发现坏技术的能力。</p>
+</section>
+<section id="为什么创业者偏好宽松检验" class="level4">
+<h4 class="anchored" data-anchor-id="为什么创业者偏好宽松检验">为什么创业者偏好宽松检验？</h4>
+<p>在“通过才继续”的候选合同下，创业者取得第一阶段非货币收益 <span class="math inline">b_E</span>，通过后再取得 <span class="math inline">b_E</span>，并可能分享成功现金。因此</p>
+<p><span class="math display">
+U_E(d)=b_E+\pi a\eta V+h(d)b_E.
+</span></p>
+<p><span class="math inline">\eta=0</span> 时，两种检验的效用分别为 <span class="math inline">2+0.42\times2=2.84</span> 和 <span class="math inline">2+0.69\times2=3.38</span>。创业者偏好宽松检验，尽管双方事前有相同技术判断。</p>
+<p>固定 <span class="math inline">a</span>，提高 <span class="math inline">d</span> 会减少坏技术误通过。对两方效用求导：</p>
+<p><span class="math display">
+\frac{\partial U_V}{\partial d}=(1-\pi)K_1&gt;0,
+\qquad
+\frac{\partial U_E}{\partial d}=-(1-\pi)b_E&lt;0.
+</span></p>
+<p>双方对如何识别失败有相反激励。增加创业者成功份额 <span class="math inline">\eta</span>，不改变第二个导数，因为坏技术没有最终成功现金；放过坏技术却仍能带来继续研究的非货币收益。</p>
+</section>
+<section id="最后同时检查-ic-与-pc" class="level4">
+<h4 class="anchored" data-anchor-id="最后同时检查-ic-与-pc">最后同时检查 IC 与 PC</h4>
+<p>如果严格检验可以写进合同，<span class="math inline">\eta=0</span> 时 VC 得 12，创业者得 2.84，双方 PC 成立。但设计不可核实时，严格检验违反创业者的 IC。若允许创业者选择宽松检验，创业者愿意参加，VC 却预期亏损 1.5，VC 的 PC 不成立。</p>
+<p>一般 <span class="math inline">\eta\ge0</span> 时，宽松检验给 VC 的收入为</p>
+<p><span class="math display">
+U_V(0.45)=36(1-\eta)-34.5-3
+=-1.5-36\eta&lt;0.
+</span></p>
+<p>所以，在本节限定的合同集合里，增加创业者成功份额也不能使融资成立。投资者会在最初拒绝这份候选合同，而不是事先相信严格检验、事后才意外发现宽松检验。两种检验在 <span class="math inline">\eta=0</span> 时通过后的追加净收益都为正，宽松检验的融资失败来自实验成本也需要事前覆盖。</p>
+<p>本节揭示了分阶段融资的进一步限制：合同能核实里程碑结果，不代表能够约束产生结果的方法。不同实验集合与失败奖励继续在下文 G.2、G.3 展开。这个结论依赖私人收益、资本承担和合同空间，不能推广成“所有绩效奖励都无效”。</p>
+</section>
+</section>
+<section id="g.2-两类准确性与双方的设计选择" class="level3">
+<h3 class="anchored" data-anchor-id="g.2-两类准确性与双方的设计选择">G.2 两类准确性与双方的设计选择</h3>
+<p>保持本附录 <span class="math inline">\pi,V,K_1,C,\eta,b_E</span> 的含义，把好技术通过率 <span class="math inline">a</span> 和坏技术拒绝率 <span class="math inline">d</span> 都允许选择。假定两者可独立变化，实验成本固定，候选合同仍为可执行的“通过即开发”承诺。</p>
 <p><span class="math display">
 h(a,d)=\pi a+(1-\pi)(1-d),
 </span></p>
@@ -5671,10 +5935,10 @@ U_E=b_E+\pi a\eta V+hb_E.
 (1-\pi)(0.9-0.45)K_1
 =0.6\times0.45\times50=13.5.
 </span></p>
-<p>它恰好等于正文 <span class="math inline">12-(-1.5)</span>。损失来自更多坏技术获得开发资本，不是可行技术自身的最终回报下降。</p>
+<p>它恰好等于G.1 的 <span class="math inline">12-(-1.5)</span>。损失来自更多坏技术获得开发资本，不是可行技术自身的最终回报下降。</p>
 </section>
-<section id="g.2-奖励未通过能否改变设计" class="level3">
-<h3 class="anchored" data-anchor-id="g.2-奖励未通过能否改变设计">G.2 奖励“未通过”能否改变设计？</h3>
+<section id="g.3-奖励未通过能否改变设计" class="level3">
+<h3 class="anchored" data-anchor-id="g.3-奖励未通过能否改变设计">G.3 奖励“未通过”能否改变设计？</h3>
 <p>在基本合同之外，新增一项安排：实验未通过时向创业者发放 <span class="math inline">T_F\ge0</span>，这笔现金由 VC 承担。创业者效用改为</p>
 <p><span class="math display">
 U_E^{T}=b_E+\pi a\eta V+hb_E+(1-h)T_F.
@@ -5698,7 +5962,7 @@ b_E&lt;T_F&lt;b_E+\eta V.
 U_V^{T}
 =\pi a(1-\eta)V-hK_1-C-(1-h)T_F\ge0.
 </span></p>
-<p>沿用正文数字，另设 <span class="math inline">\eta=0.1,T_F=3</span>。有 <span class="math inline">2&lt;3&lt;12</span>，创业者愿意选择可行集合里较高的 <span class="math inline">a,d</span>。在 <span class="math inline">a=d=0.9</span> 时，VC 净收益为</p>
+<p>沿用 G.1 数字，另设 <span class="math inline">\eta=0.1,T_F=3</span>。有 <span class="math inline">2&lt;3&lt;12</span>，创业者愿意选择可行集合里较高的 <span class="math inline">a,d</span>。在 <span class="math inline">a=d=0.9</span> 时，VC 净收益为</p>
 <p><span class="math display">
 0.36\times90-0.42\times50-3-0.58\times3=6.66.
 </span></p>
@@ -5833,22 +6097,22 @@ V_i(j)={}&amp;f_1^j+\nu_1^j[\eta_i+e_1(\nu_1^j)]
 <tr class="even">
 <td>GP—企业：控制与融资</td>
 <td>Aghion–Bolton（1992），基础理论</td>
-<td>正文必讲，解释财富约束、收益冲突和控制</td>
+<td>正文必讲；允许重谈的教学特例，核查补偿能力和双方 PC</td>
 </tr>
 <tr class="odd">
 <td>GP—企业：知情续投</td>
 <td>Admati–Pfleiderer（1994），基础理论</td>
-<td>正文必讲，推导收益与成本的比例条件</td>
+<td>正文必讲；原文融资反例、固定比例、证券定价与全部出资者 PC</td>
 </tr>
 <tr class="even">
 <td>GP—企业：实验设计</td>
 <td>Bolton 等（2024），前沿工作论文</td>
-<td>正文必讲，完成概率、设计 IC 与双方 PC</td>
+<td>附录 G 选读；概率、设计 IC、双方 PC 与续投承诺</td>
 </tr>
 <tr class="odd">
 <td>GP—企业：分阶段承诺</td>
 <td>Neher（1999），正式理论</td>
-<td>正文机制，附录核查特例</td>
+<td>正文必讲原文 Example 4.1 的两期逆推；最优路径放附录 E</td>
 </tr>
 <tr class="even">
 <td>GP—企业：真实权利组合</td>
@@ -5953,7 +6217,7 @@ V_i(j)={}&amp;f_1^j+\nu_1^j[\eta_i+e_1(\nu_1^j)]
 </tr>
 </tbody>
 </table>
-<p>同一个字母在不同论文里可能有不同含义。本讲每个模型都重新列符号：分配及努力算例的 <span class="math inline">D</span> 是 GP 收入差，<span class="math inline">G(X)</span> 是 GP 总收入；原文报酬模型的 <span class="math inline">f_t,\nu_t</span> 是抽象线性合同参数，<span class="math inline">\eta</span> 是 GP 能力；ASW附录D 用 <span class="math inline">w_{GP}(x)</span> 表示基金现金对应的 GP 收入；控制模型的 <span class="math inline">s</span> 是创业者现金份额；续投模型的 <span class="math inline">\phi,\psi</span> 分别是 VC 收益和资本比例；实验模型的 <span class="math inline">\eta</span> 是创业者成功现金份额。它们没有被假定为同一份合同的参数。</p>
+<p>同一个字母在不同论文里可能有不同含义。本讲每个模型都重新列符号：分配及努力算例的 <span class="math inline">D</span> 是 GP 收入差，<span class="math inline">G(X)</span> 是 GP 总收入；原文报酬模型的 <span class="math inline">f_t,\nu_t</span> 是抽象线性合同参数，<span class="math inline">\eta</span> 是 GP 能力；ASW附录D 用 <span class="math inline">w_{GP}(x)</span> 表示基金现金对应的 GP 收入；控制特例的 <span class="math inline">\gamma</span> 是创业者现金份额；Neher 的 <span class="math inline">s</span> 是现金倍数，<span class="math inline">\beta</span> 是一期贴现因子，<span class="math inline">P_i</span> 是重谈后 VC 在完成时取得的收入；Admati–Pfleiderer 的 <span class="math inline">s</span> 是成功概率状态，<span class="math inline">\alpha</span> 是 VC 固定比例；实验模型的 <span class="math inline">\eta</span> 是创业者成功现金份额。它们没有被假定为同一份合同的参数。</p>
 </section>
 <section id="book-references" class="level2">
 <h2 class="anchored" data-anchor-id="book-references">参考文献</h2>
