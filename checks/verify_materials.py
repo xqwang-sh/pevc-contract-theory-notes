@@ -28,64 +28,57 @@ def close(x, y):
 def week5_numerical_checks():
     from fractions import Fraction as F
 
-    gamma, capital = F(1,20), F(456,5)
-    primitives = {"G": [(F(1,2),150),(F(1),0)],
-                  "B": [(F(2,5),19),(F(1,2),0)]}
-    initial = {}
-    for state, actions in primitives.items():
-        initial[state] = [(p*200, gamma*p*200+b, (1-gamma)*p*200)
-                          for p,b in actions]
-    vc_before = initial["B"][0][2]
-    reneg_share = 1-vc_before/initial["B"][1][0]
-    assert reneg_share == F(6,25)
-    assert reneg_share*100 > initial["B"][0][1]
-    assert reneg_share*80+19 > reneg_share*100
-    branches = [(F(1,2),initial["G"][0][2],initial["G"][0][1]),
-                (F(1,5),vc_before,reneg_share*100),
-                (F(3,10),initial["B"][1][2],initial["B"][1][1])]
-    vc_cash = sum(prob*v for prob,v,e in branches)
-    founder = sum(prob*e for prob,v,e in branches)
-    assert vc_cash==capital and founder==F(419,5)
-    founder_cash_AB=F(1,2)*5+F(1,5)*24+F(3,10)*5
-    assert founder_cash_AB==F(44,5) and founder-founder_cash_AB==75
-    assert founder_cash_AB+vc_cash==100
-    assert founder+vc_cash-capital == F(175)-capital
-    assert initial["G"][1][2]-100 == 90
+    # Aghion–Bolton (1992), pp. 482–484 original numerical example.
+    # y_i^j is monetary income; lambda_i^j is non-transferable private benefit.
+    pi1=F(1,2)*(F(1,50)*100)+F(1,2)*(F(1,50)*50)
+    assert pi1==F(3,2)
+    pi2=F(1,2)*100+F(1,2)*0
+    assert pi2==50
+    beta_g,beta_b=F(99,100),F(1,100)
+    pi3=50*beta_g+(1-beta_g)+(1-beta_b)/2
+    assert pi3==F(10001,200)
+    pi4=(F(1,2)*200+F(1,2)*50)*F(100,200)
+    assert pi4==F(125,2)
+    # The entrepreneur's theta_b IC requires t_s*50 >= 49.
+    assert F(49,50)*50==49
 
-    # Independently allow the entrepreneur to offer both cash and control changes.
-    # This bounded grid is a sanity check of the analytical bounds, not their proof.
-    def renegotiate(state, controller, t0, t200):
-        options=[]
-        for p,b in primitives[state]:
-            e=(1-p)*t0+p*t200+b
-            v=p*200-((1-p)*t0+p*t200)
-            options.append((p*200,b,e,v))
-        chosen=max(options,key=lambda a:a[2] if controller=="E" else a[3])
-        cash,b,e,v=chosen
-        feasible=[(c,ben,c+ben-v,v) for c,ben,_,_ in options
-                  if c>=v and c+ben-v>=e]
-        return max(feasible+[chosen],key=lambda a:a[2])
-    maxima={"fixed_E":F(-10000),"fixed_V_efficient":F(-10000)}
-    for t0 in range(0,401,5):
-        for t200 in range(0,401,5):
-            for control,key in (("E","fixed_E"),("V","fixed_V_efficient")):
-                g=renegotiate("G",control,F(t0),F(t200))
-                b=renegotiate("B",control,F(t0),F(t200))
-                if control=="E":
-                    # sigma- can independently attain at most 80 in B.
-                    value=F(1,2)*g[3]+F(1,5)*b[3]+F(3,10)*80
-                else:
-                    if g[0]+g[1]!=250 or b[0]+b[1]!=100: continue
-                    value=F(1,2)*g[3]+F(1,5)*b[3]+F(3,10)*100
-                maxima[key]=max(maxima[key],value)
-    assert maxima=={"fixed_E":90,"fixed_V_efficient":90}
-    signals={}
-    for q,want_v,want_e in ((F(1,5),F(931,10),F(819,10)),
-                           (F(3,5),F(893,10),F(857,10))):
-        v=F(1,2)*95+q/2*76+(1-q)/2*95
-        e=F(1,2)*155+q/2*24+(1-q)/2*5
-        assert v==want_v and e==want_e and v+e-capital==F(419,5)
-        signals[str(q)]={"VC_cash":v,"E_utility":e,"VC_net":v-capital}
+    # Hellmann (1998) eq. (2) with alpha_0=0, teaching values; p and B held fixed.
+    phi,p,B,M,th=F(4,5),F(1,2),F(1,10),F(1),F(1,2)
+    G=phi-p-B; a=F(2,5)
+    SFC=B+a*p; SR=SFC+th*G; mR=(phi-(1-a)*p-SR)/M
+    assert (G,SFC,SR,mR)==(F(1,5),F(3,10),F(2,5),F(1,10))
+    uvc=(1-a)*p+mR*(1-th)*G-M*mR**2/2; uen=B+a*p+mR*th*G
+    assert (uvc,uen)==(F(61,200),F(31,100))
+    a2=1-(uvc-G**2/(2*M))/p
+    assert a2==F(43,100) and B+a2*p==F(63,200)>uen
+    m_low=(phi-F(1,5)-(1-a)*p)/M
+    assert m_low==F(3,10) and m_low*G-M*m_low**2/2==F(3,200)
+    # Casamatta-style teaching model (not original numbers).
+    R_,L0,cE,cV=F(10),F(2),F(3,5),F(2,5)
+    E=F(4,5)*R_+F(1,5)*L0
+    assert E==F(42,5) and cV/F(1,5)==2 and (R_-L0)-cE/F(3,10)==6
+    assert F(3,4)*E-cV==F(59,10) and F(4,5)*8+F(1,5)*2-cV==F(32,5)
+    assert F(1,4)*E-cV==F(17,10)
+    sE=1-F(1,4)-3/E
+    assert sE==F(11,28) and sE*E-cE==F(27,10) and E-3-cV-cE==F(22,5)
+    xS=(F(31,5)+cV-F(1,5)*L0)/F(4,5)
+    assert xS==F(31,4) and (R_-xS)*F(3,10)==F(27,40) and F(4,5)*(R_-xS)-cE==F(6,5)
+    # H5-3 Hellmann exercise: phi=.9, p=.5, B=.2, M=1, theta=3/4, alpha=.4.
+    phi3,p3,B3,th3,a3=F(9,10),F(1,2),F(1,5),F(3,4),F(2,5)
+    G3=phi3-p3-B3; SR3=B3+a3*p3+th3*G3; m3=phi3-(1-a3)*p3-SR3
+    uvc3=(1-a3)*p3+m3*(1-th3)*G3-m3**2/2; uen3=B3+a3*p3+m3*th3*G3
+    assert (G3,SR3,m3,uvc3,uen3)==(F(1,5),F(11,20),F(1,20),F(241,800),F(163,400))
+    a3b=1-(uvc3-G3**2/2)/p3
+    assert a3b==F(7,16) and B3+a3b*p3==F(67,160)
+    # H5-4 teaching numbers.
+    E4=F(4,5)*12+F(1,5)*3
+    assert E4==F(51,5) and F(2,9)*E4-F(2,5)==F(28,15) and E4-F(2,9)*E4-4-F(3,5)==F(10,3)
+    assert (8+F(2,5))/E4==F(14,17) and (8+F(2,5)-F(3,5))/F(4,5)==F(39,4)
+    assert F(1,2)*80+F(1,2)*10-10==35 and F(50,75)==F(2,3) and F(1,3)*75-3==22 and F(50,120)==F(5,12)
+    # Staging and window dressing teaching model.
+    assert F(1,2)*100+F(1,2)*20-40==20 and F(1,2)*70+F(1,2)*5-10==F(55,2)
+    assert 1-F(4,15)==F(11,15) and 25/F(105,2)==F(10,21) and F(40,60)==F(2,3)
+    assert F(1,3)*60-2==18 and (25-F(5,2))/F(1,2)==45 and F(1,2)*55==F(55,2)
 
     beta,R,I1,I2=F(9,10),F(2),F(3,5),F(2,5)
     upfront_required=1/beta
@@ -147,10 +140,8 @@ def week5_numerical_checks():
     assert vc_receipts==vc_cost and outside_receipts==outside_cost
     assert founder_cash==(1-alpha)*W==F(9,5)==W-1
 
-    result={"aghion_bolton":{"VC_cash":vc_cash,"E_utility":founder,
-              "initial_capital":capital,"E_cash":founder_cash_AB,"E_private_benefit":75,
-              "renegotiated_share_B_plus":reneg_share,
-              "fixed_initial_control_grid_maxima":maxima,"signal_variants":signals},
+    result={"aghion_bolton":{"pi1":pi1,"pi2":pi2,"pi3_beta_099_001":pi3,"pi4":pi4,
+              "theta_b_direct_share":F(49,50)},
             "neher_example_4_1":{"P0":P0,"P1":P1,"P2":P2,"L2":L2,
               "U1_V":U1,"U2_V":U2,"S1":S1,"C1":C1,"E_NPV":F(33,50),
               "upfront_required":upfront_required,"upfront_renegotiated":upfront_reneg},
@@ -386,17 +377,19 @@ def source_checks():
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
-        "w05-venture-contract.qmd":["91.2","83.8","1.1852","1.2222","1.3333","5/14","530/203"],
-        "w05-preparation.qmd":["1.1852","30/7","0.7","L_2"],
-        "exercises.qmd":["26.32","14.664","42.336","198.8406","91.2","83.8","1.1852","5/14","6.66","8.18"],
+        "w05-venture-contract.qmd":["200 笔投资","118 家被投企业","56%","17.5%","Q<Q_1","0.305","0.315","0.43","17/42","6.4","27.5","11/15"],
+        "w05-preparation.qmd":["49/50","3/2","50.005","62.5","0.015","[0.25,0.75]"],
+        "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","62.5","1.1852","5/14","6.66","8.18","0.30125","0.41875","7/16","14/17","9.75","5/12"],
     }
     for name,claims in required.items():
         text=(ROOT/name).read_text().replace("−","-")
         for claim in claims:assert claim in text,(name,claim)
-    for name in ("student-notes.md","w05-venture-contract.qmd"):
-        text=(ROOT/name).read_text()
-        for paper in ("Aghion","Admati","Bolton","Neher"):
-            assert paper in text,(name,paper)
+    text=(ROOT/"student-notes.md").read_text()
+    for paper in ("Aghion","Admati","Bolton","Neher"):
+        assert paper in text,("student-notes.md",paper)
+    text=(ROOT/"w05-venture-contract.qmd").read_text()
+    for paper in ("Aghion","Hellmann","Casamatta","Cornelli","Kaplan","Gompers"):
+        assert paper in text,("w05-venture-contract.qmd",paper)
     book=(ROOT/"student-notes.md").read_text()
     fund=book.split("## 第一篇：",1)[1].split("## 第二篇：",1)[0]
     assert "GP 无初始财富" not in fund
@@ -419,16 +412,26 @@ def source_checks():
     assert re.findall(r"^## P5-(\d)：",prep,re.M)==["1","2","3","4"]
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
-    assert "核对 P5-4" in prep and "Admati" in prep
+    assert "核对 P5-4" in prep and "Aghion" in prep and "**P5-2：Aghion–Bolton**" in prep
+    assert "## 理论基础：Aghion–Bolton" not in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
         assert "{#"+anchor+"}" in (ROOT/"exercises.qmd").read_text()
     venture=book.split("## 第二篇：",1)[1].split("## 附录怎样读？",1)[0]
-    assert "Example 4.1" in venture
+    for anchor in ("book-venture-motivation","book-venture-rights","book-venture-control","book-venture-hellmann","book-venture-double","book-venture-staging","book-venture-exit","book-venture-summary"):
+        assert "{#"+anchor+"}" in venture,anchor
+    assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-hellmann}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-staging}")
+    assert "{#book-venture-followon}" in book.split("## 附录 F：",1)[1].split("## 附录 G：",1)[0]
+    for claim in ("49/50","62.5","0.305","0.315","17/42","27.5","11/15"):
+        assert claim in venture,claim
+    assert "本轮已重读" in book and "2024 年 6 月的工作论文版本" in book
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture
     assert book.index("{#book-venture-experiment}") > book.index("{#book-app-h}")
+    for name in ("student-notes.md","w05-venture-contract.qmd","w05-preparation.qmd"):
+        assert "不是，而是" not in (ROOT/name).read_text(),name
+    assert "开场问答：从预习答案进入模型" not in (ROOT/"w05-venture-contract.qmd").read_text()
     exercises=(ROOT/"exercises.qmd").read_text()
     assert exercises.index("{#h5-5}") > exercises.index("{#optional-homework}")
     assert "第 5 周完成 H5-1 至 H5-4" in exercises

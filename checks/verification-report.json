@@ -47,28 +47,11 @@
     },
     "week5": {
       "aghion_bolton": {
-        "VC_cash": 91.2,
-        "E_utility": 83.8,
-        "initial_capital": 91.2,
-        "E_cash": 8.8,
-        "E_private_benefit": 75,
-        "renegotiated_share_B_plus": 0.24,
-        "fixed_initial_control_grid_maxima": {
-          "fixed_E": 90.0,
-          "fixed_V_efficient": 90.0
-        },
-        "signal_variants": {
-          "1/5": {
-            "VC_cash": 93.1,
-            "E_utility": 81.9,
-            "VC_net": 1.9
-          },
-          "3/5": {
-            "VC_cash": 89.3,
-            "E_utility": 85.7,
-            "VC_net": -1.9
-          }
-        }
+        "pi1": 1.5,
+        "pi2": 50.0,
+        "pi3_beta_099_001": 50.005,
+        "pi4": 62.5,
+        "theta_b_direct_share": 0.98
       },
       "neher_example_4_1": {
         "P0": 1.1851851851851851,
@@ -190,26 +173,26 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "c77492ca27321ad5af9bf30521c3c3df4e07c8e62690c887a6ba04261a9b20ec",
+    "student-notes.md": "4715c73c7e7d0b700ac90c2e09bca9c8b611d32f5e94cb7a03f48ecd434d631f",
     "student-notes.qmd": "e8ce7a2e34f18748bfc15ca4062867219c90c7732dffaa4606d2d42555826df0",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "e4913035f1bb12df1a1fb0f82300dc63c9b253a16925416c4866a88d37ca86ec",
+    "w05-venture-contract.qmd": "df0d829682a7d18611d566b0180b6e1a45f1ef2789e027691092833cf50d8b20",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "16c1df519c3f040fff35e2160ddc973e98708b37abc32a105a91845aba48b07c",
-    "exercises.qmd": "8df1607e7a48dcc66fa0f88e19a4b4edd2c03a7c1f563bc3d98c3a40affa89ba"
+    "w05-preparation.qmd": "fa49280aeeb45a58df08077a34d8984aa6fc7833429add07c0d1842f3bbbf9ab",
+    "exercises.qmd": "b434299c2ee715ff580403148cbbd1fc689e29c1387fbc3c7560e61dcbadada4"
   },
   "html": {
     "pages": 7,
-    "local_links_checked": 129,
-    "details": 29,
+    "local_links_checked": 130,
+    "details": 30,
     "sha256": {
-      "index.html": "c162a61cf215208df8e5a08eb0d87b2d8bcf8c131f11cae8e70b2dc89dacaa85",
-      "student-notes.html": "98c3c640867bc58da0162d72f7cee6f00bb0d8084e46c81e06d8f4b6ca3d5d69",
-      "w04-fund-contract.html": "eabcb8457b8f568b1bdfbbd608e7a5959eb6585a27961c67b96df73b27dc2004",
-      "w05-venture-contract.html": "5b77127862788d1f5c6e1c96bfc0a4c94b24073eb02beffe9c93d493d2dbdee9",
-      "w04-preparation.html": "5cf3b319cdff07dcd131ac66662b80e0703b646fbdecffc095292c55d4305e75",
-      "w05-preparation.html": "dabc68908a294740614f973b42846fad590963ab45c84aaea0a388622e88e26c",
-      "exercises.html": "1557bfd9597cf96ac288eb771735fbc514b85dd504db0065a94c9b951f45354b"
+      "index.html": "52e2aa0872d6093a385799cb7aec413340d4f0bcec815f04d3acc61519ddee6e",
+      "student-notes.html": "03194333d6779ad50f7b45b4ae8fc4cfd6db90d83c00e1fbcfee0403506d4c8d",
+      "w04-fund-contract.html": "e815c73eb5ad19e009c49f015c6d01343722383b2146aa16390a6fef41c1b42b",
+      "w05-venture-contract.html": "240f021351d3f3d5f669e14e75d8b661aed3a3462f49073c0f817b1a256931d1",
+      "w04-preparation.html": "04f800a22fe21220b56e40bd204bcc2c724cab268199a565f4bbfc7d644df389",
+      "w05-preparation.html": "3ad967337ba91e594ad5e0e48f68bb811c0be554447af5380f43bf9ed2a6b5ee",
+      "exercises.html": "f09eddc493bea7bd1de07db217a0b9b2776af2d5bb8bd8f3dca37a3cc5100f52"
     }
   },
   "mirrored_files_checked": 25
