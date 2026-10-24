@@ -1,123 +1,155 @@
 {
-  "checked_at": "2026-10-24T17:25:30.761883+09:00",
-  "method": "Ego browser DOM and Chromium screenshots; native browser window restored with computer-use Raise before screenshot capture.",
+  "checked_at": "2026-10-24T20:11:47.288196+09:00",
+  "method": "Ego browser DOM on all seven final HTML pages; Chromium screenshots after immediate scrolling and animation-frame stabilization. Native browser window restored with computer-use Raise.",
   "pages": [
     {
-      "page": "index.html",
-      "katexErrors": 0,
-      "renderedFormulas": 0,
-      "viewportWidth": 1416,
-      "pageWidth": 1416
-    },
-    {
-      "page": "w05-preparation.html",
-      "katexErrors": 0,
-      "renderedFormulas": 44,
-      "viewportWidth": 1416,
-      "pageWidth": 1416
-    },
-    {
       "page": "w05-venture-contract.html",
+      "title": "第 5 周课堂：VC 与企业的合同理论",
+      "renderedFormulas": 192,
       "katexErrors": 0,
-      "renderedFormulas": 168,
       "viewportWidth": 1416,
-      "pageWidth": 1416
+      "viewportHeight": 722,
+      "pageWidth": 1416,
+      "wideMath": 0
     },
     {
       "page": "student-notes.html",
+      "title": "PE/VC 合同理论完整学生讲义：LPA 与 GP—企业合同",
+      "renderedFormulas": 828,
       "katexErrors": 0,
-      "renderedFormulas": 815,
       "viewportWidth": 1416,
-      "pageWidth": 1416
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
     },
     {
-      "page": "exercises.html",
+      "page": "index.html",
+      "title": "PE/VC 合同理论｜两层授权，两类合同",
+      "renderedFormulas": 0,
       "katexErrors": 0,
-      "renderedFormulas": 251,
       "viewportWidth": 1416,
-      "pageWidth": 1416
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
     },
     {
       "page": "w04-preparation.html",
-      "katexErrors": 0,
+      "title": "第 4 周预习：LPA 怎样安排资本、授权与收入？",
       "renderedFormulas": 38,
+      "katexErrors": 0,
       "viewportWidth": 1416,
-      "pageWidth": 1416
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
     },
     {
       "page": "w04-fund-contract.html",
-      "katexErrors": 0,
+      "title": "第 4 周课堂：LPA 怎样把投资判断交给 GP？",
       "renderedFormulas": 114,
+      "katexErrors": 0,
       "viewportWidth": 1416,
-      "pageWidth": 1416
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
+    },
+    {
+      "page": "w05-preparation.html",
+      "title": "第 5 周预习：控制权、双边激励与分期承诺",
+      "renderedFormulas": 59,
+      "katexErrors": 0,
+      "viewportWidth": 1416,
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
+    },
+    {
+      "page": "exercises.html",
+      "title": "PE/VC 合同理论：课后习题与分步答案",
+      "renderedFormulas": 257,
+      "katexErrors": 0,
+      "viewportWidth": 1416,
+      "viewportHeight": 756,
+      "pageWidth": 1416,
+      "wideMath": 0
     }
   ],
   "visual_checks": [
-    "AB assumptions, contractible signal and cash, utility and efficient action",
-    "AB noisy-signal table, actual renegotiation, participation and welfare; split income formulas fit the desktop width",
-    "Hellmann repriced equity, renewed search comparison and founder participation",
-    "Hellmann original continuous behavior conditions and full compensation comparison",
-    "Casamatta original continuous effort conditions and effort displacement",
-    "CY posterior, VC continuation and conversion table",
-    "CY manipulation deviation and both participation constraints",
-    "Expanded H5-2 answer including the noisy-signal exercise"
+    "Aghion-Bolton control module and contractibility assumptions",
+    "Hellmann CEO appointment/search application and its assumptions",
+    "Casamatta financing/advice question and bilateral effort setup",
+    "Neher deterministic/full-information setup and commitment assumptions",
+    "Neher second-period renegotiation and the outside-option rule",
+    "Neher first-period continuation value, future commitment bound and P1 calculation",
+    "Staged-finance reading map and separate questions for subsequent papers",
+    "Expanded H5-5 answer, including the no-asset-accumulation counterfactual"
   ],
   "desktop_display_math_overflow": 0,
   "desktop_viewport": {
     "width": 1416,
-    "height": 722
+    "heights": [
+      722,
+      756
+    ]
   },
-  "screenshot_directory": "../revisions/2026-10-24-week5-classroom-review",
+  "screenshot_directory": "../revisions/2026-10-24-week5-three-questions-review",
   "screenshots": [
     {
-      "file": "ab-assumptions.png",
-      "sha256": "9110ce87bdd119438a454da1ba9cddd0bf62e692010ec4b3d11b8d778ae0e9d0"
+      "file": "control-module.png",
+      "sha256": "ed7812637f2a7d987ae720b0936b1d1a01c672a77534c17e452888440959fbd8"
     },
     {
-      "file": "ab-noisy-control.png",
-      "sha256": "8571877e32ddfc4c5f1fc714065a815efa49acaa79363def6f624950527dc77b"
+      "file": "hellmann-application.png",
+      "sha256": "216f1750cfba62c8d6ce47b1bfb66dacbe22cf8858ba8c6e751a06d2397126f3"
     },
     {
-      "file": "hellmann-contract.png",
-      "sha256": "d400e8648770ce67abc5f87c939da34d082220f62d7cf14b0df5b2155604eb58"
+      "file": "casamatta-incentives.png",
+      "sha256": "f1589de9cdb2bb09eb9e6abd990dd4bad642e6da0f55f904c76dff69053ad346"
     },
     {
-      "file": "hellmann-original-conditions.png",
-      "sha256": "1fd86c50a2d878934d86f0f6f40183ac969075a19db8df5d1e77164d3287947b"
+      "file": "neher-assumptions.png",
+      "sha256": "3b10e95acb5d11f9b081260a7991058a5dc49c7a32862e1f85f71b5bf0dfca7a"
     },
     {
-      "file": "casamatta-original-conditions.png",
-      "sha256": "3cbb46fb7c12fc619ac155728bf3c00a41a4fd41deb28be7f38d6a1e6d775d77"
+      "file": "neher-second-period.png",
+      "sha256": "a645a88ea2a2a95ad8a18a8eb39f50b3d39553bd5e6308052ef022c419ac6292"
     },
     {
-      "file": "cy-policy.png",
-      "sha256": "d1b0c146829ea3665fb44e890e51aa6815148325f496e451ed4523bc6cedcc78"
+      "file": "neher-first-period.png",
+      "sha256": "1c9bca3a3c7161e0401228ce3e91cb9598eb2b90826f3f5df1dd2f2d22537202"
     },
     {
-      "file": "cy-incentives.png",
-      "sha256": "08eb630349aad29c81be6a5aa18566a37907435529dd34a4e01adeca9573d989"
+      "file": "staging-reading-map.png",
+      "sha256": "d0bf35387b23f6a00955401f11ff9a66820084c9248738bd1cfffe3084fec116"
     },
     {
-      "file": "cy-participation.png",
-      "sha256": "231e11540737668e2161ad2b0eaf7c0ba1f5b0d826a1cda81ae3100ae35db14b"
-    },
-    {
-      "file": "exercise-ab-expanded.png",
-      "sha256": "f72126a0f2b1fe958f9def5860fdf1996938dfccdf66f0387f4e101456aef7db"
+      "file": "neher-exercise.png",
+      "sha256": "41936b3c52ace88d6ec576eb4e7140d684093443c8b3ece64a7f6d857ebf15a7"
     }
   ],
   "final_html_sha256": {
-    "index.html": "e4e8c4ef0b59da28c107fdf9dbbde92e3ef2c9c4f25769d1b68d9d306189b16f",
-    "student-notes.html": "2588a55ae9d582edab0e0228cad49e67170d695fc0ec09df7fdc04ad454ae700",
-    "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-    "w05-venture-contract.html": "63bf5ce4129b87bcfb06f9da1b31e91a28587ba330d9cf39b09c7fb1881d7b33",
+    "w05-venture-contract.html": "5b30973849f19dda4bbeeee032f697a18c8fff1962f9ae24be7b7aa6a048d9e5",
+    "student-notes.html": "6eb1cf441962450e521476fdfea588836ab00ec8e37480928a4e5d8035c67a53",
+    "index.html": "2d0e91f3863966f2f5f614d0cc944b079c2589c76a9894e12c2e5707cc2112a1",
     "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-    "w05-preparation.html": "e8e6347e5265118c230420c0d7accbb0d430a87cebf84a798f2b51d2d0a5a20f",
-    "exercises.html": "623e9c6baf5f1850c6fca31f5aef34487488e4b220f7868936d80a71e5e3bb8f"
+    "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
+    "w05-preparation.html": "c9fe16ed7e80bb635935ccc4d705d70b05f1cbddd5f4b916c1fdb1a29adce3d1",
+    "exercises.html": "22d96b0cab5bb84ac7d65079f2361f574b8ec130d301976a30856338cfa588b1"
+  },
+  "preservation_checks": {
+    "w04-fund-contract.qmd": true,
+    "w04-preparation.qmd": true,
+    "pevc-handout.css": true,
+    "_quarto.yml": true,
+    "book_fund_body": true,
+    "appendices_ABC": true,
+    "week4_core_exercises": true,
+    "week4_optional_exercises": true,
+    "baseline_untracked_preserved": true,
+    "course_bibliography_mirror": true
   },
   "limits": [
-    "Visual spot checks, not a complete device compatibility test",
+    "Desktop visual spot checks; not a full device compatibility test",
     "No mobile visual check in this revision"
   ],
-  "publication": "Local files and course mirrors synchronized; production publication not performed"
+  "publication": "Local HTML and course mirrors synchronized; GitHub review tracked in PR #6; production publication not performed"
 }

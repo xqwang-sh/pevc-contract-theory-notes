@@ -283,6 +283,11 @@ def week5_numerical_checks():
     assert S1-U1 < beta**2*(R-P0)
     assert beta*R-U2 < beta*(R-P0)
     assert (beta*R-1)-beta**2*(R-P0)==F(7,50)
+    no_asset_P2=max(F(0),beta*R/2)/beta
+    no_asset_C1=beta**2*no_asset_P2-beta*I2
+    no_asset_U1=max(F(0),min(no_asset_C1,S1/2))
+    no_asset_P1=(no_asset_U1+beta*I2)/beta**2
+    assert no_asset_P1==no_asset_P2==1<P0
     multi=[]
     for T in range(1,7):
         path=[F(1)]
@@ -328,6 +333,8 @@ def week5_numerical_checks():
               "theta_b_direct_share":F(49,50)},
             "neher_example_4_1":{"P0":P0,"P1":P1,"P2":P2,"L2":L2,
               "U1_V":U1,"U2_V":U2,"S1":S1,"C1":C1,"E_NPV":F(33,50),
+              "without_asset_accumulation":{"P1":no_asset_P1,"P2":no_asset_P2,
+                                             "feasible":False},
               "upfront_required":upfront_required,"upfront_renegotiated":upfront_reneg},
             "neher_example_4_2":{"candidates":multi,"six_round_path":path},
             "admati_pfleiderer":{"M":M,"N":N,"Q":Q,"W":W,"alpha":alpha,
@@ -561,7 +568,7 @@ def source_checks():
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
-        "w05-venture-contract.qmd":["200 笔投资","118 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","2.3","4.1","-0.08","77.5","0.76","66.75","66.5","3.3","2.7","1+\\alpha p_B","完整求解"],
+        "w05-venture-contract.qmd":["213 笔投资","119 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","2.3","4.1","77.5","0.76","1+\\alpha p_B","Example 4.1","1.1852","1.2222","1.3333","0.66","794","人力资本"],
         "w05-preparation.qmd":["75","70","49","2.4","1.8","4.5"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
@@ -572,7 +579,7 @@ def source_checks():
     for paper in ("Aghion","Admati","Bolton","Neher"):
         assert paper in text,("student-notes.md",paper)
     text=(ROOT/"w05-venture-contract.qmd").read_text()
-    for paper in ("Aghion","Hellmann","Casamatta","Cornelli","Kaplan","Gompers"):
+    for paper in ("Aghion","Hellmann","Casamatta","Neher","Cornelli","Kaplan","Gompers","Bergemann","Repullo"):
         assert paper in text,("w05-venture-contract.qmd",paper)
     book=(ROOT/"student-notes.md").read_text()
     fund=book.split("## 第一篇：",1)[1].split("## 第二篇：",1)[0]
@@ -597,7 +604,7 @@ def source_checks():
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
     assert "核对 P5-4" in prep and "P5-2：Aghion–Bolton" in prep
-    assert "## 经典基础：Aghion–Bolton" in (ROOT/"w05-venture-contract.qmd").read_text()
+    assert "## 第一部分：收益分配之外，为什么还需控制权？" in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
@@ -607,8 +614,23 @@ def source_checks():
         assert "{#"+anchor+"}" in venture,anchor
     assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-hellmann}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-staging}")
     assert "{#book-venture-followon}" in book.split("## 附录 F：",1)[1].split("## 附录 G：",1)[0]
-    for claim in ("75","70","2.3","4.1","-0.08","不足额离职补偿","自己出资","尚不知道项目好坏"):
+    for claim in ("75","70","2.3","4.1","不足额离职补偿","自己出资","Example 4.1","1.2222","0.66"):
         assert claim in venture,claim
+    classroom=(ROOT/"w05-venture-contract.qmd").read_text()
+    third=classroom.split("## 第三部分：",1)[1].split("## 分阶段融资之后",1)[0]
+    assert "Neher" in third and "L_2=0" in third and "Gompers" in third
+    assert "粉饰怎样移动信号" not in third
+    assert "尚不知道项目好坏" in book.split("### G.3 ",1)[1].split("### G.4 ",1)[0]
+    expected=classroom[classroom.index("## 一份 VC 合同需要回答哪些问题？"):]
+    expected=re.sub(r"^(#{2,5}) ",lambda m:"#"+m[1]+" ",expected,flags=re.M)
+    names={"w05-motivation":"book-venture-motivation","w05-payments":"book-venture-rights",
+           "w05-control":"book-venture-control","w05-hellmann":"book-venture-hellmann",
+           "w05-double":"book-venture-double","w05-staging":"book-venture-staging",
+           "w05-reading-map":"book-venture-reading-map","w05-exit":"book-venture-exit",
+           "w05-check":"book-venture-summary"}
+    for old,new in names.items():expected=expected.replace("{#"+old+"}","{#"+new+"}")
+    expected=expected.replace("student-notes.html#book-","#book-")
+    assert venture.split("\n\n",1)[1].strip()==expected.strip(),"Classroom/book body drift"
     assert "2024 年 6 月的工作论文版本" in book
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture
@@ -619,8 +641,13 @@ def source_checks():
         assert "不是，而是" not in (ROOT/name).read_text(),name
     assert "开场问答：从预习答案进入模型" not in (ROOT/"w05-venture-contract.qmd").read_text()
     exercises=(ROOT/"exercises.qmd").read_text()
-    assert exercises.index("{#h5-5}") > exercises.index("{#optional-homework}")
-    assert "第 5 周完成 H5-1 至 H5-4" in exercises
+    assert exercises.index("{#h5-5}") < exercises.index("{#optional-homework}")
+    assert exercises.index("{#h5-6}") > exercises.index("{#optional-homework}")
+    assert "第 5 周完成 H5-1 至 H5-5" in exercises
+    assert re.findall(r"^### H5-(\d+)：",exercises,re.M)==[str(i) for i in range(1,12)]
+    for exercise in re.finditer(r"^### H5-\d+：.*?(?=^### |^## |\Z)",exercises,re.M|re.S):
+        numbers=re.findall(r"^(\d+)\. ",exercise[0].split("<details",1)[0],re.M)
+        assert [int(n) for n in numbers]==list(range(1,len(numbers)+1)),exercise[0].splitlines()[0]
     for name in SOURCES:
         text=(ROOT/name).read_text()
         assert not [c for c in text if ord(c)<32 and c not in "\n\t"], name

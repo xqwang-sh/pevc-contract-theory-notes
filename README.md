@@ -10,7 +10,7 @@
 
 在本目录运行 python3 checks/render_materials.py 生成六个 HTML 页面；它在本地临时目录渲染，避免 OneDrive 临时目录清理权限错误。需要更新课程目录副本时加 --sync-parent。首页 docs/index.html 独立维护。全部页面自包含，沿用 pevc-handout.css。源文件和 HTML 的课程目录副本按 AGENTS.md 同步。
 
-2026-10-24 修订第 5 周：正文先用 Aghion–Bolton 解释不完全合同、私人收益、财富约束和或有控制，再主讲 Hellmann、Casamatta、Cornelli–Yosha。每篇写清信息与合同空间，正文完整推导核心收入、行为和参与条件；必要的后验、续投与转换计算也在正文。附录保留较长合同比较、反事实和拓展，Neher、Admati–Pfleiderer 与实验设计为选读。核心题为 H5-1 至 H5-4，学生材料不写预计用时。原文版本与核读位置见模型审查记录，正式发布须另有实际部署记录。
+2026-10-24 第 5 周现行结构为三个问题：第一部分用 Aghion–Bolton 解释收益分配之外为何需要控制权，并用 Hellmann（1998）讲任免权与搜寻投入；第二部分用 Casamatta 讲融资与建议捆绑的双边激励；第三部分完整逆推 Neher（1999）原文 Example 4.1，解释分阶段融资的承诺与资产积累机制。核心推导放正文。Kaplan–Strömberg 提供合同事实，Gompers 提供代理与监督预测的实证证据；学习、知情续投、粉饰和多阶段证券设计另列阅读地图。第 5 周核心题 H5-1 至 H5-5，学生材料不标预计用时。原文版本与核读位置见模型审查记录；本地修改、GitHub 审阅与正式发布分别记录。
 
 核查命令：python3 checks/verify_materials.py --sources-only 独立复算数值；完成渲染与副本同步后，运行 python3 checks/verify_materials.py 核对本地链接、锚点和文件一致性。检查结果写入 checks 下的 JSON 文件。
 

@@ -227,6 +227,11 @@
         "S1": 1.26,
         "C1": 0.72,
         "E_NPV": 0.66,
+        "without_asset_accumulation": {
+          "P1": 1.0,
+          "P2": 1.0,
+          "feasible": false
+        },
         "upfront_required": 1.1111111111111112,
         "upfront_renegotiated": 1.0
       },
@@ -337,12 +342,12 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "65d5421d90c9b141ae69dbf40f78a39223517a9ed9c0c0eed8c4ee35dc1a2cdf",
+    "student-notes.md": "183ca7becdc3ea59acb6d1683d1124c572740161ee0260fffa5b5576bea84f85",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "88bccc18880e2de660677eede40269f42d52a6f9460bc25a7b0acd67ca8ad588",
+    "w05-venture-contract.qmd": "417e0ac582db092e9cadb7aca796ba1467c80fcf5f168e98b8cb9b174f888127",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "f47f0219c59b257d9d8306c9c8ffa90ce3a7a45f4560aed6f076e10cb4bf46e7",
-    "exercises.qmd": "962ebdc5e56ea319f0cd500e116af28805626866a0abc25c128f14cfe5ab6062"
+    "w05-preparation.qmd": "f5896405b0c64fe1bb450a651e7946dc11dff43c36c9f1a517fc8c6345fdc85e",
+    "exercises.qmd": "8c320ba3ef8d28ceb513c8fc97597638ce5b99b18b80e1941f17ec7774e6f685"
   }
 }
