@@ -342,10 +342,10 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "d6e7a89a2ade5068b981eb398b69c21b863a45cac2f034df224735ebe51832aa",
+    "student-notes.md": "b2e559812e73fbc668d289bc3296ba8b3b284c39dc2111483fa1d0775b19c473",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "3ed8db6600736ed7d8af6ba20771b8f0ce95c0ab1869c9a0cd682a8dc15da212",
+    "w05-venture-contract.qmd": "605c12a43e398dfa64517389a7b7f160e6a428ec0536dfaf65cd12e0eac71ba0",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
     "w05-preparation.qmd": "f5896405b0c64fe1bb450a651e7946dc11dff43c36c9f1a517fc8c6345fdc85e",
     "exercises.qmd": "8c320ba3ef8d28ceb513c8fc97597638ce5b99b18b80e1941f17ec7774e6f685"
