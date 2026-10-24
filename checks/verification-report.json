@@ -342,10 +342,10 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "d6e7a89a2ade5068b981eb398b69c21b863a45cac2f034df224735ebe51832aa",
+    "student-notes.md": "b2e559812e73fbc668d289bc3296ba8b3b284c39dc2111483fa1d0775b19c473",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "3ed8db6600736ed7d8af6ba20771b8f0ce95c0ab1869c9a0cd682a8dc15da212",
+    "w05-venture-contract.qmd": "605c12a43e398dfa64517389a7b7f160e6a428ec0536dfaf65cd12e0eac71ba0",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
     "w05-preparation.qmd": "f5896405b0c64fe1bb450a651e7946dc11dff43c36c9f1a517fc8c6345fdc85e",
     "exercises.qmd": "8c320ba3ef8d28ceb513c8fc97597638ce5b99b18b80e1941f17ec7774e6f685"
@@ -356,9 +356,9 @@
     "details": 31,
     "sha256": {
       "index.html": "2d0e91f3863966f2f5f614d0cc944b079c2589c76a9894e12c2e5707cc2112a1",
-      "student-notes.html": "6ffe41abd156f58ea50cb7b5f169efb683d3c17356b3f522854f3d60b6f46bdd",
+      "student-notes.html": "36d7cd2074845d4ed341b8ee4266a5d4cefbbabd50a6c251ae2105c5394b9457",
       "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-      "w05-venture-contract.html": "7590ed373564273c91227a52330e55917f053fbbef60821c4305831807952c4a",
+      "w05-venture-contract.html": "600f735829917fbd1822d1e3466beb15cf019296054b66a5333a58fb52a8b95b",
       "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
       "w05-preparation.html": "c9fe16ed7e80bb635935ccc4d705d70b05f1cbddd5f4b916c1fdb1a29adce3d1",
       "exercises.html": "22d96b0cab5bb84ac7d65079f2361f574b8ec130d301976a30856338cfa588b1"
