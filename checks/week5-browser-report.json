@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-24T16:32:48.917120+09:00",
-  "method": "Ego browser with Chromium screenshots; key fragments visually inspected. CDP capture used because the native browser window was minimized.",
+  "checked_at": "2026-10-24T17:25:30.761883+09:00",
+  "method": "Ego browser DOM and Chromium screenshots; native browser window restored with computer-use Raise before screenshot capture.",
   "pages": [
     {
       "page": "index.html",
@@ -12,101 +12,112 @@
     {
       "page": "w05-preparation.html",
       "katexErrors": 0,
-      "renderedFormulas": 43,
+      "renderedFormulas": 44,
       "viewportWidth": 1416,
       "pageWidth": 1416
     },
     {
       "page": "w05-venture-contract.html",
       "katexErrors": 0,
-      "renderedFormulas": 37,
+      "renderedFormulas": 168,
       "viewportWidth": 1416,
       "pageWidth": 1416
     },
     {
       "page": "student-notes.html",
       "katexErrors": 0,
-      "renderedFormulas": 775,
+      "renderedFormulas": 815,
       "viewportWidth": 1416,
       "pageWidth": 1416
     },
     {
       "page": "exercises.html",
       "katexErrors": 0,
-      "renderedFormulas": 246,
+      "renderedFormulas": 251,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
+    },
+    {
+      "page": "w04-preparation.html",
+      "katexErrors": 0,
+      "renderedFormulas": 38,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
+    },
+    {
+      "page": "w04-fund-contract.html",
+      "katexErrors": 0,
+      "renderedFormulas": 114,
       "viewportWidth": 1416,
       "pageWidth": 1416
     }
   ],
   "visual_checks": [
-    "Classroom: Hellmann symmetric-information and contractibility assumptions",
-    "Classroom: Casamatta double moral hazard, limited liability and relative efficiency",
-    "Classroom: CY information timing and two-effect manipulation calculation",
-    "Classroom: contractible-effort counterfactual in the final render",
-    "Exercises: H5-4 answer expanded and visually inspected",
-    "Book G.3: signal-dependent continuation and conversion table, E incentive comparison",
-    "390-pixel viewport: body fits; wide formulas scroll horizontally"
+    "AB assumptions, contractible signal and cash, utility and efficient action",
+    "AB noisy-signal table, actual renegotiation, participation and welfare; split income formulas fit the desktop width",
+    "Hellmann repriced equity, renewed search comparison and founder participation",
+    "Hellmann original continuous behavior conditions and full compensation comparison",
+    "Casamatta original continuous effort conditions and effort displacement",
+    "CY posterior, VC continuation and conversion table",
+    "CY manipulation deviation and both participation constraints",
+    "Expanded H5-2 answer including the noisy-signal exercise"
   ],
-  "mobile_formula_scroll": [
-    {
-      "client_width": 300,
-      "scroll_width": 303,
-      "scroll_left_after_request": 2.5
-    },
-    {
-      "client_width": 300,
-      "scroll_width": 523,
-      "scroll_left_after_request": 90
-    }
-  ],
-  "screenshot_directory": "../revisions/2026-10-24-week5-core-review",
+  "desktop_display_math_overflow": 0,
+  "desktop_viewport": {
+    "width": 1416,
+    "height": 722
+  },
+  "screenshot_directory": "../revisions/2026-10-24-week5-classroom-review",
   "screenshots": [
     {
-      "file": "class-cy-cdp.png",
-      "sha256": "5caf495504cd0bca271e9d0b32ae879115f8afba3c5a0a209a47f2c1e52af5df"
+      "file": "ab-assumptions.png",
+      "sha256": "9110ce87bdd119438a454da1ba9cddd0bf62e692010ec4b3d11b8d778ae0e9d0"
     },
     {
-      "file": "class-cy-calculation.png",
-      "sha256": "70021be469c2cedcfad19ed86976a1330cde1aab5ffb23efc5fa2a5b7283a6d0"
+      "file": "ab-noisy-control.png",
+      "sha256": "8571877e32ddfc4c5f1fc714065a815efa49acaa79363def6f624950527dc77b"
     },
     {
-      "file": "class-hellmann.png",
-      "sha256": "deb19774880fd9994ec22db440d2130615fc4a32c0ae5c2cd21ecb8673463a6e"
+      "file": "hellmann-contract.png",
+      "sha256": "d400e8648770ce67abc5f87c939da34d082220f62d7cf14b0df5b2155604eb58"
     },
     {
-      "file": "class-casamatta.png",
-      "sha256": "ffe0878945a28f8fe20601a4ddfc475d75ebc77bc67ad6a2007537929b2ead62"
+      "file": "hellmann-original-conditions.png",
+      "sha256": "1fd86c50a2d878934d86f0f6f40183ac969075a19db8df5d1e77164d3287947b"
     },
     {
-      "file": "exercise-h5-4-expanded.png",
-      "sha256": "48658d38f34030a66cd9b8ff80e202c939c01f7539cf0fa9252693586f68e818"
+      "file": "casamatta-original-conditions.png",
+      "sha256": "3cbb46fb7c12fc619ac155728bf3c00a41a4fd41deb28be7f38d6a1e6d775d77"
     },
     {
-      "file": "book-cy-policy.png",
-      "sha256": "48ed60e9f211f61ecae850f8730f6a41c35b2a70a3957d090e7b344538da4618"
+      "file": "cy-policy.png",
+      "sha256": "d1b0c146829ea3665fb44e890e51aa6815148325f496e451ed4523bc6cedcc78"
     },
     {
-      "file": "mobile-cy-calculation.png",
-      "sha256": "16193f3186a8e487d6267f7b4a44752a44a0acbb25558c3b62d30d51cee60699"
+      "file": "cy-incentives.png",
+      "sha256": "08eb630349aad29c81be6a5aa18566a37907435529dd34a4e01adeca9573d989"
     },
     {
-      "file": "class-contractible-effort.png",
-      "sha256": "c389ccbd72ef857c8fee8ebff90f9dafc3123defdf954ec462c5650c5e152d86"
+      "file": "cy-participation.png",
+      "sha256": "231e11540737668e2161ad2b0eaf7c0ba1f5b0d826a1cda81ae3100ae35db14b"
+    },
+    {
+      "file": "exercise-ab-expanded.png",
+      "sha256": "f72126a0f2b1fe958f9def5860fdf1996938dfccdf66f0387f4e101456aef7db"
     }
   ],
   "final_html_sha256": {
-    "index.html": "f27d4c2688d4dd2b99e54d9790395a053ca82c57ceac8399a773fe8f793f7558",
-    "student-notes.html": "9f0fdd8c65000ab5a10e33300b706b8ff7031e76d4d1d2297c4fb706365bb5b2",
+    "index.html": "e4e8c4ef0b59da28c107fdf9dbbde92e3ef2c9c4f25769d1b68d9d306189b16f",
+    "student-notes.html": "2588a55ae9d582edab0e0228cad49e67170d695fc0ec09df7fdc04ad454ae700",
     "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-    "w05-venture-contract.html": "561019f6887c5d85b3dfe3d2ec74ba404098ca6241b14edba845e38dc1252477",
+    "w05-venture-contract.html": "63bf5ce4129b87bcfb06f9da1b31e91a28587ba330d9cf39b09c7fb1881d7b33",
     "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-    "w05-preparation.html": "396fd70a9da0a565ea7a7f909f8f9e2544f3f9fb7e036fa7be5c265aa4fa4d95",
-    "exercises.html": "705909daadbbdefcf10c6d098c8a985854116801d50cbac89e08416238629006"
+    "w05-preparation.html": "e8e6347e5265118c230420c0d7accbb0d430a87cebf84a798f2b51d2d0a5a20f",
+    "exercises.html": "623e9c6baf5f1850c6fca31f5aef34487488e4b220f7868936d80a71e5e3bb8f"
   },
   "limits": [
-    "Spot checks, not a complete browser or device compatibility test",
-    "The five-page DOM formula counts were unchanged by the final prose-only counterfactual addition; that paragraph was separately checked in the final classroom render",
-    "Wide formulas require horizontal scrolling on a phone"
+    "Visual spot checks, not a complete device compatibility test",
+    "No mobile visual check in this revision"
   ],
-  "publication": "Local rendering and course mirrors only; no production deployment performed"
+  "publication": "Local files and course mirrors synchronized; production publication not performed"
 }

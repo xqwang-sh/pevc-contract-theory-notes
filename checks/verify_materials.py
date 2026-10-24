@@ -163,6 +163,72 @@ def week5_core_checks():
     vc_cash=sum(F(1,2)*states[s][a][0] for s,a in enumerate(first_best))
     en=sum(F(1,2)*states[s][a][1] for s,a in enumerate(first_best))
     assert vc_cash==en==75 and vc_cash-70==5 and vc_cash+en-70==80
+    # Resolve control and actual renegotiation, imposing nonnegative E cash.
+    def ab_contract(beta_good,beta_bad,capital=F(70)):
+        branches=[]
+        for state,beta in enumerate((beta_good,beta_bad)):
+            for signal in (1,0):
+                mass=F(1,2)*(beta if signal else 1-beta)
+                initial=max(range(2),key=lambda a:states[state][a][1 if signal else 0])
+                action=initial
+                vc,eu=F(states[state][initial][0]),F(states[state][initial][1])
+                cash_e=F(0)
+                for candidate,(cash,private) in enumerate(states[state]):
+                    available=F(cash)-vc
+                    if available>=0 and available+private>eu:
+                        action=candidate;cash_e=available;eu=available+private
+                assert cash_e>=0 and cash_e+vc==states[state][action][0]
+                assert eu==cash_e+states[state][action][1]
+                branches.append({'state':state,'signal':signal,'probability':mass,
+                                 'action':action,'renegotiated':action!=initial,
+                                 'VC_cash':vc,'E_cash':cash_e,'E_utility':eu})
+        vc=sum(row['probability']*row['VC_cash'] for row in branches)
+        e=sum(row['probability']*row['E_utility'] for row in branches)
+        resource=sum(row['probability']*sum(states[row['state']][row['action']])
+                     for row in branches)-capital
+        assert vc-capital+e==resource
+        return {'branches':branches,'VC_cash':vc,'VC_net':vc-capital,'E':e,'surplus':resource}
+    noisy=ab_contract(F(9,10),F(1,10))
+    complete=ab_contract(F(1),F(0))
+    assert (noisy['VC_cash'],noisy['VC_net'],noisy['E'],noisy['surplus'])==(F(155,2),F(15,2),70,F(155,2))
+    assert [row['action'] for row in noisy['branches']]==[0,1,1,1]
+    assert [row['renegotiated'] for row in noisy['branches']]==[False,False,True,False]
+    assert complete['VC_cash']==complete['E']==75 and complete['surplus']==80
+    assert complete['surplus']-noisy['surplus']==F(1,20)*(250-200)==F(5,2)
+    assert noisy['VC_cash']>complete['VC_cash'] and noisy['surplus']<complete['surplus']
+    # In the good state, I's original cash 200 exceeds all cash under a_g.
+    assert states[0][0][0]<states[0][1][0]
+
+    # Check the original continuous effort conditions through nearby deviations.
+    alpha=F(4,5);B_private=F(1)/(4*alpha);B_social=F(1,4)
+    success=lambda b:F(3,4)-2*b*b
+    en_objective=lambda b:b+alpha*success(b)
+    for step in (F(-1,100),F(1,100)):
+        assert en_objective(B_private)>en_objective(B_private+step)
+    assert B_private>B_social and 0<success(B_private)<1
+    phi_c,M_c=F(19,20),F(2)
+    joint=phi_c-success(B_private)-B_private
+    full=B_private+alpha*success(B_private)
+    vc_increment=lambda severance:phi_c-severance-(1-alpha)*success(B_private)
+    m_fb=joint/M_c;m_low_severance=vc_increment(full-F(1,50))/M_c
+    assert vc_increment(full)==joint>0
+    assert m_low_severance-m_fb==F(1,50)/M_c
+    for severance,mstar in ((full,m_fb),(full-F(1,50),m_low_severance)):
+        value=lambda m:m*vc_increment(severance)-M_c*m*m/2
+        for step in (F(-1,100),F(1,100)):
+            assert value(mstar)>value(mstar+step)
+    b_cost,g_cost,R_c,x_c=F(4),F(8),F(1),F(1,4)
+    e_c,a_c=(R_c-x_c)/b_cost,x_c/g_cost
+    u_e=lambda effort:(effort+a_c)*(R_c-x_c)-b_cost*effort*effort/2
+    u_v=lambda effort:(e_c+effort)*x_c-g_cost*effort*effort/2
+    for step in (F(-1,100),F(1,100)):
+        assert u_e(e_c)>u_e(e_c+step) and u_v(a_c)>u_v(a_c+step)
+    transfer=F(1,20)
+    e_after=(R_c-x_c-transfer)/b_cost;a_after=(x_c+transfer)/g_cost
+    assert e_after-e_c==-transfer/b_cost
+    assert a_after-a_c==transfer/g_cost
+    assert e_after+a_after<e_c+a_c<1
+
     for share in (F(1,2),F(3,4),F(1)):
         renegotiated=1-(1-share)*F(200,100)
         assert (1-renegotiated)*100==(1-share)*200
@@ -175,6 +241,9 @@ def week5_core_checks():
             'cornelli_yosha':{'payoffs':receipts,'policy':policy,'conditional_net_payoffs':menu,
                               'VC':clean_v,'E':clean_e,'surplus':total,'deviation_E':deviation_e,
                               'debt_VC':debt_v,'debt_E':debt_e,'debt_surplus':debt_total},
+            'aghion_bolton_noisy_signal':noisy,
+            'original_effort_conditions':{'hellmann_B_private':B_private,'hellmann_B_social':B_social,
+                                          'hellmann_m_full_compensation':m_fb,'casamatta_e':e_c,'casamatta_a':a_c},
             'aghion_bolton_perfect_signal':{'VC_cash':vc_cash,'VC_net':vc_cash-70,'E':en,'surplus':80}}
 
 
@@ -182,7 +251,7 @@ def week5_numerical_checks():
     from fractions import Fraction as F
 
     # Aghion–Bolton (1992), pp. 482–484 original numerical example.
-    # y_i^j is monetary income; lambda_i^j is non-transferable private benefit.
+    # y_i^j is expected monetary income; lambda_i^j is non-transferable private benefit.
     pi1=F(1,2)*(F(1,50)*100)+F(1,2)*(F(1,50)*50)
     assert pi1==F(3,2)
     pi2=F(1,2)*100+F(1,2)*0
@@ -492,7 +561,7 @@ def source_checks():
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
-        "w05-venture-contract.qmd":["200 笔投资","118 家企业","信息对称","不完整合同","双边道德风险","有限责任","不可核实","2.3","4.1","-0.08"],
+        "w05-venture-contract.qmd":["200 笔投资","118 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","2.3","4.1","-0.08","77.5","0.76","66.75","66.5","3.3","2.7","1+\\alpha p_B","完整求解"],
         "w05-preparation.qmd":["75","70","49","2.4","1.8","4.5"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
@@ -528,7 +597,7 @@ def source_checks():
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
     assert "核对 P5-4" in prep and "P5-2：Aghion–Bolton" in prep
-    assert "## 理论基础：Aghion–Bolton" not in (ROOT/"w05-venture-contract.qmd").read_text()
+    assert "## 经典基础：Aghion–Bolton" in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
@@ -544,7 +613,7 @@ def source_checks():
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture
     assert "+-\\underbrace" not in venture
-    assert "若仍由 VC 提供全部启动资本" in book
+    assert "仍由 VC 提供全部启动资本" in book
     assert book.index("{#book-venture-experiment}") > book.index("{#book-app-h}")
     for name in ("student-notes.md","w05-venture-contract.qmd","w05-preparation.qmd"):
         assert "不是，而是" not in (ROOT/name).read_text(),name

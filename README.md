@@ -10,7 +10,7 @@
 
 在本目录运行 python3 checks/render_materials.py 生成六个 HTML 页面；它在本地临时目录渲染，避免 OneDrive 临时目录清理权限错误。需要更新课程目录副本时加 --sync-parent。首页 docs/index.html 独立维护。全部页面自包含，沿用 pevc-handout.css。源文件和 HTML 的课程目录副本按 AGENTS.md 同步。
 
-2026-10-24 简化第 5 周。课堂主讲 Hellmann 的投入保护、Casamatta 的融资与建议捆绑、Cornelli–Yosha 的粉饰与转换。每篇先说明谁知道什么、什么不可契约，再用二元选择或简单期望收入推导一个核心机制。Aghion–Bolton 为预习桥接，只算完全准确信号的一份可行合同；连续努力、定价与信念核对放到附录。Neher、Admati–Pfleiderer 和实验设计保留选读。核心题为 H5-1 至 H5-4，其余题目为附录选做。学生材料不写预计用时。原文版本及具体复核范围见模型审查记录；公开发布须另有实际部署记录。
+2026-10-24 修订第 5 周：正文先用 Aghion–Bolton 解释不完全合同、私人收益、财富约束和或有控制，再主讲 Hellmann、Casamatta、Cornelli–Yosha。每篇写清信息与合同空间，正文完整推导核心收入、行为和参与条件；必要的后验、续投与转换计算也在正文。附录保留较长合同比较、反事实和拓展，Neher、Admati–Pfleiderer 与实验设计为选读。核心题为 H5-1 至 H5-4，学生材料不写预计用时。原文版本与核读位置见模型审查记录，正式发布须另有实际部署记录。
 
 核查命令：python3 checks/verify_materials.py --sources-only 独立复算数值；完成渲染与副本同步后，运行 python3 checks/verify_materials.py 核对本地链接、锚点和文件一致性。检查结果写入 checks 下的 JSON 文件。
 

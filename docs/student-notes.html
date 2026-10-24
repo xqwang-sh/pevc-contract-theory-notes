@@ -3624,7 +3624,7 @@ text-decoration: none;
   <li><a href="#book-app-d" id="toc-book-app-d" class="nav-link" data-scroll-target="#book-app-d">附录 D：企业证券分配、估值与稀释</a></li>
   <li><a href="#book-app-e" id="toc-book-app-e" class="nav-link" data-scroll-target="#book-app-e">附录 E：Aghion–Bolton 原文例子的控制上界与信号</a></li>
   <li><a href="#book-app-f" id="toc-book-app-f" class="nav-link" data-scroll-target="#book-app-f">附录 F：Neher 分阶段承诺与知情融资的进一步条件</a></li>
-  <li><a href="#book-app-g" id="toc-book-app-g" class="nav-link" data-scroll-target="#book-app-g">附录 G：三篇主讲论文的推导与教学边界</a></li>
+  <li><a href="#book-app-g" id="toc-book-app-g" class="nav-link" data-scroll-target="#book-app-g">附录 G：三篇主讲论文的边界与延伸</a></li>
   <li><a href="#book-app-h" id="toc-book-app-h" class="nav-link" data-scroll-target="#book-app-h">附录 H：Bolton、Liu、Nanda、Sundaresan 的实验设计、续投规则与失败奖励</a></li>
   <li><a href="#book-reading" id="toc-book-reading" class="nav-link" data-scroll-target="#book-reading">文献导读：先按合同，再按问题阅读</a></li>
   <li><a href="#book-glossary" id="toc-book-glossary" class="nav-link" data-scroll-target="#book-glossary">术语速查</a></li>
@@ -4459,11 +4459,11 @@ f+\nu[\eta_i+e(\nu)]-C(e(\nu))
 <section id="book-venture" class="level2">
 <h2 class="anchored" data-anchor-id="book-venture">第二篇：GP 与企业合同，以 VC 为主</h2>
 <section id="book-venture-motivation" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-motivation">本讲的三个问题</h3>
+<h3 class="anchored" data-anchor-id="book-venture-motivation">从不完全合同到三个 VC 合同问题</h3>
 <div class="chapter-opening">
 <p>LP 把资本交给 GP 后，基金再向企业投资。创业者需要 VC 的资金、建议和招聘支持，VC 也需要创业者继续经营。双方的投入难以写进合同，中期信息还可能被操纵。一份 VC 合同因此要安排谁决定、怎样分收入，以及何时追加资金。</p>
 </div>
-<p>本讲用“VC”称呼企业投资方，实际签约的通常是基金及其投资载体。课堂集中推导三个机制，每个机制只保留一项主要比较。</p>
+<p>本讲用“VC”称呼企业投资方，实际签约的通常是基金及其投资载体。先用 Aghion–Bolton 介绍不完全合同与控制权，再完整求解三个 VC 合同机制。每个主讲模型都从假设和收入出发，求行动、检查激励与参与约束。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -4479,24 +4479,29 @@ f+\nu[\eta_i+e(\nu)]-C(e(\nu))
 </thead>
 <tbody>
 <tr class="odd">
+<td>Aghion–Bolton（1992），经典基础</td>
+<td>状态与未来行动不能直接写入合同；信号与现金可核实；私人收益和财富约束使目标难以一致</td>
+<td>现金分配与控制配置须共同设计，或有控制在特定条件下可以改善配置</td>
+</tr>
+<tr class="even">
 <td>Hellmann（1998）</td>
 <td>信息对称；搜寻投入不可核实，创始人的私人收益不可转让；不足额离职补偿下可以事后否决替换</td>
 <td>事后分走投入收益，会使 VC 事前不投入；控制权可以保护这项投入</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Casamatta（2003）</td>
 <td>双方努力不可观察；有限责任限制惩罚；创业者的努力相对更有效率</td>
 <td>顾问自己出资，可以用同一笔激励收入补偿资本成本</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Cornelli–Yosha（2003）</td>
 <td>粉饰行动不可观察；双方事前都不知道质量，中期共同信号不可核实；转换先于最终现金实现</td>
 <td>粉饰若也提高转换概率，转换损失可以抵消避免清算的好处</td>
 </tr>
 </tbody>
 </table>
-<p>这是问题之间的推进。三篇论文并非在同一个模型中依次增加一个假设，进入下一节时会重新列设定。Hellmann 本身已有双方的激励问题，课堂只抽出 VC 搜寻这一项；Casamatta 改问融资与日常建议怎样共同安排。</p>
-<p>数字均为教学自设。课堂证明表中的机制，连续努力、证券的一般比较和完整条件见<a href="#book-app-g">附录 G</a>。</p>
+<p>这是问题之间的推进。三篇论文并非在同一个模型中依次增加一个假设，进入下一节时会重新列设定。Hellmann 本身已有双方的激励问题；Casamatta 改问融资与日常建议怎样共同安排；Cornelli–Yosha 则研究中期信息的生成。</p>
+<p>Aghion–Bolton 的行动收入采用原文数值，信号准确率由讲义设定；后三篇的数字均为教学自设。正文保留推出核心结论所需的收入、行为与约束推导。<a href="#book-app-e">附录 E</a>和<a href="#book-app-g">附录 G</a>提供更长的合同比较、反例与延伸。</p>
 </section>
 <section id="book-venture-rights" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-rights">先读合同：现金流权和控制权是两件事</h3>
@@ -4556,16 +4561,66 @@ V_{NP}(W)=\max\{\min(W,L),\alpha W\}.
 <p>转换点为 <span class="math inline">L/\alpha=1{,}500</span>。这里 VC 在给定退出现金下选择分配分支，还没有回答谁决定退出。Cornelli–Yosha 则把转换放在中期、最终现金尚未实现时，两个时点不能混用。</p>
 </section>
 <section id="book-venture-control" class="level3">
-<h3 class="anchored" data-anchor-id="book-venture-control">预习桥接：为什么控制权值得单独约定？</h3>
-<p><a href="https://doi.org/10.2307/2297860">Aghion–Bolton（1992）</a>的起点是：状态双方能看到，法院不能核实；创业者还有不能转给投资者的私人收益，也缺少补偿对方的财富。双方可能对同一项行动有不同偏好，重谈也不保证消除冲突。</p>
-<p>两个状态各半，先取创业者初始现金份额为零。原文的行动收入为：</p>
+<h3 class="anchored" data-anchor-id="book-venture-control">经典基础：Aghion–Bolton，不完全合同为什么需要控制权？</h3>
+<p><a href="https://doi.org/10.2307/2297860">Aghion–Bolton（1992）</a>把金融合同看作现金分配与决策权的共同安排。问题是：有些未来决定不能预先写清，双方事后又有利益冲突，合同应当把决定权交给谁？</p>
+<section id="不完全合同具体体现在哪些假设" class="level4">
+<h4 class="anchored" data-anchor-id="不完全合同具体体现在哪些假设">不完全合同具体体现在哪些假设？</h4>
+<p>时序为：投资者提供资本 <span class="math inline">K</span>、签约 → 状态 <span class="math inline">\theta</span> 与公共信号 <span class="math inline">\sigma</span> 实现 → 控制者选择行动，双方可重谈 → 最终现金 <span class="math inline">r</span> 实现。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>关键假设</th>
+<th>对合同有什么限制？</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>状态 <span class="math inline">\theta</span> 事前难以描述，事后双方都知道，但不能直接作为合同条件</td>
+<td>不能直接写“在真实好状态做某事”；这里没有一方私知质量的逆向选择</td>
+</tr>
+<tr class="even">
+<td>原文第 III 节的未来行动难以预先描述并写入合同</td>
+<td>不能预先强制执行完整的状态依赖行动计划，需要安排事后决定权</td>
+</tr>
+<tr class="odd">
+<td>公共信号 <span class="math inline">\sigma</span> 可核实，但只与状态不完全相关；最终现金 <span class="math inline">r</span> 可核实</td>
+<td>可以依据 <span class="math inline">\sigma</span> 分配控制，依据 <span class="math inline">(\sigma,r)</span> 分现金</td>
+</tr>
+<tr class="even">
+<td>创业者有不可转让的私人收益，投资者只关心现金</td>
+<td>同一行动的私人最优与总剩余最优可能不同</td>
+</tr>
+<tr class="odd">
+<td>创业者无初始财富，不能承诺负的个人收入</td>
+<td>无法随时拿钱补偿投资者；有联合增益也未必谈得成</td>
+</tr>
+</tbody>
+</table>
+<p>所以，<strong>信息对称不等于合同完备</strong>。记创业者的现金转移为 <span class="math inline">t(\sigma,r)\ge0</span>，控制配置为 <span class="math inline">\gamma(\sigma)</span>。双方效用与有效行动分别是</p>
+<p><span class="math display">
+U_E=E[t(\sigma,r)+\lambda(a,\theta)],\qquad
+U_I=E[r-t(\sigma,r)],
+</span></p>
+<p><span class="math display">
+a^*(\theta)\in\arg\max_a\{y(a,\theta)+\lambda(a,\theta)\},\qquad
+U_I\ge K.
+</span></p>
+<p>这里 <span class="math inline">y=E[r\mid\theta,a]</span> 是期望货币收入；私人收益 <span class="math inline">\lambda</span> 计入福利，却不能直接拿来偿还资本。</p>
+</section>
+<section id="两种单边控制为什么都会出问题" class="level4">
+<h4 class="anchored" data-anchor-id="两种单边控制为什么都会出问题">两种单边控制为什么都会出问题？</h4>
+<p>沿用原文第 482–484 页的数值，两个状态各半。表中的 <span class="math inline">y</span> 是<strong>条件期望收入</strong>，不是一个直接揭示状态的确定现金数。</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>状态与行动</th>
-<th style="text-align: right;">货币收入</th>
-<th style="text-align: right;">私人收益</th>
-<th style="text-align: right;">总剩余</th>
+<th style="text-align: right;"><span class="math inline">y</span></th>
+<th style="text-align: right;">私人收益 <span class="math inline">\lambda</span></th>
+<th style="text-align: right;">总剩余 <span class="math inline">y+\lambda</span></th>
 </tr>
 </thead>
 <tbody>
@@ -4595,21 +4650,76 @@ V_{NP}(W)=\max\{\min(W,L),\alpha W\}.
 </tr>
 </tbody>
 </table>
-<p>好状态的第一优是 <span class="math inline">a_g</span>，坏状态是 <span class="math inline">a_b</span>。第一优比较总剩余；创业者与投资者却分别按自己的效用选行动。</p>
-<p>在<a href="w05-preparation.html#p5-2">预习 P5-2</a>中，创业者控制时在坏状态偏向私人收益，投资者控制时在好状态偏向货币收入。用完全准确的信号作一个教学特例：好状态交给创业者、坏状态交给投资者，双方都选对行动，投资者期望收入为</p>
+<p>第一优在好状态选 <span class="math inline">a_g</span>，在坏状态选 <span class="math inline">a_b</span>。先取创业者初始现金份额为零：创业者控制时，只看私人收益，会在坏状态选错；投资者控制时，只看货币收入，会在好状态选错。</p>
+<p>重谈也受到约束。好状态若由投资者控制，它原本可得 200；改选 <span class="math inline">a_g</span> 虽然总剩余增加 50，但项目期望现金只有 100。创业者无财富，私人收益又不能转让，无法补足差额。若创业者控制坏状态，原文允许他提出重谈：改选 <span class="math inline">a_b</span> 并保留全部现金，自己从 49 升到 50，投资者仍得零。以下沿用原文“投资者弱改善即接受”的规则。</p>
+</section>
+<section id="用有噪声的信号配置控制" class="level4">
+<h4 class="anchored" data-anchor-id="用有噪声的信号配置控制">用有噪声的信号配置控制</h4>
+<p>取教学信号 <span class="math inline">P(\sigma=1\mid g)=0.9</span>、<span class="math inline">P(\sigma=1\mid b)=0.1</span>。合同约定 <span class="math inline">\sigma=1</span> 时创业者控制、<span class="math inline">\sigma=0</span> 时投资者控制，初始创业者现金份额仍为零。按上面的行动与重谈规则：</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>状态、信号</th>
+<th style="text-align: right;">联合概率</th>
+<th>最后行动</th>
+<th style="text-align: right;">投资者期望收入</th>
+<th style="text-align: right;">创业者效用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>好、1</td>
+<td style="text-align: right;">0.45</td>
+<td><span class="math inline">a_g</span></td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td>好、0</td>
+<td style="text-align: right;">0.05</td>
+<td><span class="math inline">a_b</span>，财富约束阻止重谈</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>坏、1</td>
+<td style="text-align: right;">0.05</td>
+<td>重谈后 <span class="math inline">a_b</span></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td>坏、0</td>
+<td style="text-align: right;">0.45</td>
+<td><span class="math inline">a_b</span></td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>投资者期望收入与创业者效用为</p>
 <p><span class="math display">
-\tfrac12\times100+\tfrac12\times50=75.
+\begin{aligned}
+U_I&amp;=0.45(100)+0.05(200)+0.45(50)=77.5,\\
+U_E&amp;=0.45(150)+0.05(50)=70.
+\end{aligned}
 </span></p>
-<p>这能覆盖 <span class="math inline">K=70</span> 的启动资本。例子说明信号可以帮助配置控制；带噪声信号、重谈与单边控制的融资上界见<a href="#book-app-e">附录 E</a>。课堂继续问：如果投资者自己也要投入，控制权还会做什么？</p>
+<p>资本 <span class="math inline">K=70</span> 时双方均愿参与，总净剩余为 <span class="math inline">77.5+70-70=77.5</span>。完全准确信号的基准净剩余为 80；有噪声时仍有概率 0.05 在好状态选错行动，损失 <span class="math inline">0.05(250-200)=2.5</span>。投资者收入较高，并不表示福利更高。</p>
+</section>
+<section id="经典结论是什么" class="level4">
+<h4 class="anchored" data-anchor-id="经典结论是什么">经典结论是什么？</h4>
+<p>控制应结合私人收益、融资要求、财富约束和可核实信号共同配置。某些环境下，创业者控制或投资者控制即可；当双方目标都可能偏离总剩余、信号又足够有信息时，或有控制可以优于单边控制。债务在违约时转移控制，是这类配置的一种解释，不能据此说债务在所有环境都最优。</p>
+<p><a href="w05-preparation.html#p5-2">预习 P5-2</a>的完全准确信号只是一个易算基准。原文第 477 页明确指出，信号若完美替代状态，合同就可借信号实现完备；真正的不完全合同问题在有噪声时仍然存在。<a href="#book-app-e">附录 E</a>保留单边控制的融资上界和更长的重谈比较。</p>
+<p>接下来，Hellmann 把投资者自己的不可契约投入加入控制问题：有了决策权，VC 是否更愿意先投入？</p>
+</section>
 </section>
 <section id="book-venture-hellmann" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-hellmann">模型一：Hellmann，控制权怎样保护 VC 的投入？</h3>
-<p><a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>问：创始人即使能从其他渠道融资，为什么仍会接受 VC 替换自己的权利？核心在于，VC 寻找职业经理人的投入也需要激励。</p>
-<section id="固定创业者行为只看-vc-搜寻" class="level4">
-<h4 class="anchored" data-anchor-id="固定创业者行为只看-vc-搜寻">固定创业者行为，只看 VC 搜寻</h4>
-<p>原文假设双方信息对称，问题来自不完整合同：VC 的搜寻成本与创业者牺牲企业价值来增加私人收益的行为不可核实；替换是否发生、最终现金和相应收入却可以写进合同。控制权改变的是事后拒绝和重谈的地位。</p>
-<p>时序为：签现金流与控制合同 → VC 决定是否搜寻 → 找到经理人后决定是否替换 → 实现收入。双方风险中性，无贴现；搜寻不能由法院核实，替换权和现金支付可以执行。</p>
-<p>本例把原文的连续搜寻强度改为“搜寻或不搜寻”，固定创业者自己的经营行为，并限定到离职补偿不足的合同。这个限制重要，不能悄悄删掉。</p>
+<p><a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>问：创始人即使能够在保留控制时融资，为什么仍会主动接受 VC 替换自己的权利？VC 寻找职业经理人的投入也需要激励。先完整求解一个二元例子，再用原文的两条行为条件解释离职补偿为什么重要。</p>
+<section id="假设时序与收入合同" class="level4">
+<h4 class="anchored" data-anchor-id="假设时序与收入合同">假设、时序与收入合同</h4>
+<p>原文假设信息对称，但 VC 搜寻和创业者选择私人收益的行为不可核实。私人收益不可转让；替换是否发生、最终现金以及相应收入可以写进合同。原文创业者的财富约束生效，不能先补偿 VC、再自己保留全部现金收益。</p>
+<p>教学时序为：签现金流与控制合同 → VC 决定是否搜寻 → 找到经理人后决定是否替换、是否重谈 → 实现收入。双方风险中性，无贴现；先固定创业者自己的经营行为，把搜寻改成二元选择。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -4623,101 +4733,157 @@ V_{NP}(W)=\max\{\min(W,L),\alpha W\}.
 </thead>
 <tbody>
 <tr class="odd">
-<td>搜寻成本 <span class="math inline">c</span></td>
-<td>6，由 VC 承担</td>
+<td>项目现金</td>
+<td>成功 100、失败零；创业者经营时成功率 <span class="math inline">p=0.5</span>，经理人经营时 <span class="math inline">\varphi=0.8</span></td>
 </tr>
 <tr class="even">
-<td>找到经理人的概率 <span class="math inline">q</span></td>
-<td>搜寻后为 <span class="math inline">1/2</span>，不搜寻为 0</td>
+<td>私人收益与启动资本</td>
+<td>创业者留任得 <span class="math inline">B=10</span>，替换后失去；VC 出资 <span class="math inline">I=30</span></td>
 </tr>
 <tr class="odd">
-<td>当前合同下的替换增量</td>
-<td>VC 多得 30，创始人少得 10，联合净增量 <span class="math inline">\Gamma=20</span></td>
+<td>现金合同</td>
+<td>创业者留任时成功份额 <span class="math inline">\alpha=0.4</span>；离职时取得期望现金 <span class="math inline">S=20</span></td>
 </tr>
 <tr class="even">
-<td>创始人控制时的重谈</td>
-<td>创始人可以拒绝替换，双方各得增量的一半</td>
+<td>二元搜寻</td>
+<td>VC 不搜寻找不到经理；花成本 <span class="math inline">c=6</span>，以 <span class="math inline">q=1/2</span> 找到经理</td>
 </tr>
 <tr class="odd">
-<td>离职补偿</td>
-<td>低于创始人留下时的效用，创始人有理由否决替换</td>
+<td>创业者控制时的重谈</td>
+<td>可否决替换；找到经理后，双方平分联合增量</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="两行计算决定是否搜寻" class="level4">
-<h4 class="anchored" data-anchor-id="两行计算决定是否搜寻">两行计算决定是否搜寻</h4>
-<p>创始人控制时，VC 预见搜寻成功后还要分享收益：</p>
-<p><span class="math display">
-q\times\frac{\Gamma}{2}-c=\tfrac12\times10-6=-1.
-</span></p>
-<p>所以 VC 不搜寻。成本由它自己承担，事后收益却要分给可以否决替换的创始人，这就是敲竹杠。</p>
-<p>VC 控制时，可以按约执行替换，VC 的搜寻净收益为：</p>
-<p><span class="math display">
-q\times30-c=\tfrac12\times30-6=9&gt;0.
-</span></p>
-<p>所以 VC 搜寻。但 9 是 VC 在当前合同下的私人增量，总剩余只增加 <span class="math inline">q\Gamma-c=\tfrac12\times20-6=4</span>。9 对应原现金条款；若在期初重新议定股权，须重新检查搜寻。下面这组合同把 VC 的参与要求保持不变，让新增的 4 留给创始人。</p>
+<p><span class="math inline">S=20</span> 可以由替换后成功时给创始人 25、失败时给零实现，因为 <span class="math inline">0.8\times25=20</span>。不设期初固定转移。</p>
+<p>先从合同算出事后的利益，而不直接假定“VC 多得 30”：</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 28%">
-<col style="width: 28%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>一组可行的期初合同</th>
-<th>VC 是否搜寻</th>
-<th style="text-align: right;">VC 扣启动资本后的净收益</th>
+<th>谁经营？</th>
+<th style="text-align: right;">VC 期望现金</th>
+<th style="text-align: right;">创业者现金与私人收益</th>
+<th style="text-align: right;">联合收益</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>创业者留任</td>
+<td style="text-align: right;"><span class="math inline">(1-0.4)50=30</span></td>
+<td style="text-align: right;"><span class="math inline">0.4(50)+10=30</span></td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td>经理人替换</td>
+<td style="text-align: right;"><span class="math inline">80-20=60</span></td>
+<td style="text-align: right;"><span class="math inline">20</span></td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+<p>替换使 VC 多得 30，创始人少得 10，联合净增量 <span class="math inline">\Gamma=20</span>。合同的离职补偿低于留任效用，是创始人可信地否决替换的原因。</p>
+</section>
+<section id="先解事后重谈再解事前搜寻" class="level4">
+<h4 class="anchored" data-anchor-id="先解事后重谈再解事前搜寻">先解事后重谈，再解事前搜寻</h4>
+<p>创始人控制时，双方以留任的 <span class="math inline">(30,30)</span> 为重谈起点。把新增 20 平分，替换后的收入变成 <span class="math inline">(40,40)</span>，VC 只能保留增量 10。搜寻的私人净收益为</p>
+<p><span class="math display">
+q\frac{\Gamma}{2}-c=\tfrac12(10)-6=-1,
+</span></p>
+<p>所以不搜寻。VC 控制时，可以按原合同执行替换，搜寻净收益为</p>
+<p><span class="math display">
+q(60-30)-c=\tfrac12(30)-6=9&gt;0,
+</span></p>
+<p>所以搜寻。但联合净增量只有 <span class="math inline">q\Gamma-c=\tfrac12(20)-6=4</span>。9 还包含创始人未获补偿的损失，不能全算作创造的价值。</p>
+</section>
+<section id="怎样让创始人愿意在期初让出控制" class="level4">
+<h4 class="anchored" data-anchor-id="怎样让创始人愿意在期初让出控制">怎样让创始人愿意在期初让出控制？</h4>
+<p>只交控制而不改现金条款，创始人效用降为 <span class="math inline">\tfrac12(20)+\tfrac12(30)=25</span>。因此必须比较完整合同，保持 VC 的参与要求相同。</p>
+<p>在 VC 控制的合同中，重新选择创业者留任时的成功份额 <span class="math inline">\alpha</span>，让 VC 扣资本和搜寻成本后净收益仍为零：</p>
+<p><span class="math display">
+\tfrac12(80-20)+\tfrac12[(1-\alpha)50]-6-30=0
+\quad\Longrightarrow\quad \alpha=0.76.
+</span></p>
+<p>改份额后还要再检查行为。VC 不搜寻得期望现金 12；搜寻得 <span class="math inline">\tfrac12(60)+\tfrac12(12)-6=30</span>，搜寻的私人增量为 18，仍愿搜寻。创始人效用为</p>
+<p><span class="math display">
+U_E=\tfrac12(20)+\tfrac12[0.76(50)+10]=34.
+</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>期初安排</th>
+<th style="text-align: right;">创业者份额 <span class="math inline">\alpha</span></th>
+<th>搜寻</th>
+<th style="text-align: right;">VC 净收益</th>
 <th style="text-align: right;">创始人效用</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>创始人控制</td>
+<td>创业者控制</td>
+<td style="text-align: right;">0.40</td>
 <td>否</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">30</td>
 </tr>
 <tr class="even">
-<td>VC 控制，期初提高创始人的股权</td>
+<td>VC 控制，现金条款不变</td>
+<td style="text-align: right;">0.40</td>
+<td>是</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="odd">
+<td>VC 控制，重新议定股权</td>
+<td style="text-align: right;">0.76</td>
 <td>是</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">34</td>
 </tr>
 </tbody>
 </table>
-<p><a href="#book-hellmann-extension">附录 G.1</a>给出对应的收入合同，并检查补偿、重谈和双方参与条件。创始人让出控制，是为了让一项原来不会发生的增值投入发生。</p>
-<p>这里 <span class="math inline">q\Gamma/2&lt;c&lt;q\Gamma</span>：事后分享会使一项增加总剩余的搜寻不发生。若 <span class="math inline">c&gt;q\Gamma</span>，搜寻不再增加总剩余，VC 仍可能因私人收益而搜寻，不能继续套用本例的福利结论。</p>
-<p>若允许事前足额补偿，而且补偿不影响创业者自己的激励，创始人保留控制也可能避免敲竹杠。原文让创业者选择私人收益：多让股权会损害其经营激励，所以创业者可能宁愿接受较低离职补偿。课堂把这种不足额补偿作为给定条件，原文的内生补偿、过多替换和 vesting 放到附录讨论。</p>
+<p>新增的联合剩余 4，最终通过现金条款留给创业者。这才说明他为什么愿意让出控制。若 <span class="math inline">c&gt;q\Gamma</span>，搜寻不再增加总剩余，即使 VC 还愿搜寻，也不能继续套用这个福利判断。</p>
+</section>
+<section id="回到原文不足额离职补偿从哪里来" class="level4">
+<h4 class="anchored" data-anchor-id="回到原文不足额离职补偿从哪里来">回到原文：不足额离职补偿从哪里来？</h4>
+<p>上面的二元例子给定了不足额补偿。原文则让创业者选择私人收益 <span class="math inline">B</span>，同时降低成功率 <span class="math inline">p(B)</span>，其中 <span class="math inline">p_B&lt;0</span>；VC 选择连续搜寻概率 <span class="math inline">m</span>，成本为 <span class="math inline">Mm^2/2</span>。以下沿原文将成功现金标准化为 1，<span class="math inline">B,S</span> 同按此单位计量，并重新记 <span class="math inline">\Gamma=\varphi-p-B</span>；不再代入前面以 100 为成功现金的数字。</p>
+<p>创业者留任时最大化 <span class="math inline">B+\alpha p(B)</span>，VC 选择搜寻强度，两条内点条件是</p>
+<p><span class="math display">
+1+\alpha p_B=0,\qquad
+Mm=\varphi-S-(1-\alpha)p.
+</span></p>
+<p>社会对创业者行为的条件是 <span class="math inline">1+p_B=0</span>。创业者只取得 <span class="math inline">\alpha&lt;1</span> 的现金回报，所以股权分配影响其经营激励。完全补偿须为 <span class="math inline">S^{FC}=B+\alpha p</span>；将其代入 VC 搜寻条件，得到</p>
+<p><span class="math display">
+m(S^{FC})=\frac{\varphi-p-B}{M}=\frac{\Gamma}{M}=m^{FB}.
+</span></p>
+<p>这里取 <span class="math inline">\Gamma&gt;0</span> 和内点搜寻，<span class="math inline">M</span> 足够大使 <span class="math inline">m&lt;1</span>；<span class="math inline">m^{FB}</span> 是给定经营行为时的有效搜寻水平。若 <span class="math inline">S&lt;S^{FC}</span>，同一条件给出 <span class="math inline">m-m^{FB}=(S^{FC}-S)/M&gt;0</span>。若由创业者控制并通过重谈分走 <span class="math inline">\theta\Gamma</span>，VC 的搜寻则变成 <span class="math inline">m^R=(1-\theta)\Gamma/M</span>，低于这个有效水平。</p>
+<p>原文 Result 1 的权衡在于：给 VC 更多价值，可以降低创业者股权，也可以降低离职补偿。前者还损害创业者的经营激励；在完全补偿处，小幅降低补偿的边际效率成本较低。因此最优合同选择不足额补偿，配合 VC 控制来保护投入；完整最优化还依赖财富约束与合同空间，并非上面二元例子单独证明。</p>
+<p>若固定创业者行为又允许自由设置足额补偿，创始人保留控制也可能避免敲竹杠。要保留原文的控制结论，就不能删掉经营激励与补偿的权衡。<a href="#book-hellmann-extension">附录 G.1</a>继续讨论该边界与 vesting；本节已完成核心合同、搜寻和参与约束的推导。</p>
 </section>
 </section>
 <section id="book-venture-double" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-double">模型二：Casamatta，为什么顾问最好也出资？</h3>
-<p><a href="https://doi.org/10.1111/1540-6261.00597">Casamatta（2003）</a>把创业者与顾问的投入放在同一份融资合同里。课堂只推导一个机制：顾问需要激励收入；顾问自己出资时，同一笔收入还可以补偿资本成本。</p>
-<section id="同一份收入要激励双方" class="level4">
-<h4 class="anchored" data-anchor-id="同一份收入要激励双方">同一份收入要激励双方</h4>
-<p>核心摩擦是双边道德风险：创业者和顾问各自的努力不可观察，最终现金可核实；有限责任又限制了失败时的惩罚。创业者可以自己出资，外部融资的价值仍可能来自激励。原文还要求创业者的努力相对更有效率；本例中，提高一单位成功概率的成本分别为 <span class="math inline">0.3/0.3=1</span> 和 <span class="math inline">0.6/0.2=3</span>。</p>
-<p>时序为：签约并投入资本 → 双方分别选努力 → 成功或失败 → 分现金。努力不可核实，现金可核实；风险中性、无贴现、有限责任，资本要求净收益为零。双方同时选择努力，无差异时按努力处理。</p>
+<p><a href="https://doi.org/10.1111/1540-6261.00597">Casamatta（2003）</a>研究融资与建议为何由同一个人提供。双边道德风险要求给顾问留下激励收入；顾问自己出资，可以补偿创业者为激励它而让出的这部分收入。这个作用即使创业者有钱自筹也存在。</p>
+<section id="假设与两条努力-ic" class="level4">
+<h4 class="anchored" data-anchor-id="假设与两条努力-ic">假设与两条努力 IC</h4>
+<p>时序为：签约并投入资本 → 双方同时选努力 → 成功或失败 → 分现金。努力不可观察，货币投入和最终现金可契约；双方风险中性、无贴现，企业成立后有限责任，资本要求净收益为零。无差异时按努力处理。</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>设定</th>
+<th>教学设定</th>
 <th>数值</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>现金与资本</td>
-<td>成功得 10，失败得 0；启动资本 <span class="math inline">I=3</span></td>
+<td>成功得 10，失败得 0；启动资本 <span class="math inline">I=3</span>，创业者可自筹</td>
 </tr>
 <tr class="even">
 <td>创业者努力</td>
-<td><span class="math inline">e\in\{0,1\}</span>，成本 <span class="math inline">0.3e</span></td>
+<td><span class="math inline">e\in\{0,1\}</span>，成本 <span class="math inline">0.3e</span>，成功率增量 0.3</td>
 </tr>
 <tr class="odd">
 <td>顾问努力</td>
-<td><span class="math inline">a\in\{0,1\}</span>，成本 <span class="math inline">0.6a</span></td>
+<td><span class="math inline">a\in\{0,1\}</span>，成本 <span class="math inline">0.6a</span>，成功率增量 0.2</td>
 </tr>
 <tr class="even">
 <td>成功概率</td>
@@ -4725,115 +4891,271 @@ q\times30-c=\tfrac12\times30-6=9&gt;0.
 </tr>
 </tbody>
 </table>
-<p>先看只有创业者与 VC 的分配：成功给 VC <span class="math inline">x</span>、创业者 <span class="math inline">10-x</span>，失败都为零。两人的 IC 为</p>
+<p>原文要求创业者的努力相对更有效率。本例提高一单位成功概率的成本分别为 <span class="math inline">0.3/0.3=1</span> 与 <span class="math inline">0.6/0.2=3</span>，体现同一方向。先取只有创业者与 VC 的两方分配：成功给 VC <span class="math inline">x</span>、创业者 <span class="math inline">10-x</span>，失败都为零。两人的努力增量为</p>
 <p><span class="math display">
-\underbrace{0.2x\ge0.6}_{\text{VC 努力}}\ \Longrightarrow\ x\ge3,
-\qquad
-\underbrace{0.3(10-x)\ge0.3}_{\text{创业者努力}}\ \Longrightarrow\ x\le9.
+\Delta U_V=0.2x-0.6,\qquad
+\Delta U_E=0.3(10-x)-0.3.
 </span></p>
-<p>给顾问最少的成功收入 3，已经要付期望收入 <span class="math inline">0.8\times3=2.4</span>；扣除成本 0.6，顾问留下激励租金 <strong>1.8</strong>。</p>
+<p>要实施双方努力，必须同时满足</p>
+<p><span class="math display">
+x\ge3,\qquad x\le9.
+</span></p>
+<p>顾问不出资时，最小成功收入 3 已给出期望现金 <span class="math inline">0.8(3)=2.4</span>。扣努力成本后留下 <strong>1.8 的激励租金</strong>。失败没有现金，有限责任又不允许负收入，不能任意收回这笔租金。</p>
 </section>
-<section id="为什么把融资与建议捆绑" class="level4">
-<h4 class="anchored" data-anchor-id="为什么把融资与建议捆绑">为什么把融资与建议捆绑？</h4>
-<p>顾问只出力、资本另找被动投资者时，创业者效用为</p>
+<section id="三种安排逐一计算不能省略无顾问基准" class="level4">
+<h4 class="anchored" data-anchor-id="三种安排逐一计算不能省略无顾问基准">三种安排逐一计算，不能省略无顾问基准</h4>
+<p><strong>不雇顾问。</strong> 创业者努力时 <span class="math inline">P=0.6</span>。被动投资者若出资 3，成功时须收 <span class="math inline">3/0.6=5</span>；创业者余下 5，其努力收益 <span class="math inline">0.3(5)=1.5&gt;0.3</span>，所以努力。创业者净效用为</p>
 <p><span class="math display">
-\underbrace{8}_{\text{期望现金}}-\underbrace{2.4}_{\text{顾问收入}}-\underbrace{3}_{\text{资本回收}}-\underbrace{0.3}_{\text{自身成本}}=2.3.
+U_E^0=0.6(5)-0.3=2.7.
 </span></p>
-<p>VC 同时出资本和提供建议时，给它期望现金 <span class="math inline">3+0.6=3.6</span> 即可覆盖资本与成本。成功时支付 <span class="math inline">x=3.6/0.8=4.5</span>，满足双方 IC。创业者效用为</p>
+<p>若创业者自己出资，则净效用同样为 <span class="math inline">0.6(10)-0.3-3=2.7</span>。顾问的作用不能归因于创业者缺钱。</p>
+<p><strong>顾问只出力，被动投资者出钱。</strong> 给顾问最少的成功收入 3；双方努力时被动资本须拿 <span class="math inline">3/0.8=3.75</span>，创业者剩 <span class="math inline">10-3-3.75=3.25</span>。因此</p>
 <p><span class="math display">
-8-3.6-0.3=4.1.
+0.3(3.25)=0.975\ge0.3,\qquad
+0.2(3)=0.6,
+</span></p>
+<p>双方努力 IC 均成立，被动资本也回本。创业者效用为 <span class="math inline">U_E^A=0.8(3.25)-0.3=2.3</span>，低于不雇顾问的 2.7。建议虽然创造价值，创业者却不愿承担全部激励收入。</p>
+<p><strong>VC 既出钱又提供建议。</strong> 此时没有另一个被动投资者，VC 的参与约束为</p>
+<p><span class="math display">
+0.8x-0.6-3\ge0.
+</span></p>
+<p>取等号得 <span class="math inline">x=4.5</span>，位于 <span class="math inline">[3,9]</span>；进一步检查 <span class="math inline">0.2(4.5)=0.9&gt;0.6</span>、<span class="math inline">0.3(5.5)=1.65&gt;0.3</span>，所以给定合同下双方确实努力。创业者取得</p>
+<p><span class="math display">
+U_E^{VC}=0.8(5.5)-0.3=4.1.
 </span></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 40%">
-<col style="width: 30%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>安排</th>
-<th style="text-align: right;">创业者效用</th>
-<th>判断</th>
+<th style="text-align: right;">创业者净效用</th>
+<th style="text-align: right;">顾问或 VC 净效用</th>
+<th style="text-align: right;">被动资本净收益</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>不雇顾问，自筹或由被动投资者融资</td>
-<td style="text-align: right;"><span class="math inline">0.6\times10-3-0.3=2.7</span></td>
-<td>可行基准</td>
+<td>不雇顾问</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">无</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td>顾问只出力，被动投资者出钱</td>
+<td>纯顾问加被动资本</td>
 <td style="text-align: right;">2.3</td>
-<td>顾问创造的价值不足以覆盖其全部激励收入</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td>VC 既出钱又提供建议</td>
+<td>VC 同时融资和建议</td>
 <td style="text-align: right;">4.1</td>
-<td>同一笔收入兼顾激励与资本回收</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">无</td>
 </tr>
 </tbody>
 </table>
-<p>捆绑比单独雇顾问多出的 <span class="math inline">4.1-2.3=1.8</span>，正是顾问原来的租金。收入可以用于补偿资本，不必在资本回收之外再支付同样一笔租金。这里比较的是创业者愿意选择哪种安排，租金本身不是社会资源损失。</p>
-<p>若努力可以观察并写进可执行合同，就能直接约定努力、补偿成本，不必用成功收入留下这笔激励租金。原文的第一优下，谁提供资本不影响努力与项目价值；融资和建议捆绑的价值来自努力不可契约。</p>
-<p><a href="#book-casamatta-extension">附录 G.2</a>核对第三方融资时创业者的 IC，以及低融资额时 VC 仍可能取得租金的情况。原文还研究融资规模与证券选择；本例失败现金为零，没有区分普通股、债务与可转换证券的一般最优性。</p>
+<p>后两种安排的总剩余都是 <span class="math inline">8-3-0.3-0.6=4.1</span>。原来的 1.8 是双方之间的租金转移，并非资源损失；顾问出资后，其收入兼顾资本回收和努力激励。由于 <span class="math inline">2.3&lt;2.7&lt;4.1</span>，创业者只愿在融资与建议捆绑时采用这项建议。</p>
+</section>
+<section id="原文的连续努力为什么有同一项权衡" class="level4">
+<h4 class="anchored" data-anchor-id="原文的连续努力为什么有同一项权衡">原文的连续努力为什么有同一项权衡？</h4>
+<p>原文成功率为 <span class="math inline">e+a</span>，成本为 <span class="math inline">be^2/2</span>、<span class="math inline">ga^2/2</span>，其中 <span class="math inline">g&gt;b</span>。只讨论内点 <span class="math inline">e+a&lt;1</span>。令 <span class="math inline">\Delta_E</span>、<span class="math inline">\Delta_V</span> 分别为双方成功与失败时的收入差。私人最优化给出</p>
+<p><span class="math display">
+\max_e\left\{e\Delta_E-\frac b2e^2\right\}
+\Rightarrow e=\frac{\Delta_E}{b},\qquad
+a=\frac{\Delta_V}{g}.
+</span></p>
+<p>仅有两方时，<span class="math inline">\Delta_E+\Delta_V=R_u-R_d</span>；第一优却要求每个人都按完整现金增量行动，即 <span class="math inline">be^{FB}=ga^{FB}=R_u-R_d</span>。同一份收入无法同时把全部边际回报给两个人。</p>
+<p>若从创业者向顾问多转一单位成功激励，创业者努力减少 <span class="math inline">1/b</span>，顾问努力只增加 <span class="math inline">1/g</span>；因为 <span class="math inline">g&gt;b</span>，后者不足以弥补前者。这是原文不雇纯顾问结果中的努力挤出作用；二元例子把努力简化成高低选择，主要保留租金与融资的机制。</p>
+<p>允许顾问出资，便能在不改变给定激励收入差的情况下补偿创业者。若努力可以直接写进可执行合同，则可以约定努力并补偿成本，融资来源在原文第一优下不再影响价值。</p>
+</section>
+<section id="证券类型的结论应读到哪一步" class="level4">
+<h4 class="anchored" data-anchor-id="证券类型的结论应读到哪一步">证券类型的结论应读到哪一步？</h4>
+<p>原文第 III 节还利用非零失败现金分配两种状态的收入：外部融资较少时，VC 需要更强的成功激励；融资较多时，则需要保护创业者的成功激励，由此讨论普通股、优先股和可转换债券的实施。本例失败现金为零，已经能解释融资与建议捆绑，却不能区分这些证券的一般最优性。<a href="#book-casamatta-extension">附录 G.2</a>保留低融资额时 IC 比 PC 更紧的边界计算。</p>
 </section>
 </section>
 <section id="book-venture-staging" class="level3">
 <h3 class="anchored" data-anchor-id="book-venture-staging">模型三：Cornelli–Yosha，转换怎样约束粉饰？</h3>
-<p>分阶段出资使 VC 可以中途停止坏项目，也使创业者担心拿不到下一轮资金。<a href="https://doi.org/10.1111/1467-937X.00235">Cornelli–Yosha（2003）</a>研究这种威胁如何诱发 window dressing，以及转换权怎样改变其激励。</p>
-<section id="保留最关键的时序" class="level4">
-<h4 class="anchored" data-anchor-id="保留最关键的时序">保留最关键的时序</h4>
+<p>分阶段出资使 VC 可以停止坏项目，也使创业者担心拿不到下一轮资金。<a href="https://doi.org/10.1111/1467-937X.00235">Cornelli–Yosha（2003）</a>研究这种威胁怎样诱发粉饰，以及转换权怎样抑制粉饰。这里需要同时解出 VC 的中期选择与创业者的事前选择，不能把转换惩罚直接当成规定。</p>
+<section id="信息时序与可执行的证券" class="level4">
+<h4 class="anchored" data-anchor-id="信息时序与可执行的证券">信息、时序与可执行的证券</h4>
 <p>签约并投首轮资本 → <strong>创业者尚不知道项目好坏时选择是否粉饰</strong> → 双方共同看到中期信号 → VC 决定续投及是否转换 → 最终现金实现。</p>
-<p>信息不对称来自未被观察的粉饰行动，创业者并不预先私知质量。真实质量好坏各半。粉饰不改变质量，不创造长期现金，只把一部分信号向上移动。信号可观察但不可核实，续投和转换必须符合 VC 当时的利益，不能直接写成依信号强制执行的惩罚。</p>
-</section>
-<section id="先给一份能执行的合同" class="level4">
-<h4 class="anchored" data-anchor-id="先给一份能执行的合同">先给一份能执行的合同</h4>
-<p>本例用三个信号代替原文的连续信号。VC 的最优选择为：差信号停止，中等信号续投不转换，好信号续投并转换。转换先于最终现金实现。</p>
-<p>下表是项目继续后、给定真实质量的期望现金。双方尚未直接观察质量；这张表用于计算行为的后果。</p>
+<p>真实质量 <span class="math inline">g,b</span> 各半，双方事前都不知道。信息不对称来自未被观察的粉饰行动；中期信号共同观察而不可核实。粉饰改变信号分布，不改变真实质量。最终现金、债权和转换选择可核实，转换必须先于最终现金实现。</p>
+<p>教学模型中，VC 先投入 <span class="math inline">I_1=10</span>，中期继续须再投入 <span class="math inline">I_2=65</span>；停止后双方收入为零。创业者无出资或私人收益，双方风险中性、无贴现，外部机会均为零。若继续，最终现金的条件分布为</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>真实质量</th>
-<th style="text-align: right;">期望总现金</th>
+<th>质量</th>
+<th style="text-align: right;"><span class="math inline">P(X=0)</span></th>
+<th style="text-align: right;"><span class="math inline">P(X=100)</span></th>
+<th style="text-align: right;"><span class="math inline">P(X=200)</span></th>
+<th style="text-align: right;"><span class="math inline">E[X\mid\theta]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>好 <span class="math inline">g</span></td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td>坏 <span class="math inline">b</span></td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.58</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">60</td>
+</tr>
+</tbody>
+</table>
+<p>给定质量，最终现金与中期信号条件独立。VC 持有面值 100 的债券，可在中期保留债权，或取消全部债权、转换为 95% 股权；这里只允许全转或不转。</p>
+<p><span class="math display">
+V_D(X)=\min(X,100),\qquad V_C(X)=0.95X.
+</span></p>
+<p>例如好质量下，保留债券的期望收入为 <span class="math inline">0.80(100)+0.10(100)=90</span>，转换后为 <span class="math inline">0.95(100)=95</span>。坏质量下分别为 <span class="math inline">0.58(100)+0.01(100)=59</span> 和 <span class="math inline">0.95(60)=57</span>。创业者取得剩余现金：</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>质量</th>
 <th style="text-align: right;">不转换：VC／创业者</th>
 <th style="text-align: right;">转换：VC／创业者</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>好项目</td>
-<td style="text-align: right;">100</td>
+<td>好 <span class="math inline">g</span></td>
 <td style="text-align: right;">90／10</td>
 <td style="text-align: right;">95／5</td>
 </tr>
 <tr class="even">
-<td>坏项目</td>
-<td style="text-align: right;">60</td>
+<td>坏 <span class="math inline">b</span></td>
 <td style="text-align: right;">59／1</td>
 <td style="text-align: right;">57／3</td>
 </tr>
 </tbody>
 </table>
-<p>这组收入可以由面值 100、可转换为 95% 股份的债券实现。<a href="#book-cornelli-extension">附录 G.3</a>给出现金分布、信号概率、VC 的最优选择及参与条件。课堂只用这张表比较粉饰的收益与损失。</p>
+<p>95% 是用于放大转换损失的教学取值，不是现实持股比例的估计。转换之后不能等到看到 <span class="math inline">X</span> 再重选分配分支。</p>
 </section>
-<section id="只算粉饰改变的两条路径" class="level4">
-<h4 class="anchored" data-anchor-id="只算粉饰改变的两条路径">只算粉饰改变的两条路径</h4>
-<p>粉饰把 <strong>2% 的坏项目从差信号移到中等信号</strong>，同时把 <strong>2% 的好项目从中等信号移到好信号</strong>。百分比均为占全部项目的概率质量；好坏的总比例不变。创业者在未知质量时作一次选择，不能只在坏项目里粉饰。</p>
-<p>若只有固定债务，没有转换权，好项目在哪一种续投信号下都给创业者 10。粉饰只增加坏项目被续投的收入：</p>
+<section id="粉饰怎样移动信号" class="level4">
+<h4 class="anchored" data-anchor-id="粉饰怎样移动信号">粉饰怎样移动信号？</h4>
+<p>下表列的是占全部项目的联合概率 <span class="math inline">P(\theta,\sigma\mid a)</span>，不是给定质量后的条件概率。粉饰无成本；否则还需另扣粉饰成本。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>行动与质量</th>
+<th style="text-align: right;">差信号</th>
+<th style="text-align: right;">中等信号</th>
+<th style="text-align: right;">好信号</th>
+<th style="text-align: right;">合计</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>不粉饰，好</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="even">
+<td>不粉饰，坏</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="odd">
+<td>粉饰，好</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr class="even">
+<td>粉饰，坏</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+</tbody>
+</table>
+<p>粉饰把 0.02 的坏项目概率质量从差移到中等，同时把 0.02 的好项目从中等移到好。好坏比例没有改变。创业者事前不知道质量，不能只在坏项目里粉饰、避开好项目触发转换的风险。</p>
+</section>
+<section id="先向后解vc-真的愿意停止续投和转换吗" class="level4">
+<h4 class="anchored" data-anchor-id="先向后解vc-真的愿意停止续投和转换吗">先向后解：VC 真的愿意停止、续投和转换吗？</h4>
+<p>先猜测创业者不粉饰，再检验这是否是均衡。中等信号的后验为</p>
 <p><span class="math display">
-\Delta U_E^{\text{固定债务}}=0.02\times1=0.02&gt;0.
+P(g\mid\text{中等},a=0)=\frac{0.10}{0.10+0.30}=\frac14.
 </span></p>
-<p>加入转换后，救回坏项目仍有好处，但更多好项目触发转换，使创业者收入从 10 降到 5：</p>
+<p>差、好信号的好质量后验分别为 0、1。首轮资本 10 已经沉没，中期只比较停止的零收入与续投收入减 65：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>信号</th>
+<th style="text-align: right;">保留债券的期望现金</th>
+<th style="text-align: right;">转换的期望现金</th>
+<th>VC 最优行动</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>差</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">57</td>
+<td>均小于 65，停止</td>
+</tr>
+<tr class="even">
+<td>中等</td>
+<td style="text-align: right;"><span class="math inline">\tfrac14(90)+\tfrac34(59)=66.75</span></td>
+<td style="text-align: right;"><span class="math inline">\tfrac14(95)+\tfrac34(57)=66.5</span></td>
+<td>续投、保留债券</td>
+</tr>
+<tr class="odd">
+<td>好</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">95</td>
+<td>续投、转换</td>
+</tr>
+</tbody>
+</table>
+<p>中等信号下必须先比较 <span class="math inline">66.75&gt;66.5</span>，再检查 <span class="math inline">66.75&gt;65</span>；前者决定证券选择，后者决定是否续投。信号不可核实时，这两项私人比较使规则能够由 VC 自愿执行。</p>
+</section>
+<section id="再向前解创业者会不会粉饰" class="level4">
+<h4 class="anchored" data-anchor-id="再向前解创业者会不会粉饰">再向前解：创业者会不会粉饰？</h4>
+<p>给定上述中期规则，若只有固定债务，好项目在哪种续投信号下都给创业者 10，粉饰只增加坏项目被续投的收入：</p>
 <p><span class="math display">
-\Delta U_E^{\text{可转换}}=
-\underbrace{0.02\times1}_{\text{少被停止融资的好处}}
--\underbrace{0.02\times(10-5)}_{\text{更多转换的损失}}
-=-0.08&lt;0.
+\Delta U_E^{\text{固定债务}}=0.02(1)=0.02&gt;0.
 </span></p>
-<p>因此，创业者不粉饰。转换改变了好项目的收入，这项事前风险约束了粉饰。我们没有用“坏项目现金全给 VC”替代转换机制。</p>
-<p>若粉饰只提高坏项目的续投概率，却完全不提高好项目的转换概率，第二项消失，机制就会失效。转换还必须是 VC 中期愿意执行的选择，不能把惩罚当作外生规定。</p>
-<p>本例展示原文的两股力量，没有证明证券唯一最优。允许重谈等扩展见原文。这里的中期转换，也不同于开头“退出现金已知后再选分配分支”的计算。</p>
+<p>加入转换后，救回坏项目的好处仍在，但更多好项目触发转换，创业者收入从 10 降为 5：</p>
+<p><span class="math display">
+\begin{aligned}
+\Delta U_E^{\text{可转换}}
+&amp;=\underbrace{0.02(1)}_{\text{避免停止融资}}
+-\underbrace{0.02(10-5)}_{\text{增加转换损失}}\\
+&amp;=0.02-0.10=-0.08&lt;0.
+\end{aligned}
+</span></p>
+<p>因此创业者不粉饰，恰好验证了 VC 的原先猜测。它单方面偏离时，行动仍然隐藏，VC 按均衡信念选择；不能一边算偏离，一边假设 VC 已经观察到粉饰。</p>
+</section>
+<section id="最后核对双方参与与总剩余" class="level4">
+<h4 class="anchored" data-anchor-id="最后核对双方参与与总剩余">最后核对双方参与与总剩余</h4>
+<p>不粉饰时，创业者在中等信号的坏、好项目及好信号的好项目上取得收入：</p>
+<p><span class="math display">
+U_E=0.30(1)+0.10(10)+0.40(5)=3.3&gt;0.
+</span></p>
+<p>VC 在概率均为 0.40 的中等、好信号下续投，其期初净收益为</p>
+<p><span class="math display">
+U_V=0.40(66.75-65)+0.40(95-65)-10=2.7&gt;0.
+</span></p>
+<p>双方 PC 都成立。预期最终现金 <span class="math inline">0.50(100)+0.30(60)=68</span>，预期资本成本 <span class="math inline">10+0.80(65)=62</span>，净剩余为 6，等于 <span class="math inline">U_E+U_V</span>。这完成了证券收入、VC 最优行动、创业者 IC 和双方 PC 的求解。</p>
+<p>取消转换时，若 VC 预期粉饰，中等信号的好质量后验降为 <span class="math inline">0.08/0.40=0.2</span>，债务收入仍有 <span class="math inline">0.2(90)+0.8(59)=65.2&gt;65</span>。继续规则未变，创业者确实粉饰，对照也是自洽的。原文的作用来自把避免清算的收益与更多转换的损失同时纳入事前激励。</p>
+<p>若粉饰只救回坏项目、不提高好项目转换概率，损失项消失，机制就会失效。本例核对一组教学合同中的均衡，不证明该合同在所有证券中唯一最优；不同合同的租金分配也要重新比较。<a href="#book-cornelli-extension">附录 G.3</a>保留固定债务对照的完整福利对账与原文版本说明。</p>
 </section>
 </section>
 <section id="book-venture-exit" class="level3">
@@ -4879,7 +5201,7 @@ q\times30-c=\tfrac12\times30-6=9&gt;0.
 </table>
 <p><a href="https://doi.org/10.1111/j.1540-6261.1995.tb05185.x">Gompers（1995）</a>与<a href="https://doi.org/10.1111/j.1540-6261.2004.00696.x">Kaplan–Strömberg（2004）</a>提供制度和关联性证据。博士研究还要追问：什么数据变化能把竞争解释区分开？</p>
 <p>读完本讲，应能独立完成三项比较：VC 的投入收益是否覆盖成本；同一笔收入怎样同时满足努力与融资要求；粉饰的续投收益是否超过转换损失。每次都要说清哪项假设改变后结论会失效。</p>
-<p>课后完成 <a href="exercises.html#w05-homework">H5-1 至 H5-4</a>。<a href="#book-app-e">附录 E</a>保留控制与重谈计算；<a href="#book-app-g">附录 G</a>补足三篇的推导和边界；<a href="#book-app-f">附录 F</a>的 Neher、Admati–Pfleiderer，以及<a href="#book-app-h">附录 H</a>的实验设计，是进一步的问题，不要求课前通读。</p>
+<p>课后完成 <a href="exercises.html#w05-homework">H5-1 至 H5-4</a>。<a href="#book-app-e">附录 E</a>保留控制与重谈计算；<a href="#book-app-g">附录 G</a>保留更长的对照和边界；<a href="#book-app-f">附录 F</a>的 Neher、Admati–Pfleiderer，以及<a href="#book-app-h">附录 H</a>的实验设计，是进一步的问题，不要求课前通读。</p>
 </section>
 </section>
 <section id="book-appendices" class="level2">
@@ -4931,8 +5253,8 @@ q\times30-c=\tfrac12\times30-6=9&gt;0.
 </tr>
 <tr class="odd">
 <td>G</td>
-<td>三篇主讲的收入合同、IC、PC、信号与转换核算；连续努力和退出延伸</td>
-<td>第二篇三个核心机制</td>
+<td>补偿反事实、低融资额 IC/PC 边界、固定债务福利对照；额外连续努力与退出延伸</td>
+<td>第二篇核心推导之后</td>
 </tr>
 <tr class="even">
 <td>H</td>
@@ -5447,7 +5769,7 @@ P_{\mathrm{new}}=P_{\mathrm{old}}\frac{A+B}{A+C},
 </section>
 <section id="book-app-e" class="level2">
 <h2 class="anchored" data-anchor-id="book-app-e">附录 E：Aghion–Bolton 原文例子的控制上界与信号</h2>
-<p>正文采用 Aghion–Bolton（1992）第 482–484 页的数值例子。课堂与预习只用完全准确信号展示一份可行的控制合同；这里保留原文带噪声信号下的收入上界与重谈推导，作为选读。两个状态各以 <span class="math inline">1/2</span> 概率出现，原文参数是</p>
+<p>正文采用 Aghion–Bolton（1992）第 482–484 页的数值例子。课堂介绍原文的信息与合同假设，用有噪声信号展示一份可行的或有控制合同；预习用完全准确信号作完备基准。这里保留更长的收入上界与重谈推导。两个状态各以 <span class="math inline">1/2</span> 概率出现，原文参数是</p>
 <p><span class="math display">
 \begin{array}{c|cc|cc}
 &amp;y_i^g&amp;\lambda_i^g&amp;y_i^b&amp;\lambda_i^b\\ \hline
@@ -5455,7 +5777,7 @@ P_{\mathrm{new}}=P_{\mathrm{old}}\frac{A+B}{A+C},
 \theta_b&amp;0&amp;49&amp;50&amp;0
 \end{array}
 </span></p>
-<p>上标是行动，下标是状态。第一优行动是 <span class="math inline">a_g</span>（在 <span class="math inline">\theta_g</span>）和 <span class="math inline">a_b</span>（在 <span class="math inline">\theta_b</span>）。创业者只能取得非负货币转移 <span class="math inline">t(\sigma,r)\ge0</span>，投资者只关心货币收入。</p>
+<p>上标是行动，下标是状态，<span class="math inline">y</span> 为给定状态与行动的期望货币收入。第一优行动是 <span class="math inline">a_g</span>（在 <span class="math inline">\theta_g</span>）和 <span class="math inline">a_b</span>（在 <span class="math inline">\theta_b</span>）。创业者只能取得非负货币转移 <span class="math inline">t(\sigma,r)\ge0</span>，投资者只关心货币收入。</p>
 <section id="e.1-创业者控制不重谈完全重谈与部分重谈" class="level3">
 <h3 class="anchored" data-anchor-id="e.1-创业者控制不重谈完全重谈与部分重谈">E.1 创业者控制：不重谈、完全重谈与部分重谈</h3>
 <p>如果创业者控制且不发生重谈，<span class="math inline">\theta_b</span> 中的激励约束为</p>
@@ -5471,7 +5793,7 @@ t_\sigma y_b^b+\lambda_b^b
 +\frac12\left(\frac1{50}\cdot50\right)=\frac32.
 </span></p>
 <p>因此不重谈合同只在 <span class="math inline">K\le3/2</span> 时满足投资者的参与约束。</p>
-<p>若 <span class="math inline">t_0=t_1=0</span>，创业者在 <span class="math inline">\theta_b</span> 先选 <span class="math inline">a_g</span>，然后在状态实现后提出改选 <span class="math inline">a_b</span>。投资者原有收入为 0；创业者可以在重谈中把 <span class="math inline">a_b</span> 的 50 现金全部留给自己，投资者仍得 0，按论文的弱改善接受规则会接受。投资者在 <span class="math inline">\theta_g</span> 得 100，在 <span class="math inline">\theta_b</span> 得 0，于是</p>
+<p>若 <span class="math inline">t_0=t_1=0</span>，创业者在 <span class="math inline">\theta_b</span> 先选 <span class="math inline">a_g</span>，然后在状态实现后提出改选 <span class="math inline">a_b</span>。投资者原有收入为 0；创业者可以在重谈中把 <span class="math inline">a_b</span> 的全部现金留给自己，期望收入为 50，投资者仍得 0，按论文的弱改善接受规则会接受。投资者在 <span class="math inline">\theta_g</span> 得 100，在 <span class="math inline">\theta_b</span> 得 0，于是</p>
 <p><span class="math display">
 \pi_2=50.
 </span></p>
@@ -5510,9 +5832,9 @@ t_\sigma y_b^b+\lambda_b^b
 <h3 class="anchored" data-anchor-id="e.3-这组上界不是什么">E.3 这组上界不是什么</h3>
 <p><span class="math inline">3/2</span>、<span class="math inline">50</span> 和 <span class="math inline">62.5</span> 是原文这个数值例子的收入上界，不是现实 VC 的持股比例，也不是普遍的融资规模阈值。改变状态概率、收入、私人收益、信号准确率或重谈议价权，都要重新求解。原文的或有控制结果依靠公共信号与状态的相关性；信号越准确，越能把创业者控制和投资者控制放到合适的分支，但信号仍不是可直接写进合同的状态。</p>
 </section>
-<section id="e.4-课堂为何只算完全准确信号" class="level3">
-<h3 class="anchored" data-anchor-id="e.4-课堂为何只算完全准确信号">E.4 课堂为何只算完全准确信号？</h3>
-<p>课堂取完全准确信号这个教学特例，用 <span class="math inline">t_0=t_1=0</span>、好状态创业者控制、坏状态投资者控制，实现第一优行动。投资者收入为 75，创业者私人收益为 75；<span class="math inline">K=70</span> 时，双方净收益分别为 5、75，总剩余为 80。这只验证一份可行合同，不能与上面带噪声信号的融资上界直接拼成最优性证明。</p>
+<section id="e.4-完全准确信号为什么是完备基准" class="level3">
+<h3 class="anchored" data-anchor-id="e.4-完全准确信号为什么是完备基准">E.4 完全准确信号为什么是完备基准？</h3>
+<p>预习取完全准确信号这个教学特例，用 <span class="math inline">t_0=t_1=0</span>、好状态创业者控制、坏状态投资者控制，实现第一优行动。投资者收入为 75，创业者私人收益为 75；<span class="math inline">K=70</span> 时，双方净收益分别为 5、75，总剩余为 80。原文第 477 页指出，这时信号可完美替代状态，合同相对于状态的描述限制已经消失。这只验证一份完备基准合同，不能与上面带噪声信号的融资上界直接拼成最优性证明。</p>
 </section>
 </section>
 <section id="book-app-f" class="level2">
@@ -5855,273 +6177,63 @@ W=\int_0^{0.4}1\,ds+\int_{0.4}^{1}(10s-3)\,ds
 </section>
 </section>
 <section id="book-app-g" class="level2">
-<h2 class="anchored" data-anchor-id="book-app-g">附录 G：三篇主讲论文的推导与教学边界</h2>
-<p>正文每篇只推导一个机制。本附录给出对应的收入合同、偏离行为与参与条件，区分机制演示和原文的完整最优合同。</p>
+<h2 class="anchored" data-anchor-id="book-app-g">附录 G：三篇主讲论文的边界与延伸</h2>
+<p>正文已展开三个主讲模型的核心求解。本附录保留补偿反事实、融资边界、证券对照与额外模型，区分机制演示和原文的完整最优合同。</p>
 <section id="book-hellmann-extension" class="level3">
-<h3 class="anchored" data-anchor-id="book-hellmann-extension">G.1 Hellmann：把控制、补偿与投入放在同一份合同里</h3>
-<section id="原文里哪些条件不能删" class="level4">
-<h4 class="anchored" data-anchor-id="原文里哪些条件不能删">原文里哪些条件不能删？</h4>
-<p><a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>第 2–4 节的投资者与创业者信息对称，双方都有不可契约的行动。创业者选择私人收益 <span class="math inline">B</span>，代价是降低成功概率 <span class="math inline">p(B)</span>；VC 选择搜寻概率 <span class="math inline">m</span>，成本为 <span class="math inline">Mm^2/2</span>。原文取 <span class="math inline">M</span> 足够大，使搜寻强度不达到 1。</p>
-<p>成功现金标准化为 1。未替换时创业者在成功与失败中的收入差为 <span class="math inline">\alpha</span>，替换时的期望收入为 <span class="math inline">S</span>。令 <span class="math inline">\Gamma=\varphi-p-B</span>，并暂取原文最优合同中的零固定工资，则</p>
-<p><span class="math display">
-1+\alpha p_B=0,\qquad
-Mm=\varphi-S-(1-\alpha)p.
-</span></p>
-<p>第一式是创业者的行为，第二式是 VC 的搜寻。由此可见，原文已经包含双方的激励问题，不能把它说成只研究二元替换决定。</p>
-<p>完全补偿为 <span class="math inline">S^{FC}=B+\alpha p</span>。原文第 4 节指出：创业者控制且 <span class="math inline">S&lt;S^{FC}</span> 时，创业者可以可信地拒绝替换，重谈后得到 <span class="math inline">S^R=S^{FC}+\theta\Gamma</span>；VC 只保留 <span class="math inline">(1-\theta)\Gamma</span>，搜寻不足。若 <span class="math inline">S\ge S^{FC}</span>，创业者却不能可信地以受损为由拒绝替换。<strong>所以，固定创业者行为后，不能一面允许自由设置足额补偿，一面声称控制转移必不可少。</strong></p>
-<p>原文为何会选择 <span class="math inline">S&lt;S^{FC}</span>？在完全补偿所对应的搜寻水平附近，降低 <span class="math inline">S</span> 向 VC 转移一单位价值，只使创业者损失一单位；降低创业者股权还会恶化第一式所描述的经营激励，多产生代理成本。因此，完整模型可能选择不足额补偿。Result 1、Result 4 分别给出最优补偿与控制结论；这依靠原文的财富约束、创业者行为和合同空间，不由正文的二元例子单独证明。</p>
+<h3 class="anchored" data-anchor-id="book-hellmann-extension">G.1 Hellmann：补偿与控制结论的适用边界</h3>
+<p>正文已求解二元搜寻合同、重议股权后的搜寻和双方参与，也给出原文的两条内点行为条件。本节依据 <a href="https://www.jstor.org/stable/2555816">Hellmann（1998）</a>第 2–4 节、Result 1 与 4，进一步说明这些推导尚不能代替哪些最优化。</p>
+<section id="为什么不能删去不足额补偿" class="level4">
+<h4 class="anchored" data-anchor-id="为什么不能删去不足额补偿">为什么不能删去不足额补偿？</h4>
+<p>原文第 4 节区分 <span class="math inline">S&lt;S^{FC}</span> 与 <span class="math inline">S\ge S^{FC}</span>：前者使创业者能可信地拒绝替换，后者不会带来同样的敲竹杠。如果固定创业者行为，又允许事前任意设置补偿，VC 控制便不一定必不可少。</p>
+<p>沿用正文成功现金 100、经营成功率 0.5、经理人成功率 0.8、私人收益 10、资本 30、搜寻成本 6 和找到经理概率 1/2。改取创业者成功份额 <span class="math inline">\alpha=0.48</span>、离职期望现金 <span class="math inline">S=34</span>，则留任效用为 <span class="math inline">0.48(50)+10=34=S</span>，达到完全补偿。</p>
+<p>创业者控制时也可按约替换。VC 留任期望现金为 26，替换后为 <span class="math inline">80-34=46</span>，搜寻净增量为 <span class="math inline">\tfrac12(46-26)-6=4&gt;0</span>。VC 期初净收益为 <span class="math inline">\tfrac12(46)+\tfrac12(26)-6-30=0</span>，创业者取得 34。该合同与正文重新议定股权的 VC 控制合同实现相同结果。</p>
+<p>这不是对原文的反例，因为这里固定了原文内生的创业者行为。它说明正文的二元例子必须保留给定不足额补偿的限制。原文最优补偿为何不足，还要同时求创业者经营行为、股权与补偿，并满足 VC 参与、财富和有限责任约束；两条一阶条件本身不构成全局最优性的证明。</p>
 </section>
-<section id="正文两份合同的具体实现" class="level4">
-<h4 class="anchored" data-anchor-id="正文两份合同的具体实现">正文两份合同的具体实现</h4>
-<p>为简化搜寻，本例只允许“不搜寻”与“花 6 搜寻”，后者以 <span class="math inline">q=1/2</span> 找到经理人。其他数值为：成功现金 100、失败为零；创业者经营成功率 <span class="math inline">p=0.5</span>，留下时取得私人收益 <span class="math inline">B=10</span>；职业经理人成功率 <span class="math inline">\varphi=0.8</span>；VC 启动出资 30。不设期初转移，替换时创业者的期望现金固定为 <span class="math inline">S=20</span>，可由替换后成功时付 25、失败时付零实现。</p>
-<p>若创业者成功时持有份额 <span class="math inline">\alpha=0.4</span>，未替换时创业者效用为 <span class="math inline">0.4\times50+10=30</span>，VC 期望现金为 30。替换后创业者期望现金为 20、私人收益消失，VC 期望现金为 <span class="math inline">80-20=60</span>。所以 VC 的私人增量为 30，创业者损失为 10，联合净增量为 20。</p>
-<ul>
-<li>创业者控制：<span class="math inline">S=20&lt;S^{FC}=30</span>，双方重谈平分净增量，创业者离职后取得 40、VC 取得 40。VC 的搜寻净增量为 <span class="math inline">\tfrac12(40-30)-6=-1</span>，不搜寻。</li>
-<li>VC 控制且保持原股权：可按合同替换，搜寻净增量为 <span class="math inline">\tfrac12(60-30)-6=9</span>。创业者效用却降到 <span class="math inline">\tfrac12(20)+\tfrac12(30)=25</span>。控制权提高总剩余，并不意味着创业者自动受益。</li>
-<li>VC 控制、期初重新议定股权：提高创业者成功份额为 <span class="math inline">\alpha=0.76</span>，保持 <span class="math inline">S=20</span>。VC 不搜寻得 12，搜寻后期望现金为 <span class="math inline">\tfrac12(60)+\tfrac12(12)=36</span>，所以搜寻确实最优。扣成本 6 和资本 30 后净收益为零，恰与第一份合同相同。创业者效用为 <span class="math inline">\tfrac12(20)+\tfrac12(0.76\times50+10)=34</span>。</li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>安排</th>
-<th style="text-align: right;">创业者成功份额</th>
-<th>搜寻</th>
-<th style="text-align: right;">VC 净收益</th>
-<th style="text-align: right;">创业者效用</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>创业者控制</td>
-<td style="text-align: right;">0.40</td>
-<td>不搜寻</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">30</td>
-</tr>
-<tr class="even">
-<td>VC 控制、现金条款不变</td>
-<td style="text-align: right;">0.40</td>
-<td>搜寻</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">25</td>
-</tr>
-<tr class="odd">
-<td>VC 控制、重新议定股权</td>
-<td style="text-align: right;">0.76</td>
-<td>搜寻</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">34</td>
-</tr>
-</tbody>
-</table>
-<p>最后一份合同中，替换时 VC 得 60，保留创业者时只得 12，故替换威胁可信。双方事后联合收益因替换增加 20，也不会通过重谈撤销一项联合增值的替换。创始人外部机会若为零，两份比较合同都满足其 PC。</p>
-<p>现金对账为 <span class="math inline">\tfrac12\times80+\tfrac12\times50=65</span>，扣启动资本 30、搜寻成本 6，再加未被替换时的私人收益 <span class="math inline">\tfrac12\times10=5</span>，总剩余为 34。未搜寻合同的总剩余为 <span class="math inline">50-30+10=30</span>，增量为 4。</p>
-<p>本例只比较上述合同，展示现金条款如何把投入创造的增量留给创业者。它没有把不足额离职补偿内生化，也没有在允许任意期初转移、补偿和经营行为的全部合同中证明 VC 控制唯一最优。若放松这些限制，须重新比较。</p>
-</section>
-<section id="过多替换与-vesting-为什么留在这里" class="level4">
-<h4 class="anchored" data-anchor-id="过多替换与-vesting-为什么留在这里">过多替换与 vesting 为什么留在这里？</h4>
-<p>原文的“替换过多”与“不足额遣散”来自创业者股权激励和替换激励的权衡。正文固定了创业者行为，不能再用降低 <span class="math inline">S</span> 的算例声称证明这种权衡。原文第 5 节还允许创业者在替换前采取影响后续经营的行动，让其离职收入继续依赖企业成功，可以保护这种投入。这是 vesting 的另一项激励问题，不能直接从搜寻的两行计算推出。</p>
+<section id="过多搜寻与-vesting-的结论分别依靠什么" class="level4">
+<h4 class="anchored" data-anchor-id="过多搜寻与-vesting-的结论分别依靠什么">过多搜寻与 vesting 的结论分别依靠什么？</h4>
+<p>正文的 <span class="math inline">m^{FB}=\Gamma/M</span> 是给定经营行为时的有效搜寻；完整第一优还要求经营行为满足 <span class="math inline">1+p_B=0</span>。原文的最优合同要在两项激励之间取舍，不能把二元例子中的搜寻概率直接说成原文的最优 <span class="math inline">m</span>。</p>
+<p>第 5 节的 vesting 分析又允许创业者在替换前采取影响后续经营的行动。离职后的收入继续依赖企业成功，可以保护这项投入。它与只激励 VC 找经理人的问题不同，不能直接从二元搜寻净收益推出。</p>
 </section>
 </section>
 <section id="book-casamatta-extension" class="level3">
-<h3 class="anchored" data-anchor-id="book-casamatta-extension">G.2 Casamatta：努力、三方支付和资本一起核对</h3>
-<p><a href="https://doi.org/10.1111/1540-6261.00597">Casamatta（2003）</a>第 I 节、第 II.A–B 节的 Proposition 1、2 是本节依据。原文中，双方努力不可观察，货币投资可契约，最终现金可核实；当事人起初不受财富约束，企业成立后受有限责任保护。成功概率为 <span class="math inline">e+a</span>，努力成本为 <span class="math inline">be^2/2</span> 与 <span class="math inline">ga^2/2</span>，且 <span class="math inline">g&gt;b</span>。给顾问更多成功收入，除了直接分走收入，还会降低创业者的连续努力；原文据此求出不雇纯顾问的结果。允许顾问出资后，其投入可以抵销这笔激励租金。</p>
-<p>正文改用二元努力，只演示后一个机制和三种安排的选择，不复现连续努力的全部权衡。创业者有能力自筹全部资本；用被动融资呈现的无顾问基准，与自筹后的净效用相同。成功现金为 10、失败为零，<span class="math inline">P=0.3+0.3e+0.2a</span>，创业者与顾问的努力成本分别为 0.3、0.6，启动资本为 3。</p>
-<section id="为什么给顾问收入会留下租金" class="level4">
-<h4 class="anchored" data-anchor-id="为什么给顾问收入会留下租金">为什么给顾问收入会留下租金？</h4>
-<p>VC 每单位努力使成功概率增加 0.2，故成功收入至少为 <span class="math inline">x=0.6/0.2=3</span>。双方努力时，VC 获得 <span class="math inline">0.8\times3=2.4</span> 的期望现金，扣成本后为 1.8。这里失败没有现金、合同又满足有限责任，不能用负的失败支付收回这笔租金。</p>
-<p>不雇顾问时，成功概率为 0.6。被动投资者在成功时收 <span class="math inline">3/0.6=5</span>，创业者也收 5。创业者努力的收益为 <span class="math inline">0.3\times5=1.5\ge0.3</span>，其期初效用为 <span class="math inline">0.6\times5-0.3=2.7</span>。</p>
-<p>单独雇顾问时，成功时顾问拿 3、被动投资者拿 <span class="math inline">3/0.8=3.75</span>，创业者拿 3.25。创业者 IC 为 <span class="math inline">0.3\times3.25=0.975\ge0.3</span>，顾问 IC 为 <span class="math inline">0.2\times3=0.6</span>，被动资本恰好回本。创业者效用为 <span class="math inline">0.8\times3.25-0.3=2.3</span>，顾问净收益为 1.8。</p>
-<p>VC 同时融资与建议时，成功收入为 <span class="math inline">x=(3+0.6)/0.8=4.5</span>。VC 的努力收益为 <span class="math inline">0.2\times4.5=0.9\ge0.6</span>，创业者努力收益为 <span class="math inline">0.3\times5.5=1.65\ge0.3</span>。VC 扣资本与努力成本后的净收益为零，创业者效用为 4.1。</p>
-</section>
-<section id="租金为何不是社会成本" class="level4">
-<h4 class="anchored" data-anchor-id="租金为何不是社会成本">租金为何不是社会成本？</h4>
-<p>后两种安排下，总剩余都是 <span class="math inline">8-3-0.3-0.6=4.1</span>。单独雇顾问时，创业者与顾问分得 <span class="math inline">2.3+1.8</span>；捆绑时，VC 的资本和努力成本得到补偿，创业者分得 4.1。由于创业者会比较 <span class="math inline">2.3&lt;2.7&lt;4.1</span>，不能融资的顾问在本例中不会被选中，能提供资金的 VC 则会被选中。融资使顾问创造的价值在均衡中得以实现。</p>
-<p>这是一组参数下的机制演示。不能把它改写成不附条件的“任何不出钱的顾问都没有价值”。</p>
-</section>
+<h3 class="anchored" data-anchor-id="book-casamatta-extension">G.2 Casamatta：低融资额与证券实施的边界</h3>
+<p>正文的三种安排、三方收入、双方 IC 与 PC 已展开。<a href="https://doi.org/10.1111/1540-6261.00597">Casamatta（2003）</a>第 I、II 节使用连续努力，Proposition 1、2 分别处理纯顾问与顾问出资；第 III 节 Proposition 5 再讨论证券实施。二元教学模型不能替代这些一般结果。</p>
 <section id="融资额较小时为什么不能只让-pc-取等号" class="level4">
 <h4 class="anchored" data-anchor-id="融资额较小时为什么不能只让-pc-取等号">融资额较小时，为什么不能只让 PC 取等号？</h4>
-<p>若仍由 VC 提供全部启动资本，但资本需求改为 <span class="math inline">I_V</span>、技术不变，须同时满足努力 IC 和 PC：</p>
+<p>仍由 VC 提供全部启动资本，但资本需求改为 <span class="math inline">I_V</span>，其他技术不变。实施双方努力必须同时满足</p>
 <p><span class="math display">
 x\ge3,\qquad 0.8x-0.6\ge I_V,\qquad x\le9.
 </span></p>
-<p>因此，给定本合同族，最小成功收入为</p>
+<p>因此，本合同族中的最小成功收入为</p>
 <p><span class="math display">
 x=\max\left\{3,\frac{I_V+0.6}{0.8}\right\},\qquad I_V\le6.6.
 </span></p>
-<p>当 <span class="math inline">I_V&lt;1.8</span> 时，IC 比 PC 更紧，VC 净收益为 <span class="math inline">1.8-I_V&gt;0</span>。例如 <span class="math inline">I_V=0.5</span> 时，不能取 PC 等号给出 <span class="math inline">x=1.375</span>，因为 VC 会不努力；仍需 <span class="math inline">x=3</span>，留下净收益 1.3。</p>
-<p>本例失败现金为零，许多证券可以实现同一组支付，不能据此辨别可转换证券的一般最优性。原文第 III 节 Proposition 5 比较融资规模和证券类型，保留非零失败现金：融资额低时让 VC 承担更强的成功激励，融资额高时用优先收入保护创业者的成功激励。本例把失败现金设为零，无法复现这项证券比较。</p>
+<p>当 <span class="math inline">I_V&lt;1.8</span> 时，IC 比 PC 更紧，VC 净收益为 <span class="math inline">1.8-I_V&gt;0</span>。例如 <span class="math inline">I_V=0.5</span> 时，不能按 PC 等号给 <span class="math inline">x=1.375</span>，因为 VC 会不努力；仍需 <span class="math inline">x=3</span>，留下净收益 1.3。顾问出资能够补偿激励租金，不代表任意给定融资规模都让 VC 零租金。</p>
+</section>
+<section id="为什么本例不能识别可转换证券最优" class="level4">
+<h4 class="anchored" data-anchor-id="为什么本例不能识别可转换证券最优">为什么本例不能识别可转换证券最优？</h4>
+<p>失败现金为零时，不同证券可以产生同一组成功、失败收入，无法根据两种收入直接区分证券形式。原文保留非零失败现金，分别配置收入水平与成功激励：外部融资少时，给 VC 普通股、给创业者优先收入；外部融资多时，给 VC 优先股或可转换债券、给创业者普通股。证券实施依靠这项更丰富的合同空间，不能从正文的 <span class="math inline">x\in[3,9]</span> 单独推出。</p>
 </section>
 </section>
 <section id="book-cornelli-extension" class="level3">
-<h3 class="anchored" data-anchor-id="book-cornelli-extension">G.3 Cornelli–Yosha：转换必须是 VC 愿意执行的选择</h3>
-<p><a href="https://doi.org/10.1111/1467-937X.00235">原文</a>的作者 2002 年 6 月稿第 2.1–2.4 节及 Proposition 1、2，是本节机制的依据。创业者事前不知道真实质量，双方中期共同看到不可核实信号；粉饰改变信号的分布，不改变真实质量。原文使用连续信号和指数分布收益。本例改为三个信号、三种最终现金，只验证一份可行合同及一项偏离，不复现一般最优证券证明。</p>
-<section id="收入表怎样由同一份证券得到" class="level4">
-<h4 class="anchored" data-anchor-id="收入表怎样由同一份证券得到">收入表怎样由同一份证券得到？</h4>
-<p>真实质量 <span class="math inline">\theta\in\{g,b\}</span> 各占一半，双方事前都不知道。若继续，最终现金 <span class="math inline">X</span> 的条件分布为</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>真实质量</th>
-<th style="text-align: right;"><span class="math inline">P(X=0)</span></th>
-<th style="text-align: right;"><span class="math inline">P(X=100)</span></th>
-<th style="text-align: right;"><span class="math inline">P(X=200)</span></th>
-<th style="text-align: right;"><span class="math inline">E[X\mid\theta]</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">g</span></td>
-<td style="text-align: right;">0.10</td>
-<td style="text-align: right;">0.80</td>
-<td style="text-align: right;">0.10</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">b</span></td>
-<td style="text-align: right;">0.41</td>
-<td style="text-align: right;">0.58</td>
-<td style="text-align: right;">0.01</td>
-<td style="text-align: right;">60</td>
-</tr>
-</tbody>
-</table>
-<p>给定质量后，<span class="math inline">X</span> 与中期信号条件独立。初始资本 <span class="math inline">I_1=10</span>，VC 中期续投需另出 <span class="math inline">I_2=65</span>；停止后双方收入均为零。创业者没有出资、没有其他私人收益，双方风险中性，无贴现。</p>
-<p>VC 持有面值 100 的债券。它可在中期选择保留债券，或取消全部债权、转为 95% 的股份；本教学合同只允许这两个选择。保留债券时 VC 得 <span class="math inline">\min(X,100)</span>，创业者得 <span class="math inline">(X-100)^+</span>；转换后 VC 得 <span class="math inline">0.95X</span>、创业者得 <span class="math inline">0.05X</span>。由上表逐项取期望，正好得到</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>质量</th>
-<th style="text-align: right;">保留债券：VC／创业者</th>
-<th style="text-align: right;">转换：VC／创业者</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">g</span></td>
-<td style="text-align: right;">90／10</td>
-<td style="text-align: right;">95／5</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">b</span></td>
-<td style="text-align: right;">59／1</td>
-<td style="text-align: right;">57／3</td>
-</tr>
-</tbody>
-</table>
-<p>95% 是刻意放大转换损失的教学取值，不是现实 VC 份额的估计。转换在 <span class="math inline">X</span> 实现之前完成，不能等看到 <span class="math inline">X</span> 后再重新选一次。</p>
-</section>
-<section id="信号和粉饰怎样安排" class="level4">
-<h4 class="anchored" data-anchor-id="信号和粉饰怎样安排">信号和粉饰怎样安排？</h4>
-<p>下表每个单元格都是联合概率 <span class="math inline">P(\theta,\sigma\mid a)</span>。创业者在还不知道质量时选择 <span class="math inline">a=0</span> 或 <span class="math inline">a=1</span>；这一选择不被 VC 或法院观察。信号随后由双方共同观察，但法院不能核实。</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>选择与质量</th>
-<th style="text-align: right;">差信号</th>
-<th style="text-align: right;">中等信号</th>
-<th style="text-align: right;">好信号</th>
-<th style="text-align: right;">质量合计</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>不粉饰，<span class="math inline">g</span></td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.10</td>
-<td style="text-align: right;">0.40</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="even">
-<td>不粉饰，<span class="math inline">b</span></td>
-<td style="text-align: right;">0.20</td>
-<td style="text-align: right;">0.30</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="odd">
-<td>粉饰，<span class="math inline">g</span></td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">0.42</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr class="even">
-<td>粉饰，<span class="math inline">b</span></td>
-<td style="text-align: right;">0.18</td>
-<td style="text-align: right;">0.32</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-</tbody>
-</table>
-<p>粉饰把 0.02 的坏项目概率质量从差移到中等，把 0.02 的好项目概率质量从中等移到好，没有改变好坏项目的总概率。没有粉饰成本，也没有长期质量改善，因而后面的约束确实来自证券激励。</p>
-</section>
-<section id="给定不粉饰的预期vc-是否愿意执行这套规则" class="level4">
-<h4 class="anchored" data-anchor-id="给定不粉饰的预期vc-是否愿意执行这套规则">给定“不粉饰”的预期，VC 是否愿意执行这套规则？</h4>
-<p>差、中、好信号下，<span class="math inline">P(g\mid\sigma)</span> 分别为 <span class="math inline">0,1/4,1</span>。初始资本 10 已经沉没，中期只比较停止的零收入与续投后的收入减 65。</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 28%">
-<col style="width: 28%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>信号</th>
-<th style="text-align: right;">保留债券的期望现金</th>
-<th style="text-align: right;">转换的期望现金</th>
-<th>最优行动</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>差</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">57</td>
-<td>两项都小于 65，停止</td>
-</tr>
-<tr class="even">
-<td>中等</td>
-<td style="text-align: right;"><span class="math inline">\tfrac14(90)+\tfrac34(59)=66.75</span></td>
-<td style="text-align: right;"><span class="math inline">\tfrac14(95)+\tfrac34(57)=66.5</span></td>
-<td>续投，保留债券</td>
-</tr>
-<tr class="odd">
-<td>好</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">95</td>
-<td>续投，转换</td>
-</tr>
-</tbody>
-</table>
-<p>这套规则是 VC 的中期最优选择，没有把不可核实信号直接写成可强制执行的转换触发条款。</p>
-</section>
-<section id="创业者的-ic-与双方-pc" class="level4">
-<h4 class="anchored" data-anchor-id="创业者的-ic-与双方-pc">创业者的 IC 与双方 PC</h4>
-<p>在这套规则下，不粉饰的创业者期望收入为</p>
+<h3 class="anchored" data-anchor-id="book-cornelli-extension">G.3 Cornelli–Yosha：固定债务对照与福利比较</h3>
+<p>正文已从现金分布与信号联合概率求出 VC 的继续和转换规则，并核对创业者 IC、双方 PC 与总剩余。机制依据是作者 <strong>2002 年 6 月稿</strong>第 2.1–2.4 节、Proposition 1、2；该稿使用连续信号与指数分布收益。正文改为三个信号、三种现金和全转或不转，未复现一般最优证券证明。<a href="https://doi.org/10.1111/1467-937X.00235">期刊入口</a></p>
+<section id="固定债务且预期粉饰时参与能否成立" class="level4">
+<h4 class="anchored" data-anchor-id="固定债务且预期粉饰时参与能否成立">固定债务且预期粉饰时，参与能否成立？</h4>
+<p>取消同一债券的转换权后，创业者选择粉饰。中等信号下好质量后验为 0.2，VC 债务期望收入为 65.2，仍会续投；差时停止、好时续投。VC 净收益为</p>
 <p><span class="math display">
-U_E(0)=0.30\times1+0.10\times10+0.40\times5=3.3.
+0.40(65.2-65)+0.42(90-65)-10=0.58.
 </span></p>
-<p>单方面偏离为粉饰，VC 仍按原预期和既定合同作决定，创业者取得</p>
+<p>创业者取得 <span class="math inline">0.32(1)+0.50(10)=5.32</span>，双方仍愿参与。实际继续项目包括全部 0.50 的好项目与 0.32 的坏项目，所以总剩余也可直接算为</p>
 <p><span class="math display">
-U_E(1)=0.32\times1+0.08\times10+0.42\times5=3.22.
+0.50(100)+0.32(60)-10-0.82(65)=5.9.
 </span></p>
-<p>所以 <span class="math inline">U_E(0)&gt;U_E(1)</span>，不粉饰是严格最优。偏离的差额正是正文的 <span class="math inline">0.02\times1-0.02\times5=-0.08</span>。</p>
-<p>VC 的期初净收益为</p>
-<p><span class="math display">
-0.40(66.75-65)+0.40(95-65)-10=2.7&gt;0.
-</span></p>
-<p>创业者外部机会为零，<span class="math inline">3.3&gt;0</span>；两方参与条件均成立。本例没有假定竞争把 VC 的净收益压到零，也没有在所有证券中最大化创业者收入。</p>
-<p>对账：最终现金期望为 <span class="math inline">0.50\times100+0.30\times60=68</span>，总资本为 <span class="math inline">10+0.80\times65=62</span>，净现值为 6，恰好等于 <span class="math inline">3.3+2.7</span>。</p>
+<p>可转换合同下不粉饰，总剩余为 6，避免了多续投坏项目造成的 <span class="math inline">0.02(65-60)=0.1</span> 损失。</p>
 </section>
-<section id="没有转换权时粉饰预期能否自洽" class="level4">
-<h4 class="anchored" data-anchor-id="没有转换权时粉饰预期能否自洽">没有转换权时，粉饰预期能否自洽？</h4>
-<p>保留同一份固定债务而取消转换权时，创业者粉饰的增量为 <span class="math inline">0.02\times1=0.02</span>。因此“不粉饰”的候选安排不满足其 IC。</p>
-<p>若 VC 预期粉饰，中等信号下的好质量概率变为 <span class="math inline">0.08/(0.08+0.32)=0.2</span>，保留债券的期望现金为 <span class="math inline">0.2\times90+0.8\times59=65.2&gt;65</span>，仍会续投。差时停止、好时续投的规则也未改变。创业者确实选择粉饰，VC 净收益为 <span class="math inline">0.40(65.2-65)+0.42(90-65)-10=0.58</span>，仍愿参加。</p>
-<p>固定债务均衡下创业者取得 <span class="math inline">0.32\times1+0.50\times10=5.32</span>，总剩余为 <span class="math inline">5.32+0.58=5.9</span>。可转换合同下不粉饰，总剩余为 6，避免了新增坏项目续投造成的 <span class="math inline">0.02(65-60)=0.1</span> 损失。创业者两份合同之间的收入还受到 VC 租金分配影响，不能只比较 5.32 与 3.3 就称可转换合同对创业者最优。</p>
-<p>本例验证的是这两份合同中的行为与福利，未证明任意固定债务或债股组合都不能实现相同结果，也未证明粉饰必使所有项目融资失败。原文更一般的证券比较、连续信号和重谈结果，需要其完整设定。</p>
+<section id="福利比较为什么不能直接当作最优证券证明" class="level4">
+<h4 class="anchored" data-anchor-id="福利比较为什么不能直接当作最优证券证明">福利比较为什么不能直接当作最优证券证明？</h4>
+<p>固定债务给创业者 5.32、VC 0.58；可转换合同给创业者 3.3、VC 2.7。两种合同的租金分配不同，不能仅凭总剩余较高就称创业者必定更喜欢所列可转换条款。要比较最优融资合同，还须允许各自重新定价，说明议价权与可用的期初转移，再检查全部约束。</p>
+<p>本例证明转换可以消除这项粉饰激励，并验证所列合同的均衡行为与参与。它未证明任意固定债务或债股组合都不能实现同样结果，也未证明粉饰必使项目融资失败。原文更一般的证券比较、连续信号和重谈，需要其完整设定。</p>
 </section>
 </section>
 <section id="g.4-连续努力固定分成为什么不能给双方全部边际回报" class="level3">
@@ -6410,27 +6522,27 @@ U_V^{T}
 <tr class="even">
 <td>GP—企业：真实权利组合</td>
 <td>Kaplan–Strömberg（2003、2004），实证</td>
-<td>第 1 节；建立现金流、控制和后续融资的术语，也是后面模型的检验对象</td>
+<td>正文合同事实；建立现金流、控制和后续融资的术语，也是后面模型的检验对象</td>
 </tr>
 <tr class="odd">
 <td>GP—企业：控制权的基础</td>
 <td>Aghion–Bolton（1992），基础理论</td>
-<td>预习 P5-2 与正文桥接；完全准确信号的一步计算。重谈与上界选读附录 E</td>
+<td>正文经典基础：信息、可契约范围、财富约束和有噪声的或有控制；预习 P5-2 为完备基准。较长上界比较选读附录 E</td>
 </tr>
 <tr class="even">
 <td>GP—企业：VC 控制与创始人替换</td>
 <td>Hellmann（1998），正式理论</td>
-<td>正文模型一：不足额补偿、否决与搜寻；原文的内生补偿和其他结果选读附录 G.1</td>
+<td>正文模型一：合同收入、重谈、搜寻、重议股权与原文两条行为条件；补偿反事实与 vesting 选读附录 G.1</td>
 </tr>
 <tr class="odd">
 <td>GP—企业：融资与建议捆绑</td>
 <td>Casamatta（2003），正式理论</td>
-<td>正文模型二：双边道德风险、激励租金与出资。原文连续努力及证券类型放附录 G.2；Schmidt、Repullo–Suarez 为延伸阅读</td>
+<td>正文模型二：双边 IC、三方收入、租金与融资、原文连续努力条件；低融资额与证券实施放附录 G.2</td>
 </tr>
 <tr class="even">
 <td>GP—企业：分阶段与粉饰</td>
 <td>Gompers（1995）实证；Cornelli–Yosha（2003）理论</td>
-<td>正文模型三：未知质量时粉饰的两项效果；附录 G.3 核对信号、VC 最优选择与双方 PC</td>
+<td>正文模型三：现金与信号分布、后验、VC 最优选择、粉饰 IC 和双方 PC；附录 G.3 为固定债务福利对照</td>
 </tr>
 <tr class="odd">
 <td>GP—企业：动态融资的其他分支</td>

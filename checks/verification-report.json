@@ -148,6 +148,61 @@
           "debt_E": 5.32,
           "debt_surplus": 5.9
         },
+        "aghion_bolton_noisy_signal": {
+          "branches": [
+            {
+              "state": 0,
+              "signal": 1,
+              "probability": 0.45,
+              "action": 0,
+              "renegotiated": false,
+              "VC_cash": 100.0,
+              "E_cash": 0.0,
+              "E_utility": 150.0
+            },
+            {
+              "state": 0,
+              "signal": 0,
+              "probability": 0.05,
+              "action": 1,
+              "renegotiated": false,
+              "VC_cash": 200.0,
+              "E_cash": 0.0,
+              "E_utility": 0.0
+            },
+            {
+              "state": 1,
+              "signal": 1,
+              "probability": 0.05,
+              "action": 1,
+              "renegotiated": true,
+              "VC_cash": 0.0,
+              "E_cash": 50.0,
+              "E_utility": 50.0
+            },
+            {
+              "state": 1,
+              "signal": 0,
+              "probability": 0.45,
+              "action": 1,
+              "renegotiated": false,
+              "VC_cash": 50.0,
+              "E_cash": 0.0,
+              "E_utility": 0.0
+            }
+          ],
+          "VC_cash": 77.5,
+          "VC_net": 7.5,
+          "E": 70.0,
+          "surplus": 77.5
+        },
+        "original_effort_conditions": {
+          "hellmann_B_private": 0.3125,
+          "hellmann_B_social": 0.25,
+          "hellmann_m_full_compensation": 0.04140625,
+          "casamatta_e": 0.1875,
+          "casamatta_a": 0.03125
+        },
         "aghion_bolton_perfect_signal": {
           "VC_cash": 75.0,
           "VC_net": 5.0,
@@ -282,26 +337,26 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "89add117a742af7e7b91f81810212d6081b46417c1833090f3e3f10382323620",
+    "student-notes.md": "65d5421d90c9b141ae69dbf40f78a39223517a9ed9c0c0eed8c4ee35dc1a2cdf",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "4859e71243a237717325cd8feb6e28869175745a1eef5e4f74f6db7a2b26b241",
+    "w05-venture-contract.qmd": "88bccc18880e2de660677eede40269f42d52a6f9460bc25a7b0acd67ca8ad588",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "e96f5db595582380b7195ef22401ae05def9f6ed188b111761b4a09c59144bfe",
-    "exercises.qmd": "e6433aa5b4d261a679371c3508eac730226c3927acd15732faa39e97da03259b"
+    "w05-preparation.qmd": "f47f0219c59b257d9d8306c9c8ffa90ce3a7a45f4560aed6f076e10cb4bf46e7",
+    "exercises.qmd": "962ebdc5e56ea319f0cd500e116af28805626866a0abc25c128f14cfe5ab6062"
   },
   "html": {
     "pages": 7,
-    "local_links_checked": 146,
+    "local_links_checked": 148,
     "details": 30,
     "sha256": {
-      "index.html": "f27d4c2688d4dd2b99e54d9790395a053ca82c57ceac8399a773fe8f793f7558",
-      "student-notes.html": "9f0fdd8c65000ab5a10e33300b706b8ff7031e76d4d1d2297c4fb706365bb5b2",
+      "index.html": "e4e8c4ef0b59da28c107fdf9dbbde92e3ef2c9c4f25769d1b68d9d306189b16f",
+      "student-notes.html": "2588a55ae9d582edab0e0228cad49e67170d695fc0ec09df7fdc04ad454ae700",
       "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-      "w05-venture-contract.html": "561019f6887c5d85b3dfe3d2ec74ba404098ca6241b14edba845e38dc1252477",
+      "w05-venture-contract.html": "63bf5ce4129b87bcfb06f9da1b31e91a28587ba330d9cf39b09c7fb1881d7b33",
       "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-      "w05-preparation.html": "396fd70a9da0a565ea7a7f909f8f9e2544f3f9fb7e036fa7be5c265aa4fa4d95",
-      "exercises.html": "705909daadbbdefcf10c6d098c8a985854116801d50cbac89e08416238629006"
+      "w05-preparation.html": "e8e6347e5265118c230420c0d7accbb0d430a87cebf84a798f2b51d2d0a5a20f",
+      "exercises.html": "623e9c6baf5f1850c6fca31f5aef34487488e4b220f7868936d80a71e5e3bb8f"
     }
   },
   "mirrored_files_checked": 25
