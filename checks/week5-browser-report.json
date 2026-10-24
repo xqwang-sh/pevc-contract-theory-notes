@@ -1,31 +1,112 @@
 {
-  "status": "passed_for_inspected_views",
-  "checked_at": "2026-10-19T08:15:17.695607+09:00",
-  "environment": "Local HTTP pages in the in-app browser",
-  "checks": [
+  "checked_at": "2026-10-24T16:32:48.917120+09:00",
+  "method": "Ego browser with Chromium screenshots; key fragments visually inspected. CDP capture used because the native browser window was minimized.",
+  "pages": [
     {
-      "page": "student-notes.html#book-appendices",
-      "method": "Accessibility text",
-      "observed": "Appendices A through H in continuous order; A-C grouped under LPA and D-H under enterprise contracts; ASW appears at C without a fixed special title"
+      "page": "index.html",
+      "katexErrors": 0,
+      "renderedFormulas": 0,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
     },
     {
-      "page": "w05-preparation.html#p5-4",
-      "method": "Accessibility text, expanded answer and screenshot",
-      "observed": "Exactly four core modules in classroom order; experiment-design preparation absent; original author-year citations, Neher timing and liquidation values, AP conditional-pricing assumption and Q=30/7 answer visible"
+      "page": "w05-preparation.html",
+      "katexErrors": 0,
+      "renderedFormulas": 43,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
+    },
+    {
+      "page": "w05-venture-contract.html",
+      "katexErrors": 0,
+      "renderedFormulas": 37,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
+    },
+    {
+      "page": "student-notes.html",
+      "katexErrors": 0,
+      "renderedFormulas": 775,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
+    },
+    {
+      "page": "exercises.html",
+      "katexErrors": 0,
+      "renderedFormulas": 246,
+      "viewportWidth": 1416,
+      "pageWidth": 1416
     }
   ],
-  "limits": [
-    "No separate mobile emulation",
-    "This record covers the appendix and preparation follow-up, not a new full pixel audit",
-    "No production deployment performed"
+  "visual_checks": [
+    "Classroom: Hellmann symmetric-information and contractibility assumptions",
+    "Classroom: Casamatta double moral hazard, limited liability and relative efficiency",
+    "Classroom: CY information timing and two-effect manipulation calculation",
+    "Classroom: contractible-effort counterfactual in the final render",
+    "Exercises: H5-4 answer expanded and visually inspected",
+    "Book G.3: signal-dependent continuation and conversion table, E incentive comparison",
+    "390-pixel viewport: body fits; wide formulas scroll horizontally"
   ],
-  "html_sha256": {
-    "index.html": "c162a61cf215208df8e5a08eb0d87b2d8bcf8c131f11cae8e70b2dc89dacaa85",
-    "student-notes.html": "98c3c640867bc58da0162d72f7cee6f00bb0d8084e46c81e06d8f4b6ca3d5d69",
-    "w04-fund-contract.html": "eabcb8457b8f568b1bdfbbd608e7a5959eb6585a27961c67b96df73b27dc2004",
-    "w05-venture-contract.html": "5b77127862788d1f5c6e1c96bfc0a4c94b24073eb02beffe9c93d493d2dbdee9",
-    "w04-preparation.html": "5cf3b319cdff07dcd131ac66662b80e0703b646fbdecffc095292c55d4305e75",
-    "w05-preparation.html": "dabc68908a294740614f973b42846fad590963ab45c84aaea0a388622e88e26c",
-    "exercises.html": "1557bfd9597cf96ac288eb771735fbc514b85dd504db0065a94c9b951f45354b"
-  }
+  "mobile_formula_scroll": [
+    {
+      "client_width": 300,
+      "scroll_width": 303,
+      "scroll_left_after_request": 2.5
+    },
+    {
+      "client_width": 300,
+      "scroll_width": 523,
+      "scroll_left_after_request": 90
+    }
+  ],
+  "screenshot_directory": "../revisions/2026-10-24-week5-core-review",
+  "screenshots": [
+    {
+      "file": "class-cy-cdp.png",
+      "sha256": "5caf495504cd0bca271e9d0b32ae879115f8afba3c5a0a209a47f2c1e52af5df"
+    },
+    {
+      "file": "class-cy-calculation.png",
+      "sha256": "70021be469c2cedcfad19ed86976a1330cde1aab5ffb23efc5fa2a5b7283a6d0"
+    },
+    {
+      "file": "class-hellmann.png",
+      "sha256": "deb19774880fd9994ec22db440d2130615fc4a32c0ae5c2cd21ecb8673463a6e"
+    },
+    {
+      "file": "class-casamatta.png",
+      "sha256": "ffe0878945a28f8fe20601a4ddfc475d75ebc77bc67ad6a2007537929b2ead62"
+    },
+    {
+      "file": "exercise-h5-4-expanded.png",
+      "sha256": "48658d38f34030a66cd9b8ff80e202c939c01f7539cf0fa9252693586f68e818"
+    },
+    {
+      "file": "book-cy-policy.png",
+      "sha256": "48ed60e9f211f61ecae850f8730f6a41c35b2a70a3957d090e7b344538da4618"
+    },
+    {
+      "file": "mobile-cy-calculation.png",
+      "sha256": "16193f3186a8e487d6267f7b4a44752a44a0acbb25558c3b62d30d51cee60699"
+    },
+    {
+      "file": "class-contractible-effort.png",
+      "sha256": "c389ccbd72ef857c8fee8ebff90f9dafc3123defdf954ec462c5650c5e152d86"
+    }
+  ],
+  "final_html_sha256": {
+    "index.html": "f27d4c2688d4dd2b99e54d9790395a053ca82c57ceac8399a773fe8f793f7558",
+    "student-notes.html": "9f0fdd8c65000ab5a10e33300b706b8ff7031e76d4d1d2297c4fb706365bb5b2",
+    "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
+    "w05-venture-contract.html": "561019f6887c5d85b3dfe3d2ec74ba404098ca6241b14edba845e38dc1252477",
+    "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
+    "w05-preparation.html": "396fd70a9da0a565ea7a7f909f8f9e2544f3f9fb7e036fa7be5c265aa4fa4d95",
+    "exercises.html": "705909daadbbdefcf10c6d098c8a985854116801d50cbac89e08416238629006"
+  },
+  "limits": [
+    "Spot checks, not a complete browser or device compatibility test",
+    "The five-page DOM formula counts were unchanged by the final prose-only counterfactual addition; that paragraph was separately checked in the final classroom render",
+    "Wide formulas require horizontal scrolling on a phone"
+  ],
+  "publication": "Local rendering and course mirrors only; no production deployment performed"
 }

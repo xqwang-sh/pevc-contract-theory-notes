@@ -46,6 +46,115 @@
       }
     },
     "week5": {
+      "core": {
+        "hellmann": {
+          "founder_control": {
+            "search": false,
+            "search_gain": -1.0,
+            "E": 30.0,
+            "VC": 0.0,
+            "surplus": 30.0
+          },
+          "vc_fixed_cash_terms": {
+            "search": true,
+            "search_gain": 9.0,
+            "E": 25.0,
+            "VC": 9.0,
+            "surplus": 34.0
+          },
+          "vc_repriced": {
+            "search": true,
+            "search_gain": 18.0,
+            "E": 34.0,
+            "VC": 0.0,
+            "surplus": 34.0
+          },
+          "full_compensation_founder_control": {
+            "search": true,
+            "search_gain": 4.0,
+            "E": 34.0,
+            "VC": 0.0,
+            "surplus": 34.0
+          },
+          "cost_11": {
+            "search": true,
+            "search_gain": 4.0,
+            "E": 25.0,
+            "VC": 4.0,
+            "surplus": 29.0
+          }
+        },
+        "casamatta": {
+          "E_no_advisor": 2.7,
+          "E_consultant": 2.3,
+          "E_bundled": 4.1,
+          "consultant_rent": 1.8,
+          "IC_interval": [
+            3.0,
+            9.0
+          ],
+          "low_capital_rent": 1.3
+        },
+        "cornelli_yosha": {
+          "payoffs": {
+            "g": {
+              "debt": [
+                90.0,
+                10.0
+              ],
+              "converted": [
+                95.0,
+                5.0
+              ]
+            },
+            "b": {
+              "debt": [
+                59.0,
+                1.0
+              ],
+              "converted": [
+                57.0,
+                3.0
+              ]
+            }
+          },
+          "policy": [
+            "stop",
+            "debt",
+            "converted"
+          ],
+          "conditional_net_payoffs": [
+            {
+              "stop": 0.0,
+              "debt": -6.0,
+              "converted": -8.0
+            },
+            {
+              "stop": 0.0,
+              "debt": 1.75,
+              "converted": 1.5
+            },
+            {
+              "stop": 0.0,
+              "debt": 25.0,
+              "converted": 30.0
+            }
+          ],
+          "VC": 2.7,
+          "E": 3.3,
+          "surplus": 6.0,
+          "deviation_E": 3.22,
+          "debt_VC": 0.58,
+          "debt_E": 5.32,
+          "debt_surplus": 5.9
+        },
+        "aghion_bolton_perfect_signal": {
+          "VC_cash": 75.0,
+          "VC_net": 5.0,
+          "E": 75.0,
+          "surplus": 80
+        }
+      },
       "aghion_bolton": {
         "pi1": 1.5,
         "pi2": 50.0,
@@ -173,26 +282,26 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "4715c73c7e7d0b700ac90c2e09bca9c8b611d32f5e94cb7a03f48ecd434d631f",
-    "student-notes.qmd": "e8ce7a2e34f18748bfc15ca4062867219c90c7732dffaa4606d2d42555826df0",
+    "student-notes.md": "89add117a742af7e7b91f81810212d6081b46417c1833090f3e3f10382323620",
+    "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "df0d829682a7d18611d566b0180b6e1a45f1ef2789e027691092833cf50d8b20",
+    "w05-venture-contract.qmd": "4859e71243a237717325cd8feb6e28869175745a1eef5e4f74f6db7a2b26b241",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "fa49280aeeb45a58df08077a34d8984aa6fc7833429add07c0d1842f3bbbf9ab",
-    "exercises.qmd": "b434299c2ee715ff580403148cbbd1fc689e29c1387fbc3c7560e61dcbadada4"
+    "w05-preparation.qmd": "e96f5db595582380b7195ef22401ae05def9f6ed188b111761b4a09c59144bfe",
+    "exercises.qmd": "e6433aa5b4d261a679371c3508eac730226c3927acd15732faa39e97da03259b"
   },
   "html": {
     "pages": 7,
-    "local_links_checked": 130,
+    "local_links_checked": 146,
     "details": 30,
     "sha256": {
-      "index.html": "52e2aa0872d6093a385799cb7aec413340d4f0bcec815f04d3acc61519ddee6e",
-      "student-notes.html": "03194333d6779ad50f7b45b4ae8fc4cfd6db90d83c00e1fbcfee0403506d4c8d",
-      "w04-fund-contract.html": "e815c73eb5ad19e009c49f015c6d01343722383b2146aa16390a6fef41c1b42b",
-      "w05-venture-contract.html": "240f021351d3f3d5f669e14e75d8b661aed3a3462f49073c0f817b1a256931d1",
-      "w04-preparation.html": "04f800a22fe21220b56e40bd204bcc2c724cab268199a565f4bbfc7d644df389",
-      "w05-preparation.html": "3ad967337ba91e594ad5e0e48f68bb811c0be554447af5380f43bf9ed2a6b5ee",
-      "exercises.html": "f09eddc493bea7bd1de07db217a0b9b2776af2d5bb8bd8f3dca37a3cc5100f52"
+      "index.html": "f27d4c2688d4dd2b99e54d9790395a053ca82c57ceac8399a773fe8f793f7558",
+      "student-notes.html": "9f0fdd8c65000ab5a10e33300b706b8ff7031e76d4d1d2297c4fb706365bb5b2",
+      "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
+      "w05-venture-contract.html": "561019f6887c5d85b3dfe3d2ec74ba404098ca6241b14edba845e38dc1252477",
+      "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
+      "w05-preparation.html": "396fd70a9da0a565ea7a7f909f8f9e2544f3f9fb7e036fa7be5c265aa4fa4d95",
+      "exercises.html": "705909daadbbdefcf10c6d098c8a985854116801d50cbac89e08416238629006"
     }
   },
   "mirrored_files_checked": 25

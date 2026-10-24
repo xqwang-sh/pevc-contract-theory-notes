@@ -25,6 +25,159 @@ PAGES = [
 def close(x, y):
     assert math.isclose(x, y, abs_tol=1e-8), (x, y)
 
+def week5_core_checks():
+    from fractions import Fraction as F
+
+    # Solve the binary search choice from the contract and renegotiation payoffs.
+    R, p, phi, B, I, q = F(100), F(1,2), F(4,5), F(10), F(30), F(1,2)
+    def search_contract(alpha, severance, control, cost=F(6)):
+        keep_e, keep_v = alpha*p*R+B, (1-alpha)*p*R
+        replace_e, replace_v = severance, phi*R-severance
+        joint = replace_e+replace_v-keep_e-keep_v
+        if control == 'founder' and severance < keep_e:
+            replace_e, replace_v = keep_e+joint/2, keep_v+joint/2
+        assert replace_v >= keep_v and replace_e >= 0 and replace_v >= 0
+        search_gain = q*(replace_v-keep_v)-cost
+        search = search_gain >= 0
+        ev_e = q*replace_e+(1-q)*keep_e if search else keep_e
+        ev_v = q*replace_v+(1-q)*keep_v-cost-I if search else keep_v-I
+        surplus = (q*phi*R+(1-q)*p*R+(1-q)*B-cost-I
+                   if search else p*R+B-I)
+        assert ev_e+ev_v == surplus
+        assert 0 <= alpha <= 1 and 0 <= severance/phi <= R
+        return {'search':search,'search_gain':search_gain,'E':ev_e,'VC':ev_v,'surplus':surplus}
+    founder=search_contract(F(2,5),F(20),'founder')
+    fixed=search_contract(F(2,5),F(20),'vc')
+    repriced=search_contract(F(19,25),F(20),'vc')
+    full_comp=search_contract(F(12,25),F(34),'founder')
+    assert founder['search'] is False and founder['search_gain']==-1
+    assert (founder['E'],founder['VC'])==(30,0)
+    assert (fixed['search_gain'],fixed['E'],fixed['VC'])==(9,25,9)
+    assert repriced['search'] and (repriced['E'],repriced['VC'])==(34,0)
+    assert full_comp['search'] and (full_comp['E'],full_comp['VC'])==(34,0)
+    assert repriced['surplus']-founder['surplus']==4
+    wasteful=search_contract(F(2,5),F(20),'vc',F(11))
+    assert wasteful['search_gain']==4 and wasteful['surplus']-founder['surplus']==-1
+
+    # Compute both agents' best responses and the passive financier's receipts.
+    ce, cv, initial, cash = F(3,10), F(3,5), F(3), F(10)
+    def effort_outcome(e,a,claims,advising=True):
+        prob=F(3,10)+F(3,10)*e+F(1,5)*a
+        eclaim,vclaim,fclaim=claims
+        assert min(claims)>=0 and sum(claims)==cash
+        return prob*eclaim-ce*e, prob*vclaim-(cv*a if advising else 0), prob*fclaim
+    def check_efforts(claims, advising=True):
+        a=int(advising)
+        chosen=effort_outcome(1,a,claims,advising)
+        assert chosen[0]>=effort_outcome(0,a,claims,advising)[0]
+        if advising:
+            assert chosen[1]>=effort_outcome(1,0,claims,advising)[1]
+        return chosen
+    no_advisor=check_efforts((F(5),F(0),F(5)),False)
+    separate=check_efforts((F(13,4),F(3),F(15,4)))
+    bundled=check_efforts((F(11,2),F(9,2),F(0)))
+    assert no_advisor==(F(27,10),F(0),initial)
+    assert separate==(F(23,10),F(9,5),initial)
+    assert (bundled[0],bundled[1]-initial)==(F(41,10),F(0))
+    assert sum(separate)-initial==sum(bundled)-initial==F(41,10)
+    # Self funding produces the same no-advisor and consultant net payoffs.
+    self_alone=check_efforts((cash,F(0),F(0)),False)[0]-initial
+    self_advice=check_efforts((F(7),F(3),F(0)))[0]-initial
+    assert self_alone==no_advisor[0] and self_advice==separate[0]
+    lower=cv/F(1,5);upper=cash-ce/F(3,10)
+    assert (lower,upper)==(3,9)
+    low_capital=F(1,2);pc_only=(low_capital+cv)/F(4,5)
+    assert pc_only==F(11,8) and F(1,5)*pc_only<cv
+    assert F(4,5)*lower-cv-low_capital==F(13,10)
+    assert F(4,5)*upper-cv==F(33,5)
+
+    # Construct CY payoffs from one security and the primitive cash distributions.
+    output=(F(0),F(100),F(200));face=F(100);conversion=F(19,20)
+    pmf={'g':(F(1,10),F(4,5),F(1,10)),
+         'b':(F(41,100),F(29,50),F(1,100))}
+    receipts={}
+    for kind,probs in pmf.items():
+        assert sum(probs)==1
+        receipts[kind]={}
+        for instrument in ('debt','converted'):
+            v=tuple(min(x,face) if instrument=='debt' else conversion*x for x in output)
+            assert all(0<=claim<=x for claim,x in zip(v,output))
+            vc=sum(prob*claim for prob,claim in zip(probs,v))
+            total=sum(prob*x for prob,x in zip(probs,output))
+            receipts[kind][instrument]=(vc,total-vc)
+    assert receipts=={'g':{'debt':(90,10),'converted':(95,5)},
+                      'b':{'debt':(59,1),'converted':(57,3)}}
+    clean={'g':(F(0),F(1,10),F(2,5)),
+           'b':(F(1,5),F(3,10),F(0))}
+    dressed={'g':(F(0),F(2,25),F(21,50)),
+             'b':(F(9,50),F(8,25),F(0))}
+    first,second=F(10),F(65)
+    for matrix in (clean,dressed):
+        assert all(sum(row)==F(1,2) and min(row)>=0 for row in matrix.values())
+    def choose_policy(matrix, convertible=True):
+        policy=[];conditional=[]
+        for signal in range(3):
+            mass=sum(row[signal] for row in matrix.values())
+            possible=('debt','converted') if convertible else ('debt',)
+            menu={'stop':F(0)}
+            for instrument in possible:
+                menu[instrument]=sum(matrix[t][signal]*receipts[t][instrument][0]
+                                     for t in matrix)/mass-second
+            best=max(menu,key=menu.get)
+            assert all(menu[best]>v for action,v in menu.items() if action!=best)
+            policy.append(best);conditional.append(menu)
+        return policy,conditional
+    def exante(matrix, policy):
+        vc,e,resources=-first,F(0),-first
+        for signal,instrument in enumerate(policy):
+            if instrument=='stop':continue
+            for kind,row in matrix.items():
+                vpay,epay=receipts[kind][instrument]
+                vc+=row[signal]*(vpay-second);e+=row[signal]*epay
+                resources+=row[signal]*(vpay+epay-second)
+        assert vc+e==resources
+        return vc,e,resources
+    policy,menu=choose_policy(clean)
+    assert policy==['stop','debt','converted']
+    clean_v,clean_e,total=exante(clean,policy)
+    deviation_e=exante(dressed,policy)[1]
+    assert (clean_v,clean_e,total)==(F(27,10),F(33,10),6)
+    assert deviation_e==F(161,50) and deviation_e-clean_e==F(-2,25)
+    assert clean_v>=0 and clean_e>=0
+    debt_policy,_=choose_policy(clean,False)
+    actual_debt,_=choose_policy(dressed,False)
+    assert debt_policy==actual_debt==['stop','debt','debt']
+    assert exante(dressed,debt_policy)[1]-exante(clean,debt_policy)[1]==F(1,50)
+    debt_v,debt_e,debt_total=exante(dressed,actual_debt)
+    assert (debt_v,debt_e,debt_total)==(F(29,50),F(133,25),F(59,10))
+    assert total-debt_total==F(1,50)*(second-F(60))
+    bad_only={'g':clean['g'],'b':dressed['b']}
+    assert exante(bad_only,policy)[1]-clean_e==F(1,50)
+
+    # Derive the AB perfect-signal action plan, cash flow, and welfare separately.
+    states=(((100,150),(200,0)),((0,49),(50,0)))
+    first_best=[max(range(2),key=lambda a:sum(row[a])) for row in states]
+    assert first_best==[0,1]
+    assert [max(range(2),key=lambda a:row[a][1]) for row in states]==[0,0]
+    assert [max(range(2),key=lambda a:row[a][0]) for row in states]==[1,1]
+    vc_cash=sum(F(1,2)*states[s][a][0] for s,a in enumerate(first_best))
+    en=sum(F(1,2)*states[s][a][1] for s,a in enumerate(first_best))
+    assert vc_cash==en==75 and vc_cash-70==5 and vc_cash+en-70==80
+    for share in (F(1,2),F(3,4),F(1)):
+        renegotiated=1-(1-share)*F(200,100)
+        assert (1-renegotiated)*100==(1-share)*200
+    return {'hellmann':{'founder_control':founder,'vc_fixed_cash_terms':fixed,
+                       'vc_repriced':repriced,'full_compensation_founder_control':full_comp,
+                       'cost_11':wasteful},
+            'casamatta':{'E_no_advisor':no_advisor[0],'E_consultant':separate[0],
+                         'E_bundled':bundled[0],'consultant_rent':separate[1],
+                         'IC_interval':[lower,upper],'low_capital_rent':F(13,10)},
+            'cornelli_yosha':{'payoffs':receipts,'policy':policy,'conditional_net_payoffs':menu,
+                              'VC':clean_v,'E':clean_e,'surplus':total,'deviation_E':deviation_e,
+                              'debt_VC':debt_v,'debt_E':debt_e,'debt_surplus':debt_total},
+            'aghion_bolton_perfect_signal':{'VC_cash':vc_cash,'VC_net':vc_cash-70,'E':en,'surplus':80}}
+
+
 def week5_numerical_checks():
     from fractions import Fraction as F
 
@@ -41,44 +194,6 @@ def week5_numerical_checks():
     assert pi4==F(125,2)
     # The entrepreneur's theta_b IC requires t_s*50 >= 49.
     assert F(49,50)*50==49
-
-    # Hellmann (1998) eq. (2) with alpha_0=0, teaching values; p and B held fixed.
-    phi,p,B,M,th=F(4,5),F(1,2),F(1,10),F(1),F(1,2)
-    G=phi-p-B; a=F(2,5)
-    SFC=B+a*p; SR=SFC+th*G; mR=(phi-(1-a)*p-SR)/M
-    assert (G,SFC,SR,mR)==(F(1,5),F(3,10),F(2,5),F(1,10))
-    uvc=(1-a)*p+mR*(1-th)*G-M*mR**2/2; uen=B+a*p+mR*th*G
-    assert (uvc,uen)==(F(61,200),F(31,100))
-    a2=1-(uvc-G**2/(2*M))/p
-    assert a2==F(43,100) and B+a2*p==F(63,200)>uen
-    m_low=(phi-F(1,5)-(1-a)*p)/M
-    assert m_low==F(3,10) and m_low*G-M*m_low**2/2==F(3,200)
-    # Casamatta-style teaching model (not original numbers).
-    R_,L0,cE,cV=F(10),F(2),F(3,5),F(2,5)
-    E=F(4,5)*R_+F(1,5)*L0
-    assert E==F(42,5) and cV/F(1,5)==2 and (R_-L0)-cE/F(3,10)==6
-    assert F(3,4)*E-cV==F(59,10) and F(4,5)*8+F(1,5)*2-cV==F(32,5)
-    assert F(1,4)*E-cV==F(17,10)
-    sE=1-F(1,4)-3/E
-    assert sE==F(11,28) and sE*E-cE==F(27,10) and E-3-cV-cE==F(22,5)
-    xS=(F(31,5)+cV-F(1,5)*L0)/F(4,5)
-    assert xS==F(31,4) and (R_-xS)*F(3,10)==F(27,40) and F(4,5)*(R_-xS)-cE==F(6,5)
-    # H5-3 Hellmann exercise: phi=.9, p=.5, B=.2, M=1, theta=3/4, alpha=.4.
-    phi3,p3,B3,th3,a3=F(9,10),F(1,2),F(1,5),F(3,4),F(2,5)
-    G3=phi3-p3-B3; SR3=B3+a3*p3+th3*G3; m3=phi3-(1-a3)*p3-SR3
-    uvc3=(1-a3)*p3+m3*(1-th3)*G3-m3**2/2; uen3=B3+a3*p3+m3*th3*G3
-    assert (G3,SR3,m3,uvc3,uen3)==(F(1,5),F(11,20),F(1,20),F(241,800),F(163,400))
-    a3b=1-(uvc3-G3**2/2)/p3
-    assert a3b==F(7,16) and B3+a3b*p3==F(67,160)
-    # H5-4 teaching numbers.
-    E4=F(4,5)*12+F(1,5)*3
-    assert E4==F(51,5) and F(2,9)*E4-F(2,5)==F(28,15) and E4-F(2,9)*E4-4-F(3,5)==F(10,3)
-    assert (8+F(2,5))/E4==F(14,17) and (8+F(2,5)-F(3,5))/F(4,5)==F(39,4)
-    assert F(1,2)*80+F(1,2)*10-10==35 and F(50,75)==F(2,3) and F(1,3)*75-3==22 and F(50,120)==F(5,12)
-    # Staging and window dressing teaching model.
-    assert F(1,2)*100+F(1,2)*20-40==20 and F(1,2)*70+F(1,2)*5-10==F(55,2)
-    assert 1-F(4,15)==F(11,15) and 25/F(105,2)==F(10,21) and F(40,60)==F(2,3)
-    assert F(1,3)*60-2==18 and (25-F(5,2))/F(1,2)==45 and F(1,2)*55==F(55,2)
 
     beta,R,I1,I2=F(9,10),F(2),F(3,5),F(2,5)
     upfront_required=1/beta
@@ -140,7 +255,7 @@ def week5_numerical_checks():
     assert vc_receipts==vc_cost and outside_receipts==outside_cost
     assert founder_cash==(1-alpha)*W==F(9,5)==W-1
 
-    result={"aghion_bolton":{"pi1":pi1,"pi2":pi2,"pi3_beta_099_001":pi3,"pi4":pi4,
+    result={"core":week5_core_checks(),"aghion_bolton":{"pi1":pi1,"pi2":pi2,"pi3_beta_099_001":pi3,"pi4":pi4,
               "theta_b_direct_share":F(49,50)},
             "neher_example_4_1":{"P0":P0,"P1":P1,"P2":P2,"L2":L2,
               "U1_V":U1,"U2_V":U2,"S1":S1,"C1":C1,"E_NPV":F(33,50),
@@ -377,9 +492,9 @@ def source_checks():
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
-        "w05-venture-contract.qmd":["200 笔投资","118 家被投企业","56%","17.5%","Q<Q_1","0.305","0.315","0.43","17/42","6.4","27.5","11/15"],
-        "w05-preparation.qmd":["49/50","3/2","50.005","62.5","0.015","[0.25,0.75]"],
-        "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","62.5","1.1852","5/14","6.66","8.18","0.30125","0.41875","7/16","14/17","9.75","5/12"],
+        "w05-venture-contract.qmd":["200 笔投资","118 家企业","信息对称","不完整合同","双边道德风险","有限责任","不可核实","2.3","4.1","-0.08"],
+        "w05-preparation.qmd":["75","70","49","2.4","1.8","4.5"],
+        "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
     for name,claims in required.items():
         text=(ROOT/name).read_text().replace("−","-")
@@ -412,7 +527,7 @@ def source_checks():
     assert re.findall(r"^## P5-(\d)：",prep,re.M)==["1","2","3","4"]
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
-    assert "核对 P5-4" in prep and "Aghion" in prep and "**P5-2：Aghion–Bolton**" in prep
+    assert "核对 P5-4" in prep and "P5-2：Aghion–Bolton" in prep
     assert "## 理论基础：Aghion–Bolton" not in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
@@ -423,11 +538,13 @@ def source_checks():
         assert "{#"+anchor+"}" in venture,anchor
     assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-hellmann}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-staging}")
     assert "{#book-venture-followon}" in book.split("## 附录 F：",1)[1].split("## 附录 G：",1)[0]
-    for claim in ("49/50","62.5","0.305","0.315","17/42","27.5","11/15"):
+    for claim in ("75","70","2.3","4.1","-0.08","不足额离职补偿","自己出资","尚不知道项目好坏"):
         assert claim in venture,claim
-    assert "本轮已重读" in book and "2024 年 6 月的工作论文版本" in book
+    assert "2024 年 6 月的工作论文版本" in book
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture
+    assert "+-\\underbrace" not in venture
+    assert "若仍由 VC 提供全部启动资本" in book
     assert book.index("{#book-venture-experiment}") > book.index("{#book-app-h}")
     for name in ("student-notes.md","w05-venture-contract.qmd","w05-preparation.qmd"):
         assert "不是，而是" not in (ROOT/name).read_text(),name

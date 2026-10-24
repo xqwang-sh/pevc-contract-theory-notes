@@ -1,6 +1,6 @@
 ---
 pagetitle: "PE/VC 合同理论完整学生讲义：LPA 与 GP—企业合同"
-date: "2026-10-19"
+date: "2026-10-24"
 number-sections: false
 ---
 

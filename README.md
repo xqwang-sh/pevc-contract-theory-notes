@@ -10,7 +10,7 @@
 
 在本目录运行 python3 checks/render_materials.py 生成六个 HTML 页面；它在本地临时目录渲染，避免 OneDrive 临时目录清理权限错误。需要更新课程目录副本时加 --sync-parent。首页 docs/index.html 独立维护。全部页面自包含，沿用 pevc-handout.css。源文件和 HTML 的课程目录副本按 AGENTS.md 同步。
 
-2026-10-22 按“权利地图 → Aghion–Bolton 控制配置 → Admati–Pfleiderer 知情续投 → Bolton、Liu、Nanda、Sundaresan（2024）信息生产”重排第 5 周；Neher 保留为分阶段承诺的对照分支。Kaplan–Strömberg 用优先股案例建立真实合同的权利分类；Aghion–Bolton 为经典主讲，Admati–Pfleiderer 为主线延伸并后置较长定价推导；Neher 的完整逆推和 Bolton、Liu、Nanda、Sundaresan（2024）实验设计放在附录，并明确原文复核范围与教学化简。第 5 周核心题为 H5-1 至 H5-4，其余题目为附录选做。学生材料不写预计用时。是否已公开发布，以实际推送和部署记录为准。
+2026-10-24 简化第 5 周。课堂主讲 Hellmann 的投入保护、Casamatta 的融资与建议捆绑、Cornelli–Yosha 的粉饰与转换。每篇先说明谁知道什么、什么不可契约，再用二元选择或简单期望收入推导一个核心机制。Aghion–Bolton 为预习桥接，只算完全准确信号的一份可行合同；连续努力、定价与信念核对放到附录。Neher、Admati–Pfleiderer 和实验设计保留选读。核心题为 H5-1 至 H5-4，其余题目为附录选做。学生材料不写预计用时。原文版本及具体复核范围见模型审查记录；公开发布须另有实际部署记录。
 
 核查命令：python3 checks/verify_materials.py --sources-only 独立复算数值；完成渲染与副本同步后，运行 python3 checks/verify_materials.py 核对本地链接、锚点和文件一致性。检查结果写入 checks 下的 JSON 文件。
 

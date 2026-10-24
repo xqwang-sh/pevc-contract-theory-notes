@@ -1,10 +1,10 @@
 {
   "method": "Offline KaTeX syntax check; visual checks recorded separately",
-  "total": 1618,
+  "total": 1253,
   "pages": [
     {
       "page": "exercises.html",
-      "formulas": 258
+      "formulas": 246
     },
     {
       "page": "index.html",
@@ -12,7 +12,7 @@
     },
     {
       "page": "student-notes.html",
-      "formulas": 788
+      "formulas": 775
     },
     {
       "page": "w04-fund-contract.html",
@@ -24,22 +24,22 @@
     },
     {
       "page": "w05-preparation.html",
-      "formulas": 117
+      "formulas": 43
     },
     {
       "page": "w05-venture-contract.html",
-      "formulas": 303
+      "formulas": 37
     }
   ],
   "errors": [],
-  "checked_at": "2026-10-22T10:28:23.580550+09:00",
+  "checked_at": "2026-10-24T16:31:37.580496+09:00",
   "html_sha256": {
-    "exercises.html": "02d998e179e9a98a056e59bb4b33949f5c9ec9324d9c04f5493ac6ca11928c26",
-    "index.html": "c162a61cf215208df8e5a08eb0d87b2d8bcf8c131f11cae8e70b2dc89dacaa85",
-    "student-notes.html": "38607e2cbfb8a017c1964a64fa13d0a213bb98e98d9748ca90c3920f33c8e166",
-    "w04-fund-contract.html": "eabcb8457b8f568b1bdfbbd608e7a5959eb6585a27961c67b96df73b27dc2004",
-    "w04-preparation.html": "5cf3b319cdff07dcd131ac66662b80e0703b646fbdecffc095292c55d4305e75",
-    "w05-preparation.html": "9439986760d758ff3e2c132437dfb9b196d74773216044015507d1983325a5a5",
-    "w05-venture-contract.html": "4c101989ef2d0b26cc44b027d9bb43190cc8eece09808f785670983b65aacd09"
+    "exercises.html": "705909daadbbdefcf10c6d098c8a985854116801d50cbac89e08416238629006",
+    "index.html": "f27d4c2688d4dd2b99e54d9790395a053ca82c57ceac8399a773fe8f793f7558",
+    "student-notes.html": "9f0fdd8c65000ab5a10e33300b706b8ff7031e76d4d1d2297c4fb706365bb5b2",
+    "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
+    "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
+    "w05-preparation.html": "396fd70a9da0a565ea7a7f909f8f9e2544f3f9fb7e036fa7be5c265aa4fa4d95",
+    "w05-venture-contract.html": "561019f6887c5d85b3dfe3d2ec74ba404098ca6241b14edba845e38dc1252477"
   }
 }
