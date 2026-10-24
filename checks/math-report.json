@@ -1,10 +1,10 @@
 {
-  "method": "Offline KaTeX parser; browser checks recorded separately",
-  "total": 994,
+  "method": "Offline KaTeX syntax check; visual checks recorded separately",
+  "total": 1488,
   "pages": [
     {
       "page": "exercises.html",
-      "formulas": 177
+      "formulas": 257
     },
     {
       "page": "index.html",
@@ -12,7 +12,7 @@
     },
     {
       "page": "student-notes.html",
-      "formulas": 544
+      "formulas": 828
     },
     {
       "page": "w04-fund-contract.html",
@@ -24,22 +24,22 @@
     },
     {
       "page": "w05-preparation.html",
-      "formulas": 30
+      "formulas": 59
     },
     {
       "page": "w05-venture-contract.html",
-      "formulas": 91
+      "formulas": 192
     }
   ],
   "errors": [],
-  "checked_at": "2026-10-19T01:38:23.170360+09:00",
+  "checked_at": "2026-10-24T20:04:52.239919+09:00",
   "html_sha256": {
-    "exercises.html": "6d48924846b0436f4e5eafc03187814a11c29c26bf6a1eb3d8b0bcda18327203",
-    "index.html": "dc3964ce2f0e6398c264bf3680e9775b5147ec039cccc6f25afdea4917844139",
-    "student-notes.html": "5c20f7e8563240a91d0a7112b7497ed3f50a0b44d0b330db90e1ff74cefdddb5",
-    "w04-fund-contract.html": "a27612d6572673d7896a3fdd0d37a0d9bef919b8625574cebda76291c102a679",
-    "w04-preparation.html": "ed6419b56a27305498ff24cc00e2a895999315f1fc6d1a6940e6e1be50df5a90",
-    "w05-preparation.html": "c46a3c097fbebd7c5e7003252e5b2e7277a5aa1ddb2f7ef5acafe2984fbd8cc1",
-    "w05-venture-contract.html": "941edffd4ba203b274f6b15a1d2e4bb26d5af832b9fbd003b2510a26bfd61cc8"
+    "exercises.html": "22d96b0cab5bb84ac7d65079f2361f574b8ec130d301976a30856338cfa588b1",
+    "index.html": "2d0e91f3863966f2f5f614d0cc944b079c2589c76a9894e12c2e5707cc2112a1",
+    "student-notes.html": "6eb1cf441962450e521476fdfea588836ab00ec8e37480928a4e5d8035c67a53",
+    "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
+    "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
+    "w05-preparation.html": "c9fe16ed7e80bb635935ccc4d705d70b05f1cbddd5f4b916c1fdb1a29adce3d1",
+    "w05-venture-contract.html": "5b30973849f19dda4bbeeee032f697a18c8fff1962f9ae24be7b7aa6a048d9e5"
   }
 }
