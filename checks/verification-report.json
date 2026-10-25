@@ -218,6 +218,16 @@
           "VC_support_IC": 0.9583333333333334,
           "renegotiation_underinvestment_max": 1.0625,
           "default_region_supremum": 0.1171875,
+          "fixed_security_comparison": {
+            "underinvestment_without_renegotiation": 0.375,
+            "pure_debt_H_effort": 1.5,
+            "pure_debt_H_E": 1.0625,
+            "pure_debt_H_E_at_2": 0.9375,
+            "pure_equity_M_effort": 0.6666666666666666,
+            "pure_equity_M_E": 0.8888888888888888,
+            "H_cash_increment_at_2": 2.875,
+            "H_net_support_increment_at_2": 2.125
+          },
           "higher_support_cost": {
             "alpha": 0.4583333333333333,
             "action": "maintain",
@@ -520,13 +530,13 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "df8236be911abbd8d46e34c019874a310ce631cf47c6664cabddee102c5d20cc",
+    "student-notes.md": "dc4cf7ec9843959c17c0e04f15ff25468886d6ebbbc1b5b369dad8af05a8e4ad",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "66ee7b08dc21b703e803569e8b55b13e2d0ef3145dcda68ea428f724eeec32d7",
+    "w05-venture-contract.qmd": "aa2fea56c6aff999f0d1a238e05a5f254467ec73f9c166a6f1b542422741bec6",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
     "w05-preparation.qmd": "cd862d3f76647f1a38bb2ce1200efbcae769bbe34e72a122b11f3d82efd40965",
-    "exercises.qmd": "0d7ec4a1e6f63e9b8b863636272f5769a6d65703b99b7c0bbc54f1c128b9534b",
+    "exercises.qmd": "7c69434cecc6b0f57f315fbac267c8a4e9a891c8b7f54d43e88355fadeeafac7",
     "references-by-module.bib": "2f6e68449ce6be771871db51c0377d80bff46b51edf4ed5a0c2c18ab101e57a2"
   },
   "html": {
@@ -535,12 +545,12 @@
     "details": 33,
     "sha256": {
       "index.html": "a529259f7d0615ca0b77e11478b1a7209d4faf0d83b40d04cae3a85f1fab06a3",
-      "student-notes.html": "d867a911ee963045dae9064ad0f35089430fb6ebfd747768bf936bcfccccd38d",
+      "student-notes.html": "ec6062f63727a98fc948bc658f48f765e39e82cb03fe03652d134445b6d908ca",
       "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-      "w05-venture-contract.html": "b5b4766c0d222d99dfc0d4b44e9f000f8f3763b307dceb1b2249102433b6db50",
+      "w05-venture-contract.html": "f055aef53e5d66b0f148004e3592c6d8acb0d9e19d48914c8468f7a1e417bc2e",
       "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
       "w05-preparation.html": "046d6871ba4333cd2fb618c777c3ced18a1dcf5267e034b57402dae3edf657c9",
-      "exercises.html": "fb5a2370c6e97c64fe592f64a6792669bb86ffded7aa8a1441d563e75d3b7999"
+      "exercises.html": "9239b0c31a738334a125c94db9a878e4947e86f715706264a78e7e4a51dfb25f"
     }
   },
   "mirrored_files_checked": 26

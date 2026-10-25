@@ -4955,45 +4955,84 @@ F_V(v)=\max\{\min(C,v),\alpha v\}.
 </span></p>
 <p>这不是只给 VC 更多股权，而是使其行动响应与创业者已经完成的投入联系起来。</p>
 </section>
-<section id="回到创业者少投入多投入和重谈都要检查" class="level4">
-<h4 class="anchored" data-anchor-id="回到创业者少投入多投入和重谈都要检查">回到创业者：少投入、多投入和重谈都要检查</h4>
-<p>创业者知道 VC 会怎样响应。好状态若选 <span class="math inline">e=2</span>，VC 支持并转换，创业者取得</p>
+<section id="book-venture-schmidt-founder-ic" class="level4">
+<h4 class="anchored" data-anchor-id="book-venture-schmidt-founder-ic">回到创业者：少投入、多投入和重谈都要检查</h4>
+<p>前面是给定创业者投入后，求 VC 的最优响应；现在反过来，问创业者预见这个响应后，是否愿意投入。以下先看好状态，第一优目标为 <span class="math inline">e=2</span>，中、坏两态下一节另算。</p>
+<p>需要沿用的是一整条响应规则：原合同下，<span class="math inline">e&lt;2</span> 时 VC 维持且不转换，<span class="math inline">e\ge2</span> 时支持并转换，临界点按无差异时有效支持。创业者偏离时，VC 的行动也会改变。因此这里做的是<strong>全局激励相容检查</strong>，不能把“VC 始终支持”代入一个目标函数后只求一阶条件。</p>
+<section id="先看支持分支为什么-43-不是答案" class="level5">
+<h5 class="anchored" data-anchor-id="先看支持分支为什么-43-不是答案">先看支持分支：为什么 <span class="math inline">4/3</span> 不是答案？</h5>
+<p>支持并转换时，创业者保留 <span class="math inline">2/3</span> 的现金流，其效用为</p>
 <p><span class="math display">
-U_E^H(2)=\frac23(2+2\times2)-\frac{2^2}{2}=2.
+U_E^S(e)=\frac23(2+2e)-\frac{e^2}{2},\qquad e\ge2.
 </span></p>
-<p>若继续增加到 <span class="math inline">e&gt;2</span>，其效用为 <span class="math inline">\tfrac23(2+2e)-e^2/2</span>，导数 <span class="math inline">4/3-e&lt;0</span>，所以不愿多投入。</p>
-<p>少于 2 时，原合同让 VC 不支持。但支持仍创造联合增量</p>
+<p>若机械地令导数 <span class="math inline">4/3-e=0</span>，会得到 <span class="math inline">e=4/3</span>。但这个努力低于 2，VC 不会按原合同支持并转换，因此创业者实际拿不到这条分支所写的收益。</p>
+<p>在真正适用的 <span class="math inline">e\ge2</span> 区间，导数 <span class="math inline">4/3-e&lt;0</span>，所以多投入只会降低效用；该分支最优是边界 <span class="math inline">e=2</span>，得到</p>
 <p><span class="math display">
-\Delta(e)=(2+2e)-\frac34-\left(\frac98+e\right)=e+\frac18.
+U_E^S(2)=\frac23(2+2\times2)-\frac{2^2}{2}=2.
 </span></p>
-<p>因此允许重谈后，不能继续用“不支持”的结果吓阻创业者。不重谈、VC 维持且不转时，创业者保留的现金是 <span class="math inline">\max\{e-1/8,0\}</span>。<span class="math inline">\Delta(e)</span> 已扣新增支持成本，重谈时先前努力成本已沉没；在最终全程效用中仍要扣一次。创业者取得原有现金再加一半新增剩余，因此</p>
+<p><span class="math inline">e=2</span> 是 VC 策略切换的边界，最优值可以落在这里，不需要满足支持分支内部的导数等于零。下面检查少投入能否超过这个基准 2。</p>
+</section>
+<section id="先作一个不重谈的少投入比较" class="level5">
+<h5 class="anchored" data-anchor-id="先作一个不重谈的少投入比较">先作一个不重谈的少投入比较</h5>
+<p>当 <span class="math inline">e&lt;2</span>，VC 按原合同维持且不转。项目现金为 <span class="math inline">9/8+e</span>，VC 优先取得 <span class="math inline">5/4</span>；创业者现金不足时得零，偿债后才取得剩余。因此，暂不重谈时的效用是</p>
 <p><span class="math display">
-U_E^{H,R}(e)=\max\left\{e-\frac18,0\right\}-\frac{e^2}{2}
-+\frac12\left(e+\frac18\right),\qquad e&lt;2.
+U_E^0(e)=\max\left\{e-\frac18,0\right\}-\frac{e^2}{2},\qquad e&lt;2.
 </span></p>
-<p>这条式子问的是：创业者能否先少做，再靠重新谈判补回来？分两段求最大值：</p>
+<p>在 <span class="math inline">e\ge1/8</span> 的可偿债区间，一阶条件 <span class="math inline">1-e=0</span> 给出 <span class="math inline">e=1</span>，效用为 <span class="math inline">3/8</span>；在 <span class="math inline">e&lt;1/8</span> 的违约区间，效用为 <span class="math inline">-e^2/2\le0</span>。所以不重谈时少投入至多得 <span class="math inline">3/8&lt;2</span>。</p>
+<p>这一步便于看清原合同的激励，但本模型允许重谈，不能把 <span class="math inline">3/8</span> 直接当成最终的偏离收益。</p>
+</section>
+<section id="允许重谈后低努力能拿回多少" class="level5">
+<h5 class="anchored" data-anchor-id="允许重谈后低努力能拿回多少">允许重谈后，低努力能拿回多少？</h5>
+<p>低努力已经付出后，VC 原合同下不支持；但改为支持仍能增加联合剩余：</p>
+<p><span class="math display">
+\Delta(e)=(2+2e)-\frac34-\left(\frac98+e\right)=e+\frac18&gt;0.
+</span></p>
+<p>双方因此有重谈空间。重谈以原合同结果为起点，使支持发生，再均分这项新增剩余。创业者原有现金为 <span class="math inline">\max\{e-1/8,0\}</span>，另分得 <span class="math inline">\Delta(e)/2</span>，最后扣一次已经付出的努力成本：</p>
+<p><span class="math display">
+U_E^{H,R}(e)=
+\underbrace{\max\left\{e-\frac18,0\right\}}_{\text{原合同下保留的现金}}
++\underbrace{\frac12\left(e+\frac18\right)}_{\text{重谈分得的新增剩余}}
+-\underbrace{\frac{e^2}{2}}_{\text{努力成本}},\qquad e&lt;2.
+</span></p>
+<p>重谈时努力已沉没，所以不再从 <span class="math inline">\Delta(e)</span> 中扣努力成本；计算全程效用时仍要扣一次。这里的重谈来自低努力后仍有合作增益，并不要求 VC 恰好在某一点无差异。</p>
+</section>
+<section id="分段求最大值完成全局比较" class="level5">
+<h5 class="anchored" data-anchor-id="分段求最大值完成全局比较">分段求最大值，完成全局比较</h5>
+<p>现在把所有偏离放在一起：</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>少投入的范围</th>
-<th>重谈后效用</th>
-<th style="text-align: right;">这一范围的上界</th>
+<th>努力范围</th>
+<th>最终效用</th>
+<th>该范围内的最好结果</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">0\le e&lt;1/8</span>，原债也还不起</td>
+<td><span class="math inline">0\le e&lt;1/8</span>，少投入且原债无法偿还</td>
 <td><span class="math inline">e/2+1/16-e^2/2</span></td>
-<td style="text-align: right;"><span class="math inline">15/128</span></td>
+<td>上界 <span class="math inline">15/128</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">1/8\le e&lt;2</span>，仍能偿债</td>
+<td><span class="math inline">1/8\le e&lt;2</span>，少投入但可以偿债</td>
 <td><span class="math inline">3e/2-1/16-e^2/2</span></td>
-<td style="text-align: right;">在 <span class="math inline">e=3/2</span> 得 <span class="math inline">17/16</span></td>
+<td>在 <span class="math inline">e=3/2</span> 得 <span class="math inline">17/16</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">e\ge2</span>，原合同支持并转换</td>
+<td><span class="math inline">\tfrac23(2+2e)-e^2/2</span></td>
+<td>在 <span class="math inline">e=2</span> 得 2，之后递减</td>
 </tr>
 </tbody>
 </table>
-<p>即使采用最有利的少投入加重谈，创业者也只有 <span class="math inline">17/16=1.0625&lt;2</span>，所以仍选有效努力 2。第一行专门排除了违约后压低 VC 底线的偏离，对应原文 Proposition 3 的重谈限制。</p>
+<p>第二行的一阶条件为 <span class="math inline">3/2-e=0</span>。允许重谈后，最好的一次少投入偏离因此从不重谈的 <span class="math inline">3/8</span> 提高到 <span class="math inline">17/16=1.0625</span>，仍低于目标效用 2；违约区间的上界也更低。多投入的区域又已排除，所以好状态下创业者确实愿意选 <span class="math inline">e=2</span>。</p>
+<p>创业者做足前期投入，是为了取得 VC 随后支持带来的项目增值；即使转换后只保留部分现金，最终效用仍更高。目标点继续沿用 VC 无差异时选择有效支持的约定，因此这是弱实施，不声称严格或唯一。</p>
+</section>
 </section>
 <section id="中坏两态与期初融资怎样接回来" class="level4">
 <h4 class="anchored" data-anchor-id="中坏两态与期初融资怎样接回来">中、坏两态与期初融资怎样接回来？</h4>
@@ -5058,13 +5097,80 @@ W=\frac14\left(\frac12-\frac14\right)
 </span></p>
 <p>启动资本只扣一次；它在 VC 的期初净收益中已扣，在总福利中也要明确扣。三态行为都达到前面求出的第一优，所以这个教学合同在本例中实现了第一优。</p>
 </section>
-<section id="为什么固定债股不能照样实现原文结论有哪些条件" class="level4">
-<h4 class="anchored" data-anchor-id="为什么固定债股不能照样实现原文结论有哪些条件">为什么固定债股不能照样实现？原文结论有哪些条件？</h4>
-<p>考虑没有转换选择、跨状态固定的标准债股合同：VC 拿 <span class="math inline">\min(D,v)+s\max(v-D,0)</span>，创业者拿其余，其中 <span class="math inline">D\ge0,0\le s\le1</span>。</p>
-<p>中状态要实施内点有效努力 <span class="math inline">e=1</span>，创业者在可偿债区间的一阶条件是 <span class="math inline">1-s-e=0</span>，因此必须 <span class="math inline">s=0</span>；参与还要求 <span class="math inline">D\le3/2</span>。但好状态中，创业者在 <span class="math inline">e=2</span> 附近不需 VC 支持也能偿付这笔纯债，VC 多花 <span class="math inline">3/4</span> 仍只收 <span class="math inline">D</span>，便不愿支持。即使重谈补入支持，创业者只分到一半新增价值，其边际效用为 <span class="math inline">1+1/2-e</span>，会偏好低于 2 的努力。这个反证针对本例的标准债股合同族，不是不受限制的证券不可能定理。</p>
-<p>Schmidt 的关键是先后投入下的响应机制，不能把 Casamatta 的同时努力模型加一个转换条款后直接套用。本例还核对了 VC 转股却不支持的偏离；原文的一般条件要求 VC 的增值足够大，并排除创业者通过大幅少投入和重谈获利。若双方同时投入，或者 VC 可以借提前到期的转换权要求重谈，第一优结论不再直接成立。</p>
+<section id="book-venture-schmidt-fixed-securities" class="level4">
+<h4 class="anchored" data-anchor-id="book-venture-schmidt-fixed-securities">为什么固定债股不能照样实现？原文结论有哪些条件？</h4>
+<p>比较标准是能否同时实现中态 <span class="math inline">e=1</span>、好态 <span class="math inline">e=2</span> 的第一优。先用相同面值或股权比例看失败机制，再问调整固定条款能否补救。</p>
+<section id="固定债创业者保留边际回报vc-却不愿支持" class="level5">
+<h5 class="anchored" data-anchor-id="固定债创业者保留边际回报vc-却不愿支持">固定债：创业者保留边际回报，VC 却不愿支持</h5>
+<p>先取纯债面值 <span class="math inline">D=5/4</span>，没有转换选择。在好状态的目标努力 <span class="math inline">e=2</span>，维持产生现金 <span class="math inline">25/8</span>，支持产生现金 6，两者都足以偿债。因此 VC 的事后净行动收入是</p>
+<p><span class="math display">
+\text{维持：}\frac54,\qquad
+\text{支持：}\frac54-\frac34=\frac12.
+</span></p>
+<p>支持虽使现金增加 <span class="math inline">6-25/8=23/8</span>，VC 的债权收入却已经固定，只会多付支持成本，所以不愿支持。中态中，固定债可以让创业者保留全部边际现金、选择有效努力 1；困难出在好态的 VC 支持激励。</p>
+<p>允许重谈会补入支持，但创业者只分到新增支持价值的一半。在可偿债区间，其边际效用为 <span class="math inline">1+1/2-e</span>，于是选择 <span class="math inline">e=3/2&lt;2</span>。固定债下没有在 2 处切换到支持并转换分支的收益提升，因此创业者也失去了做到该门槛的激励。<strong>事后能谈成支持，仍不能恢复第一优的事前投入。</strong></p>
+</section>
+<section id="纯股权中态也会稀释创业者的努力" class="level5">
+<h5 class="anchored" data-anchor-id="纯股权中态也会稀释创业者的努力">纯股权：中态也会稀释创业者的努力</h5>
+<p>再取 VC 的固定股权比例 <span class="math inline">s=1/3</span>。中态中，支持只让 VC 多取得 <span class="math inline">(1/3)(1/2)=1/6</span>，却多花 <span class="math inline">3/4</span>，所以它仍然维持。创业者的效用为</p>
+<p><span class="math display">
+U_E^M(e)=(1-s)(1+e)-\frac{e^2}{2}
+\quad\Longrightarrow\quad e_M=1-s=\frac23&lt;1.
+</span></p>
+<p>问题是创业者承担全部努力成本，却只保留 <span class="math inline">2/3</span> 的边际现金，因而少投入。即使在好态的目标点 VC 愿意支持，中态的投入已经偏离第一优，不能由目标点的 VC 收益判断整份合同有效。</p>
+<p>可转换证券在中态保留固定索取额，使创业者保留完整的边际现金；在好态转为股权，使 VC 分享支持的增值。这两种收入安排放在同一份事前合同中，由后续投入和行动内生决定是否转换。</p>
+</section>
+<section id="调整一个固定债股组合能否两全" class="level5">
+<h5 class="anchored" data-anchor-id="调整一个固定债股组合能否两全">调整一个固定债股组合，能否两全？</h5>
+<p>上面只比较了两个给定条款。现在允许面值 <span class="math inline">D</span> 和股权比例 <span class="math inline">s</span> 自由调整，但两者跨状态固定，VC 始终取得</p>
+<p><span class="math display">
+F_V(v)=\min(D,v)+s\max(v-D,0),\qquad D\ge0,\quad0\le s\le1.
+</span></p>
+<p>要在中态实施 <span class="math inline">e=1</span>，不能让创业者在该点拿不到现金却承担努力成本，因此需要 <span class="math inline">D&lt;2</span>。在可偿债区间，创业者效用与投入条件为</p>
+<p><span class="math display">
+U_E^M(e)=(1-s)(1+e-D)-\frac{e^2}{2},\qquad
+1-s-e=0.
+</span></p>
+<p>要求 <span class="math inline">e_M=1</span> 就迫使 <span class="math inline">s=0</span>；再由创业者愿意投资、而非选零投入保留至少零效用，得 <span class="math inline">U_E^M(1)=3/2-D\ge0</span>，所以 <span class="math inline">D\le3/2</span>。</p>
+<p>但这又回到纯债。好态 <span class="math inline">e=2</span> 附近，维持现金已高于 <span class="math inline">D</span>，VC 无法通过支持增加债权收入；允许重谈后，创业者的边际效用仍为 <span class="math inline">3/2-e</span>，会愿意从 2 稍微降低投入。因此，这类标准固定债股合同无法同时实现两态第一优。这个反证针对本例的合同族，不是不受限制的证券不可能定理。</p>
+</section>
+<section id="原文的第一优结论依赖哪些条件" class="level5">
+<h5 class="anchored" data-anchor-id="原文的第一优结论依赖哪些条件">原文的第一优结论依赖哪些条件？</h5>
+<p>Schmidt 的机制依赖先后投入和后续响应，不能仅凭证券名称判断它是否有效。原文 Proposition 3 的增值与重谈限制，在本例中对应以下检查：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>要检查什么？</th>
+<th>为什么需要？</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>创业者先投入，VC 观察后行动；转换权保留到 VC 完成行动之后</td>
+<td>创业者能预见支持响应，VC 也不能靠提前放弃转换权迫使创业者让出更多收益</td>
+</tr>
+<tr class="even">
+<td>VC 支持的增值足够大，并逐项比较行动与转换</td>
+<td>“支持并转”胜过固定债还不够，还要排除“转股却不支持”；本例目标点后者只得 <span class="math inline">25/24</span></td>
+</tr>
+<tr class="odd">
+<td>创业者的全局 IC，包括违约后重谈</td>
+<td>少投入、多投入及重谈都不能超过目标效用；本例少投入加重谈至多 <span class="math inline">17/16&lt;2</span></td>
+</tr>
+<tr class="even">
+<td>现金支付满足有限责任，双方愿意融资和参与</td>
+<td>按实际行为核算资本 PC；本例 VC 期初净收益为零。有限责任约束现金支付，创业者效用还须扣努力成本</td>
+</tr>
+</tbody>
+</table>
+<p>本例的三状态数值是教学构造，前文已说明对原文中态严格边际互补的简化。改变概率、回收值、支持成本或议价份额，都要重新求行为与参与条件；不能把这一组参数当作可转换证券普遍实现第一优的证明。同时投入或转换权提前到期时，也不能直接沿用当前结论。</p>
 <p>取 <span class="math inline">K=0</span> 时，这一机制对应非参与式的固定额与转股二选一。若 VC 在中态另持普通股，或通过参与式条款持续分享边际现金，创业者不再保留完整边际回报；原文第 III.C 节专门讨论这项限制，不能据此把所有有上限的参与式合同一概排除。现金流权的这套解释，也不等于转股会自动改变董事会控制。</p>
 <p>融资与建议为何捆绑是另一个问题，见<a href="#book-casamatta-extension">附录 G.2 的 Casamatta 模型</a>。下一部分改问资本何时投入，重新建立 Neher 的分阶段承诺环境。</p>
+</section>
 </section>
 </section>
 <section id="book-venture-staging" class="level3">

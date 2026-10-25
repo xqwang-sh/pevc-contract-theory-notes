@@ -133,11 +133,56 @@ def schmidt_checks():
     assert changed_share==F(11,24)
     assert (changed['action'],changed['converted'])==('maintain',True)
     assert changed['VC']==F(275,192)>FACE
+    # Additional displays in the founder-IC and fixed-security explanations.
+    slope, intercept = CASH['H']['maintain']
+    repay_cutoff = (FACE-intercept)/slope
+    assert repay_cutoff == F(1,8) < slope < 2
+    no_reneg = continuation('H',slope,False)
+    assert no_reneg['E'] == F(3,8)
+    assert (no_reneg['action'],no_reneg['converted']) == ('maintain',False)
+    assert continuation('H',F(4,3),False)['action']=='maintain'
+    high_cash = CASH['H']['support'][0]*2+CASH['H']['support'][1]
+    maintain_cash = slope*2+intercept
+    assert high_cash-maintain_cash == F(23,8)
+    assert high_cash-maintain_cash-COST['support'] == F(17,8)
+    for effort in (F(0),F(1,8),F(1),F(3,2),F(2)):
+        support_cash = CASH['H']['support'][0]*effort+CASH['H']['support'][1]
+        old_cash = slope*effort+intercept
+        assert support_cash-COST['support']-old_cash == effort+F(1,8)
+    debt_best = slope+BARGAIN*(CASH['H']['support'][0]-slope)
+    assert debt_best == F(3,2)
+    debt_low = continuation('H',debt_best,True,share=F(0))
+    debt_target = continuation('H',F(2),True,share=F(0))
+    assert debt_low['E']==F(17,16)>debt_target['E']==F(15,16)
+    assert min(FACE,intercept)>max(FACE-COST['support'],F(1)-COST['control'])
+    assert debt_best>=repay_cutoff and debt_low['E']>large
+    pure_share = F(1,3)
+    equity_effort = (1-pure_share)*CASH['M']['maintain'][0]
+    equity_best = (1-pure_share)*(1+equity_effort)-equity_effort**2/2
+    equity_target = (1-pure_share)*2-F(1,2)
+    assert equity_effort==F(2,3) and equity_best==F(8,9)>equity_target==F(5,6)
+    assert pure_share*F(1,2)-COST['support']<0
+    assert CASH['M']['support'][0]==CASH['M']['maintain'][0]
+    assert pure_share*(CASH['M']['control'][1]-CASH['M']['maintain'][1])-COST['control']<0
+    # Middle-state first best forces s=0, then D<=3/2; debt fails near e_H=2.
+    for face in (F(0),F(1),F(3,2)):
+        at_target=continuation('H',F(2),True,face=face,share=F(0))['E']
+        below=continuation('H',F(19,10),True,face=face,share=F(0))['E']
+        assert below-at_target==F(9,200)>0
+    off_path=continuation('M',F(3),False)
+    assert off_path['cash']-off_path['receipt']>=0 and off_path['E']<0
+    fixed_comparison={'underinvestment_without_renegotiation':no_reneg['E'],
+                      'pure_debt_H_effort':debt_best,'pure_debt_H_E':debt_low['E'],
+                      'pure_debt_H_E_at_2':debt_target['E'],
+                      'pure_equity_M_effort':equity_effort,'pure_equity_M_E':equity_best,
+                      'H_cash_increment_at_2':high_cash-maintain_cash,
+                      'H_net_support_increment_at_2':high_cash-maintain_cash-COST['support']}
     return {'primitives':{'I':INITIAL,'C':FACE,'alpha':SHARE,'lambda':BARGAIN,
                           'probabilities':PROB,'action_costs':COST,'cash_table':CASH},
             'global_effort':results,'equilibrium':branches,'VC_net':expected_v,
             'E':expected_e,'welfare':welfare,'VC_support_IC':incremental_return,
             'renegotiation_underinvestment_max':small,'default_region_supremum':large,
+            'fixed_security_comparison':fixed_comparison,
             'higher_support_cost':{'alpha':changed_share,'action':changed['action'],
                                     'converted':changed['converted'],'VC':changed['VC']}}
 
