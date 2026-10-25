@@ -8,7 +8,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ["student-notes.md", "student-notes.qmd", "w04-fund-contract.qmd",
            "w05-venture-contract.qmd", "w04-preparation.qmd",
-           "w05-preparation.qmd", "exercises.qmd", "pevc-handout.css"]
+           "w05-preparation.qmd", "exercises.qmd", "pevc-handout.css", "references-by-module.bib"]
 PAGES = ["index.html", "student-notes.html", "w04-fund-contract.html",
          "w05-venture-contract.html", "w04-preparation.html",
          "w05-preparation.html", "exercises.html"]

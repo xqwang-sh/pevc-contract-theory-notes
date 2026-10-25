@@ -47,6 +47,55 @@
     },
     "week5": {
       "core": {
+        "property_rights": {
+          "cooperation_value": 100.0,
+          "investment_cost": 60.0,
+          "first_best": 40.0,
+          "ownership": {
+            "B": {
+              "standalone_after_investment": 0.0,
+              "conditional_on_investment": {
+                "A_receipt": 50.0,
+                "B_receipt": 50.0,
+                "A_net": -10.0,
+                "welfare": 40.0,
+                "gain": 100.0
+              },
+              "chosen_effort": 0,
+              "equilibrium": {
+                "A_receipt": 0.0,
+                "B_receipt": 0.0,
+                "A_net": 0.0,
+                "welfare": 0.0,
+                "gain": 0.0
+              }
+            },
+            "A": {
+              "standalone_after_investment": 40.0,
+              "conditional_on_investment": {
+                "A_receipt": 70.0,
+                "B_receipt": 30.0,
+                "A_net": 10.0,
+                "welfare": 40.0,
+                "gain": 60.0
+              },
+              "chosen_effort": 1,
+              "equilibrium": {
+                "A_receipt": 70.0,
+                "B_receipt": 30.0,
+                "A_net": 10.0,
+                "welfare": 40.0,
+                "gain": 60.0
+              }
+            }
+          },
+          "standalone_threshold": 20.0,
+          "threshold_best_responses": [
+            0,
+            1
+          ],
+          "fixed_transfer_does_not_change_investment_IC": true
+        },
         "schmidt": {
           "primitives": {
             "I": 1.0,
@@ -471,12 +520,13 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "0b15d4b438319609c13e302cb566c31aa987c2bf5395f091349b8a7ef6d9dc52",
+    "student-notes.md": "df8236be911abbd8d46e34c019874a310ce631cf47c6664cabddee102c5d20cc",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "4781ece86f90828137707536cc2831d22414a93af6a50b41b10dae43b7c6d5d6",
+    "w05-venture-contract.qmd": "66ee7b08dc21b703e803569e8b55b13e2d0ef3145dcda68ea428f724eeec32d7",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "533747adf63ec25d608cb692c2710916927459ab9e88c16221715ba8e0ddb974",
-    "exercises.qmd": "9014333125cbf423f73b7ac445415cf7ea8848c24066fd40008fd2f25a51218d"
+    "w05-preparation.qmd": "cd862d3f76647f1a38bb2ce1200efbcae769bbe34e72a122b11f3d82efd40965",
+    "exercises.qmd": "0d7ec4a1e6f63e9b8b863636272f5769a6d65703b99b7c0bbc54f1c128b9534b",
+    "references-by-module.bib": "2f6e68449ce6be771871db51c0377d80bff46b51edf4ed5a0c2c18ab101e57a2"
   }
 }

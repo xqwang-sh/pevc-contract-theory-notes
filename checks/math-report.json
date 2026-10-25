@@ -1,10 +1,10 @@
 {
   "method": "Offline KaTeX syntax check; visual checks recorded separately",
-  "total": 1687,
+  "total": 1723,
   "pages": [
     {
       "page": "exercises.html",
-      "formulas": 310
+      "formulas": 320
     },
     {
       "page": "index.html",
@@ -12,7 +12,7 @@
     },
     {
       "page": "student-notes.html",
-      "formulas": 947
+      "formulas": 968
     },
     {
       "page": "w04-fund-contract.html",
@@ -24,22 +24,22 @@
     },
     {
       "page": "w05-preparation.html",
-      "formulas": 62
+      "formulas": 48
     },
     {
       "page": "w05-venture-contract.html",
-      "formulas": 216
+      "formulas": 235
     }
   ],
   "errors": [],
-  "checked_at": "2026-10-25T22:32:06.039081+09:00",
+  "checked_at": "2026-10-26T00:40:29.042984+09:00",
   "html_sha256": {
-    "exercises.html": "c4a2d357b147e6d055638fd92b21d5b0a122a0a9f0466d936709bac39d6e434a",
-    "index.html": "2394cfe6d7227037acc7c142db0f5330cdc9c09d8da8319cedef2ec41681329e",
-    "student-notes.html": "b61d7282d99dd42662a6bea694db349a95993f228b2ee1d05c630a38750d69f4",
+    "exercises.html": "fb5a2370c6e97c64fe592f64a6792669bb86ffded7aa8a1441d563e75d3b7999",
+    "index.html": "a529259f7d0615ca0b77e11478b1a7209d4faf0d83b40d04cae3a85f1fab06a3",
+    "student-notes.html": "d867a911ee963045dae9064ad0f35089430fb6ebfd747768bf936bcfccccd38d",
     "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
     "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-    "w05-preparation.html": "665b8c4d3317bde9fc1516ea7bca1e7f590790285152e0cdcd02b3548b3cb4e9",
-    "w05-venture-contract.html": "c91542002c3540ad00b153684a2a67465702258e2317ea2223a9e4bc9e5ea727"
+    "w05-preparation.html": "046d6871ba4333cd2fb618c777c3ced18a1dcf5267e034b57402dae3edf657c9",
+    "w05-venture-contract.html": "b5b4766c0d222d99dfc0d4b44e9f000f8f3763b307dceb1b2249102433b6db50"
   }
 }
