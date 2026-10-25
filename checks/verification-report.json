@@ -47,6 +47,135 @@
     },
     "week5": {
       "core": {
+        "schmidt": {
+          "primitives": {
+            "I": 1.0,
+            "C": 1.25,
+            "alpha": 0.3333333333333333,
+            "lambda": 0.5,
+            "probabilities": {
+              "L": 0.25,
+              "M": 0.5,
+              "H": 0.25
+            },
+            "action_costs": {
+              "maintain": 0.0,
+              "support": 0.75,
+              "control": 0.25
+            },
+            "cash_table": {
+              "L": {
+                "maintain": [
+                  0.0,
+                  0.125
+                ],
+                "support": [
+                  0.0,
+                  0.25
+                ],
+                "control": [
+                  0.0,
+                  0.5
+                ]
+              },
+              "M": {
+                "maintain": [
+                  1.0,
+                  1.0
+                ],
+                "support": [
+                  1.0,
+                  1.5
+                ],
+                "control": [
+                  0.0,
+                  0.75
+                ]
+              },
+              "H": {
+                "maintain": [
+                  1.0,
+                  1.125
+                ],
+                "support": [
+                  2.0,
+                  2.0
+                ],
+                "control": [
+                  0.0,
+                  1.0
+                ]
+              }
+            }
+          },
+          "global_effort": {
+            "L": {
+              "effort": 0.0,
+              "E": 0.0,
+              "pieces_checked": 1
+            },
+            "M": {
+              "effort": 1.0,
+              "E": 0.25,
+              "pieces_checked": 9
+            },
+            "H": {
+              "effort": 2.0,
+              "E": 2.0,
+              "pieces_checked": 12
+            }
+          },
+          "equilibrium": {
+            "L": {
+              "effort": 0.0,
+              "action": "control",
+              "converted": false,
+              "cash": 0.5,
+              "cost": 0.25,
+              "receipt": 0.5,
+              "VC": 0.25,
+              "E": 0.0,
+              "gain": 0.0,
+              "surplus": 0.25
+            },
+            "M": {
+              "effort": 1.0,
+              "action": "maintain",
+              "converted": false,
+              "cash": 2.0,
+              "cost": 0.0,
+              "receipt": 1.25,
+              "VC": 1.25,
+              "E": 0.25,
+              "gain": 0.0,
+              "surplus": 1.5
+            },
+            "H": {
+              "effort": 2.0,
+              "action": "support",
+              "converted": true,
+              "cash": 6.0,
+              "cost": 0.75,
+              "receipt": 2.0,
+              "VC": 1.25,
+              "E": 2.0,
+              "gain": 0.0,
+              "surplus": 3.25
+            }
+          },
+          "VC_net": 0.0,
+          "E": 0.625,
+          "welfare": 0.625,
+          "VC_support_IC": 0.9583333333333334,
+          "renegotiation_underinvestment_max": 1.0625,
+          "default_region_supremum": 0.1171875,
+          "higher_support_cost": {
+            "alpha": 0.4583333333333333,
+            "action": "maintain",
+            "converted": true,
+            "VC": 1.4322916666666667
+          }
+        },
         "hellmann": {
           "founder_control": {
             "search": false,
@@ -342,26 +471,26 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "21e7eba4b93c057d9939cf0a4dd0e25260c2871c82bb8d37fb398ed7150321a0",
+    "student-notes.md": "0b15d4b438319609c13e302cb566c31aa987c2bf5395f091349b8a7ef6d9dc52",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "4b78a98bc2018f046af9a3c207da2384b9395d120ee27ad94be8fcefea480e8f",
+    "w05-venture-contract.qmd": "85135a48b97add35971e8b6aaedb37ea6ac5d53118d887e4062834b516a7ca48",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "f5896405b0c64fe1bb450a651e7946dc11dff43c36c9f1a517fc8c6345fdc85e",
-    "exercises.qmd": "8c320ba3ef8d28ceb513c8fc97597638ce5b99b18b80e1941f17ec7774e6f685"
+    "w05-preparation.qmd": "533747adf63ec25d608cb692c2710916927459ab9e88c16221715ba8e0ddb974",
+    "exercises.qmd": "9014333125cbf423f73b7ac445415cf7ea8848c24066fd40008fd2f25a51218d"
   },
   "html": {
     "pages": 7,
-    "local_links_checked": 149,
-    "details": 31,
+    "local_links_checked": 152,
+    "details": 33,
     "sha256": {
-      "index.html": "2d0e91f3863966f2f5f614d0cc944b079c2589c76a9894e12c2e5707cc2112a1",
-      "student-notes.html": "4bbffb1077dade523a2b76a66fe8de5cfded194f4d80a57e695c11f36c67fc65",
+      "index.html": "2394cfe6d7227037acc7c142db0f5330cdc9c09d8da8319cedef2ec41681329e",
+      "student-notes.html": "b61d7282d99dd42662a6bea694db349a95993f228b2ee1d05c630a38750d69f4",
       "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-      "w05-venture-contract.html": "cc2d6aae85a9ae00a0423f3c834613386632c966093b03eaecbf6166ff375033",
+      "w05-venture-contract.html": "c91542002c3540ad00b153684a2a67465702258e2317ea2223a9e4bc9e5ea727",
       "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-      "w05-preparation.html": "c9fe16ed7e80bb635935ccc4d705d70b05f1cbddd5f4b916c1fdb1a29adce3d1",
-      "exercises.html": "22d96b0cab5bb84ac7d65079f2361f574b8ec130d301976a30856338cfa588b1"
+      "w05-preparation.html": "665b8c4d3317bde9fc1516ea7bca1e7f590790285152e0cdcd02b3548b3cb4e9",
+      "exercises.html": "c4a2d357b147e6d055638fd92b21d5b0a122a0a9f0466d936709bac39d6e434a"
     }
   },
   "mirrored_files_checked": 25

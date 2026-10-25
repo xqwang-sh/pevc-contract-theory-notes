@@ -6,3 +6,4 @@
 
 # Local Netlify folder
 .netlify
+checks/__pycache__/

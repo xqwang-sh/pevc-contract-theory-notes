@@ -1,155 +1,374 @@
 {
-  "checked_at": "2026-10-24T20:11:47.288196+09:00",
-  "method": "Ego browser DOM on all seven final HTML pages; Chromium screenshots after immediate scrolling and animation-frame stabilization. Native browser window restored with computer-use Raise.",
+  "checked_at": "2026-10-25T13:33:04.339Z",
+  "result": "passed",
+  "scope": "desktop-local-preview",
+  "method": "Final Ego-browser DOM check of seven pages; core VC-choice table and formulas visually checked in the same task.",
+  "answer_disclosure": "Opened P5-3 and H5-3/H5-4 details through the DOM after pointer interception in earlier browser automation; no user-click claim.",
   "pages": [
     {
       "page": "w05-venture-contract.html",
       "title": "第 5 周课堂：VC 与企业的合同理论",
-      "renderedFormulas": 192,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 722,
-      "pageWidth": 1416,
-      "wideMath": 0
+      "formulaCount": 216,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "三个问题：控制权、可转换证券、分阶段融资",
+          "present": true
+        },
+        {
+          "text": "真实合同：现金流权和控制权分别安排",
+          "present": true
+        },
+        {
+          "text": "Schmidt",
+          "present": true
+        },
+        {
+          "text": "17/16",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "1 一份 VC 合同需要回答哪些问题？",
+        "2 第一部分：收益分配之外，为什么还需控制权？",
+        "2.1 Aghion–Bolton：不完全合同具体体现在哪些假设？",
+        "2.2 第一优行动与私人选择怎样分开？",
+        "2.3 可核实信号怎样触发控制权转移？",
+        "2.4 经典结论是什么？",
+        "2.5 真实合同：现金流权和控制权分别安排",
+        "3 第二部分：可转换证券怎样同时激励创业者和 VC？",
+        "3.1 Schmidt：先把信息、时序和合同分开",
+        "3.2 一组能完整逆推的教学参数",
+        "3.3 先给定候选合同，再倒推 VC 的选择",
+        "3.4 回到创业者：少投入、多投入和重谈都要检查",
+        "3.5 中、坏两态与期初融资怎样接回来？",
+        "3.6 为什么固定债股不能照样实现？原文结论有哪些条件？",
+        "4 第三部分：为什么需要分阶段融资？",
+        "4.1 原文环境与本节使用的数字",
+        "4.2 为什么不能一次投入？",
+        "4.3 两期投入先满足哪条 PC？",
+        "4.4 从第二期重谈开始",
+        "4.5 再回到第一期",
+        "4.6 把履约、参与和效率放在一起核对",
+        "4.7 如果早期投入没有形成可转移资产，会怎样？",
+        "4.8 Gompers：用数据检验分阶段融资的哪些含义？",
+        "5 分阶段融资之后，还有哪些合同问题？",
+        "5.1 退出也是一项需要单独配置的决定",
+        "6 回到一份 VC 合同"
+      ],
+      "expandedAnswers": []
     },
     {
       "page": "student-notes.html",
       "title": "PE/VC 合同理论完整学生讲义：LPA 与 GP—企业合同",
-      "renderedFormulas": 828,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
-    },
-    {
-      "page": "index.html",
-      "title": "PE/VC 合同理论｜两层授权，两类合同",
-      "renderedFormulas": 0,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
-    },
-    {
-      "page": "w04-preparation.html",
-      "title": "第 4 周预习：LPA 怎样安排资本、授权与收入？",
-      "renderedFormulas": 38,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
-    },
-    {
-      "page": "w04-fund-contract.html",
-      "title": "第 4 周课堂：LPA 怎样把投资判断交给 GP？",
-      "renderedFormulas": 114,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
+      "formulaCount": 947,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "G.1 Hellmann",
+          "present": true
+        },
+        {
+          "text": "G.2 Casamatta",
+          "present": true
+        },
+        {
+          "text": "第二部分：可转换证券怎样同时激励创业者和 VC？",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "怎样使用这份讲义？",
+        "基础篇：读合同模型需要的语言",
+        "信息、行动与可执行的合同",
+        "收入、净收益与效用怎样区分？",
+        "IC 与各方的 PC",
+        "时点、沉没成本与福利",
+        "第一篇：LPA 合同，怎样把专业投资判断交给 GP？",
+        "为什么需要一份持续多年的投资授权合同？",
+        "1. LP 承诺资本，GP 获得什么授权？",
+        "2. GP 收到的钱，有多少才是 Carry？",
+        "3. 同一合同能否同时支持努力和双方参与？",
+        "4. 有业绩报酬，为什么仍可能选错项目？",
+        "5. 行为限制解决什么问题，不同基金的条款为何不同？",
+        "6. 为什么新老管理机构采用不同的报酬结构？",
+        "本讲收束：收入、权限与信息怎样共同支持授权？",
+        "第二篇：GP—企业合同，控制、增值与分阶段融资",
+        "一份 VC 合同需要回答哪些问题？",
+        "第一部分：收益分配之外，为什么还需控制权？",
+        "第二部分：可转换证券怎样同时激励创业者和 VC？",
+        "第三部分：为什么需要分阶段融资？",
+        "分阶段融资之后，还有哪些合同问题？",
+        "回到一份 VC 合同",
+        "附录怎样读？",
+        "附录 A：基金分配、Carry 可行区间与风险比较",
+        "A.1 管理费、优先回报、追补与追回",
+        "A.2 把三项约束整理成 Carry 的可行区间",
+        "A.3 对照一组数值，区分行动、参与与福利",
+        "A.4 均值不变时，为什么也要逐个结果算收入？",
+        "A.5 增加整只基金的共同出资会怎样？",
+        "附录 B：报酬模型与 LPA 的进一步问题",
+        "B.1 学习模型：正文推导的偏好、风险与边界",
+        "B.2 信号模型：类型不冒充与努力不偏离是两种约束",
+        "B.3 LP 流动性与基金结构",
+        "B.4 下一只基金为什么影响今天？",
+        "B.5 基金年龄与到期问题",
+        "附录 C：多项目投资与基金融资结构",
+        "C.1 原论文的项目、信息与时序",
+        "C.2 逐笔融资：信息怎样限制融资",
+        "C.3 纯基金：汇总收入怎样改变选择",
+        "C.4 混合融资：基金资本与逐笔资本",
+        "C.5 第三方作用与原文结论边界",
+        "C.6 先核对共同环境",
+        "C.7 纯事前基金：不只检查第二期",
+        "C.8 混合融资：先检查逐笔债务，再检查基金合同",
+        "C.9 原文最优资本上限与可实施性的边界",
+        "附录 D：企业证券分配、估值与稀释",
+        "D.1 参与式优先股",
+        "D.2 估值、期权池与反稀释",
+        "附录 E：Aghion–Bolton 原文例子的控制上界与信号",
+        "E.1 创业者控制：不重谈、完全重谈与部分重谈",
+        "E.2 投资者控制：财富约束如何给出 \n62.5\n62.5？",
+        "E.3 这组上界不是什么",
+        "E.4 完全准确信号为什么是完备基准？",
+        "附录 F：分阶段融资的最优路径与知情续投",
+        "F.1 从正文例子进入最优路径",
+        "F.2 原文多期重谈怎样递推？",
+        "F.3 可行路径与最优路径有什么差别？",
+        "F.4 怎样区分承诺机制和学习机制？",
+        "F.5 Admati–Pfleiderer：知情续投与定价的完整推导",
+        "F.6 Admati–Pfleiderer 的稳健性还要求什么？",
+        "附录 G：控制应用、建议与粉饰的进一步问题",
+        "G.1 Hellmann：任免权、搜寻与离职补偿",
+        "G.2 Casamatta：融资与建议为何捆绑？",
+        "G.3 Cornelli–Yosha：粉饰、转换与固定债务对照",
+        "G.4 连续努力：固定分成为什么不能给双方全部边际回报？",
+        "G.5 退出问题怎样继续展开？",
+        "附录 H：Bolton、Liu、Nanda、Sundaresan 的实验设计、续投规则与失败奖励",
+        "H.1 里程碑容易通过，为什么反而可能融不到钱？",
+        "H.2 两类准确性与双方的设计选择",
+        "H.3 奖励“未通过”能否改变设计？",
+        "文献导读：先按合同，再按问题阅读",
+        "术语速查",
+        "参考文献",
+        "LPA 合同",
+        "GP 与企业合同"
+      ],
+      "expandedAnswers": []
     },
     {
       "page": "w05-preparation.html",
       "title": "第 5 周预习：控制权、双边激励与分期承诺",
-      "renderedFormulas": 59,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
+      "formulaCount": 62,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "P5-3：Schmidt",
+          "present": true
+        },
+        {
+          "text": "25/24",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "1 预习怎样衔接课堂？",
+        "2 P5-1：持有三分之一，是否总拿三分之一？",
+        "3 P5-2：Aghion–Bolton，两种控制各会错在哪里？",
+        "4 P5-3：Schmidt，转股是否就会支持企业？",
+        "5 P5-4：Neher，确定有价值的项目为什么仍融不到钱？"
+      ],
+      "expandedAnswers": [
+        "核对 P5-3"
+      ]
     },
     {
       "page": "exercises.html",
       "title": "PE/VC 合同理论：课后习题与分步答案",
-      "renderedFormulas": 257,
-      "katexErrors": 0,
-      "viewportWidth": 1416,
-      "viewportHeight": 756,
-      "pageWidth": 1416,
-      "wideMath": 0
-    }
-  ],
-  "visual_checks": [
-    "Aghion-Bolton control module and contractibility assumptions",
-    "Hellmann CEO appointment/search application and its assumptions",
-    "Casamatta financing/advice question and bilateral effort setup",
-    "Neher deterministic/full-information setup and commitment assumptions",
-    "Neher second-period renegotiation and the outside-option rule",
-    "Neher first-period continuation value, future commitment bound and P1 calculation",
-    "Staged-finance reading map and separate questions for subsequent papers",
-    "Expanded H5-5 answer, including the no-asset-accumulation counterfactual"
-  ],
-  "desktop_display_math_overflow": 0,
-  "desktop_viewport": {
-    "width": 1416,
-    "heights": [
-      722,
-      756
-    ]
-  },
-  "screenshot_directory": "../revisions/2026-10-24-week5-three-questions-review",
-  "screenshots": [
-    {
-      "file": "control-module.png",
-      "sha256": "ed7812637f2a7d987ae720b0936b1d1a01c672a77534c17e452888440959fbd8"
+      "formulaCount": 310,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "H5-3：Schmidt",
+          "present": true
+        },
+        {
+          "text": "H5-4：Schmidt",
+          "present": true
+        },
+        {
+          "text": "H5-12",
+          "present": true
+        },
+        {
+          "text": "H5-13",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "1 第 4 周：LPA 合同的收入、行动与行为限制",
+        "1.1 H4-1：总收入、Carry 与收入差怎样对账？",
+        "1.2 H4-2：同一合同的 IC 与两方 PC 怎样求交集？",
+        "1.3 H4-3：共同出资已经存在，为什么还会选错项目？",
+        "1.4 H4-4：从条款回到行为，从证据回到解释",
+        "1.5 H4-5：为什么两种模型对年轻机构给出相反预测？",
+        "2 第 5 周：控制权、双边激励与分阶段融资",
+        "2.1 H5-1：分配规则是否等于退出决定？",
+        "2.2 H5-2：或有控制怎样同时改善行动与融资？",
+        "2.3 H5-3：Schmidt，为什么还要检查“转股但不支持”？",
+        "2.4 H5-4：Schmidt，允许重谈后创业者还愿意投入吗？",
+        "2.5 H5-5：Neher 原文 Example 4.1，分阶段承诺怎样逆推？",
+        "3 第 4 周附录选做：多项目投资与融资",
+        "3.1 H4-A：汇总报酬是否能消除所有坏项目投资？",
+        "3.2 H4-B：逐笔融资、第三方与 LP 承诺",
+        "4 第 5 周选做：控制、融资与动态合同的延伸",
+        "4.1 H5-6：附录实验设计，为什么高通过率可能破坏融资？",
+        "4.2 H5-7：信号准确率怎样改变部分重谈合同？",
+        "4.3 H5-8：奖励发现失败，会不会奖励得太多？",
+        "4.4 H5-9：固定股份为什么难以同时激励双方？",
+        "4.5 H5-10：Admati–Pfleiderer，知情融资怎样同时满足投资、定价与参与？",
+        "4.6 H5-11：阶段考核的副作用，转换怎样约束粉饰？",
+        "4.7 H5-12：控制权保护投入，是否一定提高总剩余？",
+        "4.8 H5-13：融资和建议捆绑，怎样改变激励租金的承担？",
+        "5 用一页检查自己是否理解"
+      ],
+      "expandedAnswers": [
+        "H5-3 分步答案",
+        "H5-4 分步答案"
+      ]
     },
     {
-      "file": "hellmann-application.png",
-      "sha256": "216f1750cfba62c8d6ce47b1bfb66dacbe22cf8858ba8c6e751a06d2397126f3"
+      "page": "index.html",
+      "title": "PE/VC 合同理论｜两层授权，两类合同",
+      "formulaCount": 0,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "Schmidt：从先后投入",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "第一类：LPA 合同；第二类：GP 与企业合同",
+        "怎样把资本和投资判断交给 GP？",
+        "VC 为什么不只是“买股份”？",
+        "课前、课堂与课后，各做什么？"
+      ],
+      "expandedAnswers": []
     },
     {
-      "file": "casamatta-incentives.png",
-      "sha256": "f1589de9cdb2bb09eb9e6abd990dd4bad642e6da0f55f904c76dff69053ad346"
+      "page": "w04-fund-contract.html",
+      "title": "第 4 周课堂：LPA 怎样把投资判断交给 GP？",
+      "formulaCount": 114,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "LPA",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "1 为什么把钱交给 GP 以后，还要写一份长合同？",
+        "2 开场问答：把预习中的判断说清楚",
+        "3 LPA 把哪些决定交给 GP？",
+        "4 同一份合同：先算收入，再查 IC 与两方 PC",
+        "4.1 复算分配：收入与 Carry 不同",
+        "4.2 同一出资和分配下加入努力",
+        "4.3 Carry 降到 5%，哪里首先改变？",
+        "5 Carry 支持努力，也可能留下怎样的项目选择？",
+        "6 行为限制：把每项条款对应到一个决定",
+        "7 为什么不同基金的限制条款有松有紧？",
+        "7.1 一条限制的收益和成本，会因基金而异",
+        "7.2 同样的利益冲突，也可能谈出不同的权限",
+        "7.3 读到一份宽松合同，应怎样解释？",
+        "8 报酬差异：年轻机构的显性业绩激励应该更强，还是更弱？",
+        "8.1 本节比较什么：年轻机构的显性业绩激励应该更强，还是更弱？",
+        "8.2 比较以前，先说明业绩、收入与基金时序",
+        "8.3 学习模型：未来报酬已提供激励，早期显性激励较弱",
+        "8.4 信号模型：用早期强激励表明类型，后期减少收入风险",
+        "8.5 分歧在哪里，合同数据支持哪个方向？",
+        "9 收束：LPA 怎样支持一段持续授权？",
+        "10 附录入口：多项目投资与融资结构"
+      ],
+      "expandedAnswers": []
     },
     {
-      "file": "neher-assumptions.png",
-      "sha256": "3b10e95acb5d11f9b081260a7991058a5dc49c7a32862e1f85f71b5bf0dfca7a"
-    },
-    {
-      "file": "neher-second-period.png",
-      "sha256": "a645a88ea2a2a95ad8a18a8eb39f50b3d39553bd5e6308052ef022c419ac6292"
-    },
-    {
-      "file": "neher-first-period.png",
-      "sha256": "1c9bca3a3c7161e0401228ce3e91cb9598eb2b90826f3f5df1dd2f2d22537202"
-    },
-    {
-      "file": "staging-reading-map.png",
-      "sha256": "d0bf35387b23f6a00955401f11ff9a66820084c9248738bd1cfffe3084fec116"
-    },
-    {
-      "file": "neher-exercise.png",
-      "sha256": "41936b3c52ace88d6ec576eb4e7140d684093443c8b3ece64a7f6d857ebf15a7"
+      "page": "w04-preparation.html",
+      "title": "第 4 周预习：LPA 怎样安排资本、授权与收入？",
+      "formulaCount": 38,
+      "mathErrors": 0,
+      "markers": [
+        {
+          "text": "P4-1",
+          "present": true
+        }
+      ],
+      "viewportWidth": 1404,
+      "documentWidth": 1404,
+      "wideDisplayMath": 0,
+      "headings": [
+        "1 为什么先做这些准备？",
+        "2 P4-0：愿意努力，是否等于愿意签约？",
+        "3 P4-1：承诺资本，是否已经缴足？",
+        "4 P4-2：GP 总收入，有多少才是 Carry？",
+        "5 P4-3：同一合同下，谁愿意做什么？",
+        "6 P4-4：预期基金价值更高，是否就一定被 GP 选择？",
+        "7 P4-5：年轻机构需要更强的业绩激励吗？",
+        "8 带到课堂的记录"
+      ],
+      "expandedAnswers": []
     }
   ],
   "final_html_sha256": {
-    "w05-venture-contract.html": "5b30973849f19dda4bbeeee032f697a18c8fff1962f9ae24be7b7aa6a048d9e5",
-    "student-notes.html": "6eb1cf441962450e521476fdfea588836ab00ec8e37480928a4e5d8035c67a53",
-    "index.html": "2d0e91f3863966f2f5f614d0cc944b079c2589c76a9894e12c2e5707cc2112a1",
-    "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
+    "w05-venture-contract.html": "c91542002c3540ad00b153684a2a67465702258e2317ea2223a9e4bc9e5ea727",
+    "student-notes.html": "b61d7282d99dd42662a6bea694db349a95993f228b2ee1d05c630a38750d69f4",
+    "w05-preparation.html": "665b8c4d3317bde9fc1516ea7bca1e7f590790285152e0cdcd02b3548b3cb4e9",
+    "exercises.html": "c4a2d357b147e6d055638fd92b21d5b0a122a0a9f0466d936709bac39d6e434a",
+    "index.html": "2394cfe6d7227037acc7c142db0f5330cdc9c09d8da8319cedef2ec41681329e",
     "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-    "w05-preparation.html": "c9fe16ed7e80bb635935ccc4d705d70b05f1cbddd5f4b916c1fdb1a29adce3d1",
-    "exercises.html": "22d96b0cab5bb84ac7d65079f2361f574b8ec130d301976a30856338cfa588b1"
+    "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f"
   },
+  "visual_checks": [
+    "Schmidt six VC action/conversion choices and effort threshold table"
+  ],
+  "screenshots": [
+    {
+      "file": "schmidt-vc-choices-desktop.png",
+      "sha256": "c969dfbbe2790b219adba3b443e179f1a0aa8c6750dbe69e40907d40bea1c1c6"
+    }
+  ],
+  "screenshot_directory": "../revisions/2026-10-25-before-schmidt-mainline",
   "preservation_checks": {
-    "w04-fund-contract.qmd": true,
-    "w04-preparation.qmd": true,
-    "pevc-handout.css": true,
-    "_quarto.yml": true,
-    "book_fund_body": true,
-    "appendices_ABC": true,
-    "week4_core_exercises": true,
-    "week4_optional_exercises": true,
-    "baseline_untracked_preserved": true,
-    "course_bibliography_mirror": true
+    "unchanged_source_files": 5,
+    "AB_and_KS_body_unchanged": true,
+    "Neher_and_Gompers_body_unchanged": true,
+    "LPA_and_appendices_A_to_F_unchanged": true,
+    "CY_and_experiment_appendices_unchanged": true,
+    "week4_exercises_unchanged": true,
+    "Hellmann_display_formulae_preserved": 6,
+    "Casamatta_display_formulae_preserved": 7,
+    "conflict_files_preserved": 3
   },
   "limits": [
-    "Desktop visual spot checks; not a full device compatibility test",
-    "No mobile visual check in this revision"
+    "Desktop visual spot check; no mobile compatibility claim"
   ],
-  "publication": "Local HTML and course mirrors synchronized; GitHub review tracked in PR #6; production publication not performed"
+  "publication": "Local preview verified before GitHub merge and production publication; release receipts retained separately."
 }
