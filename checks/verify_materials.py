@@ -10,6 +10,8 @@ import json
 import math
 import re
 
+from schmidt_model import schmidt_checks
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = [
     "student-notes.md", "student-notes.qmd", "w04-fund-contract.qmd",
@@ -232,7 +234,8 @@ def week5_core_checks():
     for share in (F(1,2),F(3,4),F(1)):
         renegotiated=1-(1-share)*F(200,100)
         assert (1-renegotiated)*100==(1-share)*200
-    return {'hellmann':{'founder_control':founder,'vc_fixed_cash_terms':fixed,
+    return {'schmidt':schmidt_checks(),
+            'hellmann':{'founder_control':founder,'vc_fixed_cash_terms':fixed,
                        'vc_repriced':repriced,'full_compensation_founder_control':full_comp,
                        'cost_11':wasteful},
             'casamatta':{'E_no_advisor':no_advisor[0],'E_consultant':separate[0],
@@ -568,8 +571,8 @@ def source_checks():
         "student-notes.md":["13.88","10.8","43.12","-2.45","4.74","2/21","207.7368","144.20016","2.84","6.66"],
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
-        "w05-venture-contract.qmd":["213 笔投资","119 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","2.3","4.1","77.5","0.76","1+\\alpha p_B","Example 4.1","1.1852","1.2222","1.3333","0.66","794","人力资本"],
-        "w05-preparation.qmd":["75","70","49","2.4","1.8","4.5"],
+        "w05-venture-contract.qmd":["213 笔投资","119 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","Schmidt","17/16",r"\frac{25}{24}","5/8","77.5","Example 4.1","1.1852","1.2222","1.3333","0.66","794","人力资本"],
+        "w05-preparation.qmd":["75","70","49","Schmidt","5/4","25/24","7/12"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
     for name,claims in required.items():
@@ -579,7 +582,7 @@ def source_checks():
     for paper in ("Aghion","Admati","Bolton","Neher"):
         assert paper in text,("student-notes.md",paper)
     text=(ROOT/"w05-venture-contract.qmd").read_text()
-    for paper in ("Aghion","Hellmann","Casamatta","Neher","Cornelli","Kaplan","Gompers","Bergemann","Repullo"):
+    for paper in ("Aghion","Hellmann","Casamatta","Neher","Cornelli","Kaplan","Gompers","Bergemann","Repullo","Schmidt"):
         assert paper in text,("w05-venture-contract.qmd",paper)
     book=(ROOT/"student-notes.md").read_text()
     fund=book.split("## 第一篇：",1)[1].split("## 第二篇：",1)[0]
@@ -610,21 +613,26 @@ def source_checks():
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
         assert "{#"+anchor+"}" in (ROOT/"exercises.qmd").read_text()
     venture=book.split("## 第二篇：",1)[1].split("## 附录怎样读？",1)[0]
-    for anchor in ("book-venture-motivation","book-venture-rights","book-venture-control","book-venture-hellmann","book-venture-double","book-venture-staging","book-venture-exit","book-venture-summary"):
+    for anchor in ("book-venture-motivation","book-venture-rights","book-venture-control","book-venture-double","book-venture-schmidt","book-venture-staging","book-venture-exit","book-venture-summary"):
         assert "{#"+anchor+"}" in venture,anchor
-    assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-hellmann}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-staging}")
+    assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-rights}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-schmidt}")<venture.index("{#book-venture-staging}")
     assert "{#book-venture-followon}" in book.split("## 附录 F：",1)[1].split("## 附录 G：",1)[0]
-    for claim in ("75","70","2.3","4.1","不足额离职补偿","自己出资","Example 4.1","1.2222","0.66"):
+    for claim in ("77.5","70","17/16",r"\frac{25}{24}","5/8","六个选择","Example 4.1","1.2222","0.66"):
         assert claim in venture,claim
     classroom=(ROOT/"w05-venture-contract.qmd").read_text()
     third=classroom.split("## 第三部分：",1)[1].split("## 分阶段融资之后",1)[0]
     assert "Neher" in third and "L_2=0" in third and "Gompers" in third
     assert "粉饰怎样移动信号" not in third
     assert "尚不知道项目好坏" in book.split("### G.3 ",1)[1].split("### G.4 ",1)[0]
+    hellmann=book.split("### G.1 ",1)[1].split("### G.2 ",1)[0]
+    casamatta=book.split("### G.2 ",1)[1].split("### G.3 ",1)[0]
+    assert all(x in hellmann for x in ("0.76","34","1+\\alpha p_B","vesting"))
+    assert all(x in casamatta for x in ("2.3","4.1","1.8","自己出资"))
+    assert "### Hellmann（1998）：" not in classroom and "### Casamatta：" not in classroom
     expected=classroom[classroom.index("## 一份 VC 合同需要回答哪些问题？"):]
     expected=re.sub(r"^(#{2,5}) ",lambda m:"#"+m[1]+" ",expected,flags=re.M)
     names={"w05-motivation":"book-venture-motivation","w05-payments":"book-venture-rights",
-           "w05-control":"book-venture-control","w05-hellmann":"book-venture-hellmann",
+           "w05-control":"book-venture-control","w05-schmidt":"book-venture-schmidt",
            "w05-double":"book-venture-double","w05-staging":"book-venture-staging",
            "w05-reading-map":"book-venture-reading-map","w05-exit":"book-venture-exit",
            "w05-check":"book-venture-summary"}
@@ -644,7 +652,7 @@ def source_checks():
     assert exercises.index("{#h5-5}") < exercises.index("{#optional-homework}")
     assert exercises.index("{#h5-6}") > exercises.index("{#optional-homework}")
     assert "第 5 周完成 H5-1 至 H5-5" in exercises
-    assert re.findall(r"^### H5-(\d+)：",exercises,re.M)==[str(i) for i in range(1,12)]
+    assert re.findall(r"^### H5-(\d+)：",exercises,re.M)==[str(i) for i in range(1,14)]
     for exercise in re.finditer(r"^### H5-\d+：.*?(?=^### |^## |\Z)",exercises,re.M|re.S):
         numbers=re.findall(r"^(\d+)\. ",exercise[0].split("<details",1)[0],re.M)
         assert [int(n) for n in numbers]==list(range(1,len(numbers)+1)),exercise[0].splitlines()[0]

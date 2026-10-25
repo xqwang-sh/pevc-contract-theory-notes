@@ -10,7 +10,7 @@
 
 在本目录运行 python3 checks/render_materials.py 生成六个 HTML 页面；它在本地临时目录渲染，避免 OneDrive 临时目录清理权限错误。需要更新课程目录副本时加 --sync-parent。首页 docs/index.html 独立维护。全部页面自包含，沿用 pevc-handout.css。源文件和 HTML 的课程目录副本按 AGENTS.md 同步。
 
-2026-10-24 第 5 周现行结构为三个问题：第一部分用 Aghion–Bolton 解释收益分配之外为何需要控制权，并用 Hellmann（1998）讲任免权与搜寻投入；第二部分用 Casamatta 讲融资与建议捆绑的双边激励；第三部分完整逆推 Neher（1999）原文 Example 4.1，解释分阶段融资的承诺与资产积累机制。核心推导放正文。Kaplan–Strömberg 提供合同事实，Gompers 提供代理与监督预测的实证证据；学习、知情续投、粉饰和多阶段证券设计另列阅读地图。第 5 周核心题 H5-1 至 H5-5，学生材料不标预计用时。原文版本与核读位置见模型审查记录；本地修改、GitHub 审阅与正式发布分别记录。
+2026-10-25 第 5 周现行结构为三个问题：Aghion–Bolton 解释收益分配之外为何需要控制权，随后用 Kaplan–Strömberg 的真实合同说明权利分别配置；第二部分主讲 Schmidt（2003）的先后投入与可转换证券；第三部分完整逆推 Neher（1999）原文 Example 4.1。Hellmann 任免权与 Casamatta 融资建议捆绑的完整推导移入附录 G.1、G.2。Schmidt 的三状态数值是教学构造，正文保留双方行为、重谈与资本 PC；原文命题条件与教学简化分开记录。核心题 H5-1 至 H5-5，Hellmann 和 Casamatta 为选做 H5-12、H5-13。学生材料不标预计用时。本地修改、GitHub 审阅与正式发布分别记录。
 
 核查命令：python3 checks/verify_materials.py --sources-only 独立复算数值；完成渲染与副本同步后，运行 python3 checks/verify_materials.py 核对本地链接、锚点和文件一致性。检查结果写入 checks 下的 JSON 文件。
 
