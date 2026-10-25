@@ -687,6 +687,8 @@ def source_checks():
     expected=re.sub(r"^(#{2,5}) ",lambda m:"#"+m[1]+" ",expected,flags=re.M)
     names={"w05-motivation":"book-venture-motivation","w05-payments":"book-venture-rights",
            "w05-control":"book-venture-control","w05-schmidt":"book-venture-schmidt",
+           "w05-schmidt-founder-ic":"book-venture-schmidt-founder-ic",
+           "w05-schmidt-fixed-securities":"book-venture-schmidt-fixed-securities",
            "w05-incomplete":"book-venture-incomplete","w05-holdup":"book-venture-holdup",
            "w05-ab-financing":"book-venture-ab-financing","w05-ab-signal":"book-venture-ab-signal",
            "w05-double":"book-venture-double","w05-staging":"book-venture-staging",
