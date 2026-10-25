@@ -27,59 +27,6 @@ PAGES = [
 def close(x, y):
     assert math.isclose(x, y, abs_tol=1e-8), (x, y)
 
-def property_rights_checks():
-    from fractions import Fraction as F
-
-    value, cost = F(100), F(60)
-    def continuation(effort, standalone, fixed_transfer=F(0)):
-        total, da, db = value*effort, standalone*effort, F(0)
-        gain = total-da-db
-        assert gain >= 0
-        # Symmetric Nash bargaining maximizes x * (gain-x) at x=gain/2.
-        extra = gain/2
-        assert extra*(gain-extra) >= F(0)
-        assert gain-2*extra == 0
-        a, b = da+extra, db+extra
-        assert a+b == total and a >= da and b >= db
-        return {'A_receipt':a-fixed_transfer,'B_receipt':b+fixed_transfer,
-                'A_net':a-fixed_transfer-cost*effort,
-                'welfare':total-cost*effort,'gain':gain}
-    def choices(standalone, fixed_transfer=F(0)):
-        rows={e:continuation(e,standalone,fixed_transfer) for e in (0,1)}
-        best=max(row['A_net'] for row in rows.values())
-        return rows,[e for e,row in rows.items() if row['A_net']==best]
-    result={}
-    for owner, standalone, best_effort in [('B',F(0),0),('A',F(40),1)]:
-        rows,best=choices(standalone)
-        assert best == [best_effort]
-        result[owner]={'standalone_after_investment':standalone,
-                       'conditional_on_investment':rows[1],
-                       'chosen_effort':best[0],'equilibrium':rows[best[0]]}
-    assert result['B']['conditional_on_investment']['A_receipt']==50
-    assert result['B']['conditional_on_investment']['A_net']==-10
-    assert result['A']['conditional_on_investment']['A_receipt']==70
-    assert result['A']['conditional_on_investment']['B_receipt']==30
-    assert result['A']['conditional_on_investment']['A_net']==10
-    assert result['B']['equilibrium']['welfare']==0
-    assert result['A']['equilibrium']['welfare']==40
-    first_best=max((value-cost)*e for e in (0,1))
-    assert first_best==40 and (value-cost)>0
-    threshold=2*cost-value
-    assert threshold==20
-    for standalone in (F(0),F(19),F(20),F(21),F(40),F(100)):
-        rows,best=choices(standalone)
-        assert rows[1]['A_net']-rows[0]['A_net']==(standalone-threshold)/2
-        expected=[0] if standalone<threshold else [0,1] if standalone==threshold else [1]
-        assert best==expected
-        for transfer in (F(-10),F(0),F(25)):
-            shifted,_=choices(standalone,transfer)
-            assert shifted[1]['A_net']-shifted[0]['A_net']==rows[1]['A_net']-rows[0]['A_net']
-    return {'cooperation_value':value,'investment_cost':cost,'first_best':first_best,
-            'ownership':result,'standalone_threshold':threshold,
-            'threshold_best_responses':choices(threshold)[1],
-            'fixed_transfer_does_not_change_investment_IC':True}
-
-
 def week5_core_checks():
     from fractions import Fraction as F
 
@@ -287,8 +234,7 @@ def week5_core_checks():
     for share in (F(1,2),F(3,4),F(1)):
         renegotiated=1-(1-share)*F(200,100)
         assert (1-renegotiated)*100==(1-share)*200
-    return {'property_rights':property_rights_checks(),
-            'schmidt':schmidt_checks(),
+    return {'schmidt':schmidt_checks(),
             'hellmann':{'founder_control':founder,'vc_fixed_cash_terms':fixed,
                        'vc_repriced':repriced,'full_compensation_founder_control':full_comp,
                        'cost_11':wasteful},
@@ -626,7 +572,7 @@ def source_checks():
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
         "w05-venture-contract.qmd":["213 笔投资","119 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","Schmidt","17/16",r"\frac{25}{24}","5/8","77.5","Example 4.1","1.1852","1.2222","1.3333","0.66","794","人力资本"],
-        "w05-preparation.qmd":["60","100","40","50-60=-10","70-60=10","Schmidt","5/4","25/24","7/12"],
+        "w05-preparation.qmd":["订约成本","信息对称","收益可转移","事前投资","Schmidt","5/4","25/24","7/12"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
     for name,claims in required.items():
@@ -660,7 +606,7 @@ def source_checks():
     assert re.findall(r"^## P5-(\d)：",prep,re.M)==["1","2","3","4"]
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
-    assert "核对 P5-4" in prep and "P5-2：事后能合作，事前为什么仍不投入？" in prep
+    assert "核对 P5-4" in prep and "P5-2：契约缺口与重谈怎样影响事前投资？" in prep
     assert "## 第一部分：不完全合同，为什么事前需要安排事后决定权？" in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
@@ -697,12 +643,16 @@ def source_checks():
     for old,new in names.items():expected=expected.replace("{#"+old+"}","{#"+new+"}")
     expected=expected.replace("student-notes.html#book-","#book-")
     assert venture.split("\n\n",1)[1].strip()==expected.strip(),"Classroom/book body drift"
-    intro=classroom.split("### 不完全合同、专用性投资与重新谈判",1)[1].split("### 金融合同应用",1)[0]
-    for claim in ("Grossman", "Hart–Moore", "关系专用性投资", "谈判破裂收益", "一次性转移", "可写合同集合", "50-60=-10", "70-60=10", "事前投资不足", "人力资本"):
+    intro=classroom.split("### 不完全合同：缺口、重谈与事前激励",1)[1].split("### 金融合同应用",1)[0]
+    for claim in ("Grossman", "Hart–Moore", "关系专用性投资", "关系准租金", "谈判破裂收益", "订约成本", "默认选择", "事前投资", "收益可转移"):
         assert claim in intro,claim
-    assert "完全准确信号" not in prep.split("## P5-2：",1)[1].split("## P5-3：",1)[0]
+    assert "$" not in intro and not re.search(r"^\|",intro,re.M),"Opening must stay conceptual"
+    assert "Neher" not in intro and "一个简例" not in intro
+    p2=prep.split("## P5-2：",1)[1].split("## P5-3：",1)[0]
+    assert "$" not in p2 and "本题梳理" in p2
     h2=(ROOT/"exercises.qmd").read_text().split("### H5-2：",1)[1].split("### H5-3：",1)[0]
-    assert all(claim in h2 for claim in ("x\\ge20", "弱激励", "77.5", "事前没有投资"))
+    assert all(claim in h2 for claim in ("默认决定权", "谈判破裂收益", "77.5", "信息对称", "财富约束"))
+    assert "x\\ge20" not in h2 and "产权教学简例" not in book
     bib=(ROOT/"references-by-module.bib").read_text()
     keys=re.findall(r"@\w+\{([^,]+),",bib)
     assert len(keys)==len(set(keys)),"Duplicate bibliography key"
