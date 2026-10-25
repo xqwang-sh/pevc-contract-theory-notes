@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = [
     "student-notes.md", "student-notes.qmd", "w04-fund-contract.qmd",
     "w05-venture-contract.qmd", "w04-preparation.qmd",
-    "w05-preparation.qmd", "exercises.qmd",
+    "w05-preparation.qmd", "exercises.qmd", "references-by-module.bib",
 ]
 PAGES = [
     "index.html", "student-notes.html", "w04-fund-contract.html",
@@ -26,6 +26,59 @@ PAGES = [
 
 def close(x, y):
     assert math.isclose(x, y, abs_tol=1e-8), (x, y)
+
+def property_rights_checks():
+    from fractions import Fraction as F
+
+    value, cost = F(100), F(60)
+    def continuation(effort, standalone, fixed_transfer=F(0)):
+        total, da, db = value*effort, standalone*effort, F(0)
+        gain = total-da-db
+        assert gain >= 0
+        # Symmetric Nash bargaining maximizes x * (gain-x) at x=gain/2.
+        extra = gain/2
+        assert extra*(gain-extra) >= F(0)
+        assert gain-2*extra == 0
+        a, b = da+extra, db+extra
+        assert a+b == total and a >= da and b >= db
+        return {'A_receipt':a-fixed_transfer,'B_receipt':b+fixed_transfer,
+                'A_net':a-fixed_transfer-cost*effort,
+                'welfare':total-cost*effort,'gain':gain}
+    def choices(standalone, fixed_transfer=F(0)):
+        rows={e:continuation(e,standalone,fixed_transfer) for e in (0,1)}
+        best=max(row['A_net'] for row in rows.values())
+        return rows,[e for e,row in rows.items() if row['A_net']==best]
+    result={}
+    for owner, standalone, best_effort in [('B',F(0),0),('A',F(40),1)]:
+        rows,best=choices(standalone)
+        assert best == [best_effort]
+        result[owner]={'standalone_after_investment':standalone,
+                       'conditional_on_investment':rows[1],
+                       'chosen_effort':best[0],'equilibrium':rows[best[0]]}
+    assert result['B']['conditional_on_investment']['A_receipt']==50
+    assert result['B']['conditional_on_investment']['A_net']==-10
+    assert result['A']['conditional_on_investment']['A_receipt']==70
+    assert result['A']['conditional_on_investment']['B_receipt']==30
+    assert result['A']['conditional_on_investment']['A_net']==10
+    assert result['B']['equilibrium']['welfare']==0
+    assert result['A']['equilibrium']['welfare']==40
+    first_best=max((value-cost)*e for e in (0,1))
+    assert first_best==40 and (value-cost)>0
+    threshold=2*cost-value
+    assert threshold==20
+    for standalone in (F(0),F(19),F(20),F(21),F(40),F(100)):
+        rows,best=choices(standalone)
+        assert rows[1]['A_net']-rows[0]['A_net']==(standalone-threshold)/2
+        expected=[0] if standalone<threshold else [0,1] if standalone==threshold else [1]
+        assert best==expected
+        for transfer in (F(-10),F(0),F(25)):
+            shifted,_=choices(standalone,transfer)
+            assert shifted[1]['A_net']-shifted[0]['A_net']==rows[1]['A_net']-rows[0]['A_net']
+    return {'cooperation_value':value,'investment_cost':cost,'first_best':first_best,
+            'ownership':result,'standalone_threshold':threshold,
+            'threshold_best_responses':choices(threshold)[1],
+            'fixed_transfer_does_not_change_investment_IC':True}
+
 
 def week5_core_checks():
     from fractions import Fraction as F
@@ -234,7 +287,8 @@ def week5_core_checks():
     for share in (F(1,2),F(3,4),F(1)):
         renegotiated=1-(1-share)*F(200,100)
         assert (1-renegotiated)*100==(1-share)*200
-    return {'schmidt':schmidt_checks(),
+    return {'property_rights':property_rights_checks(),
+            'schmidt':schmidt_checks(),
             'hellmann':{'founder_control':founder,'vc_fixed_cash_terms':fixed,
                        'vc_repriced':repriced,'full_compensation_founder_control':full_comp,
                        'cost_11':wasteful},
@@ -572,7 +626,7 @@ def source_checks():
         "w04-fund-contract.qmd":["13.88","10.8","43.12","-2.45","4.74","54.88"],
         "w04-preparation.qmd":["13.88","10.8","43.12","-2.45","23.6","19.6"],
         "w05-venture-contract.qmd":["213 笔投资","119 家企业","信息对称","不完全合同","双边道德风险","有限责任","不可核实","Schmidt","17/16",r"\frac{25}{24}","5/8","77.5","Example 4.1","1.1852","1.2222","1.3333","0.66","794","人力资本"],
-        "w05-preparation.qmd":["75","70","49","Schmidt","5/4","25/24","7/12"],
+        "w05-preparation.qmd":["60","100","40","50-60=-10","70-60=10","Schmidt","5/4","25/24","7/12"],
         "exercises.qmd":["26.32","14.664","42.336","198.8406","49/50","1.1852","5/14","6.66","8.18","2.3","4.1","1.375","-0.08"],
     }
     for name,claims in required.items():
@@ -606,16 +660,16 @@ def source_checks():
     assert re.findall(r"^## P5-(\d)：",prep,re.M)==["1","2","3","4"]
     assert "#p5-3a" not in prep and "#p5-3b" not in prep
     assert "检验通过率与后验概率" not in prep
-    assert "核对 P5-4" in prep and "P5-2：Aghion–Bolton" in prep
-    assert "## 第一部分：收益分配之外，为什么还需控制权？" in (ROOT/"w05-venture-contract.qmd").read_text()
+    assert "核对 P5-4" in prep and "P5-2：事后能合作，事前为什么仍不投入？" in prep
+    assert "## 第一部分：不完全合同，为什么事前需要安排事后决定权？" in (ROOT/"w05-venture-contract.qmd").read_text()
     for anchor in ("p4-0","p4-1","p4-2","p4-3","p4-4","p4-5"):
         assert "{#"+anchor+"}" in (ROOT/"w04-preparation.qmd").read_text()
     for anchor in ("h4-1","h4-2","h4-3","h4-4","h4-5","h4-asw-pooling","h4-asw-financing"):
         assert "{#"+anchor+"}" in (ROOT/"exercises.qmd").read_text()
     venture=book.split("## 第二篇：",1)[1].split("## 附录怎样读？",1)[0]
-    for anchor in ("book-venture-motivation","book-venture-rights","book-venture-control","book-venture-double","book-venture-schmidt","book-venture-staging","book-venture-exit","book-venture-summary"):
+    for anchor in ("book-venture-motivation","book-venture-rights","book-venture-control","book-venture-incomplete","book-venture-holdup","book-venture-ab-financing","book-venture-ab-signal","book-venture-double","book-venture-schmidt","book-venture-staging","book-venture-exit","book-venture-summary"):
         assert "{#"+anchor+"}" in venture,anchor
-    assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-rights}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-schmidt}")<venture.index("{#book-venture-staging}")
+    assert venture.index("{#book-venture-control}")<venture.index("{#book-venture-incomplete}")<venture.index("{#book-venture-holdup}")<venture.index("{#book-venture-ab-financing}")<venture.index("{#book-venture-ab-signal}")<venture.index("{#book-venture-rights}")<venture.index("{#book-venture-double}")<venture.index("{#book-venture-schmidt}")<venture.index("{#book-venture-staging}")
     assert "{#book-venture-followon}" in book.split("## 附录 F：",1)[1].split("## 附录 G：",1)[0]
     for claim in ("77.5","70","17/16",r"\frac{25}{24}","5/8","六个选择","Example 4.1","1.2222","0.66"):
         assert claim in venture,claim
@@ -633,12 +687,26 @@ def source_checks():
     expected=re.sub(r"^(#{2,5}) ",lambda m:"#"+m[1]+" ",expected,flags=re.M)
     names={"w05-motivation":"book-venture-motivation","w05-payments":"book-venture-rights",
            "w05-control":"book-venture-control","w05-schmidt":"book-venture-schmidt",
+           "w05-incomplete":"book-venture-incomplete","w05-holdup":"book-venture-holdup",
+           "w05-ab-financing":"book-venture-ab-financing","w05-ab-signal":"book-venture-ab-signal",
            "w05-double":"book-venture-double","w05-staging":"book-venture-staging",
            "w05-reading-map":"book-venture-reading-map","w05-exit":"book-venture-exit",
            "w05-check":"book-venture-summary"}
     for old,new in names.items():expected=expected.replace("{#"+old+"}","{#"+new+"}")
     expected=expected.replace("student-notes.html#book-","#book-")
     assert venture.split("\n\n",1)[1].strip()==expected.strip(),"Classroom/book body drift"
+    intro=classroom.split("### 不完全合同、专用性投资与重新谈判",1)[1].split("### 金融合同应用",1)[0]
+    for claim in ("Grossman", "Hart–Moore", "关系专用性投资", "谈判破裂收益", "一次性转移", "可写合同集合", "50-60=-10", "70-60=10", "事前投资不足", "人力资本"):
+        assert claim in intro,claim
+    assert "完全准确信号" not in prep.split("## P5-2：",1)[1].split("## P5-3：",1)[0]
+    h2=(ROOT/"exercises.qmd").read_text().split("### H5-2：",1)[1].split("### H5-3：",1)[0]
+    assert all(claim in h2 for claim in ("x\\ge20", "弱激励", "77.5", "事前没有投资"))
+    bib=(ROOT/"references-by-module.bib").read_text()
+    keys=re.findall(r"@\w+\{([^,]+),",bib)
+    assert len(keys)==len(set(keys)),"Duplicate bibliography key"
+    for key,doi in (("grossman1986ownership","10.1086/261404"),("hart1990property","10.1086/261729")):
+        assert key in keys and doi in bib,(key,doi)
+
     assert "2024 年 6 月的工作论文版本" in book
     assert "暂不允许中期追加补偿或重谈" not in venture
     assert "book-venture-experiment" not in venture

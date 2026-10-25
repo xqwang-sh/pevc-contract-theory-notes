@@ -3613,7 +3613,7 @@ text-decoration: none;
   <ul class="collapse">
   <li><a href="#预习怎样衔接课堂" id="toc-预习怎样衔接课堂" class="nav-link active" data-scroll-target="#预习怎样衔接课堂"><span class="header-section-number">1</span> 预习怎样衔接课堂？</a></li>
   <li><a href="#p5-1" id="toc-p5-1" class="nav-link" data-scroll-target="#p5-1"><span class="header-section-number">2</span> P5-1：持有三分之一，是否总拿三分之一？</a></li>
-  <li><a href="#p5-2" id="toc-p5-2" class="nav-link" data-scroll-target="#p5-2"><span class="header-section-number">3</span> P5-2：Aghion–Bolton，两种控制各会错在哪里？</a></li>
+  <li><a href="#p5-2" id="toc-p5-2" class="nav-link" data-scroll-target="#p5-2"><span class="header-section-number">3</span> P5-2：事后能合作，事前为什么仍不投入？</a></li>
   <li><a href="#p5-3" id="toc-p5-3" class="nav-link" data-scroll-target="#p5-3"><span class="header-section-number">4</span> P5-3：Schmidt，转股是否就会支持企业？</a></li>
   <li><a href="#p5-4" id="toc-p5-4" class="nav-link" data-scroll-target="#p5-4"><span class="header-section-number">5</span> P5-4：Neher，确定有价值的项目为什么仍融不到钱？</a></li>
   </ul>
@@ -3637,7 +3637,7 @@ text-decoration: none;
     <div>
     <div class="quarto-title-meta-heading">发布于</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026年10月25日</p>
+      <p class="date">2026年10月26日</p>
     </div>
   </div>
 
@@ -3652,7 +3652,7 @@ text-decoration: none;
 <p><a href="index.html">课程首页</a> · <a href="w05-venture-contract.html">第 5 周课堂</a> · <a href="student-notes.html#book-venture">完整学生讲义</a> · <a href="exercises.html#w05-homework">课后习题</a></p>
 <section id="预习怎样衔接课堂" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="预习怎样衔接课堂"><span class="header-section-number">1</span> 预习怎样衔接课堂？</h2>
-<p>第一部分用 Aghion–Bolton 解释收益分配之外为何需要控制权，接 Kaplan–Strömberg 的真实合同；第二部分用 Schmidt（2003）解释可转换证券怎样激励先后投入；第三部分用 Neher 解释分阶段融资的承诺机制。Hellmann 任免权与 Casamatta 融资建议捆绑见完整讲义附录 G.1、G.2。下面先准备分配、控制、投入与转换、分期资产的基本计算，不要求课前读完论文或附录。</p>
+<p>第一部分先用产权教学简例解释不完全合同、重谈与事前投资，再进入 Aghion–Bolton 的融资控制和 Kaplan–Strömberg 的真实合同；第二部分用 Schmidt（2003）解释可转换证券怎样激励先后投入；第三部分用 Neher 解释分阶段融资的承诺机制。Hellmann 任免权与 Casamatta 融资建议捆绑见完整讲义附录 G.1、G.2。下面先准备分配、控制、投入与转换、分期资产的基本计算，不要求课前读完论文或附录。</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -3671,7 +3671,7 @@ text-decoration: none;
 </tr>
 <tr class="even">
 <td>P5-2</td>
-<td>第一优行动与私人选择不同；信息对称不等于合同完备</td>
+<td>事后有效合作仍可能伴随事前投资不足；产权改变谈判破裂收益</td>
 </tr>
 <tr class="odd">
 <td>P5-3</td>
@@ -3683,7 +3683,7 @@ text-decoration: none;
 </tr>
 </tbody>
 </table>
-<p>先独立作答，再展开答案。课堂会先倒推 VC 的投入与转换，再回到创业者投入；第三部分完成两期融资的逆推。</p>
+<p>先独立作答，再展开答案。第一部分先从事后谈判倒推事前投资，第二部分先求 VC 的投入与转换，再回到创业者投入；第三部分完成两期融资的逆推。每个模型分别使用自己的合同范围和重谈规则。</p>
 </section>
 <section id="p5-1" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="p5-1"><span class="header-section-number">2</span> P5-1：持有三分之一，是否总拿三分之一？</h2>
@@ -3701,67 +3701,22 @@ VC 收入依次为 300、500、1,000；创始人收入为 0、500、2,000。转�
 </details>
 </section>
 <section id="p5-2" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="p5-2"><span class="header-section-number">3</span> P5-2：Aghion–Bolton，两种控制各会错在哪里？</h2>
-<p><a href="https://doi.org/10.2307/2297860">Aghion–Bolton（1992）</a>中，创业者没有初始财富，投资者只关心货币收入。状态实现后双方都知道，但法院不能核实；法院可以依据公共信号 <span class="math inline">\sigma</span> 执行约定的控制配置和现金分配。</p>
-<p>时序为：签约并投入资本 → 状态与公共信号实现 → 控制者选择行动，可按约重谈 → 实现现金与创业者的私人收益。私人收益不能转给投资者。</p>
-<p><span class="math inline">\lambda</span> 始终属于创业者；<span class="math inline">a_g,a_b</span> 分别按好、坏状态下的第一优行动命名。下表使用原文第 482–484 页的数字，<span class="math inline">y</span> 是条件期望收入，两个状态各半。为先看清控制冲突，取初始合同给创业者的现金份额为零。</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 26%">
-<col style="width: 26%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>状态与行动</th>
-<th style="text-align: right;">期望货币收入 <span class="math inline">y</span></th>
-<th style="text-align: right;">创业者私人收益 <span class="math inline">\lambda</span></th>
-<th style="text-align: right;">总剩余 <span class="math inline">y+\lambda</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>好状态、<span class="math inline">a_g</span></td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">250</td>
-</tr>
-<tr class="even">
-<td>好状态、<span class="math inline">a_b</span></td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">200</td>
-</tr>
-<tr class="odd">
-<td>坏状态、<span class="math inline">a_b</span></td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">50</td>
-</tr>
-<tr class="even">
-<td>坏状态、<span class="math inline">a_g</span></td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">49</td>
-</tr>
-</tbody>
-</table>
+<h2 data-number="3" class="anchored" data-anchor-id="p5-2"><span class="header-section-number">3</span> P5-2：事后能合作，事前为什么仍不投入？</h2>
+<p>下面是解释产权机制的教学简例，不是 Grossman–Hart 或 Hart–Moore 的原文数值。A 能自行承担专用性投入成本 60，B 不需要投入；投入后双方合作产生总收益 100，不投入则收益为零。双方信息相同、风险中性。投入不可契约化，事前合同只安排资产所有权与固定转移，不能按投入或未来合作收益写支付条款；本题固定转移为零。</p>
+<p>投入沉没后，双方保留各自谈判破裂时的收益，再各分一半新增合作剩余。资产归 B 时，谈不拢双方都得零；资产归 A 时，A 可单独使用已形成的资产得到 40，B 得零。不投入时，无论谁拥有资产，谈判破裂收益都为零。</p>
 <ol type="1">
-<li>两个状态的第一优行动是什么？</li>
-<li>先按原合同、不作重谈时，创业者控制与投资者控制各在哪个状态选错？</li>
-<li>把完全准确的信号作为教学特例，好状态交给创业者、坏状态交给投资者。投资者期望收入能否覆盖 <span class="math inline">K=70</span>？</li>
-<li>为什么不能直接用私人收益 150 补偿投资者？</li>
+<li>假定 A 已经投入，两种所有权下 A 和 B 各得多少？此时应不应该把沉没成本 60 再从待分的合作剩余中扣一次？</li>
+<li>回到投入之前，A 在哪种所有权下愿意付出 60？与社会上是否应该投入比较。</li>
+<li>双方仍然各分一半新增剩余，为什么所有权会影响投入？信息对称是否已经足以保证合同完备？</li>
 </ol>
 <details class="solution">
 <summary>
 核对 P5-2
 </summary>
 <ol type="1">
-<li>好状态选 <span class="math inline">a_g</span>，因为 <span class="math inline">250&gt;200</span>；坏状态选 <span class="math inline">a_b</span>，因为 <span class="math inline">50&gt;49</span>。</li>
-<li>创业者只取得私人收益，会在坏状态选 <span class="math inline">a_g</span>；投资者只看现金，会在好状态选 <span class="math inline">a_b</span>。两种单边控制各有一种偏差。</li>
-<li>或有控制让双方都选对，投资者期望收入为 <span class="math inline">\tfrac12\times100+\tfrac12\times50=75\ge70</span>。投资者净收益为 5，创业者期望私人收益为 75，总剩余扣启动资本后为 80。</li>
-<li>私人收益不是现金，不能支付给投资者。完美且可核实的信号可以替代真实状态，是原文的合同完备基准。课堂会使用有噪声信号，说明不完全合同下的控制与重谈。上面只验证一份可行合同，没有证明任意信号下或有控制都最优；更长上界比较见附录 E。</li>
+<li>B 拥有资产时各得 <span class="math inline">100/2=50</span>；A 拥有资产时，A 得 <span class="math inline">40+(100-40)/2=70</span>，B 得 30。60 已沉没，事后不再扣；评价事前投入时扣一次。</li>
+<li>不投入时 A 得零。B 拥有资产时，A 投入净得 <span class="math inline">50-60=-10</span>，所以不投入；A 拥有资产时净得 <span class="math inline">70-60=10</span>，所以投入。社会净增益为 <span class="math inline">100-60=40&gt;0</span>，第一种安排因此存在投资不足，第二种安排实现本例的有效投资。</li>
+<li>所有权改变谈判破裂收益，从而改变预期投资回报。给定投资时，两种安排都会合作并取得 100；预见收益被分走仍可能使事前不投入。双方知道投资与质量，也未必能让法院核实并执行相应条款。课堂随后加入创业者财富约束，说明为什么重谈有时连事后行动都无法修复。</li>
 </ol>
 </details>
 </section>

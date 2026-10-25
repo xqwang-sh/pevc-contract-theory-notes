@@ -3796,7 +3796,7 @@ H4-5 分步答案
 </section>
 <section id="w05-homework" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="w05-homework"><span class="header-section-number">2</span> 第 5 周：控制权、双边激励与分阶段融资</h2>
-<p>第 5 周完成 H5-1 至 H5-5。H5-1 读取现金条款；H5-2 对应一般控制权；H5-3、H5-4 分别求 Schmidt 的 VC 响应与创业者投入、重谈和参与；H5-5 完整逆推 Neher 的分阶段承诺。Hellmann 与 Casamatta 改为选做 H5-12、H5-13，每题重新说明参数。</p>
+<p>第 5 周完成 H5-1 至 H5-5。H5-1 读取现金条款；H5-2 对应产权、事前投入与融资控制；H5-3、H5-4 分别求 Schmidt 的 VC 响应与创业者投入、重谈和参与；H5-5 完整逆推 Neher 的分阶段承诺。Hellmann 与 Casamatta 改为选做 H5-12、H5-13，每题重新说明参数。</p>
 <section id="h5-1" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="h5-1"><span class="header-section-number">2.1</span> H5-1：分配规则是否等于退出决定？</h3>
 <p>VC 持有一轮 1 倍非参与式可转换优先股，优先额 <span class="math inline">L=600</span> 万，转换份额 <span class="math inline">\alpha=1/4</span>。<span class="math inline">W</span> 为偿债及扣费用后的股东可分配现金，退出允许自由转换，其余普通股归创始人。</p>
@@ -3842,23 +3842,30 @@ H5-1 分步答案
 </details>
 </section>
 <section id="h5-2" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="h5-2"><span class="header-section-number">2.2</span> H5-2：或有控制怎样同时改善行动与融资？</h3>
-<p>沿用<a href="w05-preparation.html#p5-2">预习 P5-2</a>的 Aghion–Bolton 数字：好坏状态各半，创业者初始现金份额为零、没有财富，只享有不可转让的私人收益。以下现金数都是条件期望收入。好状态下 <span class="math inline">a_g</span> 产生期望现金 100 和私人收益 150，<span class="math inline">a_b</span> 产生现金 200、没有私人收益；坏状态下 <span class="math inline">a_b</span> 产生现金 50、没有私人收益，<span class="math inline">a_g</span> 只有私人收益 49。</p>
+<h3 data-number="2.2" class="anchored" data-anchor-id="h5-2"><span class="header-section-number">2.2</span> H5-2：产权怎样影响投资？融资约束又改变了什么？</h3>
+<p>先沿用预习 P5-2 的产权教学环境：A 的投资成本 60，合作总收益 100，B 不投资；事前只可约定所有权与固定转移，本题固定转移为零。投入后各自保留谈判破裂收益，再各分一半新增合作剩余。B 拥有资产时双方破裂收益为零；A 拥有资产时，投入后的 A 破裂收益为 <span class="math inline">x\in[0,100]</span>，B 为零。不投入则所有收益均为零。</p>
+<p>再考虑<a href="w05-venture-contract.html#w05-ab-financing">课堂的 Aghion–Bolton 例子</a>：好坏状态各半，创业者初始现金份额为零、没有财富，只享有不可转让的私人收益。以下现金数都是条件期望收入。好状态下 <span class="math inline">a_g</span> 产生期望现金 100 和私人收益 150，<span class="math inline">a_b</span> 产生现金 200、没有私人收益；坏状态下 <span class="math inline">a_b</span> 产生现金 50、没有私人收益，<span class="math inline">a_g</span> 只有私人收益 49。</p>
 <ol type="1">
-<li>求第一优行动，再比较两种单边控制在原合同下的行动。</li>
-<li>设公共信号完全准确，好状态给创业者控制、坏状态给投资者控制，启动资本为 70。求双方效用、投资者净收益与总剩余。</li>
-<li>投资者控制且初始创业者现金份额为零时，为什么重谈不能让它在好状态放弃期望现金 200、改选期望现金 100？</li>
-<li>第 2 问的完美信号在契约上意味着什么？再用课堂的有噪声信号 <span class="math inline">P(1\mid g)=0.9,P(1\mid b)=0.1</span>，取同样的控制配置及原文重谈规则，求双方效用与总净剩余；哪一格仍有效率损失？</li>
+<li>先取 <span class="math inline">x=40</span>，从事后谈判倒推投资。两种所有权下 A 的事后收入和全程净收益分别是多少？实际投资与总净剩余分别是多少？</li>
+<li>对一般的 <span class="math inline">x</span>，求 A 拥有资产时愿意投资的最低谈判破裂收益。边界处的激励是否严格？为什么提高破裂收益不能直接等同于提高新增剩余的分成比例？</li>
+<li>回到 Aghion–Bolton，求第一优行动，再比较两种单边控制在原合同下的行动。</li>
+<li>投资者控制且创业者初始现金份额为零时，为什么重谈不能使好状态下的投资者放弃期望现金 200、改选期望现金 100？与前两问的效率损失有何不同？</li>
+<li>先设完全准确的可核实信号，好状态交创业者、坏状态交投资者，求双方效用、投资者净收益和总净剩余。再用课堂有噪声信号 <span class="math inline">P(1\mid g)=0.9,P(1\mid b)=0.1</span> 与原文重谈规则复算，指出剩余效率损失。</li>
 </ol>
 <details class="solution">
 <summary>
 H5-2 分步答案
 </summary>
 <ol type="1">
-<li>好状态的第一优为 <span class="math inline">a_g</span>，坏状态为 <span class="math inline">a_b</span>。未重谈时，创业者控制在坏状态错选 <span class="math inline">a_g</span>，投资者控制在好状态错选 <span class="math inline">a_b</span>。</li>
-<li>或有控制下两种状态都选对。投资者收入为 <span class="math inline">\tfrac12(100)+\tfrac12(50)=75</span>，扣启动资本后为 5；创业者效用为 <span class="math inline">\tfrac12(150)=75</span>。合计为 80，也等于 <span class="math inline">\tfrac12(250)+\tfrac12(50)-70</span>。这是一份可行合同，没有证明所有或有控制合同都最优。</li>
-<li>投资者按原合同可拿 200，而改选 <span class="math inline">a_g</span> 后，该行动最多提供期望现金 100；创业者无财富，私人收益也不能转让，因此不能补足差额。</li>
-<li>完美可核实信号可以替代状态，构成合同完备基准。有噪声时，四格联合概率为 0.45、0.05、0.05、0.45。按课堂的控制与重谈规则，投资者收入 <span class="math inline">0.45(100)+0.05(200)+0.45(50)=77.5</span>，净收益 7.5；创业者效用 <span class="math inline">0.45(150)+0.05(50)=70</span>，总净剩余为 77.5。好状态却出现信号 0 时，投资者选 <span class="math inline">a_b</span> 且财富约束阻止重谈，损失 <span class="math inline">0.05(250-200)=2.5</span>。不能把信号差直接当作真实质量差；更长的控制比较见<a href="student-notes.html#book-app-e">附录 E</a>。</li>
+<li><p>B 拥有资产时，假定投资已经发生，A、B 各得 50，A 全程净收益为 <span class="math inline">50-60=-10</span>；倒推后 A 不投资，实际双方收益与总净剩余都为零。A 拥有资产且 <span class="math inline">x=40</span> 时，A 取得 <span class="math inline">40+(100-40)/2=70</span>，净得 10；B 得 30。A 投资，总净剩余为 <span class="math inline">100-60=40</span>。给定投资时两种安排都有效合作，事前投资选择却不同。</p></li>
+<li><p>A 投资后的净收益为</p>
+<p><span class="math display">
+x+\frac{100-x}{2}-60=\frac{x}{2}-10.
+</span></p>
+<p>因此投资 IC 为 <span class="math inline">x\ge20</span>。在 <span class="math inline">x=20</span> 时只有弱激励，需约定无差异时投资；<span class="math inline">x&gt;20</span> 才严格愿意投资。新增剩余始终各分一半；变化的是可以先保留的破裂收益及剩下的合作增益。只提高不随投入变化的固定转移，不改变投入与不投入的收益差，但可能影响是否签约。</p></li>
+<li><p>好状态第一优为 <span class="math inline">a_g</span>，坏状态为 <span class="math inline">a_b</span>。未重谈时，创业者控制在坏状态错选 <span class="math inline">a_g</span>；投资者控制在好状态错选 <span class="math inline">a_b</span>。</p></li>
+<li><p>投资者按原合同可拿 200，改选 <span class="math inline">a_g</span> 后最多提供期望现金 100；创业者无外部财富，私人收益又不能转让，无法补足差额。前两问的重谈可实现给定投资下的有效合作，问题出在事前没有投资；这里财富约束还会阻止事后决策修复。</p></li>
+<li><p>完美信号可以替代真实状态，构成合同完备基准。两种状态都选对，投资者期望收入为 <span class="math inline">\tfrac12(100)+\tfrac12(50)=75</span>，扣资本 70 后净得 5；创业者效用为 <span class="math inline">\tfrac12(150)=75</span>，总净剩余为 80。有噪声时四格联合概率为 0.45、0.05、0.05、0.45。按课堂的控制与重谈规则，投资者收入 <span class="math inline">0.45(100)+0.05(200)+0.45(50)=77.5</span>，净得 7.5；创业者效用 <span class="math inline">0.45(150)+0.05(50)=70</span>，总净剩余为 77.5。好状态却出现信号 0 时，投资者选 <span class="math inline">a_b</span> 且财富约束阻止重谈，损失 <span class="math inline">0.05(250-200)=2.5</span>。以上验证给定合同，不证明所有或有控制合同都最优；更长比较见<a href="student-notes.html#book-app-e">附录 E</a>。</p></li>
 </ol>
 </details>
 </section>
