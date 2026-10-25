@@ -47,55 +47,6 @@
     },
     "week5": {
       "core": {
-        "property_rights": {
-          "cooperation_value": 100.0,
-          "investment_cost": 60.0,
-          "first_best": 40.0,
-          "ownership": {
-            "B": {
-              "standalone_after_investment": 0.0,
-              "conditional_on_investment": {
-                "A_receipt": 50.0,
-                "B_receipt": 50.0,
-                "A_net": -10.0,
-                "welfare": 40.0,
-                "gain": 100.0
-              },
-              "chosen_effort": 0,
-              "equilibrium": {
-                "A_receipt": 0.0,
-                "B_receipt": 0.0,
-                "A_net": 0.0,
-                "welfare": 0.0,
-                "gain": 0.0
-              }
-            },
-            "A": {
-              "standalone_after_investment": 40.0,
-              "conditional_on_investment": {
-                "A_receipt": 70.0,
-                "B_receipt": 30.0,
-                "A_net": 10.0,
-                "welfare": 40.0,
-                "gain": 60.0
-              },
-              "chosen_effort": 1,
-              "equilibrium": {
-                "A_receipt": 70.0,
-                "B_receipt": 30.0,
-                "A_net": 10.0,
-                "welfare": 40.0,
-                "gain": 60.0
-              }
-            }
-          },
-          "standalone_threshold": 20.0,
-          "threshold_best_responses": [
-            0,
-            1
-          ],
-          "fixed_transfer_does_not_change_investment_IC": true
-        },
         "schmidt": {
           "primitives": {
             "I": 1.0,
@@ -530,13 +481,13 @@
     }
   },
   "source_sha256": {
-    "student-notes.md": "dc4cf7ec9843959c17c0e04f15ff25468886d6ebbbc1b5b369dad8af05a8e4ad",
+    "student-notes.md": "9cc60fcb618257dbd2c7d1265560d6d7a6a5014b8a95fa53425347b60c533c36",
     "student-notes.qmd": "58bd39744c4826b8f2ab92fbde06e9894b07bbbb4305f24c8c97af772c8cd8cd",
     "w04-fund-contract.qmd": "939ec32075fbc10db3cafe64452878a3fa1e9a74f61ffc591a8fe3184991b558",
-    "w05-venture-contract.qmd": "aa2fea56c6aff999f0d1a238e05a5f254467ec73f9c166a6f1b542422741bec6",
+    "w05-venture-contract.qmd": "05c7de00b505ad043d8a77ef075f98914d8c31256e3af56e6f524f880399c326",
     "w04-preparation.qmd": "31b1610215887eb40d9808cca79be9a9806709b5dcf4fa82bbf316093ec40487",
-    "w05-preparation.qmd": "cd862d3f76647f1a38bb2ce1200efbcae769bbe34e72a122b11f3d82efd40965",
-    "exercises.qmd": "7c69434cecc6b0f57f315fbac267c8a4e9a891c8b7f54d43e88355fadeeafac7",
+    "w05-preparation.qmd": "dafc5d08f50bb81f2393b9031e68253a35ec126e05a45462fef568a610d6ebb1",
+    "exercises.qmd": "1e94bb867ded0ed3611a87692a81fab0814c8959f1603f9dffe89bc5e114c80b",
     "references-by-module.bib": "2f6e68449ce6be771871db51c0377d80bff46b51edf4ed5a0c2c18ab101e57a2"
   },
   "html": {
@@ -544,13 +495,13 @@
     "local_links_checked": 152,
     "details": 33,
     "sha256": {
-      "index.html": "a529259f7d0615ca0b77e11478b1a7209d4faf0d83b40d04cae3a85f1fab06a3",
-      "student-notes.html": "ec6062f63727a98fc948bc658f48f765e39e82cb03fe03652d134445b6d908ca",
+      "index.html": "0e23f747cb8f733a84cba4cfe725c565754204132c2517059c8fa0dcc5edc3e4",
+      "student-notes.html": "e05d0dc31673d76244ed856c84667a5edfd7295eab981ed3c5493bed9d86519b",
       "w04-fund-contract.html": "5ff474a14fab6fce8c850e134c46f74f5e8a352cb3c36e6357893add2c5c4e01",
-      "w05-venture-contract.html": "f055aef53e5d66b0f148004e3592c6d8acb0d9e19d48914c8468f7a1e417bc2e",
+      "w05-venture-contract.html": "77967e119119eac3189d2037642bdeb9614fe8f85b7b70508d809fd5db299c14",
       "w04-preparation.html": "ee89ddbc475ef1e1fd59dc18a2fc587e5da4edbd11d53f8e90a52d51784a776f",
-      "w05-preparation.html": "046d6871ba4333cd2fb618c777c3ced18a1dcf5267e034b57402dae3edf657c9",
-      "exercises.html": "9239b0c31a738334a125c94db9a878e4947e86f715706264a78e7e4a51dfb25f"
+      "w05-preparation.html": "6314602ca093ae68d88806410b9db841b75d66653fe249427ecb93fbf70d0c84",
+      "exercises.html": "cd45e0e5bed633a89afdc31af7e8342cc2e654f9a8f61b0bb34835e56aa012c6"
     }
   },
   "mirrored_files_checked": 26
